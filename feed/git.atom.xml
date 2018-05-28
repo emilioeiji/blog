@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - Git</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/git.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2018-05-28T16:18:00-03:00</updated><entry><title>Subindo o blog para o servidor.</title><link href="http://emilioeiji.com.br/subindo-blog-servidor.html" rel="alternate"></link><published>2018-05-28T16:18:00-03:00</published><updated>2018-05-28T16:18:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2018-05-28:/subindo-blog-servidor.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;Subindo o blog para o servidor.&lt;/h2&gt;
+&lt;p&gt;A partir de agora estou utilizando o git para subir o blog nos servidores da hostgator.&lt;/p&gt;
+&lt;p&gt;Primeiramente iniciei o repositório git com o comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git init
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;O mesmo criou um ditório .git com os seus respectivos arquivos de configurações.&lt;/p&gt;
+&lt;p&gt;Em seguida adicionei todos os …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;Subindo o blog para o servidor.&lt;/h2&gt;
+&lt;p&gt;A partir de agora estou utilizando o git para subir o blog nos servidores da hostgator.&lt;/p&gt;
+&lt;p&gt;Primeiramente iniciei o repositório git com o comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git init
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;O mesmo criou um ditório .git com os seus respectivos arquivos de configurações.&lt;/p&gt;
+&lt;p&gt;Em seguida adicionei todos os arquivos gerados no diretório output pelo Pelican com o seguinte comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git add *
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Feito o comit inicial:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git commit -m &lt;span class="s2"&gt;&amp;quot;Comite inicial.&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Adicionado o repositório de origem:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git remote add origin https://github.com/emilioeiji/blog.git
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E pra finalisar feito o push dos arquvos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git push -u origin master
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Com isso, o blog fica salvo no github e fácil de alterar as informações.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="git"></category><category term="linux"></category><category term="blog"></category><category term="pelican"></category></entry></feed>
