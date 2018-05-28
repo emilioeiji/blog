@@ -56,7 +56,14 @@ make: *** &lt;span class="o"&gt;[&lt;/span&gt;html&lt;span class="o"&gt;]&lt;/sp
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sed -i &lt;span class="s1"&gt;&amp;#39;s,:tag:,:tags:,g&amp;#39;&lt;/span&gt; *
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-</content><category term="sed"></category><category term="linux"></category></entry><entry><title>RAID via software no linux</title><link href="http://emilioeiji.com.br/RAID-via-software-no-linux.html" rel="alternate"></link><published>2015-09-03T12:40:00-03:00</published><updated>2015-09-03T12:40:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2015-09-03:/RAID-via-software-no-linux.html</id><summary type="html">&lt;p&gt;Olá pessoal.&lt;/p&gt;
+</content><category term="sed"></category><category term="linux"></category></entry><entry><title>Voltando a publicar.</title><link href="http://emilioeiji.com.br/voltando-a-publicar.html" rel="alternate"></link><published>2018-05-28T12:00:00-03:00</published><updated>2018-05-28T12:00:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2018-05-28:/voltando-a-publicar.html</id><summary type="html">&lt;div class="section" id="voltando-a-publicar-no-blog"&gt;
+&lt;h2&gt;Voltando a publicar no blog.&lt;/h2&gt;
+&lt;p&gt;Depois de 2 anos e alguns meses sem postar nada, estou voltando com o intuíto de fixar e aprendar novos conteúdos. Como muitas vezes acabo aprendendo algo novo e não registrando, acabo esquecendo em seguida. O blog vai me ajudar como ajudou no passado a …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="voltando-a-publicar-no-blog"&gt;
+&lt;h2&gt;Voltando a publicar no blog.&lt;/h2&gt;
+&lt;p&gt;Depois de 2 anos e alguns meses sem postar nada, estou voltando com o intuíto de fixar e aprendar novos conteúdos. Como muitas vezes acabo aprendendo algo novo e não registrando, acabo esquecendo em seguida. O blog vai me ajudar como ajudou no passado a fixar esses novos conteúdos e quem sabe ajude mais alguém pela internet.&lt;/p&gt;
+&lt;p&gt;Abraços&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="off-topic"></category></entry><entry><title>RAID via software no linux</title><link href="http://emilioeiji.com.br/RAID-via-software-no-linux.html" rel="alternate"></link><published>2015-09-03T12:40:00-03:00</published><updated>2015-09-03T12:40:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2015-09-03:/RAID-via-software-no-linux.html</id><summary type="html">&lt;p&gt;Olá pessoal.&lt;/p&gt;
 &lt;p&gt;Hoje estou configurando um computador com o bacula e preciso configurar os HD's em RAID, como os backups ficarão armazenados local na maquina e em outro NAS vou configurá-los com RAID 0.&lt;/p&gt;
 &lt;p&gt;Na maquina estou rodando o Debian portanto os comandos abaixo podem ser executados na maioria das …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Olá pessoal.&lt;/p&gt;
 &lt;p&gt;Hoje estou configurando um computador com o bacula e preciso configurar os HD's em RAID, como os backups ficarão armazenados local na maquina e em outro NAS vou configurá-los com RAID 0.&lt;/p&gt;
