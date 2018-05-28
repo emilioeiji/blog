@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - Python</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/python.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2015-03-17T20:30:00-03:00</updated><entry><title>Hello World em Python vs Java vs C</title><link href="http://emilioeiji.com.br/hello-world-em-python-vs-java-vs-c.html" rel="alternate"></link><published>2015-03-17T20:30:00-03:00</published><updated>2015-03-17T20:30:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2015-03-17:/hello-world-em-python-vs-java-vs-c.html</id><summary type="html">&lt;p&gt;Olá Galera.&lt;/p&gt;
+&lt;p&gt;Recentemente fui questionado porque eu estava estudando
+Python e não Java, que seria a &amp;quot;linguagem mais utilizada, eficaz, etc. etc.&amp;quot;
+Acredito que não exista linguagem de programação melhor que a outra
+e sim a que melhor se encaixa em determinadas situações. Eu
+como estou aprendendo programação apenas para …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Olá Galera.&lt;/p&gt;
+&lt;p&gt;Recentemente fui questionado porque eu estava estudando
+Python e não Java, que seria a &amp;quot;linguagem mais utilizada, eficaz, etc. etc.&amp;quot;
+Acredito que não exista linguagem de programação melhor que a outra
+e sim a que melhor se encaixa em determinadas situações. Eu
+como estou aprendendo programação apenas para agregar conhecimento
+o Python me atende perfeitamente.&lt;/p&gt;
+&lt;p&gt;A comparação abaixo já existe em diversos foruns, blogs e afins, mas tbm
+vou postar aqui :D não custa nada...&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hello World! em Python 3&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Hello World!&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Hello World! em Java&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;HelloWorld&lt;/span&gt;
+&lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;[]&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+        &lt;span class="o"&gt;{&lt;/span&gt;
+            &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello World!&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+        &lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Hello World! em C&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt;&lt;span class="cpf"&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello World&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Simplesmente por isso resolvi aprender a programar em Python :)&lt;/p&gt;
+</content><category term="programação"></category><category term="python"></category><category term="java"></category><category term="C"></category></entry></feed>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RaspBerry Pi - Sensor de Distância Ultrassônico HC-SR04 | Emilio Eiji</title>
+  <meta charset="utf-8">
+<meta name="description" content="RaspBerry Pi - Sensor de Distância Ultrassônico HC-SR04 Galera, esse é o meu primeiro post com o RaspBerry Pi B+, nele vou descrever como conseguir medir a distancia de algum objeto utilizando os raspberry pi e o sensor ultrassônico HC-SR04. Você vai precisar de: Raspberry Pi Sensor Ultrassônico HC-SR04 Resistor de …"><meta name="author" content="Emilio">  <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+  <meta http-equiv="Cache-Control" content="max-age=604800, must-revalidate" />
+  <link href="./theme/css/screen.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link href="./" type="application/atom+xml" rel="alternate" title="Emilio Eiji ATOM Feed" />
+  <link href="./feed/index.html" type="application/rss+xml" rel="alternate" title="Emilio Eiji RSS Feed" />
+</head>
+<body>
+<div id="outer-wrapper">
+<div id="header-wrapper">
+  <!-- <div class="logo"><a href=".">Emilio Eiji</a></div> -->
+  <div class="logo"><a href=".">emilioeiji.com.br</a></div>
+  <div class="small">The power of root</div>
+    <div class="nav">
+  <li><a href="./abop/abop-ptbr.html">Abop</a></li>
+  <li><a href="./archives/">Arquivos</a></li>
+  <li><a href="./focalinux/index.html">FocaLinux</a></li>
+  <li><a href="./about/">Sobre</a></li>
+  <li><a href="./wiki/index.php">WiKi</a></li>
+    </div>
+    <div class="nav social">
+<ul>
+    <li><a href="https://facebook.com/emilioeiji">Facebook</a></li>
+    <li><a href="https://github.com/emilioeiji">GitHub</a></li>
+    <li><a href="https://plus.google.com/+emilioeiji">Google+</a></li>
+    <li><a href="https://br.linkedin.com/pub/emilio-eiji/7a/24b/29/pt">linkedin</a></li>
+    <li><a href="https://twitter.com/emilioeiji">twitter</a></li>
+    <li><a href="https://youtube.com/c/emilioeiji">Youtube</a></li>
+</ul>    </div>
+</div>    <div id="main">
+<h2><a href="./raspberry-pi-sensor-de-distancia-ultrassonico-hc-sr04.html">RaspBerry Pi - Sensor de Distância Ultrassônico HC-SR04</a></h2>
+<h5><i class="icon-feather"></i> Dom 05 outubro 2014
+<i class="icon-bookmarks"></i>
+<span><a href="./tag/raspberrypi.html">RaspberryPi</a> / </span>
+<span><a href="./tag/hc-sr04.html">HC-SR04</a> / </span>
+<span><a href="./tag/sensor.html">Sensor</a> / </span>
+</h5>
+
+<p><strong>RaspBerry Pi - Sensor de Distância Ultrassônico HC-SR04</strong></p>
+<p>Galera, esse é o meu primeiro post com o RaspBerry Pi B+, nele vou
+descrever como conseguir medir a distancia de algum objeto utilizando os
+raspberry pi e o sensor ultrassônico HC-SR04.</p>
+<p>Você vai precisar de:</p>
+<ol class="arabic simple">
+<li>Raspberry Pi</li>
+<li>Sensor Ultrassônico HC-SR04</li>
+<li>Resistor de 1kΩ</li>
+<li>Resistor de 2KΩ</li>
+<li>Jumpers</li>
+</ol>
+<p>**&nbsp;HC-SR04**</p>
+<p>O HC-SR04 é um sensor ultrassônico, capaz de detectar coisas e medir a
+distância do sensor até o item. A sua distância varia de mais ou menos 1
+cm até 500cm (ou seja, 1cm até 5m), tendo uma precisão de 3mm. É
+aconselhável usar como alcance máximo 200mm, pois dessa forma tem uma
+grande alcance com uma ótima precisão. Assim como outros sensores de
+distância, o HC-SR04 vem com um emissor e um receptor de sinais
+ultrassônico. Para verificar a distância, o sensor emite um sinal que
+bate no objeto e volta para o receptor, obtendo assim um tempo. O
+cálculo que efetuamos é Velocidade = Distância / Tempo.</p>
+<p>Para começar a medição é necessário alimentar o módulo e colocar o
+pino Trigger em nível alto por mais de 10us. Assim o sensor emitirá uma
+onda sonora que ao encontrar um obstáculo rebaterá de volta em direção
+ao módulo, sendo que o neste tempo de emissão e recebimento do sinal o
+pino ECHO ficará em nivel alto. Logo o calcula da distância pode ser
+feito de acordo com o tempo em que o pino ECHO permaneceu em nível alto
+após o pino Trigger ter sido colocado em nível alto.</p>
+<p>Distância = [Tempo ECHO em nível alto * Velocidade do Som] / 2</p>
+<p>A velocidade do som poder ser considerada idealmente igual a 340 m/s,
+logo o resultado é obtido em metros se considerado o tempo em segundos.
+Na fórmula a divisão por 2 deve-se ao foto que a onda é enviada e
+rebatida, logo ela percorre 2 vezes a distância procurada.</p>
+<p><strong>Divisor de Voltagens</strong></p>
+<p>O raspberry pi diferente do arduino, trabalha com o valor de entrada em
+3.3v por isso devemos utilizar os resistores. Abaixo segue um diagrama
+de como irá ficar o esquema de ligação.</p>
+<p><a class="reference external" href="./images/Diagrama1.png"><img alt="Diagrama" src="./images/Diagrama1.png" /></a>Poderia ter utilizado resistors com outros valores, mas como
+não tinha em mãos optei por efetuar a ligação dessa maneira, a formula
+para o calculo é a seguinte:</p>
+<p>V saida = V entrada X R2/R1+R2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V saida/V
+entrda = R2/R1 + R2</p>
+<p>Vamos efetuar o cálculo, mas antes vamos levantar os valores, V saída =
+3.3V, V entrada = 5v e R1 = 1000.</p>
+<p>3.3/5 = R2/1000+R2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.66 = R2/1000+R2</p>
+<p>0.66(1000+R2) = R2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 660 + 0.66R2 = R2</p>
+<p>660 = 0.34R2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1941 = R2</p>
+<p><a class="reference external" href="./images/Diagrama2.png"><img alt="Diagrama 2" src="./images/Diagrama2.png" /></a></p>
+<p><strong>Mão na massa</strong></p>
+<p>Vamos efetuar a ligação do sensor aos jumpers.</p>
+<p><a class="reference external" href="./images/20141004_144641.jpg"><img alt="Conectando os jumpers" src="./images/20141004_144641-300x225.jpg" /></a></p>
+<p>Se for seguir a minha sequência, preno no ground, amarelo no echo, azul
+no trigger e vermelho no vcc (5V).</p>
+<p>Ou pode ligá-lo também direto na protoboard.</p>
+<p><a class="reference external" href="./images/20141004_145829.jpg"><img alt="HC-SR04 na protoboard" src="./images/20141004_145829-300x225.jpg" /></a></p>
+<p>Optei por deixar o sensor direto na protoboard para deixá-lo fixo e
+facilitar o testes, feito isso, liguei o pino 2 e 6 respectivamente nas
+colunas positivo e negativo e fiz o jumper do vcc e ground do sensor na
+coluna de alimentação.</p>
+<p><a class="reference external" href="./images/20141004_145847.jpg"><img alt="Trigger ligado a Gpio 23 ou pino 16" src="./images/20141004_145847-300x225.jpg" /></a></p>
+<p>Próximo passo é ligar o trigger em uma coluna vazia na protoboard e em
+seguida conectá-lo ao pino 16 ou GPIO 23 na placa.</p>
+<p><a class="reference external" href="./images/20141004_150045.jpg"><img alt="Echo conectado ao R1" src="./images/20141004_150045-300x225.jpg" /></a></p>
+<p>Conecte o ECHO em uma coluna vazia ligado a uma perna do resitor R1.</p>
+<p><a class="reference external" href="./images/20141004_153043.jpg"><img alt="Echo ligado ao resistor R2" src="./images/20141004_153043-300x225.jpg" /></a></p>
+<p>Conecte outro jumper na segunda perna do resistor e ligue-o ao pino 18
+ou GPIO 24, na mesma coluna ligue o R2 (resistor de 2k) após o jumper e
+conecte no ground ficando
+<a class="reference external" href="https://www.modmypi.com/image/data/tutorials/hc-sr04/hc-sr04-tut-6.JPG">assim.</a>
+No meu caso como tinha apenas resitor de 1k liguei em paralelo para
+chegar aos 2k necessários.</p>
+<p>No final deve ficar algo parecido com a imagem acima.</p>
+<p>Agora vamos conectar no nosso raspberry pi via ssh e começar a escrever
+nosso script para ler a distancia com o sensor.</p>
+<p><a class="reference external" href="./images/Captura-de-tela-de-2014-10-04-150823.png"><img alt="Conectando via ssh ao raspberry pi" src="./images/Captura-de-tela-de-2014-10-04-150823-300x198.png" /></a></p>
+<p><strong>Srcipt Python</strong></p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">RPi.GPIO</span> <span class="kn">as</span> <span class="nn">GPIO</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span><span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span><span class="p">)</span>
+
+<span class="n">TRIG</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="n">ECHO</span> <span class="o">=</span> <span class="mi">24</span>
+
+<span class="k">print</span> <span class="s2">&quot;Mensurando a Distancia&quot;</span>
+
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">ECHO</span><span class="p">,</span><span class="n">GPIO</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+
+<span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Aguardando o Sensor Estabilizar&quot;</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.00001</span><span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">ECHO</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">pulse_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="k">while</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">ECHO</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">pulse_end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="n">pulse_duration</span> <span class="o">=</span> <span class="n">pulse_end</span> <span class="o">-</span> <span class="n">pulse_start</span>
+
+<span class="n">distance</span> <span class="o">=</span> <span class="n">pulse_duration</span> <span class="o">*</span> <span class="mi">17150</span>
+
+<span class="n">distance</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="s2">&quot;A distancia eh: &quot;</span><span class="p">,</span><span class="n">distance</span><span class="p">,</span> <span class="s2">&quot; cm&quot;</span>
+
+<span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+</pre></div>
+<p><strong>Comentando o Script</strong></p>
+<p>Vou detalhar abaixo o scritp utilizado.</p>
+<p>Importamos a biblioteca python GPIO, iportado a biblioteca time e
+setamos o modo da pinagem que o raspberry irá interpretar que é BCM.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">RPi.GPIO</span> <span class="kn">as</span> <span class="nn">GPIO</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span><span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span><span class="p">)</span>
+</pre></div>
+<p>Definimos os pinos BCM de TRIG e ECHO como 23 e 24.</p>
+<div class="highlight"><pre><span></span><span class="n">TRIG</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="n">ECHO</span> <span class="o">=</span> <span class="mi">24</span>
+</pre></div>
+<p>Vamos imprimir a mensagem que o scritp está mensurando a distancia.</p>
+<div class="highlight"><pre><span></span><span class="k">print</span> <span class="s2">&quot;Mensurando a Distancia&quot;</span>
+</pre></div>
+<p>Vamos setar o TRIG e ECHO como saída e entrada respectivamente.</p>
+<div class="highlight"><pre><span></span><span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">ECHO</span><span class="p">,</span><span class="n">GPIO</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+</pre></div>
+<p>Certificamos que o TRIG está como &quot;falso&quot; para não transmitir nenhuma
+informação inconsistente e damos 1 segundo para ele estabilizar.</p>
+<div class="highlight"><pre><span></span><span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Aguardando o Sensor Estabilizar&quot;</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+<p>O sensor precisa de um pulso de 10 micros-segundos para iniciar a
+medição e o ECHO responder o tempo que o sinal percorreu e voltou para o
+sensor (O sensor dispara 8 rajadas a 40 kHz), e setamos novamente o pino
+como Falso para parar a medição.</p>
+<div class="highlight"><pre><span></span><span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.00001</span><span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span><span class="k">while</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">ECHO</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">pulse_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</pre></div>
+<p>O sensor mede a distancia baseado no tempo em que o ECHO permanece com o
+status High ou 1, portanto na variável pulse_start armazenamos o ultimo
+timestamp (a função time.time() armazena o ultimo timestamp na variável
+declarada) para comparar posteriormente com a variável pulse_end.</p>
+<div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">ECHO</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">pulse_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</pre></div>
+<p>A variável armazena o ultimo timestamp na variável pulse_end para ser
+subtraído a variável pulse_start.</p>
+<div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">ECHO</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">pulse_end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</pre></div>
+<p>Agora vamos calcular a diferença entre as duas variáveis e determinar
+quanto tempo o ECHO ficou ativo.</p>
+<div class="highlight"><pre><span></span><span class="n">pulse_duration</span> <span class="o">=</span> <span class="n">pulse_end</span> <span class="o">-</span> <span class="n">pulse_start</span>
+</pre></div>
+<p>Como dito no início da postagem, vamos utilizar o cálculo
+Velocidade=Distancia/Tempo como sabemos que a velocidade do som é 340m/s
+vamos converter para cm/s ficando 34300, dividimos esse valor por 2 já
+que calculamos o tempo de ida e volta do sinal, e para encontrar a
+distancia multiplicamos pelo tempo que o sinal levou parar ir e voltar.</p>
+<div class="highlight"><pre><span></span><span class="n">distance</span> <span class="o">=</span> <span class="n">pulse_duration</span> <span class="o">*</span> <span class="mi">17150</span>
+</pre></div>
+<p>Para melhor legibilidade vamos definir nossa distancia com apenas 2
+casas decimais.</p>
+<div class="highlight"><pre><span></span><span class="n">distance</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+<p>Vamos agora apresentar a distancia na tela.</p>
+<div class="highlight"><pre><span></span><span class="k">print</span> <span class="s2">&quot;A distancia eh: &quot;</span><span class="p">,</span><span class="n">distance</span><span class="p">,</span> <span class="s2">&quot; cm&quot;</span>
+</pre></div>
+<p>E por ultimo limpamos as configurações feitas para os pinos GPIO.</p>
+<div class="highlight"><pre><span></span><span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+</pre></div>
+<p>Feito isso só salvar e executar o nosso script para mostrar a distancia.</p>
+<p><a class="reference external" href="./images/Captura-de-tela-de-2014-10-04-152635.png"><img alt="Executanso Script" src="./images/Captura-de-tela-de-2014-10-04-152635-300x291.png" /></a></p>
+<p><a class="reference external" href="./images/WP_20141005_004.jpg"><img alt="Tirando a prova real." src="./images/WP_20141005_004-300x168.jpg" /></a></p>
+<p>Em um próximo post vou tentar interagir com LEDS ou Buzzer para
+melhorarmos nosso script.</p>
+<p>Este obra de Emilio Eiji está licenciado com uma Licença <a class="reference external" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Atribuição-NãoComercial-CompartilhaIgual 4.0
+Internacional</a>.</p>
+
+
+<p align="center"><a href="#">on the top</a></p>
+<h3>Comments</h3>
+<div id="disqus_thread">
+    <script type="text/javascript">
+       var disqus_identifier = "raspberry-pi-sensor-de-distancia-ultrassonico-hc-sr04.html";
+       (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://emilioeiji.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+</div>    </div>
+</div>
+<div id="footer-wrapper">
+<ul class="footer">
+     <li class="footer"><a href="./tag/100-linux.html">100-linux&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/abrir-linha.html">abrir linha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/alterar.html">alterar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/alterar-senha.html">alterar senha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/amazon.html">amazon&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/analise.html">análise&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/apache.html">apache&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/apple.html">apple&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/arduino.html">arduino&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ardunio.html">ardunio&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/atualizar.html">atualizar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/atualizar-dokuwiki.html">atualizar dokuwiki&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/backup.html">backup&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/bacula.html">bacula&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/boot.html">boot&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/c.html">C&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/cacti.html">cacti&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/certificacao.html">certificação&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/citrix.html">citrix&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/comandos-vim.html">comandos vim&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/criptografia.html">criptografia&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/curiosidades.html">curiosidades&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dd.html">dd&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/debian.html">debian&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dia.html">dia&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dicas.html">dicas&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dicas-vim.html">dicas vim&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/display.html">display&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dokuwiki.html">dokuwiki&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dual-monitor.html">dual monitor&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dx.html">DX&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ebay.html">ebay&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/empresas.html">empresas&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/excluir.html">excluir&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/externo.html">externo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/facebook.html">facebook&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/filezilla.html">filezilla&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/firefox.html">firefox&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/flask.html">flask&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/fluxbox.html">fluxbox&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/freenas.html">freenas&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/geany.html">geany&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/google.html">google&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/grub.html">grub&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hacker.html">hacker&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hacking.html">hacking&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hc-sr04.html">HC-SR04&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hd.html">hd&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hora.html">hora&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hostgator.html">hostgator&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hostinger.html">hostinger&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hp.html">hp&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/idrac.html">idrac&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ilo.html">ilo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/imagem.html">imagem&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/imm.html">imm&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/instalacao.html">instalação&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/instalando.html">instalando&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/internet-explorer.html">internet explorer&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/iso.html">iso&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/java.html">java&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/keepass.html">keepass&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/lamp.html">lamp&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ldr.html">ldr&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/led.html">led&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/led-zeppelin.html">led zeppelin&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/libreoffice.html">libreoffice&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linha.html">linha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linkedin.html">linkedin&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linux.html">linux&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linux-mint.html">linux mint&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/lm35.html">lm35&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/lucro.html">lucro&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mcsa.html">mcsa&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mecanismo.html">mecanismo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mensagens.html">mensagens&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/microsoft.html">microsoft&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/moonlight.html">moonlight&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mssql.html">mssql&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/musica.html">musica&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mysql.html">mysql&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mysql-client.html">mysql client&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/net-rpc.html">net rpc&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/netinst.html">netinst&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ntp.html">ntp&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/off-topic.html">off-topic&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/openfire.html">openfire&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pelican.html">pelican&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/penboot.html">penboot&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pendrive.html">pendrive&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pesquisa.html">pesquisa&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/petra.html">petra&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/php.html">php&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pipelight.html">pipelight&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/powershell.html">powershell&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/processos.html">processos&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/programacao.html">programação&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pstools.html">pstools&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/python.html">python&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/raid.html">raid&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/raspberrypi.html">RaspberryPi&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/reiniciar.html">reiniciar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/rele.html">relé&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/remoto.html">remoto&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/remover.html">remover&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/reset.html">reset&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/resetar.html">resetar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/restart.html">restart&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/rock-n-roll.html">rock n roll&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/root.html">root&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/rsync.html">rsync&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/samsung.html">samsung&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sed.html">sed&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/seguranca.html">seguranca&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/semaforo.html">semaforo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sensor.html">Sensor&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/server.html">server&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/servico.html">serviço&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/servicos-windows.html">serviços windows&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sid.html">sid&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/silverlight.html">silverlight&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sony.html">sony&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sysprep.html">sysprep&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/tecnologia.html">tecnologia&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/transmission.html">transmission&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/vim.html">vim&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/vim-abrir-linha.html">vim abrir linha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/virtualbox.html">virtualbox&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/virus.html">virus&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/wargame.html">wargame&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/wheezy.html">wheezy&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows.html">windows&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-2003.html">windows 2003&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-2008.html">windows 2008&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-2012.html">windows 2012&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-7.html">windows 7&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-8.html">windows 8&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-server.html">windows server&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-services.html">windows services&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/xchat.html">xchat&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/yahoo.html">yahoo</a></li>
+</ul><ul class="footer">
+    <li class="footer">&copy;&nbsp;2015&nbsp;::</li>
+    <li class="footer"><a href=".">Emilio Eiji </a>&nbsp;::</li>
+<!--    <li class="footer">powered by <a href="https://github.com/getpelican">pelican</a>&nbsp;::</li> -->
+    <li class="footer"><a href="http://creativecommons.org/licenses/by-nc/3.0/deed.ru">CC BY-NC</a></li>
+</ul>
+</div><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41240903-2', 'emilioeiji.com.br');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

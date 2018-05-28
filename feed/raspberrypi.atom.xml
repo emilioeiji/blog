@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - RaspberryPi</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/raspberrypi.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2014-11-22T22:28:00-02:00</updated><entry><title>Segunda decepção com o DX - Peças Raspberry Pi</title><link href="http://emilioeiji.com.br/segunda-decepcao-com-o-dx-pecas-raspberry-pi.html" rel="alternate"></link><published>2014-11-22T22:28:00-02:00</published><updated>2014-11-22T22:28:00-02:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2014-11-22:/segunda-decepcao-com-o-dx-pecas-raspberry-pi.html</id><summary type="html">&lt;p&gt;I aew galera...&lt;/p&gt;
+&lt;p&gt;Hoje, após exatamente 59 dias chegou algumas peças que eu estava ansioso
+esperando :p seriam elas 1 cabo de dados de 40 vias Fêmea-Fêmea
+([STRIKEOUT:Que veio com a trava que prende o cabo ao conector
+quebrada]) onde seria ligado na placa e no &lt;a class="reference external" href="http://www.dx.com/p/diy-t-style-40-pin-gpio-expansion-board-for-raspberry-pi-b-blue-344558#.VHEvOIWu7K8"&gt;RPI
+GPiO&lt;/a&gt;
+que …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I aew galera...&lt;/p&gt;
+&lt;p&gt;Hoje, após exatamente 59 dias chegou algumas peças que eu estava ansioso
+esperando :p seriam elas 1 cabo de dados de 40 vias Fêmea-Fêmea
+([STRIKEOUT:Que veio com a trava que prende o cabo ao conector
+quebrada]) onde seria ligado na placa e no &lt;a class="reference external" href="http://www.dx.com/p/diy-t-style-40-pin-gpio-expansion-board-for-raspberry-pi-b-blue-344558#.VHEvOIWu7K8"&gt;RPI
+GPiO&lt;/a&gt;
+que também veio nesse pedido. Quando abri o pacote, fui logo conectando
+o cabo de 40 vias no raspberry e no RPI GPiO, a minha intenção em usar
+esses dois acessória seria para não ficar sempre montando e desmontando
+os circuitos montados na protoboard, o objetivo era desconectar o cabo e
+levar o Raspberry para a sala e conectado na TV com o openelec.&lt;/p&gt;
+&lt;p&gt;Abaixo segue a imagem que estava no site do DX.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Captura-de-tela-de-2014-11-22-225012.png"&gt;&lt;img alt="RPI GPiO V2.0" src="http://emilioeiji.com.br/images/Captura-de-tela-de-2014-11-22-225012.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Olhando pra ela a princípio atenderia os meus
+objetivos, ligá-la a uma protoboard e fetuar a ligação dos jumpers na
+protoboard porém, a imagem a baixo mostra que isso não é possível.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/rpi.jpg"&gt;&lt;img alt="3.3 v e 5v" src="http://emilioeiji.com.br/images/rpi-225x300.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Se conectada a uma protoboard, não consigo utilizar os pinos de 3.3v e
+5v, analisando o produto enviado com o produto anunciado no DX, notei
+que o modelo enviado é a versão 1.0 e o anunciado seria a 2.0, não sei
+se isso foi corrigido ou oque aconteceu, vou tentar pedir &lt;a class="reference external" href="http://www.dx.com/p/straight-pcb-gpio-expansion-board-for-raspberry-pi-b-black-338017#.VHE10IWu7K8"&gt;outro
+modelo&lt;/a&gt;
+para ver se atende os meus requisitos.&lt;/p&gt;
+&lt;p&gt;OBS: Só para esclarecer, a primeira decepção com o DX não foi com o site
+e sim com o correios e exército brasileiro, também não foi relacionado a
+peças do Raspberry ou Arduino e sim com uma luneta para carabina :p
+pesquisei um pouco antes de comprar para saber não teria problemas por
+se tratar de uma luneta, o modelo em questão era com zoom fixo em 3x,
+bem fraquinha e simplezinha. Na época não era pra ter tido nenhum
+problema com ela, mas para a minha surpresa a luneta foi barrada pelo
+exército brasileiro alegando ser de uso restrito... mas tudo bem :)
+perdi só alguns dólares.&lt;/p&gt;
+&lt;p&gt;Mas é isso ai, infelizmente se quisermos ter acesso a produtos com
+preços justos temos que importar e sofrer com a demora na entrega, agora
+se dinheiro não for problema, temos ótimos sites onde vendem produtos
+para Raspberry e Arduino :p&lt;/p&gt;
+</content><category term="RaspberryPi"></category><category term="DX"></category></entry><entry><title>RaspBerry Pi – Sensor de Distância Ultrassônico HC-SR04 tempo real.</title><link href="http://emilioeiji.com.br/raspberry-pi-sensor-de-distancia-ultrassonico-hc-sr04-tempo-real.html" rel="alternate"></link><published>2014-11-22T21:42:00-02:00</published><updated>2014-11-22T21:42:00-02:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2014-11-22:/raspberry-pi-sensor-de-distancia-ultrassonico-hc-sr04-tempo-real.html</id><summary type="html">&lt;p&gt;Boa pessoal.&lt;/p&gt;
+&lt;p&gt;Conforme havia comentado no post anterior ([STRIKEOUT:demorou pra
+caramba!!!]) estou postando o scritp para utilizar com o HC-SR04 onde
+retorna a distancia em tempo real, o esquema de ligação é o mesmo, a
+única coisa que irá mudar é o script python.&lt;/p&gt;
+&lt;p&gt;Igualmente ao script anterior tentarei …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Boa pessoal.&lt;/p&gt;
+&lt;p&gt;Conforme havia comentado no post anterior ([STRIKEOUT:demorou pra
+caramba!!!]) estou postando o scritp para utilizar com o HC-SR04 onde
+retorna a distancia em tempo real, o esquema de ligação é o mesmo, a
+única coisa que irá mudar é o script python.&lt;/p&gt;
+&lt;p&gt;Igualmente ao script anterior tentarei explicar o máximo possível o
+script.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#!/usr/bin/python&lt;/span&gt;
+&lt;span class="cp"&gt;# -*- encoding: utf-8 -*-&lt;/span&gt;
+
+&lt;span class="cp"&gt;# Importando as bibliotecas necessária.&lt;/span&gt;
+&lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;
+&lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;RPi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GPIO&lt;/span&gt; &lt;span class="n"&gt;as&lt;/span&gt; &lt;span class="n"&gt;GPIO&lt;/span&gt;
+
+&lt;span class="cp"&gt;# Função que mensura a distancia do objeto.&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;mensura&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GPIO_TRIGGER&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.00001&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GPIO_TRIGGER&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;input&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GPIO_ECHO&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;input&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GPIO_ECHO&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;stop&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;percorrido&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;stop&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt;
+&lt;span class="n"&gt;distancia&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;percorrido&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;34300&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+
+&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;distancia&lt;/span&gt;
+
+&lt;span class="cp"&gt;# Mensura a média da distancia.&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;mensura_media&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;distancia1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mensura&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;distancia2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mensura&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;distancia3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mensura&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;distancia&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;distancia1&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;distancia2&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;distancia3&lt;/span&gt;
+&lt;span class="n"&gt;distancia&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;distancia&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;distancia&lt;/span&gt;
+
+&lt;span class="cp"&gt;# Função principal&lt;/span&gt;
+
+&lt;span class="cp"&gt;# Setando os pinos como BCM&lt;/span&gt;
+&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setmode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;BCM&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="cp"&gt;# Definindo os pinos&lt;/span&gt;
+&lt;span class="n"&gt;GPIO_TRIGGER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;23&lt;/span&gt;
+&lt;span class="n"&gt;GPIO_ECHO&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;24&lt;/span&gt;
+
+&lt;span class="n"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Mensurando a distancia.&amp;quot;&lt;/span&gt;
+
+&lt;span class="cp"&gt;# Definindo os pinos output e input.&lt;/span&gt;
+&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GPIO_TRIGGER&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;OUT&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Trigger&lt;/span&gt;
+&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GPIO_ECHO&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;IN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Echo&lt;/span&gt;
+
+&lt;span class="cp"&gt;# Trigger como falso.&lt;/span&gt;
+&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GPIO_TRIGGER&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="cp"&gt;# Quando precionado CTRL+C o script é enterrompido e&lt;/span&gt;
+&lt;span class="cp"&gt;# resetado os estados da GPIO.&lt;/span&gt;
+&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+
+&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="nl"&gt;True&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+
+&lt;span class="n"&gt;distancia&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mensura_media&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;A distancia é : %f&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;distancia&lt;/span&gt;
+&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;except&lt;/span&gt; &lt;span class="nl"&gt;KeyboardInterrupt&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cleanup&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Espero que tenham gostado e em breve volto com novidades.&lt;/p&gt;
+</content><category term="RaspberryPi"></category><category term="HC-SR04"></category><category term="Sensor"></category></entry><entry><title>RaspBerry Pi - Sensor de Distância Ultrassônico HC-SR04</title><link href="http://emilioeiji.com.br/raspberry-pi-sensor-de-distancia-ultrassonico-hc-sr04.html" rel="alternate"></link><published>2014-10-05T23:17:00-03:00</published><updated>2014-10-05T23:17:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2014-10-05:/raspberry-pi-sensor-de-distancia-ultrassonico-hc-sr04.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;RaspBerry Pi - Sensor de Distância Ultrassônico HC-SR04&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Galera, esse é o meu primeiro post com o RaspBerry Pi B+, nele vou
+descrever como conseguir medir a distancia de algum objeto utilizando os
+raspberry pi e o sensor ultrassônico HC-SR04.&lt;/p&gt;
+&lt;p&gt;Você vai precisar de:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Raspberry Pi&lt;/li&gt;
+&lt;li&gt;Sensor Ultrassônico HC-SR04&lt;/li&gt;
+&lt;li&gt;Resistor de …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;RaspBerry Pi - Sensor de Distância Ultrassônico HC-SR04&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Galera, esse é o meu primeiro post com o RaspBerry Pi B+, nele vou
+descrever como conseguir medir a distancia de algum objeto utilizando os
+raspberry pi e o sensor ultrassônico HC-SR04.&lt;/p&gt;
+&lt;p&gt;Você vai precisar de:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Raspberry Pi&lt;/li&gt;
+&lt;li&gt;Sensor Ultrassônico HC-SR04&lt;/li&gt;
+&lt;li&gt;Resistor de 1kΩ&lt;/li&gt;
+&lt;li&gt;Resistor de 2KΩ&lt;/li&gt;
+&lt;li&gt;Jumpers&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;**&amp;nbsp;HC-SR04**&lt;/p&gt;
+&lt;p&gt;O HC-SR04 é um sensor ultrassônico, capaz de detectar coisas e medir a
+distância do sensor até o item. A sua distância varia de mais ou menos 1
+cm até 500cm (ou seja, 1cm até 5m), tendo uma precisão de 3mm. É
+aconselhável usar como alcance máximo 200mm, pois dessa forma tem uma
+grande alcance com uma ótima precisão. Assim como outros sensores de
+distância, o HC-SR04 vem com um emissor e um receptor de sinais
+ultrassônico. Para verificar a distância, o sensor emite um sinal que
+bate no objeto e volta para o receptor, obtendo assim um tempo. O
+cálculo que efetuamos é Velocidade = Distância / Tempo.&lt;/p&gt;
+&lt;p&gt;Para começar a medição é necessário alimentar o módulo e colocar o
+pino Trigger em nível alto por mais de 10us. Assim o sensor emitirá uma
+onda sonora que ao encontrar um obstáculo rebaterá de volta em direção
+ao módulo, sendo que o neste tempo de emissão e recebimento do sinal o
+pino ECHO ficará em nivel alto. Logo o calcula da distância pode ser
+feito de acordo com o tempo em que o pino ECHO permaneceu em nível alto
+após o pino Trigger ter sido colocado em nível alto.&lt;/p&gt;
+&lt;p&gt;Distância = [Tempo ECHO em nível alto * Velocidade do Som] / 2&lt;/p&gt;
+&lt;p&gt;A velocidade do som poder ser considerada idealmente igual a 340 m/s,
+logo o resultado é obtido em metros se considerado o tempo em segundos.
+Na fórmula a divisão por 2 deve-se ao foto que a onda é enviada e
+rebatida, logo ela percorre 2 vezes a distância procurada.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Divisor de Voltagens&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;O raspberry pi diferente do arduino, trabalha com o valor de entrada em
+3.3v por isso devemos utilizar os resistores. Abaixo segue um diagrama
+de como irá ficar o esquema de ligação.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Diagrama1.png"&gt;&lt;img alt="Diagrama" src="http://emilioeiji.com.br/images/Diagrama1.png" /&gt;&lt;/a&gt;Poderia ter utilizado resistors com outros valores, mas como
+não tinha em mãos optei por efetuar a ligação dessa maneira, a formula
+para o calculo é a seguinte:&lt;/p&gt;
+&lt;p&gt;V saida = V entrada X R2/R1+R2&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; V saida/V
+entrda = R2/R1 + R2&lt;/p&gt;
+&lt;p&gt;Vamos efetuar o cálculo, mas antes vamos levantar os valores, V saída =
+3.3V, V entrada = 5v e R1 = 1000.&lt;/p&gt;
+&lt;p&gt;3.3/5 = R2/1000+R2 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 0.66 = R2/1000+R2&lt;/p&gt;
+&lt;p&gt;0.66(1000+R2) = R2 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 660 + 0.66R2 = R2&lt;/p&gt;
+&lt;p&gt;660 = 0.34R2 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 1941 = R2&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Diagrama2.png"&gt;&lt;img alt="Diagrama 2" src="http://emilioeiji.com.br/images/Diagrama2.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mão na massa&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Vamos efetuar a ligação do sensor aos jumpers.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/20141004_144641.jpg"&gt;&lt;img alt="Conectando os jumpers" src="http://emilioeiji.com.br/images/20141004_144641-300x225.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Se for seguir a minha sequência, preno no ground, amarelo no echo, azul
+no trigger e vermelho no vcc (5V).&lt;/p&gt;
+&lt;p&gt;Ou pode ligá-lo também direto na protoboard.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/20141004_145829.jpg"&gt;&lt;img alt="HC-SR04 na protoboard" src="http://emilioeiji.com.br/images/20141004_145829-300x225.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Optei por deixar o sensor direto na protoboard para deixá-lo fixo e
+facilitar o testes, feito isso, liguei o pino 2 e 6 respectivamente nas
+colunas positivo e negativo e fiz o jumper do vcc e ground do sensor na
+coluna de alimentação.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/20141004_145847.jpg"&gt;&lt;img alt="Trigger ligado a Gpio 23 ou pino 16" src="http://emilioeiji.com.br/images/20141004_145847-300x225.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Próximo passo é ligar o trigger em uma coluna vazia na protoboard e em
+seguida conectá-lo ao pino 16 ou GPIO 23 na placa.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/20141004_150045.jpg"&gt;&lt;img alt="Echo conectado ao R1" src="http://emilioeiji.com.br/images/20141004_150045-300x225.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Conecte o ECHO em uma coluna vazia ligado a uma perna do resitor R1.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/20141004_153043.jpg"&gt;&lt;img alt="Echo ligado ao resistor R2" src="http://emilioeiji.com.br/images/20141004_153043-300x225.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Conecte outro jumper na segunda perna do resistor e ligue-o ao pino 18
+ou GPIO 24, na mesma coluna ligue o R2 (resistor de 2k) após o jumper e
+conecte no ground ficando
+&lt;a class="reference external" href="https://www.modmypi.com/image/data/tutorials/hc-sr04/hc-sr04-tut-6.JPG"&gt;assim.&lt;/a&gt;
+No meu caso como tinha apenas resitor de 1k liguei em paralelo para
+chegar aos 2k necessários.&lt;/p&gt;
+&lt;p&gt;No final deve ficar algo parecido com a imagem acima.&lt;/p&gt;
+&lt;p&gt;Agora vamos conectar no nosso raspberry pi via ssh e começar a escrever
+nosso script para ler a distancia com o sensor.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Captura-de-tela-de-2014-10-04-150823.png"&gt;&lt;img alt="Conectando via ssh ao raspberry pi" src="http://emilioeiji.com.br/images/Captura-de-tela-de-2014-10-04-150823-300x198.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Srcipt Python&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;RPi.GPIO&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;GPIO&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setmode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;BCM&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;TRIG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;23&lt;/span&gt;
+&lt;span class="n"&gt;ECHO&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;24&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Mensurando a Distancia&amp;quot;&lt;/span&gt;
+
+&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TRIG&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;OUT&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ECHO&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;IN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TRIG&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Aguardando o Sensor Estabilizar&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TRIG&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.00001&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TRIG&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;input&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ECHO&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;pulse_start&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;input&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ECHO&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;pulse_end&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;pulse_duration&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pulse_end&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;pulse_start&lt;/span&gt;
+
+&lt;span class="n"&gt;distance&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pulse_duration&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;17150&lt;/span&gt;
+
+&lt;span class="n"&gt;distance&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;round&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;distance&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;A distancia eh: &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;distance&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot; cm&amp;quot;&lt;/span&gt;
+
+&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cleanup&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Comentando o Script&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Vou detalhar abaixo o scritp utilizado.&lt;/p&gt;
+&lt;p&gt;Importamos a biblioteca python GPIO, iportado a biblioteca time e
+setamos o modo da pinagem que o raspberry irá interpretar que é BCM.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;RPi.GPIO&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;GPIO&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setmode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;BCM&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Definimos os pinos BCM de TRIG e ECHO como 23 e 24.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;TRIG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;23&lt;/span&gt;
+&lt;span class="n"&gt;ECHO&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;24&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Vamos imprimir a mensagem que o scritp está mensurando a distancia.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Mensurando a Distancia&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Vamos setar o TRIG e ECHO como saída e entrada respectivamente.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TRIG&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;OUT&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ECHO&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;IN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Certificamos que o TRIG está como &amp;quot;falso&amp;quot; para não transmitir nenhuma
+informação inconsistente e damos 1 segundo para ele estabilizar.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TRIG&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Aguardando o Sensor Estabilizar&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;O sensor precisa de um pulso de 10 micros-segundos para iniciar a
+medição e o ECHO responder o tempo que o sinal percorreu e voltou para o
+sensor (O sensor dispara 8 rajadas a 40 kHz), e setamos novamente o pino
+como Falso para parar a medição.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TRIG&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.00001&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TRIG&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;input&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ECHO&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;pulse_start&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;O sensor mede a distancia baseado no tempo em que o ECHO permanece com o
+status High ou 1, portanto na variável pulse_start armazenamos o ultimo
+timestamp (a função time.time() armazena o ultimo timestamp na variável
+declarada) para comparar posteriormente com a variável pulse_end.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;input&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ECHO&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;pulse_start&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A variável armazena o ultimo timestamp na variável pulse_end para ser
+subtraído a variável pulse_start.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;input&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ECHO&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;pulse_end&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Agora vamos calcular a diferença entre as duas variáveis e determinar
+quanto tempo o ECHO ficou ativo.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pulse_duration&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pulse_end&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;pulse_start&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Como dito no início da postagem, vamos utilizar o cálculo
+Velocidade=Distancia/Tempo como sabemos que a velocidade do som é 340m/s
+vamos converter para cm/s ficando 34300, dividimos esse valor por 2 já
+que calculamos o tempo de ida e volta do sinal, e para encontrar a
+distancia multiplicamos pelo tempo que o sinal levou parar ir e voltar.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;distance&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pulse_duration&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;17150&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Para melhor legibilidade vamos definir nossa distancia com apenas 2
+casas decimais.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;distance&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;round&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;distance&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Vamos agora apresentar a distancia na tela.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;A distancia eh: &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;distance&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot; cm&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E por ultimo limpamos as configurações feitas para os pinos GPIO.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;GPIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cleanup&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Feito isso só salvar e executar o nosso script para mostrar a distancia.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Captura-de-tela-de-2014-10-04-152635.png"&gt;&lt;img alt="Executanso Script" src="http://emilioeiji.com.br/images/Captura-de-tela-de-2014-10-04-152635-300x291.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/WP_20141005_004.jpg"&gt;&lt;img alt="Tirando a prova real." src="http://emilioeiji.com.br/images/WP_20141005_004-300x168.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Em um próximo post vou tentar interagir com LEDS ou Buzzer para
+melhorarmos nosso script.&lt;/p&gt;
+&lt;p&gt;Este obra de Emilio Eiji está licenciado com uma Licença &lt;a class="reference external" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;Creative
+Commons Atribuição-NãoComercial-CompartilhaIgual 4.0
+Internacional&lt;/a&gt;.&lt;/p&gt;
+</content><category term="RaspberryPi"></category><category term="HC-SR04"></category><category term="Sensor"></category></entry></feed>

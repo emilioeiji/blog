@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Flask - Introdução | Emilio Eiji</title>
+  <meta charset="utf-8">
+<meta name="description" content="Depois que migrei o meu blog para o Pelican, procurei mais a fundo aprender sua estrutura, pesquisando como funcionava seus templates etc. Com isso vi que o desenvolvimento web com frameworks python fica muito mais fácil e dinamico surgindo interesse no web2py e flask. A primeiro momento escolhi o flask …"><meta name="author" content="Emilio">  <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+  <meta http-equiv="Cache-Control" content="max-age=604800, must-revalidate" />
+  <link href="./theme/css/screen.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link href="./" type="application/atom+xml" rel="alternate" title="Emilio Eiji ATOM Feed" />
+  <link href="./feed/index.html" type="application/rss+xml" rel="alternate" title="Emilio Eiji RSS Feed" />
+</head>
+<body>
+<div id="outer-wrapper">
+<div id="header-wrapper">
+  <!-- <div class="logo"><a href=".">Emilio Eiji</a></div> -->
+  <div class="logo"><a href=".">emilioeiji.com.br</a></div>
+  <div class="small">The power of root</div>
+    <div class="nav">
+  <li><a href="./abop/abop-ptbr.html">Abop</a></li>
+  <li><a href="./archives/">Arquivos</a></li>
+  <li><a href="./focalinux/index.html">FocaLinux</a></li>
+  <li><a href="./about/">Sobre</a></li>
+  <li><a href="./wiki/index.php">WiKi</a></li>
+    </div>
+    <div class="nav social">
+<ul>
+    <li><a href="https://facebook.com/emilioeiji">Facebook</a></li>
+    <li><a href="https://github.com/emilioeiji">GitHub</a></li>
+    <li><a href="https://plus.google.com/+emilioeiji">Google+</a></li>
+    <li><a href="https://br.linkedin.com/pub/emilio-eiji/7a/24b/29/pt">linkedin</a></li>
+    <li><a href="https://twitter.com/emilioeiji">twitter</a></li>
+    <li><a href="https://youtube.com/c/emilioeiji">Youtube</a></li>
+</ul>    </div>
+</div>    <div id="main">
+<h2><a href="./flask-introducao.html">Flask - Introdução</a></h2>
+<h5><i class="icon-feather"></i> Dom 24 maio 2015
+<i class="icon-bookmarks"></i>
+<span><a href="./tag/flask.html">flask</a> / </span>
+<span><a href="./tag/python.html">python</a> / </span>
+<span><a href="./tag/programacao.html">programação</a> / </span>
+</h5>
+
+<p>Depois que migrei o meu blog para o Pelican, procurei mais a fundo aprender sua estrutura,
+pesquisando como funcionava seus templates etc. Com isso vi que o desenvolvimento
+web com frameworks python fica muito mais fácil e dinamico surgindo interesse
+no web2py e flask.</p>
+<p>A primeiro momento escolhi o flask por ser recomendado para iniciantes (como eu).
+Pretendo nesse post criar um site/app simples seguindo uma estrutura de diretórios,
+sei que o correto seria iniciar com o modelo de prograação MVC mas como estou
+aprendendo prefiro não complicar muito agora no começo, espero que todos compreendam
+que não sou programador por tanto, não entrarei muito em detalhes já que meu conhecimento
+é superficial em programação, mas prometo que assim que for melhorando vou elaborando
+posts com mais qualidade.</p>
+<div class="section" id="a-instalacao">
+<h2>A instalação</h2>
+<p>A instalação é muito simples, basta pelo gerenciador de pacotes do python executar
+o seguinte comando:</p>
+<div class="highlight"><pre><span></span>pip install Flask
+</pre></div>
+<p>O procedimento pode ser executado (é até aconselhavel) rodando dentro do
+virtualenv, onde cria-se um ambiente virtual para o desenvolvimento assim,
+caso seja instalado novos pacotes não irá impactar na sua maquina local.</p>
+</div>
+<div class="section" id="criando-a-estrutura">
+<h2>Criando a estrutura</h2>
+<p>A estrutura do projeto é bem básica, dentro de um diretório comm o nome do seu site/app
+iremos criar a seguinte estrutura:</p>
+<div class="highlight"><pre><span></span>app/
+├── README.md
+├── routes.py
+├── static
+│   ├── css
+│   ├── img
+│   └── js
+└── templates
+    ├── home.html
+    └── layout.html
+</pre></div>
+<p>Portando mão na massa e vamos criar os diretórios.</p>
+<div class="highlight"><pre><span></span>mkdir app
+touch README.md
+touch routes.py
+mkdir static
+mkdir static/css
+mkdir static/img
+mkdir static/js
+mkdir templates
+</pre></div>
+<p>A princípio criamos um diretório chamado app onde armazenaremos todos os arquivos,
+em seguida crirei o arquivo README.md e routes.py em branco, onde o README.md
+deverá conter a descrição e as funcionalidades do nosso site/app, e o arquivo
+routes.py onde contem as nossas funções python. No diretório static irão ficar
+todos os nossos arquivo estáticos que não tem alterações, como imagens, arquivos css,
+templates, java script, etc.</p>
+</div>
+<div class="section" id="templates">
+<h2>Templates</h2>
+<p>A primeiro momento podemos criar uma aplicaço básica em qualquer arquivo e executá-lo
+com o python que estará pronto nosso primeiro aplicativo, veja um exemplo abaixo:</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+<span class="c1"># -*- encoding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+        <span class="k">return</span> <span class="s1">&#39;Index Page&#39;</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/hello&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+        <span class="k">return</span> <span class="s1">&#39;Hello World!&#39;</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</pre></div>
+<p>Para executá-lo:</p>
+<div class="highlight"><pre><span></span>python3 hello.py
+</pre></div>
+<p>Para acessá-lo: abrir o browser em <a class="reference external" href="http://localhost:5000">http://localhost:5000</a></p>
+<p>Pronto, nossa primeira aplicação :p</p>
+<p>Mas para deixarmos nosso site/app mais bonito, efetuamos o uso dos templates,
+e para facilitar ainda mais, podemos criar um arquivo de layout e sempre que necessário
+chamamos ele dentro de outros arquivos.</p>
+<p>Para a criaçao dos templates é utilizado o jinja2, padrão para qualquer framework
+que faz uso do mesmo, portanto nele podemos chamar variáveis e utilizar alguns
+comandos python.</p>
+<p>Vamos agora criar o arquivo de layout dentro de static/templates</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Aplicação Flask<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;logo&quot;</span><span class="p">&gt;</span>Aplicação Flask<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+      {% block content %}
+      {% endblock %}
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+<p>No arquivo de layout.html definimos o título e um cabeçalho dentro de uma div,
+sempre que qualquer outro template fazer o uso do layout.html conterá esse cabeçalho
+e o conteúdo do outro arquivo será exibido dentro do {% block content %} e
+{% endblock %}</p>
+<p>Vamos criar agora o arquivo home.html para ilustrar melhor a sua utilização.</p>
+<div class="highlight"><pre><span></span>{% extends &quot;layout.html&quot; %}
+{% block content %}
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;jumbo&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Seja bem vindo a uma aplicação flask<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Essa é a homepage da aplicação flask<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+{% endblock %}
+</pre></div>
+</div>
+<div class="section" id="codando-python">
+<h2>Codando Python</h2>
+<p>Bom até o momento criamos um app muito simples que retorna apenas Hello World!
+e criamos as templates, mas como interligamos tudo isso?</p>
+<p>Vamos começar agora a codar dentro do arquivo routes.py, onde criaremos as
+funções e mapeamentos para que a nossa aplicação funcione corretamente.</p>
+<p>Dentro do arquivo app/routes.py vamos codar as seguintes linhas:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+  <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;home.html&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+<ol class="arabic simple">
+<li>Na linha 1 efetuamos a importação do módulo flask dentro do python.</li>
+<li>Em seguinda na linha 3 criamos uma nova instância da classe Flask</li>
+<li>Na linha 5 efetuamos o mapemando do / para a função home(). Sempre que alguem
+visitar o / será redirecionamdo para o /home.html.</li>
+<li>Criamos a função home() que retorna a função Flask render_template(),
+o mesmo faz a renderização dos teplates que criamos.</li>
+<li>Nas linhas 9 e 10 rodamos o nosso aplicativo com o comando run().</li>
+</ol>
+<p>Vamos ver como está ficando?</p>
+<p>. code-block:: bash</p>
+<blockquote>
+python3 hello.py</blockquote>
+<p>Se tudo estiver correto irá carregar uma página bem simples contendo algumas mensagens.
+Vamos melhorar essa visualização utilizando o arquivo static/css que criaremos agora.</p>
+<p>Vamos criar um arquivo dentro de app/static/css com o nome de main.css e vamos colocar
+o seguinte conteúdo dentro dele.</p>
+<div class="highlight"><pre><span></span><span class="nt">body</span> <span class="p">{</span>
+  <span class="nb">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nb">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nb">font-family</span><span class="o">:</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="n">sans</span><span class="o">-</span>        <span class="nb">serif</span><span class="p">;</span>
+  <span class="nb">color</span><span class="o">:</span> <span class="m">#444</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">header</span> <span class="p">{</span>
+  <span class="nb">background-color</span><span class="o">:</span> <span class="m">#2B2B2B</span><span class="p">;</span>
+  <span class="nb">height</span><span class="o">:</span> <span class="m">35px</span><span class="p">;</span>
+  <span class="nb">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="nb">opacity</span><span class="o">:</span> <span class="o">.</span><span class="m">9</span><span class="p">;</span>
+  <span class="nb">margin-bottom</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">header</span> <span class="nt">h1</span><span class="nc">.logo</span> <span class="p">{</span>
+  <span class="nb">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nb">font-size</span><span class="o">:</span> <span class="m">1.7em</span><span class="p">;</span>
+  <span class="nb">color</span><span class="o">:</span> <span class="m">#fff</span><span class="p">;</span>
+  <span class="nb">text-transform</span><span class="o">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+  <span class="nb">float</span><span class="o">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">header</span> <span class="nt">h1</span><span class="nc">.logo</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="nb">color</span><span class="o">:</span> <span class="m">#fff</span><span class="p">;</span>
+  <span class="nb">text-decoration</span><span class="o">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/*</span>
+<span class="c"> * Center the body content</span>
+<span class="c"> */</span>
+
+<span class="nc">.container</span> <span class="p">{</span>
+  <span class="nb">width</span><span class="o">:</span> <span class="m">940px</span><span class="p">;</span>
+  <span class="nb">margin</span><span class="o">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="nc">.jumbo</span> <span class="p">{</span>
+  <span class="nb">padding</span><span class="o">:</span> <span class="m">10px</span> <span class="m">0</span> <span class="m">30px</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nb">background-color</span><span class="o">:</span> <span class="m">#eeeeee</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">6px</span><span class="p">;</span>
+ <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">6px</span><span class="p">;</span>
+          <span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">6px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">h2</span> <span class="p">{</span>
+  <span class="nb">font-size</span><span class="o">:</span> <span class="m">3em</span><span class="p">;</span>
+  <span class="nb">margin-top</span><span class="o">:</span> <span class="m">40px</span><span class="p">;</span>
+  <span class="nb">text-align</span><span class="o">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nb">letter-spacing</span><span class="o">:</span> <span class="m">-2px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">h3</span> <span class="p">{</span>
+  <span class="nb">font-size</span><span class="o">:</span> <span class="m">1.7em</span><span class="p">;</span>
+  <span class="nb">font-weight</span><span class="o">:</span> <span class="m">100</span><span class="p">;</span>
+  <span class="nb">margin-top</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
+  <span class="nb">text-align</span><span class="o">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nb">letter-spacing</span><span class="o">:</span> <span class="m">-1px</span><span class="p">;</span>
+  <span class="nb">color</span><span class="o">:</span> <span class="m">#999</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<p>Agora vamos alterar nosso arquivo layout.html para que busce nosso arquivo de
+estilo css, todos os templates filhos irão efetuar o uso do css.</p>
+<p>Vamos acrescentar a linha abaixo dentro do nosso arquivo layout.html</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ url_for(&#39;static&#39;, filename=&#39;css/main.css&#39;) }}&quot;</span><span class="p">&gt;</span>;
+</pre></div>
+<p>Ficando assim:</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Flask<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ url_for(&#39;static&#39;, filename=&#39;css/main.css&#39;) }}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;logo&quot;</span><span class="p">&gt;</span>Aplicação Flask<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+      {% block content %}
+      {% endblock %}
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+<p>Feito isso obtemos uma página um pouco mais bonitinha ao recarregar.</p>
+</div>
+<div class="section" id="about-html">
+<h2>about.html</h2>
+<p>Vamos agora criar uma página onde irá falar um pouco do nosso aplicativo chamada
+de about.html, iniciaremos criando um template para ela em app/templates</p>
+<div class="highlight"><pre><span></span>{% extends &quot;layout.html&quot; %}
+
+{% block content %}
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>About<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Esta página deverá falar um pouco sobre o nosso aplicativo flask.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+{% endblock %}
+</pre></div>
+<p>Como feito anteriormente precisamos mapear essa página no arquivo routes.py criando uma rota e uma função.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+  <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;home.html&#39;</span><span class="p">)</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/about&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">about</span><span class="p">():</span>
+  <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;about.html&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="navegando">
+<h2>Navegando!</h2>
+<p>Bom já que criamos uma página sobre nosso app, nada melhor que criarmos alguma
+forma para navegar entre as páginas. Vamos seguir a tendencia da maioria dos sites
+e deixar a barra ne navegação a mostra em todas as paginas, para isso vamos editar
+o arquivo layout.html e fazer nossas alterações.</p>
+<p>O arquivo depois de alterado deve ficar assim:</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Flask<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ url_for(&#39;static&#39;,   filename=&#39;css/main.css&#39;) }}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;logo&quot;</span><span class="p">&gt;</span>Aplicação Flask<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;menu&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ url_for(&#39;home&#39;) }}&quot;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ url_for(&#39;about&#39;) }}&quot;</span><span class="p">&gt;</span>Sobre<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+      {% block content %}
+      {% endblock %}
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+<p>Efetuando apenas o ajuste no layout.html notará que o menu ficou um pouco estranho,
+devemos editar também o nosso arquivo main.css para que seja ajustado o nosso
+menu, para tanto vamos adicionar as seguintes linhas:</p>
+<div class="highlight"><pre><span></span><span class="nc">.menu</span> <span class="p">{</span>
+  <span class="nb">float</span><span class="o">:</span> <span class="nb">right</span><span class="p">;</span>
+  <span class="nb">margin-top</span><span class="o">:</span> <span class="m">8px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.menu</span> <span class="nt">li</span> <span class="p">{</span>
+  <span class="nb">display</span><span class="o">:</span> <span class="nb">inline</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.menu</span> <span class="nt">li</span> <span class="o">+</span> <span class="nt">li</span> <span class="p">{</span>
+  <span class="nb">margin-left</span><span class="o">:</span> <span class="m">35px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.menu</span> <span class="nt">li</span> <span class="nt">a</span> <span class="p">{</span>
+  <span class="nb">color</span><span class="o">:</span> <span class="m">#999</span><span class="p">;</span>
+  <span class="nb">text-decoration</span><span class="o">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<p>A pagina ficou bem simples, mas para exemplo conseguimos abordar alguns pontos
+tais como:</p>
+<ol class="arabic simple">
+<li>Criação da estrutura de arquivos.</li>
+<li>Uso de templates.</li>
+<li>Redirecionar url.</li>
+<li>Trabalhar com arquivo estáticos.</li>
+</ol>
+<p>Essa dica foi retirada de um <a class="reference external" href="http://code.tutsplus.com/pt/tutorials/an-introduction-to-pythons-flask-framework--net-28822">site</a>
+escrito em português de portual e adaptado para o nosso português brasileiro.</p>
+</div>
+
+
+<p align="center"><a href="#">on the top</a></p>
+<h3>Comments</h3>
+<div id="disqus_thread">
+    <script type="text/javascript">
+       var disqus_identifier = "flask-introducao.html";
+       (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://emilioeiji.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+</div>    </div>
+</div>
+<div id="footer-wrapper">
+<ul class="footer">
+     <li class="footer"><a href="./tag/100-linux.html">100-linux&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/abrir-linha.html">abrir linha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/alterar.html">alterar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/alterar-senha.html">alterar senha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/amazon.html">amazon&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/analise.html">análise&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/apache.html">apache&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/apple.html">apple&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/arduino.html">arduino&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ardunio.html">ardunio&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/atualizar.html">atualizar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/atualizar-dokuwiki.html">atualizar dokuwiki&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/backup.html">backup&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/bacula.html">bacula&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/boot.html">boot&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/c.html">C&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/cacti.html">cacti&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/certificacao.html">certificação&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/citrix.html">citrix&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/comandos-vim.html">comandos vim&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/criptografia.html">criptografia&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/curiosidades.html">curiosidades&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dd.html">dd&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/debian.html">debian&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dia.html">dia&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dicas.html">dicas&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dicas-vim.html">dicas vim&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/display.html">display&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dokuwiki.html">dokuwiki&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dual-monitor.html">dual monitor&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dx.html">DX&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ebay.html">ebay&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/empresas.html">empresas&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/excluir.html">excluir&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/externo.html">externo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/facebook.html">facebook&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/filezilla.html">filezilla&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/firefox.html">firefox&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/flask.html">flask&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/fluxbox.html">fluxbox&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/freenas.html">freenas&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/geany.html">geany&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/google.html">google&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/grub.html">grub&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hacker.html">hacker&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hacking.html">hacking&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hc-sr04.html">HC-SR04&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hd.html">hd&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hora.html">hora&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hostgator.html">hostgator&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hostinger.html">hostinger&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hp.html">hp&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/idrac.html">idrac&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ilo.html">ilo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/imagem.html">imagem&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/imm.html">imm&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/instalacao.html">instalação&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/instalando.html">instalando&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/internet-explorer.html">internet explorer&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/iso.html">iso&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/java.html">java&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/keepass.html">keepass&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/lamp.html">lamp&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ldr.html">ldr&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/led.html">led&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/led-zeppelin.html">led zeppelin&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/libreoffice.html">libreoffice&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linha.html">linha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linkedin.html">linkedin&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linux.html">linux&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linux-mint.html">linux mint&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/lm35.html">lm35&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/lucro.html">lucro&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mcsa.html">mcsa&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mecanismo.html">mecanismo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mensagens.html">mensagens&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/microsoft.html">microsoft&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/moonlight.html">moonlight&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mssql.html">mssql&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/musica.html">musica&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mysql.html">mysql&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mysql-client.html">mysql client&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/net-rpc.html">net rpc&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/netinst.html">netinst&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ntp.html">ntp&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/off-topic.html">off-topic&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/openfire.html">openfire&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pelican.html">pelican&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/penboot.html">penboot&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pendrive.html">pendrive&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pesquisa.html">pesquisa&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/petra.html">petra&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/php.html">php&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pipelight.html">pipelight&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/powershell.html">powershell&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/processos.html">processos&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/programacao.html">programação&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pstools.html">pstools&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/python.html">python&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/raid.html">raid&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/raspberrypi.html">RaspberryPi&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/reiniciar.html">reiniciar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/rele.html">relé&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/remoto.html">remoto&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/remover.html">remover&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/reset.html">reset&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/resetar.html">resetar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/restart.html">restart&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/rock-n-roll.html">rock n roll&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/root.html">root&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/rsync.html">rsync&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/samsung.html">samsung&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sed.html">sed&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/seguranca.html">seguranca&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/semaforo.html">semaforo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sensor.html">Sensor&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/server.html">server&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/servico.html">serviço&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/servicos-windows.html">serviços windows&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sid.html">sid&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/silverlight.html">silverlight&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sony.html">sony&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sysprep.html">sysprep&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/tecnologia.html">tecnologia&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/transmission.html">transmission&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/vim.html">vim&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/vim-abrir-linha.html">vim abrir linha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/virtualbox.html">virtualbox&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/virus.html">virus&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/wargame.html">wargame&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/wheezy.html">wheezy&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows.html">windows&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-2003.html">windows 2003&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-2008.html">windows 2008&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-2012.html">windows 2012&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-7.html">windows 7&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-8.html">windows 8&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-server.html">windows server&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-services.html">windows services&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/xchat.html">xchat&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/yahoo.html">yahoo</a></li>
+</ul><ul class="footer">
+    <li class="footer">&copy;&nbsp;2015&nbsp;::</li>
+    <li class="footer"><a href=".">Emilio Eiji </a>&nbsp;::</li>
+<!--    <li class="footer">powered by <a href="https://github.com/getpelican">pelican</a>&nbsp;::</li> -->
+    <li class="footer"><a href="http://creativecommons.org/licenses/by-nc/3.0/deed.ru">CC BY-NC</a></li>
+</ul>
+</div><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41240903-2', 'emilioeiji.com.br');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

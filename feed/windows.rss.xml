@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Emilio Eiji - Windows</title><link>http://emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Wed, 11 Mar 2015 21:29:00 -0300</lastBuildDate><item><title>Como alterar o sid do windows</title><link>http://emilioeiji.com.br/como-alterar-o-sid-do-windows.html</link><description>&lt;p class="first last"&gt;Alterar SID&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Tue, 10 Mar 2015 20:29:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2015-03-10:/como-alterar-o-sid-do-windows.html</guid><category>alterar</category><category>sid</category><category>windows</category><category>pstools</category><category>sysprep</category></item><item><title>Habilitar execução de scripts powershell</title><link>http://emilioeiji.com.br/habilitar-execucao-de-scripts-powershell.html</link><description>&lt;p&gt;Habilitar execução de scripts powershell no windows.&lt;/p&gt;
+&lt;p&gt;Muito simples para habilitar a execução de scripts powershell no
+windows.&lt;/p&gt;
+&lt;p&gt;Execute &lt;em&gt;Get-ExecutionPolicy&lt;/em&gt; para saber se já está habilitado ou não.&lt;/p&gt;
+&lt;p&gt;Em seguinte habilite a execução com o comando &lt;em&gt;Set-ExecutionPolicy
+Unrestricted&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Feito isso o windows já está habilitado para executar scripts
+powershell, mas …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Fri, 27 Jun 2014 10:44:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2014-06-27:/habilitar-execucao-de-scripts-powershell.html</guid><category>windows</category><category>powershell</category></item><item><title>Remover segurança reforçada do internet explorer win2k8 e win2k12</title><link>http://emilioeiji.com.br/remover-seguranca-reforcada-internet-explorer-win2k8-e-win2k12.html</link><description>&lt;p&gt;Remover segurança reforçada do internet explorer win2k8 e win2k12.&lt;/p&gt;
+&lt;p&gt;Boas galera, essa parada de ficar pedindo sempre pra adicionar os sites
+como sites seguros ou ficar bloqueando quando tentamos baixar alguma
+coisa é muito chato, sei que a intenção é melhorar a segurança, mas para
+usuários administradores o nível deveria …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Tue, 03 Jun 2014 13:45:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2014-06-03:/remover-seguranca-reforcada-internet-explorer-win2k8-e-win2k12.html</guid><category>windows 2008</category><category>windows 2012</category><category>windows server</category><category>internet explorer</category></item><item><title>Remover vírus do Windows que cria atalho.</title><link>http://emilioeiji.com.br/remover-virus-windows-cria-atalho.html</link><description>&lt;p&gt;Boas pessoal...&lt;/p&gt;
+&lt;p&gt;Neste post vou explicar de uma forma bem simples como remover vírus do
+Windows que cria atalho, tanto na maquina como em pendrive.&lt;/p&gt;
+&lt;p&gt;Primeiramente você pode baixar qualquer linux live cd, vou deixar aqui
+como exemplo o &lt;a class="reference external" href="http://www.linuxmint.com/download.php"&gt;Linux Mint.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;De boot pelo cd/pendrive e logo que carregar …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Fri, 18 Oct 2013 17:38:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2013-10-18:/remover-virus-windows-cria-atalho.html</guid><category>windows</category><category>virus</category><category>remover</category></item><item><title>10 sintomas de computadores infectados</title><link>http://emilioeiji.com.br/10-sintomas-computadores-infectados.html</link><description>&lt;p&gt;A empresa de segurança digital Kaspersky Lab elaborou uma lista com os
+dez sintomas mais comuns que indicam que algo malicioso está ocorrendo
+no computador:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;Bloqueios inesperados:&lt;/strong&gt;&amp;nbsp;se alguma vez isto lhe aconteceu,
+provavelmente já sabe que a tão temida tela azul é sinônimo de que
+algo vai mal no …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Tue, 10 Sep 2013 10:04:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2013-09-10:/10-sintomas-computadores-infectados.html</guid><category>windows</category></item><item><title>Citrix - The remote session was disconnected because there are no terminal server...</title><link>http://emilioeiji.com.br/citrix-the-remote-session-was-disconnected-because-there-are-no-terminal-server.html</link><description>&lt;p&gt;Pra quem estiver com o mesmo problema que eu, ao conectar a um servidor
+utilizando o citrix retornar a mensagem &amp;quot;The Remote session was
+disconnected because there are no terminal server license servers
+available to provide a license. Please contact the server
+administrator.&amp;quot;, segue a correção.&lt;/p&gt;
+&lt;p&gt;Efetuar um backup do …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Mon, 28 Jan 2013 13:54:00 -0200</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2013-01-28:/citrix-the-remote-session-was-disconnected-because-there-are-no-terminal-server.html</guid><category>windows</category><category>citrix</category></item><item><title>Windows 7, dois monitores, dois papeis de parede.</title><link>http://emilioeiji.com.br/windows-7-dois-monitores-dois-papeis-de-parede.html</link><description>&lt;p&gt;Pesquisando hoje como definir um papel de parede para cada monitor,
+encontrei um software que pode ser baixado
+&lt;a class="reference external" href="http://www.displayfusion.com/Download/"&gt;aqui.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Após baixar o DisplayFusione instalá-lo, basta clicar com o botão
+direito na area de trabalho e selecionar &amp;quot;Papel de parede do
+DisplayFusion&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Fácil&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Tue, 10 Apr 2012 10:06:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2012-04-10:/windows-7-dois-monitores-dois-papeis-de-parede.html</guid><category>windows 7</category><category>windows</category><category>dual monitor</category></item><item><title>Pen Boot do Windows 7</title><link>http://emilioeiji.com.br/pen-boot-do-windows-7.html</link><description>&lt;p&gt;Se você estiver executando uma versão do windows 7, basta ir em iniciar,
+executar e ditiar &lt;em&gt;diskpart&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Com o pen drive conectado na nova janel que abriu execute o comando
+&lt;em&gt;list disk&lt;/em&gt; para saber qual o numero de disco seu pendrive pegou.&lt;/p&gt;
+&lt;p&gt;Cuidado para não informar o numero errado e …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Tue, 21 Feb 2012 17:19:00 -0200</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2012-02-21:/pen-boot-do-windows-7.html</guid><category>windows 7</category><category>penboot</category><category>pendrive</category><category>boot</category></item><item><title>Problemas com cdrom Windows 7</title><link>http://emilioeiji.com.br/problemas-com-cdrom.html</link><description>&lt;p&gt;Daew galera.&lt;/p&gt;
+&lt;p&gt;Quando tiverem problemas com Drive de CDrom no windows 7, tentem
+executar esse fix que provavelmente resolva.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://support.microsoft.com/mats/cd_dvd_drive_problems"&gt;http://support.microsoft.com/mats/cd_dvd_drive_problems&lt;/a&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Thu, 12 Jan 2012 09:56:00 -0200</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2012-01-12:/problemas-com-cdrom.html</guid><category>windows 7</category></item><item><title>PenDrive Bootável com Windows 7</title><link>http://emilioeiji.com.br/pendrive-bootavel-com-windows-7.html</link><description>&lt;p&gt;Procedimentos para preparar o pendriveAntes de começar, espete seu
+pendrive na porta USB&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;Abra o prompt de comando (Iniciar &amp;gt;&amp;gt; All Programs &amp;gt;&amp;gt; Acessories &amp;gt;&amp;gt;
+Command Prompt).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Digite os comandos abaixo, sempre pressionando Enter após cada um:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+Diskpart (Uma nova janela será aberta, espere até o cursor aparecer)
+List Disk
+Select Disk 1 …&lt;/pre&gt;&lt;/blockquote&gt;&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Thu, 21 Apr 2011 11:46:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2011-04-21:/pendrive-bootavel-com-windows-7.html</guid><category>penboot</category><category>windows</category><category>windows 7</category><category>pendrive</category></item><item><title>Analisar Processos Do Windows</title><link>http://emilioeiji.com.br/analisar-processos-do-windows.html</link><description>&lt;p&gt;Ao abrir o gestor de tarefas (CTRL+ALT+DEL ou CTRL+SHIFT+ESC) para
+verificar os processos que correm no seu computador, certamente já se
+deparou com processos &amp;quot;estranhos&amp;quot; que você desconhece. Ao pesquisar na
+Internet sobre esses mesmos processos rapidamente encontra vários sites
+afirmando que se trata de um …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Wed, 03 Mar 2010 13:46:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2010-03-03:/analisar-processos-do-windows.html</guid><category>windows</category><category>processos</category></item></channel></rss>

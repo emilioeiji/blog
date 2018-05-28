@@ -1,0 +1,1129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - Linux</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/linux.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2018-05-28T14:37:00-03:00</updated><entry><title>SED - Alterar string em arquivos.</title><link href="http://emilioeiji.com.br/sed-alterar-string-arquivos.html" rel="alternate"></link><published>2018-05-28T14:37:00-03:00</published><updated>2018-05-28T14:37:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2018-05-28:/sed-alterar-string-arquivos.html</id><summary type="html">&lt;div class="section" id="alterar-strig-em-varios-arquivos-utilizando-o-sed"&gt;
+&lt;h2&gt;Alterar strig em vários arquivos utilizando o SED.&lt;/h2&gt;
+&lt;p&gt;Estou reinstalando o Pelican para voltar a publicar algumas coisas no site e me deparei com a seguinte situação:
+Após reinstalar o pelican e suas dependencias, ao tentar rodar o make html o mesmo estava retorando o erro abaixo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;CRITICAL: AttributeError: &lt;span class="s1"&gt;&amp;#39;str …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="alterar-strig-em-varios-arquivos-utilizando-o-sed"&gt;
+&lt;h2&gt;Alterar strig em vários arquivos utilizando o SED.&lt;/h2&gt;
+&lt;p&gt;Estou reinstalando o Pelican para voltar a publicar algumas coisas no site e me deparei com a seguinte situação:
+Após reinstalar o pelican e suas dependencias, ao tentar rodar o make html o mesmo estava retorando o erro abaixo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;CRITICAL: AttributeError: &lt;span class="s1"&gt;&amp;#39;str&amp;#39;&lt;/span&gt; object has no attribute &lt;span class="s1"&gt;&amp;#39;slug&amp;#39;&lt;/span&gt;
+Makefile:65: recipe &lt;span class="k"&gt;for&lt;/span&gt; target &lt;span class="s1"&gt;&amp;#39;html&amp;#39;&lt;/span&gt; failed
+make: *** &lt;span class="o"&gt;[&lt;/span&gt;html&lt;span class="o"&gt;]&lt;/span&gt; Error 1
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Notei que nos arquivos .rst para a geração dos artigos alguns arquivos no cabeçalho estavam com :tag: e outros com :tags:, onde os arquivos que estavam com :tag: estavam retornando erro.&lt;/p&gt;
+&lt;p&gt;Para alterar todos os arquivos substituindo :tag: para :tags: rodei o seguinte comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sed -i &lt;span class="s1"&gt;&amp;#39;s,:tag:,:tags:,g&amp;#39;&lt;/span&gt; *
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content><category term="sed"></category><category term="linux"></category></entry><entry><title>RAID via software no linux</title><link href="http://emilioeiji.com.br/RAID-via-software-no-linux.html" rel="alternate"></link><published>2015-09-03T12:40:00-03:00</published><updated>2015-09-03T12:40:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2015-09-03:/RAID-via-software-no-linux.html</id><summary type="html">&lt;p&gt;Olá pessoal.&lt;/p&gt;
+&lt;p&gt;Hoje estou configurando um computador com o bacula e preciso configurar os HD's em RAID, como os backups ficarão armazenados local na maquina e em outro NAS vou configurá-los com RAID 0.&lt;/p&gt;
+&lt;p&gt;Na maquina estou rodando o Debian portanto os comandos abaixo podem ser executados na maioria das …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Olá pessoal.&lt;/p&gt;
+&lt;p&gt;Hoje estou configurando um computador com o bacula e preciso configurar os HD's em RAID, como os backups ficarão armazenados local na maquina e em outro NAS vou configurá-los com RAID 0.&lt;/p&gt;
+&lt;p&gt;Na maquina estou rodando o Debian portanto os comandos abaixo podem ser executados na maioria das distribuições debian-like.&lt;/p&gt;
+&lt;p&gt;Primeiramente devemos instalar o utilitário RAID que se chama mdadm com o seguinte comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@srv-bacula:~# apt-get install mdadm
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências
+Lendo informação de estado... Pronto
+Os NOVOS pacotes a seguir serão instalados:
+  mdadm
+&lt;span class="m"&gt;0&lt;/span&gt; pacotes atualizados, &lt;span class="m"&gt;1&lt;/span&gt; pacotes novos instalados, &lt;span class="m"&gt;0&lt;/span&gt; a serem removidos e &lt;span class="m"&gt;9&lt;/span&gt; não atualizados.
+É preciso baixar &lt;span class="m"&gt;566&lt;/span&gt; kB de arquivos.
+Depois desta operação, 1.098 kB adicionais de espaço em disco serão usados.
+Obter:1 http://ftp.br.debian.org/debian/ wheezy/main mdadm i386 3.2.5-5 &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;566&lt;/span&gt; kB&lt;span class="o"&gt;]&lt;/span&gt;
+Baixados &lt;span class="m"&gt;566&lt;/span&gt; kB em 1s &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;353&lt;/span&gt; kB/s&lt;span class="o"&gt;)&lt;/span&gt;
+Pré-configurando pacotes ...
+A seleccionar pacote anteriormente não seleccionado mdadm.
+&lt;span class="o"&gt;(&lt;/span&gt;Lendo banco de dados ... &lt;span class="m"&gt;70717&lt;/span&gt; ficheiros e directórios actualmente instalados.&lt;span class="o"&gt;)&lt;/span&gt;
+Desempacotando mdadm &lt;span class="o"&gt;(&lt;/span&gt;de .../mdadm_3.2.5-5_i386.deb&lt;span class="o"&gt;)&lt;/span&gt; ...
+Processando gatilhos para man-db ...
+Configurando mdadm &lt;span class="o"&gt;(&lt;/span&gt;3.2.5-5&lt;span class="o"&gt;)&lt;/span&gt; ...
+Generating array device nodes... &lt;span class="k"&gt;done&lt;/span&gt;.
+Generating mdadm.conf... &lt;span class="k"&gt;done&lt;/span&gt;.
+update-initramfs: deferring update &lt;span class="o"&gt;(&lt;/span&gt;trigger activated&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt; ok &lt;span class="o"&gt;]&lt;/span&gt; Assembling MD arrays...done &lt;span class="o"&gt;(&lt;/span&gt;no arrays found in config file or automatically&lt;span class="o"&gt;)&lt;/span&gt;.
+&lt;span class="o"&gt;[&lt;/span&gt; ok &lt;span class="o"&gt;]&lt;/span&gt; Starting MD monitoring service: mdadm --monitor.
+Processando gatilhos para initramfs-tools ...
+update-initramfs: Generating /boot/initrd.img-3.2.0-4-686-pae
+W: mdadm: /etc/mdadm/mdadm.conf defines no arrays.
+W: mdadm: no arrays defined in configuration file.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Será carregado uma tela solicitando para selecionar o grupo MD para carregar o sistema, caso utilizar o sistema todo em RAID será necessário infromar o grupo ou deixar &amp;quot;all&amp;quot; para carregar todos os grupos, se o disco que efetua o boot estiver fora do RAID pode ser informado &amp;quot;none&amp;quot;.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/raid-software-01.png"&gt;&lt;img alt="raid-software-01" src="http://emilioeiji.com.br/images/raid-software-01.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Em seguida será solicitado se deseja iniciar os grupos MD após carregar o sistema.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/raid-software-02.png"&gt;&lt;img alt="raid-software-02" src="http://emilioeiji.com.br/images/raid-software-02.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Agora vamos identificar os discos com o comando fdis -l, geralmente os discos são /dev/sd*.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@srv-bacula:~# fdisk -l
+
+Disk /dev/sda: 250.1 GB, &lt;span class="m"&gt;250059350016&lt;/span&gt; bytes
+&lt;span class="m"&gt;255&lt;/span&gt; heads, &lt;span class="m"&gt;63&lt;/span&gt; sectors/track, &lt;span class="m"&gt;30401&lt;/span&gt; cylinders, total &lt;span class="m"&gt;488397168&lt;/span&gt; sectors
+&lt;span class="nv"&gt;Units&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; setores of &lt;span class="m"&gt;1&lt;/span&gt; * &lt;span class="nv"&gt;512&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;512&lt;/span&gt; bytes
+Sector size &lt;span class="o"&gt;(&lt;/span&gt;logical/physical&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
+I/O size &lt;span class="o"&gt;(&lt;/span&gt;minimum/optimal&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
+Disk identifier: 0x000ab517
+
+Dispositivo Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        &lt;span class="m"&gt;2048&lt;/span&gt;   &lt;span class="m"&gt;484247551&lt;/span&gt;   &lt;span class="m"&gt;242122752&lt;/span&gt;   &lt;span class="m"&gt;83&lt;/span&gt;  Linux
+/dev/sda2       &lt;span class="m"&gt;484249598&lt;/span&gt;   &lt;span class="m"&gt;488396799&lt;/span&gt;     &lt;span class="m"&gt;2073601&lt;/span&gt;    &lt;span class="m"&gt;5&lt;/span&gt;  Estendida
+/dev/sda5       &lt;span class="m"&gt;484249600&lt;/span&gt;   &lt;span class="m"&gt;488396799&lt;/span&gt;     &lt;span class="m"&gt;2073600&lt;/span&gt;   &lt;span class="m"&gt;82&lt;/span&gt;  Linux swap / Solaris
+
+Disk /dev/sdb: 250.1 GB, &lt;span class="m"&gt;250059350016&lt;/span&gt; bytes
+&lt;span class="m"&gt;255&lt;/span&gt; heads, &lt;span class="m"&gt;63&lt;/span&gt; sectors/track, &lt;span class="m"&gt;30401&lt;/span&gt; cylinders, total &lt;span class="m"&gt;488397168&lt;/span&gt; sectors
+&lt;span class="nv"&gt;Units&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; setores of &lt;span class="m"&gt;1&lt;/span&gt; * &lt;span class="nv"&gt;512&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;512&lt;/span&gt; bytes
+Sector size &lt;span class="o"&gt;(&lt;/span&gt;logical/physical&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
+I/O size &lt;span class="o"&gt;(&lt;/span&gt;minimum/optimal&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
+Disk identifier: 0x00000000
+
+Dispositivo Boot      Start         End      Blocks   Id  System
+
+Disk /dev/sdd: 1000.2 GB, &lt;span class="m"&gt;1000204886016&lt;/span&gt; bytes
+&lt;span class="m"&gt;255&lt;/span&gt; heads, &lt;span class="m"&gt;63&lt;/span&gt; sectors/track, &lt;span class="m"&gt;121601&lt;/span&gt; cylinders, total &lt;span class="m"&gt;1953525168&lt;/span&gt; sectors
+&lt;span class="nv"&gt;Units&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; setores of &lt;span class="m"&gt;1&lt;/span&gt; * &lt;span class="nv"&gt;512&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;512&lt;/span&gt; bytes
+Sector size &lt;span class="o"&gt;(&lt;/span&gt;logical/physical&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
+I/O size &lt;span class="o"&gt;(&lt;/span&gt;minimum/optimal&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
+Disk identifier: 0x00000000
+
+Dispositivo Boot      Start         End      Blocks   Id  System
+
+Disk /dev/sdc: 250.1 GB, &lt;span class="m"&gt;250059350016&lt;/span&gt; bytes
+&lt;span class="m"&gt;255&lt;/span&gt; heads, &lt;span class="m"&gt;63&lt;/span&gt; sectors/track, &lt;span class="m"&gt;30401&lt;/span&gt; cylinders, total &lt;span class="m"&gt;488397168&lt;/span&gt; sectors
+&lt;span class="nv"&gt;Units&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; setores of &lt;span class="m"&gt;1&lt;/span&gt; * &lt;span class="nv"&gt;512&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;512&lt;/span&gt; bytes
+Sector size &lt;span class="o"&gt;(&lt;/span&gt;logical/physical&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
+I/O size &lt;span class="o"&gt;(&lt;/span&gt;minimum/optimal&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
+Disk identifier: 0x00000000
+
+Dispositivo Boot      Start         End      Blocks   Id  System
+
+Disk /dev/sde: 1000.2 GB, &lt;span class="m"&gt;1000204886016&lt;/span&gt; bytes
+&lt;span class="m"&gt;255&lt;/span&gt; heads, &lt;span class="m"&gt;63&lt;/span&gt; sectors/track, &lt;span class="m"&gt;121601&lt;/span&gt; cylinders, total &lt;span class="m"&gt;1953525168&lt;/span&gt; sectors
+&lt;span class="nv"&gt;Units&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; setores of &lt;span class="m"&gt;1&lt;/span&gt; * &lt;span class="nv"&gt;512&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;512&lt;/span&gt; bytes
+Sector size &lt;span class="o"&gt;(&lt;/span&gt;logical/physical&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;4096&lt;/span&gt; bytes
+I/O size &lt;span class="o"&gt;(&lt;/span&gt;minimum/optimal&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;4096&lt;/span&gt; bytes / &lt;span class="m"&gt;4096&lt;/span&gt; bytes
+Disk identifier: 0x00000000
+
+Dispositivo Boot      Start         End      Blocks   Id  System
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Podemos identificar os discos da seguinte forma:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/dev/sda = /
+/dev/sdb = HD 250GB - MD0
+/dev/sdc = HD 250GB - MD0
+/dev/sdd = HD 1TB - MD1
+/dev/sde = HD 1TB - MD1
+&lt;/pre&gt;
+&lt;p&gt;Onde criarei abaixo um grupo com 2 HD's de 250GB (MD0) e outro grupo com mais 2 HD's de 1TB (MD1).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@srv-bacula:~# mdadm --create /dev/md0 --level&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; --raid-devices&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; /dev/sdb /dev/sdc
+mdadm: /dev/sdb appears to be part of a raid array:
+    &lt;span class="nv"&gt;level&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;raid0 &lt;span class="nv"&gt;devices&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;ctime&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Wed Dec &lt;span class="m"&gt;31&lt;/span&gt; 21:00:00 1969
+mdadm: partition table exists on /dev/sdb but will be lost or
+       meaningless after creating array
+mdadm: /dev/sdc appears to be part of a raid array:
+    &lt;span class="nv"&gt;level&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;raid0 &lt;span class="nv"&gt;devices&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;ctime&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Wed Dec &lt;span class="m"&gt;31&lt;/span&gt; 21:00:00 1969
+mdadm: partition table exists on /dev/sdc but will be lost or
+       meaningless after creating array
+Continue creating array? y
+mdadm: Defaulting to version 1.2 metadata
+mdadm: array /dev/md0 started.
+root@srv-bacula:~# mdadm --create /dev/md1 --level&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; --raid-devices&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; /dev/sdd /dev/sde
+mdadm: /dev/sdd appears to be part of a raid array:
+    &lt;span class="nv"&gt;level&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;raid0 &lt;span class="nv"&gt;devices&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;ctime&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Wed Dec &lt;span class="m"&gt;31&lt;/span&gt; 21:00:00 1969
+mdadm: partition table exists on /dev/sdd but will be lost or
+       meaningless after creating array
+mdadm: /dev/sde appears to be part of a raid array:
+    &lt;span class="nv"&gt;level&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;raid0 &lt;span class="nv"&gt;devices&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;ctime&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Wed Dec &lt;span class="m"&gt;31&lt;/span&gt; 21:00:00 1969
+mdadm: partition table exists on /dev/sde but will be lost or
+       meaningless after creating array
+Continue creating array? y
+mdadm: Defaulting to version 1.2 metadata
+mdadm: array /dev/md1 started.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Vamos entender o comando:&lt;/p&gt;
+&lt;p&gt;O comando abaixo chama o mdadm passando a instrução para criar o grupo md0 em /dev/&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mdadm --create /dev/md0
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;O --level= define qual o nível de RAID será criado&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;--level&lt;span class="o"&gt;=&lt;/span&gt;0
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Com o parametro --raid-devices=2 estamos definindo que vamos utilizar 2 dispositivos.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;--raid-devices&lt;span class="o"&gt;=&lt;/span&gt;2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E no final passamos quais dispositivos vamos utilizar&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/dev/sdb /dev/sdc
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Após criados os grupos, vamos validar se está tudo certo com o RAID:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@srv-bacula:~# cat /proc/mdstat
+Personalities : &lt;span class="o"&gt;[&lt;/span&gt;raid0&lt;span class="o"&gt;]&lt;/span&gt;
+md1 : active raid0 sde&lt;span class="o"&gt;[&lt;/span&gt;1&lt;span class="o"&gt;]&lt;/span&gt; sdd&lt;span class="o"&gt;[&lt;/span&gt;0&lt;span class="o"&gt;]&lt;/span&gt;
+      &lt;span class="m"&gt;1953524736&lt;/span&gt; blocks super 1.2 512k chunks
+
+md0 : active raid0 sdc&lt;span class="o"&gt;[&lt;/span&gt;1&lt;span class="o"&gt;]&lt;/span&gt; sdb&lt;span class="o"&gt;[&lt;/span&gt;0&lt;span class="o"&gt;]&lt;/span&gt;
+      &lt;span class="m"&gt;488396800&lt;/span&gt; blocks super 1.2 512k chunks
+
+unused devices: &amp;lt;none&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Agora vamos particionar nossos grupos com o fdisk.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fdisk /dev/md0
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@srv-bacula:~# fdisk /dev/md0
+O dispositivo não contém nem uma tabela de partições DOS válida nem um rótulo de disco Sun, OSF ou SGI
+Building a new DOS disklabel with disk identifier 0x01bb915f.
+Changes will remain in memory only, &lt;span class="k"&gt;until&lt;/span&gt; you decide to write them.
+After that, of course, the previous content won&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;t be recoverable.
+
+Aviso: a opção inválida 0x0000 da tabela de partições &lt;span class="m"&gt;4&lt;/span&gt; será corrigida por gravação &lt;span class="o"&gt;(&lt;/span&gt;w&lt;span class="o"&gt;)&lt;/span&gt;
+
+Comando &lt;span class="o"&gt;(&lt;/span&gt;m para ajuda&lt;span class="o"&gt;)&lt;/span&gt;: n
+Partition type:
+   p   primary &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; primary, &lt;span class="m"&gt;0&lt;/span&gt; extended, &lt;span class="m"&gt;4&lt;/span&gt; free&lt;span class="o"&gt;)&lt;/span&gt;
+   e   extended
+Select &lt;span class="o"&gt;(&lt;/span&gt;default p&lt;span class="o"&gt;)&lt;/span&gt;: p
+Número da partição &lt;span class="o"&gt;(&lt;/span&gt;1-4, default 1&lt;span class="o"&gt;)&lt;/span&gt;:
+Using default value 1
+Primeiro setor &lt;span class="o"&gt;(&lt;/span&gt;2048-976793599, default 2048&lt;span class="o"&gt;)&lt;/span&gt;:
+Using default value 2048
+Last setor, +setores or +size&lt;span class="o"&gt;{&lt;/span&gt;K,M,G&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;2048-976793599, default 976793599&lt;span class="o"&gt;)&lt;/span&gt;:
+Using default value 976793599
+
+Comando &lt;span class="o"&gt;(&lt;/span&gt;m para ajuda&lt;span class="o"&gt;)&lt;/span&gt;: p
+
+Disk /dev/md0: 500.1 GB, &lt;span class="m"&gt;500118323200&lt;/span&gt; bytes
+&lt;span class="m"&gt;2&lt;/span&gt; heads, &lt;span class="m"&gt;4&lt;/span&gt; sectors/track, &lt;span class="m"&gt;122099200&lt;/span&gt; cylinders, total &lt;span class="m"&gt;976793600&lt;/span&gt; sectors
+&lt;span class="nv"&gt;Units&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; setores of &lt;span class="m"&gt;1&lt;/span&gt; * &lt;span class="nv"&gt;512&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;512&lt;/span&gt; bytes
+Sector size &lt;span class="o"&gt;(&lt;/span&gt;logical/physical&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
+I/O size &lt;span class="o"&gt;(&lt;/span&gt;minimum/optimal&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;524288&lt;/span&gt; bytes / &lt;span class="m"&gt;1048576&lt;/span&gt; bytes
+Disk identifier: 0x01bb915f
+
+Dispositivo Boot      Start         End      Blocks   Id  System
+/dev/md0p1            &lt;span class="m"&gt;2048&lt;/span&gt;   &lt;span class="m"&gt;976793599&lt;/span&gt;   &lt;span class="m"&gt;488395776&lt;/span&gt;   &lt;span class="m"&gt;83&lt;/span&gt;  Linux
+
+Comando &lt;span class="o"&gt;(&lt;/span&gt;m para ajuda&lt;span class="o"&gt;)&lt;/span&gt;: w
+A tabela de partições foi alterada!
+
+Chamando ioctl&lt;span class="o"&gt;()&lt;/span&gt; para reler tabela de partições.
+Sincronizando discos.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Agora devemos criar os sistemas de arquivos para os RAID's.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkfs.ext4 /dev/md0p1
+mkfs.ext4 /dev/md1p1
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Teremos a seguinte saída para o comando acima:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@srv-bacula:~# mkfs.ext4 /dev/md0p1
+mke2fs 1.42.5 &lt;span class="o"&gt;(&lt;/span&gt;29-Jul-2012&lt;span class="o"&gt;)&lt;/span&gt;
+Filesystem &lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
+OS type: Linux
+Block &lt;span class="nv"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4096&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;log&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;2&lt;span class="o"&gt;)&lt;/span&gt;
+Fragment &lt;span class="nv"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4096&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;log&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;2&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;Stride&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;128&lt;/span&gt; blocks, Stripe &lt;span class="nv"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;256&lt;/span&gt; blocks
+&lt;span class="m"&gt;30531584&lt;/span&gt; inodes, &lt;span class="m"&gt;122098944&lt;/span&gt; blocks
+&lt;span class="m"&gt;6104947&lt;/span&gt; blocks &lt;span class="o"&gt;(&lt;/span&gt;5.00%&lt;span class="o"&gt;)&lt;/span&gt; reserved &lt;span class="k"&gt;for&lt;/span&gt; the super user
+First data &lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+Maximum filesystem &lt;span class="nv"&gt;blocks&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+&lt;span class="m"&gt;3727&lt;/span&gt; block groups
+&lt;span class="m"&gt;32768&lt;/span&gt; blocks per group, &lt;span class="m"&gt;32768&lt;/span&gt; fragments per group
+&lt;span class="m"&gt;8192&lt;/span&gt; inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+        4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
+        102400000
+
+Allocating group tables: &lt;span class="k"&gt;done&lt;/span&gt;
+Writing inode tables: &lt;span class="k"&gt;done&lt;/span&gt;
+Creating journal &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;32768&lt;/span&gt; blocks&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="k"&gt;done&lt;/span&gt;
+Writing superblocks and filesystem accounting information: &lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Vamos colocar agora as nossas novas partições no fstab para montar automaticamente.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;      vim /etc/fstab
+
+
+/dev/md0p1          /mnt/md0  ext4    defaults,noatime      &lt;span class="m"&gt;0&lt;/span&gt;      2
+/dev/md1p1          /mnt/md1  ext4    defaults,noatime      &lt;span class="m"&gt;0&lt;/span&gt;      2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Para montar as partições vamos rodar o comando abaixo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mount -a
+
+root@srv-bacula:/mnt# df -mh
+Sist. Arq.                                               Tam  Usad Dispon. Uso% Montado em
+rootfs                                                  228G   17G    200G   8% /
+udev                                                     10M     &lt;span class="m"&gt;0&lt;/span&gt;     10M   0% /dev
+tmpfs                                                   405M  288K    404M   1% /run
+/dev/disk/by-uuid/5d3c3f4c-988e-477d-b4fd-c614cb9ec9d2  228G   17G    200G   8% /
+tmpfs                                                   5,0M     &lt;span class="m"&gt;0&lt;/span&gt;    5,0M   0% /run/lock
+tmpfs                                                   1,2G     &lt;span class="m"&gt;0&lt;/span&gt;    1,2G   0% /run/shm
+/dev/md0p1                                              459G  198M    435G   1% /mnt/md0
+/dev/md1p1                                              1,8T  196M    1,7T   1% /mnt/md1
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Pronto, agora temos nosso RAID via software funcionando em nosso linux.&lt;/p&gt;
+&lt;p&gt;Até a próxima.&lt;/p&gt;
+</content><category term="hd"></category><category term="raid"></category></entry><entry><title>Criptografando HD Externo</title><link href="http://emilioeiji.com.br/criptografando-hd-externo.html" rel="alternate"></link><published>2015-08-19T22:30:00-03:00</published><updated>2015-08-19T22:30:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2015-08-19:/criptografando-hd-externo.html</id><summary type="html">&lt;p&gt;Olá pessoal.&lt;/p&gt;
+&lt;p&gt;Como estou prestes a trocar o hd do meu notebook por um SSD e reduzindo muito o tamanho do disco, tive a necessidade de salvar os meus arquivos em um hd externo. Como tenho muitos arquivos &amp;quot;confidenciais&amp;quot; é de extrema importancia que os dados fiquem seguros em caso …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Olá pessoal.&lt;/p&gt;
+&lt;p&gt;Como estou prestes a trocar o hd do meu notebook por um SSD e reduzindo muito o tamanho do disco, tive a necessidade de salvar os meus arquivos em um hd externo. Como tenho muitos arquivos &amp;quot;confidenciais&amp;quot; é de extrema importancia que os dados fiquem seguros em caso de extravio, furto, etc.&lt;/p&gt;
+&lt;p&gt;Pesquisando um pouco encontrei várias formas para proteger o hd externo, criando um diretório e criptografando apenas ele e salvando os arquivos dentro, criptografar os arquivos, onde quando necessário utilizá-los precisaria descriptografá-los e após o uso criptografar novamente (processo muito grabalhoso), ou criptografar o disco todo ficando transparente para o usuário.&lt;/p&gt;
+&lt;p&gt;Trocando uma idéia com o meu brother ArcoVerde me sugeriu a utilização do dm-crypt para criptografar o sistema de arquivo todo, então resolvi pesquisar um pouco para entender o seu funcionamento.&lt;/p&gt;
+&lt;p&gt;Para instalá-lo em distribuições debian-like é muito simples:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install cryptsetup
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Após o pacote instalado, devemos garantir que o disco esteja todo zerado, podemos fazer isso executando o seguinte comando (supondo que o hd externo seja /dev/sdc1 :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dd &lt;span class="nv"&gt;If&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/zero &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/sdc1 &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1M &lt;span class="nv"&gt;count&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;128
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Agora ao inves de utilizarmos uma partição ext4 por exemplo, vamos criar uma partição LUKS com o seguinte comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cryptsetup luksFormat /dev/sdc1
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;O sistema irá informar que os dados serão perdidos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;emilio ~ $ sudo cryptsetup luksFormat /dev/sdc1
+
+WARNING!
+&lt;span class="o"&gt;========&lt;/span&gt;
+Isto irá sobrescrever os arquivos em /dev/sdc1 definitivamente.
+
+Are you sure? &lt;span class="o"&gt;(&lt;/span&gt;Type uppercase yes&lt;span class="o"&gt;)&lt;/span&gt;: YES
+Informe a frase secreta:
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Confirme a operação digitando YES em caixa alta e digite uma senha forte e segura.&lt;/p&gt;
+&lt;p&gt;Agora vamos mapear o nosso hd externo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;emilio ~ $ sudo cryptsetup luksOpen /dev/sdc1 hdexterno
+Informe a frase secreta para /dev/sdc1:
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Onde o hdexterno pode ser trocado por qualquer nome de sua preferencia.&lt;/p&gt;
+&lt;p&gt;Após mapearmos o nosso hd externo o mesmo se encontrará em /dev/mapper/hdexterno, agora vamos efetuar a formatação da partição:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;emilio ~ $ sudo mkfs.ext4 /dev/mapper/hdexterno
+mke2fs 1.42.9 &lt;span class="o"&gt;(&lt;/span&gt;4-Feb-2014&lt;span class="o"&gt;)&lt;/span&gt;
+Rótulo &lt;span class="k"&gt;do&lt;/span&gt; sistema de &lt;span class="nv"&gt;arquivos&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
+OS type: Linux
+Tamanho &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="nv"&gt;bloco&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4096&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;log&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;2&lt;span class="o"&gt;)&lt;/span&gt;
+Tamanho &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="nv"&gt;fragmento&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4096&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;log&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;2&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;Stride&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; blocks, Stripe &lt;span class="nv"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; blocks
+&lt;span class="m"&gt;30531584&lt;/span&gt; inodes, &lt;span class="m"&gt;122095488&lt;/span&gt; blocks
+&lt;span class="m"&gt;6104774&lt;/span&gt; blocks &lt;span class="o"&gt;(&lt;/span&gt;5.00%&lt;span class="o"&gt;)&lt;/span&gt; reserved &lt;span class="k"&gt;for&lt;/span&gt; the super user
+Primeiro bloco de &lt;span class="nv"&gt;dados&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+Máximo de blocos de sistema de &lt;span class="nv"&gt;arquivos&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;4294967296
+&lt;span class="m"&gt;3727&lt;/span&gt; grupos de blocos
+&lt;span class="m"&gt;32768&lt;/span&gt; blocos por grupo, &lt;span class="m"&gt;32768&lt;/span&gt; fragmentos por grupo
+&lt;span class="m"&gt;8192&lt;/span&gt; inodes por grupo
+Cópias de segurança de superblocos gravadas em blocos:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+        4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
+        102400000
+
+Allocating group tables: pronto
+Gravando tabelas inode: pronto
+Creating journal &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;32768&lt;/span&gt; blocks&lt;span class="o"&gt;)&lt;/span&gt;: concluído
+Escrevendo superblocos e informações de contabilidade de sistema de arquivos:    0/concluído
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Agora vamos montar o nosso dispositivo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;emilio ~ $ sudo mkdir /media/emilio/hdexterno
+emilio ~ $ sudo mount /dev/mapper/hdexterno /media/emilio/hdexterno/
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Feito isso nosso hdexterno está montando em /media/emilio/hdexterno. Para remover o dispositivo devemos rodar o umount e fechar a criptografia:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;emilio ~ $ sudo umount /media/emilio/hdexterno
+emilio ~ $ sudo cryptsetup luksClose hdexterno
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Nomeu caso que utilizo linux mint, ao plugar o hd externo abre uma caixa solicitando a senha, o mesmo é montado automaticamente no sistema:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/cryptsetup-01.png"&gt;&lt;img alt="cryptsetup-01" src="http://emilioeiji.com.br/images/cryptsetup-01.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Agora só copiar os arquivos para o seu hd externo&lt;/p&gt;
+&lt;p&gt;Uma dica muito importante é não salvar a senha para garantir mais segurança aos seus dados.&lt;/p&gt;
+&lt;p&gt;Abraços pessoal, atéa  próxima.&lt;/p&gt;
+</content><category term="criptografia"></category><category term="hd"></category><category term="externo"></category></entry><entry><title>Instalando Debian Netinst</title><link href="http://emilioeiji.com.br/instalando-debian-netinst.html" rel="alternate"></link><published>2015-03-29T14:06:00-03:00</published><updated>2015-03-29T14:06:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2015-03-29:/instalando-debian-netinst.html</id><summary type="html">&lt;p&gt;Boas galera, como estou precisando instalar o Debian para estudos, abaixo vou mostrar
+como fazer a instalação do &lt;a class="reference external" href="https://www.debian.org/CD/netinst/"&gt;netinst&lt;/a&gt; do zero.&lt;/p&gt;
+&lt;p&gt;Para efetuar o download da iso clique &lt;a class="reference external" href="https://www.debian.org/distrib/netinst"&gt;aqui&lt;/a&gt;
+e após o término do download podemos gravar a iso em um cd ou criaros um &lt;a class="reference external" href="http://emilioeiji.com.br/imagens-iso-no-pendrive.html"&gt;pendrive de boot&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;Em seguida …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Boas galera, como estou precisando instalar o Debian para estudos, abaixo vou mostrar
+como fazer a instalação do &lt;a class="reference external" href="https://www.debian.org/CD/netinst/"&gt;netinst&lt;/a&gt; do zero.&lt;/p&gt;
+&lt;p&gt;Para efetuar o download da iso clique &lt;a class="reference external" href="https://www.debian.org/distrib/netinst"&gt;aqui&lt;/a&gt;
+e após o término do download podemos gravar a iso em um cd ou criaros um &lt;a class="reference external" href="http://emilioeiji.com.br/imagens-iso-no-pendrive.html"&gt;pendrive de boot&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;Em seguida vamos dar boot na maquina e teremos a tela abaixo:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-01.png"&gt;&lt;img alt="netinst-01" src="http://emilioeiji.com.br/images/netinst-01.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Temos as seguintes opções de instalação:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;strong&gt;Install&lt;/strong&gt; - Iniciará o mode de instalação padrão em modo texto.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Graphical install&lt;/strong&gt; - Iniciará a instalação em modo gráfico, um pouco mais amigável mas
+nada de diferente do modo padrão.&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;Advanced options&lt;/dt&gt;
+&lt;dd&gt;&lt;ol class="first last arabic"&gt;
+&lt;li&gt;&lt;strong&gt;Modo Expert&lt;/strong&gt; - Iniciará a instalaçao no modo very hard, onde se tem controle de todos os
+os processos que serão executados durante a instalação, indicado para usuários avançados.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Graphical Expert&lt;/strong&gt; - Iniciára a instalação no modo hard com uma interface gráfica.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Help&lt;/strong&gt; - Obtem ajuda do sistema na instalação.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Install with speech synthesis&lt;/strong&gt; - Inicia no modo de acessibilidade, onde um assistente &amp;quot;lê&amp;quot;
+oque está aparecendo na tela.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Vou efetuar a instalação pelo modo padrão, selecionando &lt;strong&gt;Install&lt;/strong&gt;, após isso ira carregar as telas
+onde selecionaremos a opção de linguagem do sistema, localidade e teclado.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-02.png"&gt;&lt;img alt="netinst-02" src="http://emilioeiji.com.br/images/netinst-02.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-03.png"&gt;&lt;img alt="netinst-03" src="http://emilioeiji.com.br/images/netinst-03.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Irá carregar alguns módulos do sistema, configurar o ip e em seguita irá para a tela onde definiremos
+o nome do computador e o domínio.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-05.png"&gt;&lt;img alt="netinst-05" src="http://emilioeiji.com.br/images/netinst-05.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Após definirmos o nome vamos para a senha do root, cadatro do nome de um usuário e senha para o mesmo.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-06.png"&gt;&lt;img alt="netinst-06" src="http://emilioeiji.com.br/images/netinst-06.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-07.png"&gt;&lt;img alt="netinst-07" src="http://emilioeiji.com.br/images/netinst-07.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-08.png"&gt;&lt;img alt="netinst-08" src="http://emilioeiji.com.br/images/netinst-08.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Agora vamos definir o fuso horário.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-09.png"&gt;&lt;img alt="netinst-09" src="http://emilioeiji.com.br/images/netinst-09.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Na criação das partições devemos ter uma certa atenção caso tenhamos outros SO's instalados, visto
+que se selecionarmos a opção &lt;strong&gt;Assistido - usar disco inteiro&lt;/strong&gt; todos os dados do disco serão apagados
+e dá o maior trabalho recuperar os arquivos :p&lt;/p&gt;
+&lt;p&gt;Nesta etapa temos as seguintes opções:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;strong&gt;Assistido - usar o disco inteiro&lt;/strong&gt; - Essa opção serve para usuários iniciantes que não tem experiencia
+com particionamento de discos ou igual estou fazendo agora apenas para testes. :)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Assistido - usar o disco inteiro e configurar LVM&lt;/strong&gt; - Essa opção serve para configurarmos o &lt;a class="reference external" href="http://www.vivaolinux.com.br/dica/LVM-Logical-Volume-Manager"&gt;LVM&lt;/a&gt;
+(Gerenciamento de Volume Lógico) que facilida em situações que após instalar o sistemas precise alterar
+o tamanho do volume.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Assistido - usar disco todo e LVM criptografado&lt;/strong&gt; - Faz a junção das duas primeiras opções e faz
+a criptografia dos volumes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Manual&lt;/strong&gt; - Aqui efetuamos as configurações manualmente das partições e volumes, quando instalamos em
+servidores ou desktops e precisamos definir os tamanhos das partições e o ponto de montagem para cada
+partição.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-10.png"&gt;&lt;img alt="netinst-10" src="http://emilioeiji.com.br/images/netinst-10.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-11.png"&gt;&lt;img alt="netinst-11" src="http://emilioeiji.com.br/images/netinst-11.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-12.png"&gt;&lt;img alt="netinst-12" src="http://emilioeiji.com.br/images/netinst-12.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-13.png"&gt;&lt;img alt="netinst-13" src="http://emilioeiji.com.br/images/netinst-13.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-14.png"&gt;&lt;img alt="netinst-14" src="http://emilioeiji.com.br/images/netinst-14.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Após o procedimento das partições é efetuado a instalação do sistema básico e em seguida selecionamos em qual
+repositório queremos buscar os nossos pacotes para que seja configurado o apt.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-15.png"&gt;&lt;img alt="netinst-15" src="http://emilioeiji.com.br/images/netinst-15.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-16.png"&gt;&lt;img alt="netinst-16" src="http://emilioeiji.com.br/images/netinst-16.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-17.png"&gt;&lt;img alt="netinst-17" src="http://emilioeiji.com.br/images/netinst-17.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Em seguida é solicitado se quer participar do consurso de utilização de pacote, que ajuda no desenvolvimento
+do sistema oferecendo informações anonimas.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-18.png"&gt;&lt;img alt="netinst-18" src="http://emilioeiji.com.br/images/netinst-18.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Após isso vamos para a tela de seleção de software, onde vamos selecionar oque queremos instalar, no meu caso
+como é uma maquina para teste não quero instalar nada além do sistema básico, portanto vou deixar marcado apenas
+a opção de Utilitários standard de sistema.&lt;/p&gt;
+&lt;p&gt;Caso queria instalar um desktop completo deve marcar a opção &lt;strong&gt;Debian desktop environment&lt;/strong&gt; e caso a instalação
+esteja ocorrendo de um laptop marcar a opção &lt;strong&gt;Laptop&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Temos outras opções para instalarmos como web server, servidor de impressão, sql db, file server, mail server, ssh server.
+Eu particularmente gosto de instalar tudo depois que finalizar a instalação do sistema.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-19.png"&gt;&lt;img alt="netinst-19" src="http://emilioeiji.com.br/images/netinst-19.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Agora vamos somos questionados se queremos instalar o gerenciador de boot GRUB.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-20.png"&gt;&lt;img alt="netinst-20" src="http://emilioeiji.com.br/images/netinst-20.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;E pronto, acabamos de finalizar a instalação do Debian Netinst, muito fácil não?&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-21.png"&gt;&lt;img alt="netinst-21" src="http://emilioeiji.com.br/images/netinst-21.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Agora já temos a nossa tão querida telinha preta.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/netinst-22.png"&gt;&lt;img alt="netinst-22" src="http://emilioeiji.com.br/images/netinst-22.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Após a instalação a primeira coisa que faço é deixar o bash coloridinho :p editando o bash /root/.bashrc
+descomentando as linhas:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;LS_OPTIONS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;--color=auto&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;`dircolors`&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;ls&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls $LS_OPTIONS&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;ll&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls $LS_OPTIONS -l&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;l&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls $LS_OPTIONS -lA&amp;#39;&lt;/span&gt;
+
+&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;rm&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rm -i&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;cp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cp -i&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;mv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;mv -i&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;O segundo passo é instalar o &lt;strong&gt;vim&lt;/strong&gt; para facilitar e edição dos arquivos.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install vim
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;e após a instalação descomento a linha &lt;em&gt;syntax on&lt;/em&gt; no arquivo &lt;em&gt;/etc/vim/vimrc&lt;/em&gt; para destacar a sintax nos
+arquivos de configurações.&lt;/p&gt;
+&lt;p&gt;Agora vou procurar um ambiente gráfico para brincar e provavelmente irá tornar outro post do blog.&lt;/p&gt;
+&lt;p&gt;Abraços&lt;/p&gt;
+</content><category term="linux"></category><category term="debian"></category><category term="100-linux"></category><category term="netinst"></category><category term="instalação"></category><category term="instalando"></category></entry><entry><title>Bacula - Ferramenta Livre de Backup</title><link href="http://emilioeiji.com.br/bacula-ferramenta-livre-de-backup.html" rel="alternate"></link><published>2015-02-09T20:10:00-02:00</published><updated>2015-02-09T20:10:00-02:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2015-02-09:/bacula-ferramenta-livre-de-backup.html</id><summary type="html">&lt;p&gt;I aew pessoal...&lt;/p&gt;
+&lt;p&gt;Como estou configurando um novo servidor de backup com o Bacula,
+segue abaixo um livro pra quem quer dar uma geral na ferramenta.&lt;/p&gt;
+&lt;p&gt;O nome do livro é:&lt;a class="reference external" href="https://books.google.com.br/books?id=P1unBAAAQBAJ&amp;amp;lpg=PA155&amp;amp;ots=1ju0sDX_L9&amp;amp;dq=bacula%20python&amp;amp;hl=pt-BR&amp;amp;pg=PP1#v=onepage&amp;amp;q&amp;amp;f=false"&gt;Bacula - Ferramenta Livre de
+Backup.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Em breve postarei algumas dicas na configuração do servidor Bacula.&lt;/p&gt;
+&lt;p&gt;Abraços&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;I aew pessoal...&lt;/p&gt;
+&lt;p&gt;Como estou configurando um novo servidor de backup com o Bacula,
+segue abaixo um livro pra quem quer dar uma geral na ferramenta.&lt;/p&gt;
+&lt;p&gt;O nome do livro é:&lt;a class="reference external" href="https://books.google.com.br/books?id=P1unBAAAQBAJ&amp;amp;lpg=PA155&amp;amp;ots=1ju0sDX_L9&amp;amp;dq=bacula%20python&amp;amp;hl=pt-BR&amp;amp;pg=PP1#v=onepage&amp;amp;q&amp;amp;f=false"&gt;Bacula - Ferramenta Livre de
+Backup.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Em breve postarei algumas dicas na configuração do servidor Bacula.&lt;/p&gt;
+&lt;p&gt;Abraços&lt;/p&gt;
+</content><category term="backup"></category><category term="bacula"></category><category term="linux"></category></entry><entry><title>Atualizando linux mint 17 para 17.1</title><link href="http://emilioeiji.com.br/atualizando-linux-mint-17-para-17-1.html" rel="alternate"></link><published>2014-12-02T12:17:00-02:00</published><updated>2014-12-02T12:17:00-02:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2014-12-02:/atualizando-linux-mint-17-para-17-1.html</id><summary type="html">&lt;p&gt;Boas galera.&lt;/p&gt;
+&lt;p&gt;No vídeo abaixo segue os passos que segui para atualizar o linux mint 17
+(Qiana) para 17.1 (Rebecca).&lt;/p&gt;
+&lt;div class="youtube youtube-16x9"&gt;&lt;iframe src="https://www.youtube.com/embed/Mc5btmBvPI0" allowfullscreen seamless frameBorder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;Como a base do linut mint continuou a mesma (ubuntu 14.04 lts) acredito
+que a atualização via linha de comando seja segura.&lt;/p&gt;
+&lt;p&gt;Segue os comandos executados:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Verificando a …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Boas galera.&lt;/p&gt;
+&lt;p&gt;No vídeo abaixo segue os passos que segui para atualizar o linux mint 17
+(Qiana) para 17.1 (Rebecca).&lt;/p&gt;
+&lt;div class="youtube youtube-16x9"&gt;&lt;iframe src="https://www.youtube.com/embed/Mc5btmBvPI0" allowfullscreen seamless frameBorder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;Como a base do linut mint continuou a mesma (ubuntu 14.04 lts) acredito
+que a atualização via linha de comando seja segura.&lt;/p&gt;
+&lt;p&gt;Segue os comandos executados:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Verificando a versão atual.&lt;/span&gt;
+cat /etc/issue
+
+&lt;span class="c1"&gt;# Editando o repositório&lt;/span&gt;
+&lt;span class="c1"&gt;# Basta alterar o caminho do repositório antigo onde inidica qiana e alterar por rebeca.&lt;/span&gt;
+sudo gedit /etc/apt/sources.list.d/official-package-repositories.list
+
+&lt;span class="c1"&gt;# Efetuando a atualização dos pacotes&lt;/span&gt;
+sudo apt-get update
+sudo apt-get dist-upgrade
+
+&lt;span class="c1"&gt;# Reiniciar o sistema e pronto!&lt;/span&gt;
+sudo reboot
+&lt;/pre&gt;&lt;/div&gt;
+</content><category term="linux"></category><category term="linux mint"></category></entry><entry><title>Flash player em tela cheia com dois monitores no linux.</title><link href="http://emilioeiji.com.br/flash-player-em-tela-cheia-com-dois-monitores-linux.html" rel="alternate"></link><published>2014-09-21T23:51:00-03:00</published><updated>2014-09-21T23:51:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2014-09-21:/flash-player-em-tela-cheia-com-dois-monitores-linux.html</id><summary type="html">&lt;p&gt;Um dos problemas que eu tive com o dual monitor foi a execução do flash
+player em tela cheia com dois monitores no linux, quando executando
+algum vídeo no segundo monitor e efetuasse qualquer ação no monitor
+primário o vídeo voltava ao tamanho normal.&lt;/p&gt;
+&lt;p&gt;Efetuando uma pesquisa encontrei uma maneira …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Um dos problemas que eu tive com o dual monitor foi a execução do flash
+player em tela cheia com dois monitores no linux, quando executando
+algum vídeo no segundo monitor e efetuasse qualquer ação no monitor
+primário o vídeo voltava ao tamanho normal.&lt;/p&gt;
+&lt;p&gt;Efetuando uma pesquisa encontrei uma maneira de contornar essa situação
+editando o arquivo binario do flash player, abaixo vou descrever o
+procedimento que executei.&lt;/p&gt;
+&lt;p&gt;Primeiramente vamos encontrar o binário do flash player com os seguintes
+comandos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo updatedb
+sudo locate libflashplayer.so
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/updatedb.png"&gt;&lt;img alt="Executando updatedb" src="http://emilioeiji.com.br/images/updatedb.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;O próximo passo é editar o arquivo localizado com o comando acima.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo ghex /var/lib/mozilla/plugins/libflashplayer.so
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/ghexwindow.png"&gt;&lt;img alt="Janela do ghex" src="http://emilioeiji.com.br/images/ghexwindow.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Em seguida vamos localizar a seguinte variável&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Clique em Editar, localizar e procure a variável abaixo no campo da
+direita.&lt;/li&gt;
+&lt;li&gt;_NET_ACTIVE_WINDOW&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Muita atenção neste momento, qualquer erro que cometer irá comprometer o
+binário do flashplayer, portanto clique apenas em cima da letra N do
+_NET e insira a letra A, não apague a letra com DEL ou BACKSPACE,
+apenas substitua digitando a letra A, em seguida clique em Arquivo /
+Salvar.&lt;/p&gt;
+&lt;p&gt;Efetuado os procedimentos acima reiniciar o navegador que tudo deverá
+funcionar corretamente.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Captura-de-tela-de-2014-09-21-234643.png"&gt;&lt;img alt="Screenshot" src="http://emilioeiji.com.br/images/Captura-de-tela-de-2014-09-21-234643-1024x328.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+</content><category term="dual monitor"></category><category term="linux mint"></category><category term="linux"></category></entry><entry><title>100% Linux Parte 2</title><link href="http://emilioeiji.com.br/100-linux-parte-2.html" rel="alternate"></link><published>2014-08-17T00:55:00-03:00</published><updated>2014-08-17T00:55:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2014-08-17:/100-linux-parte-2.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;100% Linux Parte 2&lt;/h2&gt;
+&lt;p&gt;Como postei &lt;a class="reference external" href="http://blog.emilioeiji.com.br/100-linux-parte-1/"&gt;aqui&lt;/a&gt;,
+estou na batalha para me converter 100% em Linux e uma das minhas
+dificuldades que consegui superar hoje, na verdade se eu
+tivesse dado uma pesquisadinha mais a fundo teria conseguindo solucionar
+antes, mas eu confesso que estava procrastinando] era o uso do …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;100% Linux Parte 2&lt;/h2&gt;
+&lt;p&gt;Como postei &lt;a class="reference external" href="http://blog.emilioeiji.com.br/100-linux-parte-1/"&gt;aqui&lt;/a&gt;,
+estou na batalha para me converter 100% em Linux e uma das minhas
+dificuldades que consegui superar hoje, na verdade se eu
+tivesse dado uma pesquisadinha mais a fundo teria conseguindo solucionar
+antes, mas eu confesso que estava procrastinando] era o uso do do M$
+Silverlight, como é um plugin desenvolvido para rodar nos navegadores no
+windows já era de se esperar que não teria suporte no Linux.&lt;/p&gt;
+&lt;p&gt;A minha primeira tentativa em conseguir rodar o silverlight
+netflix-desktop, já que o mesmo usa o silverlight para exibir os seus
+vídeos, mas sem sucesso, não sei se é alguma coisa com o 64 bits mas
+após efetuar a instalação do pacote ele simplesmente não abre, tentei
+instalar na versão 32 bits que tenho no virtualbox e funcionou, mas como
+remover a versão 64 e colocar a 32 está fora de questão essa solução não
+resolveu o meu problema, mas pra quem use o sistema 32 bits ou em alguma
+outra distribuição possa funcionar.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-add-repository ppa:ehoover/compholio
+sudo apt-get update
+sudo apt-get install netflix-desktop
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Pesquisei um pouco mais e encontrei o plugin para o FireFox chamado
+&lt;a class="reference external" href="sudo%20apt-add-repository%20ppa:ehoover/compholio%20sudo%20apt-get%20update%20sudo%20apt-get%20install%20netflix-desktop"&gt;Novell
+Moonlight&lt;/a&gt;,
+que foi postado na primeira parte, até chegou até a carregar a página
+que eu preciso mas na hora de executar o vídeo deu erro de codec, até
+consegui encontrar alguma referencia no site da Microsoft desse codec
+para linux mas na hora de efetuar o download retornava que o codec não
+estava mais disponível. Também abandonei essa tentativa.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Complemento.png"&gt;&lt;img alt="Complemento" src="http://emilioeiji.com.br/images/Complemento.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Parei e pensei comigo, vou emular o firefox no wine e instalar o
+silverlight nele :) [STRIKEOUT:como não tinha pensado nisso antes????]
+mas como nada é do jeito que queremos :p lógico que não deu certo... Até
+a instalação do firefox foi tranquilo, o problema começou na hora de
+instalar o bendito silverlight :/ pesquisei em vários foruns e blogs mas
+nenhuma dica fez o bendito funcionar e novamente abandonei essa
+tentativa.&lt;/p&gt;
+&lt;p&gt;Indo um pouco mais a fundo encontrei o pipelight :) &amp;quot;&lt;em&gt;Um projeto que
+traz o Silverlight para linux em qualquer navegador que suporte a API
+Netscape Plugin, nele você consegue rodar qualquer serviço que requer o
+silverlight&lt;/em&gt;&amp;quot;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-add-repository ppa:pipelight/stable
+sudo apt-get update
+sudo apt-get install --install-recommends pipelight-multi
+sudo pipelight-plugin --update
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Para ativar o plugin, execute o seguinte comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pipelight-plugin --enable silverlight
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Se por algum motivo você desejar desabilitar o plugin, execute o
+seguinte comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pipelight-plugin --disable
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Por padrão o plugin executa a versão 5.1 do silverlight, mas se desejar
+é possível rodar em uma versão anterior por exemplo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo pipelight-plugin --disable silverlight --enable silverlight5.0
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A baixo vou listar como habilitar algumas extensões para o pipelight, o
+nome já diz +- do que se trata:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pipelight-plugin --enable flash
+pipelight-plugin --enable widevine
+pipelight-plugin --enable viewright-caiway
+pipelight-plugin --enable vizzedrgr
+pipelight-plugin --enable unity3d
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Temos a opção também de efetuar uma checagem no sistema para saber se o
+pipelight irá fuir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pipelight-plugin --system-check
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Constantemente o pipelight libera novos plugins e para conseguir ajuda
+rode o seguinte comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pipelight-plugin --help
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E para habilitar os plugins:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pipelight-plugin --enable nome&lt;span class="se"&gt;\_&lt;/span&gt;do&lt;span class="se"&gt;\_&lt;/span&gt;plugin
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Alguns plugins precisam ser desbloqueados antes de serem habilitados e
+para isso rode:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo pipelight-plugin --unlock nome&lt;span class="se"&gt;\_&lt;/span&gt;do&lt;span class="se"&gt;\_&lt;/span&gt;plugin
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Seguindo os passos acima para instalar e habilitar o plugin basta fechar
+e abrir o navegador que tudo funcionará perfeitamente.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/unicesumar.png"&gt;&lt;img alt="Unicesumar, silverlight requerido para assistir as aulas." src="http://emilioeiji.com.br/images/unicesumar.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="linux"></category><category term="linux mint"></category><category term="pipelight"></category><category term="silverlight"></category><category term="100-linux"></category></entry><entry><title>Easter Eggs com aptitude</title><link href="http://emilioeiji.com.br/easter-eggs-com-aptitude.html" rel="alternate"></link><published>2014-08-08T11:53:00-03:00</published><updated>2014-08-08T11:53:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2014-08-08:/easter-eggs-com-aptitude.html</id><summary type="html">&lt;p&gt;Achei legalzinho esse&amp;nbsp;Easter Eggs com aptitude haoiuahoaiuaha então vou
+compartilhar.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="http://emilioeiji.com.br/images/Captura-de-tela-de-2014-08-08-115124.png"&gt;&lt;img alt="Captura de tela de 2014-08-08 11:51:24" src="http://emilioeiji.com.br/images/Captura-de-tela-de-2014-08-08-115124.png" /&gt;&lt;/a&gt;&lt;/blockquote&gt;
+</summary><content type="html">&lt;p&gt;Achei legalzinho esse&amp;nbsp;Easter Eggs com aptitude haoiuahoaiuaha então vou
+compartilhar.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="http://emilioeiji.com.br/images/Captura-de-tela-de-2014-08-08-115124.png"&gt;&lt;img alt="Captura de tela de 2014-08-08 11:51:24" src="http://emilioeiji.com.br/images/Captura-de-tela-de-2014-08-08-115124.png" /&gt;&lt;/a&gt;&lt;/blockquote&gt;
+</content></entry><entry><title>LibreOffice Brasil</title><link href="http://emilioeiji.com.br/libreoffice-brasil.html" rel="alternate"></link><published>2014-07-30T11:13:00-03:00</published><updated>2014-07-30T11:13:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2014-07-30:/libreoffice-brasil.html</id><summary type="html">&lt;p&gt;Animação bacana apresentando o LibreOffice feito por brasileiros e
+produzida 100% com softwares opensource.&lt;/p&gt;
+&lt;div class="youtube youtube-16x9"&gt;&lt;iframe src="https://www.youtube.com/embed/rYoLBPAGLbo" allowfullscreen seamless frameBorder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Animação bacana apresentando o LibreOffice feito por brasileiros e
+produzida 100% com softwares opensource.&lt;/p&gt;
+&lt;div class="youtube youtube-16x9"&gt;&lt;iframe src="https://www.youtube.com/embed/rYoLBPAGLbo" allowfullscreen seamless frameBorder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;</content><category term="linux"></category><category term="libreoffice"></category></entry><entry><title>Linux + Windows 8</title><link href="http://emilioeiji.com.br/linux-windows-8.html" rel="alternate"></link><published>2014-05-17T09:26:00-03:00</published><updated>2014-05-17T09:26:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2014-05-17:/linux-windows-8.html</id><summary type="html">&lt;p&gt;Essa vai pra quem usa Linux + Windows 8&lt;/p&gt;
+&lt;p&gt;Certamente quem tem os dois sistemas em dual boot já teve o problema de
+iniciar o Linux e ao tentar acessar as partições NTFS retornar erro:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+The disk contains an unclean file system (0, 0).
+Metadata kept in Windows cache, refused to …&lt;/pre&gt;</summary><content type="html">&lt;p&gt;Essa vai pra quem usa Linux + Windows 8&lt;/p&gt;
+&lt;p&gt;Certamente quem tem os dois sistemas em dual boot já teve o problema de
+iniciar o Linux e ao tentar acessar as partições NTFS retornar erro:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+The disk contains an unclean file system (0, 0).
+Metadata kept in Windows cache, refused to mount.
+&lt;/pre&gt;
+&lt;p&gt;Isso corre porque quando desligamos o windows 8 ele na verdade não
+desliga totalmente, ele faz um shutdown hibrido e mante o pc como se
+estivesse hibernado. Para resolver esse &amp;quot;problema&amp;quot; é muito fácil e você
+que certamente tem os dois sistemas instalado deve usar mais o Linux =p
+e não vai sentir diferença no windows, com os comandos abaixo o windows
+será desligado totalmente liberando as partições. Você irá sentir a
+diferença ao ligar o seu windows, ele terá que carregar todo o sistema
+deixando assim o boot um pouco mais lento.&lt;/p&gt;
+&lt;p&gt;Primeira mente devemos executar o prompt de comando do windows como
+admin, para isso use a tecla de atalho &lt;a class="reference external" href="http://emilioeiji.com.br/images/botao-win.jpg"&gt;&lt;img alt="botao-win" src="http://emilioeiji.com.br/images/botao-win.jpg" /&gt;&lt;/a&gt; + X para abrir a
+seguinte tela:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/prompt-admin.png"&gt;&lt;img alt="prompt-admin" src="http://emilioeiji.com.br/images/prompt-admin-150x150.png" /&gt;&lt;/a&gt; Basta clicar na opção &amp;quot;Prompt de Comando (admin).&lt;/p&gt;
+&lt;p&gt;Após abrir o prompt de comando executar o seguinte comando:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+powercfg -h off
+&lt;/pre&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/powercfg.png"&gt;&lt;img alt="Linux + Windows 8" src="http://emilioeiji.com.br/images/powercfg.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Feito isso só desligar o seu windows e testar :)&lt;/p&gt;
+&lt;p&gt;Caso queira reverter o processo é só executar o comando &amp;quot;powercfg -h on&amp;quot;
+tudo voltara ao normal.&lt;/p&gt;
+</content><category term="linux"></category><category term="windows 8"></category></entry><entry><title>Linux Mint 16 - Google como mecanismo de pesquisa no firefox.</title><link href="http://emilioeiji.com.br/linux-mint-16-google-como-mecanismo-de-pesquisa-firefox.html" rel="alternate"></link><published>2014-04-30T22:19:00-03:00</published><updated>2014-04-30T22:19:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2014-04-30:/linux-mint-16-google-como-mecanismo-de-pesquisa-firefox.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;Linux Mint 16 - Google como mecanismo de pesquisa no firefox.&lt;/h2&gt;
+&lt;p&gt;Ficou muito simples colocar o Google como mecanismo de pesquisa no
+firefox, por padrão do linux mint o mecanismo padrão é o Startpage,
+razoavelmente bom porém, está longe do google.&lt;/p&gt;
+&lt;p&gt;Para colocar o google como padrão, acesse esse
+&lt;a class="reference external" href="http://www.linuxmint.com/searchengines/anse.php?sen=Google&amp;amp;c=y"&gt;Link.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Após …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;Linux Mint 16 - Google como mecanismo de pesquisa no firefox.&lt;/h2&gt;
+&lt;p&gt;Ficou muito simples colocar o Google como mecanismo de pesquisa no
+firefox, por padrão do linux mint o mecanismo padrão é o Startpage,
+razoavelmente bom porém, está longe do google.&lt;/p&gt;
+&lt;p&gt;Para colocar o google como padrão, acesse esse
+&lt;a class="reference external" href="http://www.linuxmint.com/searchengines/anse.php?sen=Google&amp;amp;c=y"&gt;Link.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Após acessar o link e carregar a pagina, clique na setinha para baixo no
+mecanismo de busca e clique em adicionar google.&lt;/p&gt;
+&lt;p&gt;Pronto, suas buscas agora serão feitas com o google.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="firefox"></category><category term="google"></category><category term="linux mint"></category><category term="mecanismo"></category><category term="pesquisa"></category><category term="petra"></category></entry><entry><title>100% Linux Parte 1</title><link href="http://emilioeiji.com.br/100-linux-parte-1.html" rel="alternate"></link><published>2014-03-31T13:52:00-03:00</published><updated>2014-03-31T13:52:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2014-03-31:/100-linux-parte-1.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;100% Linux Parte 1&lt;/h2&gt;
+&lt;p&gt;Boas pessoal, nesse post vou descrever a minha luta para migrar meu
+notebook 100% para linux. Bastante coisa já encontrei uma solução para
+contornar e outras estou na luta ainda, vou tentar descrever abaixa a
+minha saga =)&lt;/p&gt;
+&lt;p&gt;Estou usando hoje o&lt;a class="reference external" href="http://www.linuxmint.com/"&gt;Linux Mint 16&lt;/a&gt; em um …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;100% Linux Parte 1&lt;/h2&gt;
+&lt;p&gt;Boas pessoal, nesse post vou descrever a minha luta para migrar meu
+notebook 100% para linux. Bastante coisa já encontrei uma solução para
+contornar e outras estou na luta ainda, vou tentar descrever abaixa a
+minha saga =)&lt;/p&gt;
+&lt;p&gt;Estou usando hoje o&lt;a class="reference external" href="http://www.linuxmint.com/"&gt;Linux Mint 16&lt;/a&gt; em um
+&lt;a class="reference external" href="http://shop.lenovo.com/br/pt/laptops/essential/g-series/g400s/?cid=br:sem:kdocI9"&gt;lenovo g400s
+touch&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt; emilio@Emilio-Lnx ~ $ lspci
+&lt;span class="p"&gt;|&lt;/span&gt;  00:00.0 Host bridge: Intel Corporation 3rd Gen Core processor
+DRAM Controller &lt;span class="o"&gt;(&lt;/span&gt;rev 09&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  00:02.0 VGA compatible controller: Intel Corporation 3rd Gen Core
+processor Graphics Controller &lt;span class="o"&gt;(&lt;/span&gt;rev 09&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  00:14.0 USB controller: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
+Chipset Family USB xHCI Host Controller &lt;span class="o"&gt;(&lt;/span&gt;rev 04&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  00:16.0 Communication controller: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210
+Series Chipset Family MEI Controller &lt;span class="c1"&gt;#1 (rev 04)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  00:1a.0 USB controller: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
+Chipset Family USB Enhanced Host Controller &lt;span class="c1"&gt;#2 (rev 04)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  00:1b.0 Audio device: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
+Chipset Family High Definition Audio Controller &lt;span class="o"&gt;(&lt;/span&gt;rev 04&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  00:1c.0 PCI bridge: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
+Chipset Family PCI Express Root Port &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;rev c4&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  00:1c.1 PCI bridge: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
+Chipset Family PCI Express Root Port &lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;rev c4&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  00:1d.0 USB controller: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
+Chipset Family USB Enhanced Host Controller &lt;span class="c1"&gt;#1 (rev 04)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  00:1f.0 ISA bridge: Intel Corporation HM76 Express Chipset LPC
+Controller &lt;span class="o"&gt;(&lt;/span&gt;rev 04&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  00:1f.2 SATA controller: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series Chipset
+Family 6-port SATA Controller &lt;span class="o"&gt;[&lt;/span&gt;AHCI mode&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;rev 04&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  00:1f.3 SMBus: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series Chipset
+Family SMBus Controller &lt;span class="o"&gt;(&lt;/span&gt;rev 04&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  01:00.0 Ethernet controller: Qualcomm Atheros AR8162 Fast
+Ethernet &lt;span class="o"&gt;(&lt;/span&gt;rev 10&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  02:00.0 Network controller: Intel Corporation Centrino Wireless-N
+&lt;span class="m"&gt;135&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;rev c4&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Acima segue o resultado do lspci.&lt;/p&gt;
+&lt;p&gt;O Linux Mint já vem com bastante coisa instalado como:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Firefox (Navegador)&lt;/li&gt;
+&lt;li&gt;Thunderbird (Client e-mail)&lt;/li&gt;
+&lt;li&gt;x-chat (client irc)&lt;/li&gt;
+&lt;li&gt;Pidgin (Comunicador)&lt;/li&gt;
+&lt;li&gt;Transmission (Client Torrent)&lt;/li&gt;
+&lt;li&gt;Gimp (Ótima alternativa ao PS)&lt;/li&gt;
+&lt;li&gt;LibreOffice (Suíte para escritório)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Entre vários outros aplicativos que suprem a necessidade.&lt;/p&gt;
+&lt;p&gt;Vou citar alguns softwares que instalei:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;KeePassX (Gerenciador de senhas)&lt;/li&gt;
+&lt;li&gt;Inkscape (Alternativa ao Corel Draw)&lt;/li&gt;
+&lt;li&gt;FileZilla (Gerenciador FTP)&lt;/li&gt;
+&lt;li&gt;DropBox (Armazenamento em nuvem)&lt;/li&gt;
+&lt;li&gt;Skype (Comunicador)&lt;/li&gt;
+&lt;li&gt;Geany (IDE para programação)&lt;/li&gt;
+&lt;li&gt;Virtual Box (Hypervisor)&lt;/li&gt;
+&lt;li&gt;Dia (Desenhos de diagrama)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;DIA:&lt;/strong&gt;Acostumado a desenhar os diagramas de rede com o MS Visio,
+senti bastante dificuldade migrando para o DIA, mas nada como algumas
+horas perdidas para adaptar-se com o novo software, senti falta de
+algumas coisas como o desenhos de racks e computadores, mas da para
+desenvolver os diagramas sem maiores problemas. O DIA pode ser instalado
+com o simples comando &lt;em&gt;apt-get install dia&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SilverLight:&lt;/strong&gt;Com esse kra ainda estou tendo problemas, consegui
+usá-lo. Primeiramente tive dificuldade em localizar a extensão Moonlight
+para o linux, mas encontrei
+&lt;a class="reference external" href="https://aur.archlinux.org/packages/firefox-moonlight/?setlang=pt_BR"&gt;aqui.&lt;/a&gt;
+É só efetuar o download do xpi, entrar na guia de extensões do firefox,
+clicar no xpi arrastar e soltar no navegado. Pronto, extensão instalada.
+O problema está nos codecs de audito, em alguns sites usa os codecs da
+MS, e nem mesmo eles disponibilizam tais codecs para baixar, então estou
+na luta para tentar fazer funcionar em alguns sites.&lt;/p&gt;
+&lt;p&gt;Como o site que preciso acessar funciona só com o silverlight e não
+consegui resolver o problema dos codecs, mantenho o windows como
+dualboot e tenho uma Maquina Virtual rodando no VirtualBox para
+emergencias ;p Mas tenho certeza que deve haver alguma maneira de
+contornar essa situação.&lt;/p&gt;
+&lt;p&gt;Outra coisa que o Linux Mint 16 não tem um suporte adequado é o
+touchscreen, ele funciona apenas com um ponto e funciona como se fosse o
+ponteiro do mouse, onde eu efectuo o toque é como se o mouse fosse lá e
+desse um click, o Ubuntu tem um suporte melhor para touch, mas prefiro a
+filosofia do Linux Mint.&lt;/p&gt;
+&lt;p&gt;Em outros posts irei colocando as novidades e dificuldades que irei
+encontrando.&lt;/p&gt;
+&lt;p&gt;Abraços.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="100% linux"></category><category term="dia"></category><category term="filezilla"></category><category term="geany"></category><category term="keepass"></category><category term="linux"></category><category term="linux mint"></category><category term="moonlight"></category><category term="silverlight"></category><category term="transmission"></category><category term="virtualbox"></category><category term="xchat"></category></entry><entry><title>Debian Wheezy + FluxBox</title><link href="http://emilioeiji.com.br/debian-wheezy-fluxbox.html" rel="alternate"></link><published>2013-07-16T14:16:00-03:00</published><updated>2013-07-16T14:16:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2013-07-16:/debian-wheezy-fluxbox.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;&lt;strong&gt;Debian Wheezy + FluxBox&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Olá galera, neste post vou mostrar a evolução do meu Debian Wheezy +
+FluxBox , já vou adiantando que não sou nenhum expert em personalização,
+portante criticas e sugestões são bem vindas =)&lt;/p&gt;
+&lt;p&gt;Logo de inicio vou postar 2 prints que tirei, o primeiro eu já tinha
+feito algumas modificações …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;&lt;strong&gt;Debian Wheezy + FluxBox&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Olá galera, neste post vou mostrar a evolução do meu Debian Wheezy +
+FluxBox , já vou adiantando que não sou nenhum expert em personalização,
+portante criticas e sugestões são bem vindas =)&lt;/p&gt;
+&lt;p&gt;Logo de inicio vou postar 2 prints que tirei, o primeiro eu já tinha
+feito algumas modificações, eu esqueci de tirar o pirnt logo que
+instalei o debian =p e no segundo mudei o tema do conky e a ordem do
+painel.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/print1.png"&gt;&lt;img alt="Debian + FluxBox" src="http://emilioeiji.com.br/images/print1-300x187.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/print2.png"&gt;&lt;img alt="Debian Wheezy + FluxBox" src="http://emilioeiji.com.br/images/print2-300x187.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Vou postar pra vocês os aplicativos que estou utilizando e alguns
+arquivos de configuração.&lt;/p&gt;
+&lt;div class="section" id="aplicativos"&gt;
+&lt;h3&gt;Aplicativos&lt;/h3&gt;
+&lt;div class="section" id="editores"&gt;
+&lt;h4&gt;Editores&lt;/h4&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Medit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="emuladores-de-terminal"&gt;
+&lt;h4&gt;Emuladores de Terminal&lt;/h4&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Aterm&lt;/li&gt;
+&lt;li&gt;Eterm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="gerenciador-de-arquivos"&gt;
+&lt;h4&gt;Gerenciador de Arquivos&lt;/h4&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Thunar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="graficosv"&gt;
+&lt;h4&gt;Gráficosv&lt;/h4&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Gimp&lt;/li&gt;
+&lt;li&gt;Mirage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="programacao"&gt;
+&lt;h4&gt;Programação&lt;/h4&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Arduino&lt;/li&gt;
+&lt;li&gt;Geany&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="internet"&gt;
+&lt;h4&gt;Internet&lt;/h4&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Chromium&lt;/li&gt;
+&lt;li&gt;Xchat&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="style"&gt;
+&lt;h3&gt;Style&lt;/h3&gt;
+&lt;p&gt;O style que utilizei foi o Nasa e o seu download pode ser
+feito&amp;nbsp;&lt;a class="reference external" href="http://box-look.org/content/show.php/Nasa+Theme?content=115767"&gt;aqui.&lt;/a&gt;&amp;nbsp;Para
+efetuar a instalação do style é simples, basta descompactar o arquivo no
+diretório ~/.fluxbox/styles&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="papel-de-parede"&gt;
+&lt;h3&gt;Papel de Parede&lt;/h3&gt;
+&lt;p&gt;Esse aqui é o papel de parede que estou usando, achei em uma busca
+rápida pelo google.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/debianmintwallpaper2.png"&gt;&lt;img alt="Papel de parede Debian" src="http://emilioeiji.com.br/images/debianmintwallpaper2-300x225.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Para efetuar a troca do papel de parede basta usar o seguinte comando
+&lt;em&gt;fbsetbg /caminho/do/arquivo.jpg&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;No meu debian não precisei alterar nenhuma configuração no style para
+salvar o papel de parede, mas se estiverem com problema podem seguir
+essa dica
+&lt;a class="reference external" href="http://www.vivaolinux.com.br/dica/Personalizando-o-Fluxbox"&gt;aqui.&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="tema-para-o-conky"&gt;
+&lt;h3&gt;Tema para o conky&lt;/h3&gt;
+&lt;p&gt;Pessoal como mostra na figura 2, gostei bastante desse tema do conky
+com esse papel de parede, pois gosto de um visual bem clean, vou
+disponibilizar a baixo o meu conkyrc&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+use_xft yes
+xftfont 123:size=8
+xftalpha 0.1
+update_interval 1
+total_run_times 0
+own_window no
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 250 5
+maximum_width 500
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color white
+default_shade_color red
+default_outline_color green
+alignment middle_right
+gap_x 60
+gap_y 300
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 1
+override_utf8_locale yes
+use_spacer yes
+&lt;/pre&gt;
+&lt;p&gt;TEXT&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+${voffset 10}${color EAEAEA}${font GE Inspira:pixelsize=120}${time %H:%M}${font}${voffset -84}${offset 10}${color FF2300}${font GE Inspira:pixelsize=42}${time %d} ${voffset -15}${color EAEAEA}${font GE Inspira:pixelsize=22}${time %B} ${time %Y}${font}${voffset 24}${font GE Inspira:pixelsize=58}${offset -148}${time %A}${font}
+${voffset 1}${offset 12}${font Ubuntu:pixelsize=10}${color FF2300}HD ${offset 9}$color${fs_free /} / ${fs_size /}${offset 30}${color FF2300}RAM ${offset 9}$color$mem / $memmax${offset 30}${color FF2300}CPU ${offset 9}$color${cpu cpu0}%
+
+Copie e cole todo o conteúdo para seu arquivo conkyrc
+Para colocar o conky na inicialização, edite o arquivo
+~/.fluxbox/startup acima da linha *exec fluxbox&amp;nbsp;*\ o comando:
+&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;
+conky -c ~/.conky/conkyrc &amp;amp;
+&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;Lembre-se de indicar o arquivo no local corretamente para que o conky
+busque as configurações corretamente.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Conforme eu tiver tempo para ir postando, vou atualizando esse mesmo
+post com as novas informações.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content><category term="linux"></category><category term="debian"></category><category term="wheezy"></category><category term="fluxbox"></category></entry><entry><title>Imagens iso no pendrive</title><link href="http://emilioeiji.com.br/imagens-iso-no-pendrive.html" rel="alternate"></link><published>2013-06-19T09:50:00-03:00</published><updated>2013-06-19T09:50:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2013-06-19:/imagens-iso-no-pendrive.html</id><summary type="html">&lt;p&gt;Segue dois programinhas bem legais para quem quer gravar imagens iso
+no pendrive.&lt;/p&gt;
+&lt;p&gt;É bem fácil de usar, praticamente modelo NNF =)&lt;/p&gt;
+&lt;p&gt;Baixe aqui os dois
+programinhas&amp;nbsp;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/wp-content/uploads/2013/06/usb-iso.rar"&gt;usb-iso&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Para quem tiver alguma dificuldade com um desses dois programinhas e
+utilizam o linux podemos fazer a mesma coisa com o comando &lt;strong&gt;dd …&lt;/strong&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Segue dois programinhas bem legais para quem quer gravar imagens iso
+no pendrive.&lt;/p&gt;
+&lt;p&gt;É bem fácil de usar, praticamente modelo NNF =)&lt;/p&gt;
+&lt;p&gt;Baixe aqui os dois
+programinhas&amp;nbsp;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/wp-content/uploads/2013/06/usb-iso.rar"&gt;usb-iso&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Para quem tiver alguma dificuldade com um desses dois programinhas e
+utilizam o linux podemos fazer a mesma coisa com o comando &lt;strong&gt;dd&lt;/strong&gt; , eu
+particularmente gosto mais desse método.&lt;/p&gt;
+&lt;p&gt;Com o pendrive desmontado, deve-se especificar o caminho da ISO e o
+dispositivo usb.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo dd &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;imagem.iso &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/sdX
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;Lembre-se de substituir o sdx pela letra do seu pendrive.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Após executado o comando só irá retornar os registros de entrada e
+saída.&lt;/p&gt;
+&lt;p&gt;Seu pendrive está pronto =)&lt;/p&gt;
+</content><category term="linux"></category><category term="iso"></category><category term="dd"></category><category term="imagem"></category></entry><entry><title>Linux mint 12 - Alterar ordem de boot</title><link href="http://emilioeiji.com.br/linux-mint-12-alterar-ordem-de-boot.html" rel="alternate"></link><published>2012-03-01T20:54:00-03:00</published><updated>2012-03-01T20:54:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2012-03-01:/linux-mint-12-alterar-ordem-de-boot.html</id><summary type="html">&lt;p&gt;Boas pessoal...&lt;/p&gt;
+&lt;p&gt;Aqui vai um gerenciador simples do grub, com ele é possível alterar
+facilmente a ordem de boot do seu linux.&lt;/p&gt;
+&lt;p&gt;Para instalar basta executar o comando.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# apt-get install startupmanager
+&lt;/pre&gt;
+&lt;p&gt;E em seguida chamar o programa.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# sudo startupmanager
+&lt;/pre&gt;
+&lt;p&gt;Ira carregar a tela do programa com a lista de boot …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Boas pessoal...&lt;/p&gt;
+&lt;p&gt;Aqui vai um gerenciador simples do grub, com ele é possível alterar
+facilmente a ordem de boot do seu linux.&lt;/p&gt;
+&lt;p&gt;Para instalar basta executar o comando.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# apt-get install startupmanager
+&lt;/pre&gt;
+&lt;p&gt;E em seguida chamar o programa.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# sudo startupmanager
+&lt;/pre&gt;
+&lt;p&gt;Ira carregar a tela do programa com a lista de boot, basta selecionar o
+S.O. que queira deixar como padrão e fechar o programa.&lt;/p&gt;
+&lt;p&gt;Pronto, alterado a ordem do seu boot =)&lt;/p&gt;
+</content><category term="grub"></category><category term="linux"></category><category term="linux mint"></category></entry><entry><title>Resetar senha de Root no debian Squeeze</title><link href="http://emilioeiji.com.br/resetar-senha-de-root-no-debian-squeeze.html" rel="alternate"></link><published>2012-02-06T09:28:00-02:00</published><updated>2012-02-06T09:28:00-02:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2012-02-06:/resetar-senha-de-root-no-debian-squeeze.html</id><summary type="html">&lt;p&gt;Na tela do &lt;em&gt;Grub&lt;/em&gt;, precione a tecla ' e '.&lt;/p&gt;
+&lt;p&gt;Procure a linha parecida com esta:&lt;/p&gt;
+&lt;div&gt;&lt;p&gt;linux /boot/vmlinuz-2.6.xx-x-xxx root=........ ...... ro quiet&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/thumb_1328275626.imagem1.jpg"&gt;&lt;img alt="image0" src="http://emilioeiji.com.br/images/thumb_1328275626.imagem1.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;Acrescente o seguinte comando, no final da linha:&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;init=/bin/bash&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Exemplo:&lt;/p&gt;
+&lt;div&gt;&lt;p&gt;linux /boot/vmlinuz-2.6.xx-x-xxx root=........ ...... ro quiet
+init=/bin/bash&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/thumb_1328275626.imagem2.jpg"&gt;&lt;img alt="image1" src="http://emilioeiji.com.br/images/thumb_1328275626.imagem2.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;Pressione: 'Ctrl+X', para continuar …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Na tela do &lt;em&gt;Grub&lt;/em&gt;, precione a tecla ' e '.&lt;/p&gt;
+&lt;p&gt;Procure a linha parecida com esta:&lt;/p&gt;
+&lt;div&gt;&lt;p&gt;linux /boot/vmlinuz-2.6.xx-x-xxx root=........ ...... ro quiet&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/thumb_1328275626.imagem1.jpg"&gt;&lt;img alt="image0" src="http://emilioeiji.com.br/images/thumb_1328275626.imagem1.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;Acrescente o seguinte comando, no final da linha:&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;init=/bin/bash&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Exemplo:&lt;/p&gt;
+&lt;div&gt;&lt;p&gt;linux /boot/vmlinuz-2.6.xx-x-xxx root=........ ...... ro quiet
+init=/bin/bash&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/thumb_1328275626.imagem2.jpg"&gt;&lt;img alt="image1" src="http://emilioeiji.com.br/images/thumb_1328275626.imagem2.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;Pressione: 'Ctrl+X', para continuar.Em seguida, estes comandos:&lt;/p&gt;
+  &lt;/p&gt;
+
+# mount -n -o remount,rw /
+# passwd
+# reboot**&lt;/div&gt;&lt;div&gt;&lt;p&gt;**&amp;nbsp;**&lt;/p&gt;
+&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/thumb_1328275626.imagem3.jpg"&gt;&lt;img alt="image2" src="http://emilioeiji.com.br/images/thumb_1328275626.imagem3.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;**&amp;nbsp;**&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;Retirado do &lt;a class="reference external" href="http://www.vivaolinux.com.br/dica/Resetar-senha-de-root-no-Debian-Squeeze"&gt;Viva o
+Linux!!!&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</content><category term="debian"></category><category term="linux"></category><category term="resetar"></category><category term="root"></category></entry><entry><title>Linux - Remover linhas em branco de arquivo</title><link href="http://emilioeiji.com.br/linux-remover-linhas-em-branco-de-arquivo.html" rel="alternate"></link><published>2012-01-12T10:15:00-02:00</published><updated>2012-01-12T10:15:00-02:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2012-01-12:/linux-remover-linhas-em-branco-de-arquivo.html</id><summary type="html">&lt;p&gt;Para remover as linhas em brando de um arquivo muito extenso, execute o
+comando abaixo.&lt;/p&gt;
+&lt;p&gt;No exemplo estou removendo as linhas do arquivo de configuração do
+squid.&lt;/p&gt;
+&lt;p&gt;Onde o /etc/squid/squid.temp e /etc/squid/squid.conf devem ser
+alterados para o aquivo que desejam alterar.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+egrep -v &amp;quot;^&amp;gt;\|^$&amp;quot; /etc …&lt;/pre&gt;</summary><content type="html">&lt;p&gt;Para remover as linhas em brando de um arquivo muito extenso, execute o
+comando abaixo.&lt;/p&gt;
+&lt;p&gt;No exemplo estou removendo as linhas do arquivo de configuração do
+squid.&lt;/p&gt;
+&lt;p&gt;Onde o /etc/squid/squid.temp e /etc/squid/squid.conf devem ser
+alterados para o aquivo que desejam alterar.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+egrep -v &amp;quot;^&amp;gt;\|^$&amp;quot; /etc/squid/squid.temp &amp;gt; /etc/squid/squid.conf
+&lt;/pre&gt;
+</content><category term="linux"></category></entry><entry><title>Debian Lenny em Desktop</title><link href="http://emilioeiji.com.br/debian-lenny-em-desktop.html" rel="alternate"></link><published>2010-03-21T11:57:00-03:00</published><updated>2010-03-21T11:57:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2010-03-21:/debian-lenny-em-desktop.html</id><summary type="html">&lt;p&gt;Sempre que faço uma nova instalação do Debian Lenny em um desktop, uso
+essas dicas para deixá-lo mais perfeito do que já é. =)&lt;/p&gt;
+&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;As dicas são de&amp;nbsp;Julio Cesar Bessa Monqueiroencontrados no site do &lt;a class="reference external" href="http://guiadohardware.net/"&gt;Guia
+do Hardware&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.guiadohardware.net/tutoriais/debian-desktop/"&gt;**O básico para Debian Lenny no Desktop
+(Atualizado)**&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Sempre que faço uma nova instalação do Debian Lenny em um desktop, uso
+essas dicas para deixá-lo mais perfeito do que já é. =)&lt;/p&gt;
+&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;As dicas são de&amp;nbsp;Julio Cesar Bessa Monqueiroencontrados no site do &lt;a class="reference external" href="http://guiadohardware.net/"&gt;Guia
+do Hardware&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.guiadohardware.net/tutoriais/debian-desktop/"&gt;**O básico para Debian Lenny no Desktop
+(Atualizado)**&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;</content></entry><entry><title>Documentação Debian</title><link href="http://emilioeiji.com.br/documentacao-debian.html" rel="alternate"></link><published>2010-03-18T14:31:00-03:00</published><updated>2010-03-18T14:31:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2010-03-18:/documentacao-debian.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://www.debian.org/doc/manuals/debian-reference/index.pt-br.html"&gt;Guida de
+Referencia.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.debian.org/releases/stable/i386/index.html.pt_BR"&gt;Guia de
+Instalção.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.debian.org/doc/manuals/securing-debian-howto/index.pt-br.html"&gt;Manual de
+Segurança.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.debian.org/doc/manuals/apt-howto/index.pt-br.html"&gt;Manual do
+APT.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Font: &lt;a class="reference external" href="http://www.vivaolinux.com.br/"&gt;Viva o linux&lt;/a&gt; /
+&lt;a class="reference external" href="http://www.debian.org/"&gt;Debian.org&lt;/a&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="http://www.debian.org/doc/manuals/debian-reference/index.pt-br.html"&gt;Guida de
+Referencia.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.debian.org/releases/stable/i386/index.html.pt_BR"&gt;Guia de
+Instalção.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.debian.org/doc/manuals/securing-debian-howto/index.pt-br.html"&gt;Manual de
+Segurança.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.debian.org/doc/manuals/apt-howto/index.pt-br.html"&gt;Manual do
+APT.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Font: &lt;a class="reference external" href="http://www.vivaolinux.com.br/"&gt;Viva o linux&lt;/a&gt; /
+&lt;a class="reference external" href="http://www.debian.org/"&gt;Debian.org&lt;/a&gt;&lt;/p&gt;
+</content></entry><entry><title>Debian - Desativar boot modo gráfico.</title><link href="http://emilioeiji.com.br/debian-desativar-boot-modo-grafico.html" rel="alternate"></link><published>2010-03-16T23:32:00-03:00</published><updated>2010-03-16T23:32:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2010-03-16:/debian-desativar-boot-modo-grafico.html</id><summary type="html">&lt;p&gt;Dica boa para quem quer remover o boot pelo modo gráfico no Debian.&lt;/p&gt;
+&lt;p&gt;Para desativar digite o seguinte comando:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+update-rc.d -f gdm remove
+&lt;/pre&gt;
+&lt;p&gt;(Lembrando que terá que substituir pelo
+gerenciado de seu ambiente gráfico (GDM, XDM, KDM))&lt;/p&gt;
+&lt;p&gt;Para ativar o boot&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+update-rc.d -f gdm defaults
+&lt;/pre&gt;
+</summary><content type="html">&lt;p&gt;Dica boa para quem quer remover o boot pelo modo gráfico no Debian.&lt;/p&gt;
+&lt;p&gt;Para desativar digite o seguinte comando:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+update-rc.d -f gdm remove
+&lt;/pre&gt;
+&lt;p&gt;(Lembrando que terá que substituir pelo
+gerenciado de seu ambiente gráfico (GDM, XDM, KDM))&lt;/p&gt;
+&lt;p&gt;Para ativar o boot&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+update-rc.d -f gdm defaults
+&lt;/pre&gt;
+</content><category term="linux"></category><category term="debian"></category></entry><entry><title>LAMP com Debian Lenny (Ambiente Simples para Testes)</title><link href="http://emilioeiji.com.br/lamp-com-debian-lenny-ambiente-simples-para-testes.html" rel="alternate"></link><published>2009-09-17T16:31:00-03:00</published><updated>2009-09-17T16:31:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2009-09-17:/lamp-com-debian-lenny-ambiente-simples-para-testes.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Instalando o apache2:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+apt-get install apache2 apache2-doc apache2-mpm-prefork
+apache2-utils libexpat1 ssl-cert
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Instalando Suporte ao PHP5 no apache:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+apt-get install libapache2-mod-php5 php5 php5-common php5-curl
+php5-dev php5-gd php5-idn php-pear php5-imagick php5-imap php5-json
+php5-mcrypt php5-memcache php5-mhash php5-ming php5-mysql php5-ps
+php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc
+php5-xsl
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Edite o arquivo *dir.conf*&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+vim /etc …&lt;/pre&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;Instalando o apache2:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+apt-get install apache2 apache2-doc apache2-mpm-prefork
+apache2-utils libexpat1 ssl-cert
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Instalando Suporte ao PHP5 no apache:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+apt-get install libapache2-mod-php5 php5 php5-common php5-curl
+php5-dev php5-gd php5-idn php-pear php5-imagick php5-imap php5-json
+php5-mcrypt php5-memcache php5-mhash php5-ming php5-mysql php5-ps
+php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc
+php5-xsl
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Edite o arquivo *dir.conf*&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+vim /etc/apache2/mods-available/dir.conf
+&lt;/pre&gt;
+&lt;p&gt;Altere a linha &lt;em&gt;DirectoryIndex&lt;/em&gt; para&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+DirectoryIndex index.html index.htm index.shtml index.cgi index.php
+index.php3 index.pl index.xhtml
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Habilitando os módulos SSL, rewrite, suexec e include e php5&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+a2enmod ssl
+a2enmod rewrite
+a2enmod suexec
+a2enmod include
+a2enmod php5
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Faça um reload na configuração do Apache com o comando&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/etc/init.d/apache2 force-reload
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Instalando o MySql:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+aptitude install mysql-server mysql-client libmysqlclient15-dev
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Testando o LAMP&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Crie um arquivo chamado &lt;em&gt;index.php&lt;/em&gt; em &lt;em&gt;/var/www&lt;/em&gt; com o seguinte
+conteúdo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;*&lt;/span&gt;&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class="nb"&gt;phpinfo&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="x"&gt;*&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;Para verificar acesse a seguinte URL http://localhost/index.php deverá
+aparecer várias informações sobre o Apache, MySql e PHP.&lt;/em&gt;&lt;/p&gt;
+</content><category term="lamp"></category><category term="debian"></category><category term="linux"></category><category term="mysql"></category><category term="apache"></category><category term="php"></category></entry><entry><title>Mantendo seu servidor com data e hora atualziados utilizando o protocolo NTP</title><link href="http://emilioeiji.com.br/mantendo-seu-servidor-com-data-e-hora-atualziados-utilizando-o-protocolo-ntp.html" rel="alternate"></link><published>2009-09-17T15:33:00-03:00</published><updated>2009-09-17T15:33:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2009-09-17:/mantendo-seu-servidor-com-data-e-hora-atualziados-utilizando-o-protocolo-ntp.html</id><summary type="html">&lt;p&gt;Uma dica boa e simples para deixar seu servidor ou desktop com data e
+hora atualizado, é utilizar o protocolo NTP.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Instalação:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+apt-get install ntpdate ntp-doc ntp ntp-doc
+&lt;/pre&gt;
+&lt;p&gt;Verifique o fuso com o seguinte comando:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+cat /etc/timezone
+&lt;/pre&gt;
+&lt;p&gt;Caso deseje alterar, utilize:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+dpkg-reconfigure tzdata
+&lt;/pre&gt;
+&lt;p&gt;E selecione a opção desejada.&lt;/p&gt;
+&lt;p&gt;O …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Uma dica boa e simples para deixar seu servidor ou desktop com data e
+hora atualizado, é utilizar o protocolo NTP.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Instalação:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+apt-get install ntpdate ntp-doc ntp ntp-doc
+&lt;/pre&gt;
+&lt;p&gt;Verifique o fuso com o seguinte comando:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+cat /etc/timezone
+&lt;/pre&gt;
+&lt;p&gt;Caso deseje alterar, utilize:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+dpkg-reconfigure tzdata
+&lt;/pre&gt;
+&lt;p&gt;E selecione a opção desejada.&lt;/p&gt;
+&lt;p&gt;O comando ntpq -p permite verificar quais os servidores NTP a que estamos ligados. Os '*', + e - indicam respectivamente ligações bem sucedidas, sincronizações em curso e servidores pouco fiáveis.&lt;/p&gt;
+&lt;p&gt;Poderá demorar alguns minutos até aparecer a lista e até 30 minutos para ocorrer a primeira correcção.&lt;/p&gt;
+</content><category term="ntp"></category><category term="linux"></category><category term="hora"></category></entry></feed>

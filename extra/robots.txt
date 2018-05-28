@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /rss
+Disallow: /cgi-bin
+Disallow: /scgi-bin
+Sitemap: http://emilioeiji.com.br/sitemap.xml

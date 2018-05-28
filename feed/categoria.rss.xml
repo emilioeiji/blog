@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Emilio Eiji - Categoria</title><link>http://emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Mon, 10 Mar 2014 15:17:00 -0300</lastBuildDate><item><title>Hello World</title><link>http://emilioeiji.com.br/hello-world.html</link><description>&lt;p&gt;Olá! Este é o primeiro artigo. Então vamos de lorem ipsum!&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Mon, 10 Mar 2014 15:17:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2014-03-10:/hello-world.html</guid><category>tag01</category><category>tag02</category><category>tag03</category></item></channel></rss>

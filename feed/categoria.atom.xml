@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - Categoria</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/categoria.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2014-03-10T15:17:00-03:00</updated><entry><title>Hello World</title><link href="http://emilioeiji.com.br/hello-world.html" rel="alternate"></link><published>2014-03-10T15:17:00-03:00</published><updated>2014-03-10T15:17:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2014-03-10:/hello-world.html</id><summary type="html">&lt;p&gt;Olá! Este é o primeiro artigo. Então vamos de lorem ipsum!&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Olá! Este é o primeiro artigo. Então vamos de lorem ipsum!&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+sint occaecat cupidatat non proident, sunt in culpa qui officia
+deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;p&gt;E claro, um código Python!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Hello World!&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</content><category term="tag01"></category><category term="tag02"></category><category term="tag03"></category></entry></feed>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Emilio Eiji - Flask</title><link>http://emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Mon, 25 May 2015 19:32:00 -0300</lastBuildDate><item><title>Flask - Página de Contato</title><link>http://emilioeiji.com.br/flask-pagina-contato.html</link><description>&lt;p&gt;Seguindo o post anterior sobre flask, vamos desenvolver uma paǵina de contatos.
+Onde será preenchido algumas informações e encaminhado um e-mail e para isso vamos
+usar um compelmento do flask chamado flask-wtf&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Flask-WTF offers simple integration with WTForms. This integration includes optional CSRF handling for greater security.
+&lt;/pre&gt;
+&lt;p&gt;Pare efetuar a …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Mon, 25 May 2015 19:32:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2015-05-25:/flask-pagina-contato.html</guid><category>flask</category><category>python</category><category>programação</category></item><item><title>Flask - Introdução</title><link>http://emilioeiji.com.br/flask-introducao.html</link><description>&lt;p&gt;Depois que migrei o meu blog para o Pelican, procurei mais a fundo aprender sua estrutura,
+pesquisando como funcionava seus templates etc. Com isso vi que o desenvolvimento
+web com frameworks python fica muito mais fácil e dinamico surgindo interesse
+no web2py e flask.&lt;/p&gt;
+&lt;p&gt;A primeiro momento escolhi o flask …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Sun, 24 May 2015 19:31:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2015-05-24:/flask-introducao.html</guid><category>flask</category><category>python</category><category>programação</category></item></channel></rss>

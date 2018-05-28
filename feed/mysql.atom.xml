@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - MySQL</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/mysql.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2014-06-09T11:24:00-03:00</updated><entry><title>MySQL Vs. MS SQL</title><link href="http://emilioeiji.com.br/mysql-vs-ms-sql.html" rel="alternate"></link><published>2014-06-09T11:24:00-03:00</published><updated>2014-06-09T11:24:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2014-06-09:/mysql-vs-ms-sql.html</id><summary type="html">&lt;img alt="MySQL vs MSSQL" class="align-center" src="/images/mysqlvsmicsql.png" /&gt;
+&lt;p&gt;&lt;strong&gt;MySQL Vs. MS SQL&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Hoje estava assistindo ao treinamento do MS SQL 2012/2014 do meu amigo
+Bruxo Alexandre =p e veio em minha mente quais as principais diferenças
+entre os dois SGBDs (Sistema de Gerenciamento de Banco de Dados) Onde um
+se sobressai ao outro.&lt;/p&gt;
+&lt;p&gt;Para começar as duas …&lt;/p&gt;</summary><content type="html">&lt;img alt="MySQL vs MSSQL" class="align-center" src="/images/mysqlvsmicsql.png" /&gt;
+&lt;p&gt;&lt;strong&gt;MySQL Vs. MS SQL&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Hoje estava assistindo ao treinamento do MS SQL 2012/2014 do meu amigo
+Bruxo Alexandre =p e veio em minha mente quais as principais diferenças
+entre os dois SGBDs (Sistema de Gerenciamento de Banco de Dados) Onde um
+se sobressai ao outro.&lt;/p&gt;
+&lt;p&gt;Para começar as duas soluções utilizam linguagem SQL (Structured Query
+Language) que é padronizada pela ANSI, se utilizar apenas a linguagem
+padrão do SQL provavelmente a aplicação funcionará nos dois bancos, mas
+como cada SGBD quer ter suas funcionalidades aprimoradas utilizam
+algumas particularidades para atrair e facilitar para seus usuários é
+praticamente inviável programar apenas com a linguagem SQL &amp;quot;pura&amp;quot;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MySQL&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Inicialmente o MySQL foi desenvolvido por David Axmark, Allan Larsson e
+Michael &amp;quot;Monty&amp;quot; Widenius na década de 80, em 2008 a SUN comprou a MySQL
+AB por apenas 1 BI =p e posteriormente a SUN foi comprada pela Oracle
+junto com o MySQL, hoje ela é mantida por mais de 400 programadores
+espalhado pelo mundo.&lt;/p&gt;
+&lt;p&gt;O MySQL suporta praticamente qualquer plataforma, compatível com as
+principais linguagens de programação (Delphi, Java, C/C++, C#, Python,
+Perl, PHP, e por ai vai), pouco exigente quando falamos de hardware,
+fácil manuseio, roda sobre a GPL, suporta replicação e possui diversas
+interfaces gráficas e web.&lt;/p&gt;
+&lt;p&gt;Por outro lado o MySQL deixa a desejar em algumas ferramentas como
+gatilhos, procedimentos armazenados, existem relatos que fica lento
+quando existem muitos registro, por outro lado existem registro de
+bancos MySQL que roda com mais de 50.000.000 de registros e
+5.000.000.000 de linhas (Prova que deve depender muito da aplicação)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MS SQL Server&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;O SQL Server foi desenvolvido pela Microsoft junto com a Sybase em 1988,
+essa parceria durou até a versão 2000, quando a Microsoft resolveu
+acabar com a parceira e desenvolver um sistema totalmente novo a partir
+da versão 2005.&lt;/p&gt;
+&lt;p&gt;Apesar do SQL Server ter um preço abaixo da média de seus concorrentes,
+os valores ainda são bem salgados, pois além da licença do server temos
+que licenciar os cals de acessos. Além de rodar apenas nos sistemas
+operacionais da Microsoft, diferente de seus concorrentes que são
+multi-plataforma.&lt;/p&gt;
+&lt;p&gt;Um dos pontos positivos do MS SQL é a central de administração bem
+completa e simples de trabalhar, oque facilita bastante o trabalho de
+quem vai administrar e para quem não tem muita experiencia. Outro ponto
+é que o MS SQL consegue fazer uma divisão lógica das suas instancias,
+onde cada instancia pode ter seus bancos e usuários conectados.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Conclusão&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Cada SGBD tem suas vantagens e desvantagens, onde cada um é melhor em
+determinado ambiente portanto antes de implementar um banco devemos
+efetuar uma análise criteriosa para definir qual banco utilizar. Cargas
+mais pesadas e complexas MS SQL soluções mais simples MySQL =)&lt;/p&gt;
+</content><category term="análise"></category><category term="mssql"></category><category term="mysql"></category></entry><entry><title>ERROR 29 (HY000): File 'arquivo.csv' not found (Errcode: 2)</title><link href="http://emilioeiji.com.br/error-29-hy000-file-arquivo-csv-found-errcode-2.html" rel="alternate"></link><published>2013-12-27T09:29:00-02:00</published><updated>2013-12-27T09:29:00-02:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2013-12-27:/error-29-hy000-file-arquivo-csv-found-errcode-2.html</id><summary type="html">&lt;p&gt;Olá.&lt;/p&gt;
+&lt;p&gt;Estava tentando efetuar a importação de um arquivo .csv direto na linha
+de comando e estava me deparando com o seguinte erro: &amp;quot;ERROR 29 (HY000):
+File 'arquivo.csv' not found (Errcode: 2)&amp;quot;&lt;/p&gt;
+&lt;p&gt;O comando em questão era o seguinte:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;LOAD&lt;/span&gt; &lt;span class="n"&gt;DATA&lt;/span&gt; &lt;span class="k"&gt;INFILE&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;arquivo.csv&amp;#39;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;INTO&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;cadastro&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;FIELDS …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Olá.&lt;/p&gt;
+&lt;p&gt;Estava tentando efetuar a importação de um arquivo .csv direto na linha
+de comando e estava me deparando com o seguinte erro: &amp;quot;ERROR 29 (HY000):
+File 'arquivo.csv' not found (Errcode: 2)&amp;quot;&lt;/p&gt;
+&lt;p&gt;O comando em questão era o seguinte:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;LOAD&lt;/span&gt; &lt;span class="n"&gt;DATA&lt;/span&gt; &lt;span class="k"&gt;INFILE&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;arquivo.csv&amp;#39;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;INTO&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;cadastro&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;FIELDS&lt;/span&gt; &lt;span class="k"&gt;TERMINATED&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;;&amp;#39;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;LINES&lt;/span&gt; &lt;span class="k"&gt;TERMINATED&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;n&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Após pesquisar um pouco notei que no comando LOAD DATA INFILE estava
+faltando o parâmetro LOCAL, ficando assim LOAD DATA LOCAL INFILE,
+ficando assim;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;LOAD&lt;/span&gt; &lt;span class="n"&gt;DATA&lt;/span&gt; &lt;span class="n"&gt;LOCAL&lt;/span&gt; &lt;span class="k"&gt;INFILE&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;arquivo.csv&amp;#39;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;INTO&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;cadastro&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;FIELDS&lt;/span&gt; &lt;span class="k"&gt;TERMINATED&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;ENCLOSED&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;&amp;#39;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;LINES&lt;/span&gt; &lt;span class="k"&gt;TERMINATED&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;n&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Eis que me retorna um novo erro: &amp;quot;ERROR 1148 (42000) at line 5: The used
+command is not allowed with this MySQL version&amp;quot;&lt;/p&gt;
+&lt;p&gt;Após uma nova pesquisa, encontrei que para usar o comando LOAD DATA
+LOCAL INFILE quando iniciamos o client mysql devemos informar o
+parâmetro --local_infile=1&amp;nbsp;para carregar os arquivos locais, ficando
+assim;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt; &lt;span class="k"&gt;database&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;_infile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ppassword&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Após alguns minutos de pesquisa consegui importar o arquivo .csv =p&lt;/p&gt;
+</content><category term="linux"></category><category term="mysql"></category><category term="mysql client"></category></entry></feed>

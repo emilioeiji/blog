@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - Windows</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/windows.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2015-03-11T21:29:00-03:00</updated><entry><title>Como alterar o sid do windows</title><link href="http://emilioeiji.com.br/como-alterar-o-sid-do-windows.html" rel="alternate"></link><published>2015-03-10T20:29:00-03:00</published><updated>2015-03-11T21:29:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2015-03-10:/como-alterar-o-sid-do-windows.html</id><summary type="html">&lt;p class="first last"&gt;Alterar SID&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Essa semana teve um começo um pouco conturbado, choveu muito na região e
+por falta de estrutura no escoamento da água onde deveriam ser
+captadas pelas galerias, foram parar dentro da empresa, cpd e armazem
+mais especificamente. Somando um prejuízo de 6 maquinas, 2 nobreaks
+e 1 servidor.&lt;/p&gt;
+&lt;p&gt;Mas como não adianta ficar reclamando o jeito é pegar no batente e
+resolver os problemas.&lt;/p&gt;
+&lt;p&gt;Efetuamos a compra de 4 maquinas novas e para adiantar o processo
+efetuei apenas uma instalação e clonei os hd's já que as maquinas
+são todas iguais, para não ter problemas no domínio temos que alterar
+o SID (Identificador de segurança). Essa dica deve ser seguida quando
+efetuado clones de maquinas virtuais e deve ter atenção especial caso
+a maquina seja o servidor de alguma aplicação.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Um identificador de segurança (SID) é um valor exclusivo de tamanho
+variável que é usado para identificar uma entidade de segurança ou
+grupo de segurança nos sistemas operacionais Windows. SIDs conhecidos
+são um grupo de SIDs que identificam os usuários genéricos ou grupos
+genéricos. Seus valores permanecem constantes em todos os sistemas operacionais.
+
+Essas informações são úteis para a solução de problemas que envolvem
+a segurança. Também é útil para possíveis problemas de exibição
+podem ser vistos no editor da ACL. Um SID pode ser exibido no editor
+de ACL em vez de no nome do grupo ou usuário.
+&lt;/pre&gt;
+&lt;p&gt;Para efetuar o clone do HD's o procedimento é bem simple, apenas rodar o comando
+dd. Rodando o comando &lt;em&gt;fdisk -l&lt;/em&gt; retornou os dois hds conectados na maquina, sda (origem)
+e sdb (destino). Após identificar os hds basta rodar o comando dd, ficando assim:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mint mint &lt;span class="c1"&gt;# dd if=/dev/sda of=/dev/sdb&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Feito isso só esperar o comando finalizar e alterar o SID.&lt;/p&gt;
+&lt;p&gt;Para consultarmos o sid da maquina, podemos usar o PsTools disponibilizado pela própria
+microsoft, a ferramenta pode ser baixada &lt;a class="reference external" href="https://technet.microsoft.com/en-us/sysinternals/bb896649.aspx"&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Para efetuar a consulta é muito simples, basta descompactar a ferramenta e via
+prompt rodar o PsGetsid:&lt;/p&gt;
+&lt;img alt="PsGetsid" src="/images/psgetsid.jpg" /&gt;
+&lt;p&gt;Com o comando acima podemos garantir que não ficará nenhuma maquina com o mesmo SID.&lt;/p&gt;
+&lt;p&gt;Em seguida podemos chamar o SysPrep clicando em iniciar / executar.&lt;/p&gt;
+&lt;img alt="Run SysPrep" src="/images/run_sysprep.jpg" /&gt;
+&lt;p&gt;Abrirá uma tela como a baixo:&lt;/p&gt;
+&lt;img alt="SysPrep" src="/images/sysprep.jpg" /&gt;
+&lt;p&gt;Deixe marcado a opção &lt;em&gt;Generalize&lt;/em&gt; e nas opções de Shutdonw selecione &lt;em&gt;Reboot&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Após clicar em ok, o windows gerará a nova SID e reinicializará o windows, feito isso
+pode-se reodar o PsGetsid para confirmar se foi gerado uma nova SID, altere o nome da maquina
+e pronto.&lt;/p&gt;
+&lt;p&gt;Processo concluído.&lt;/p&gt;
+</content><category term="alterar"></category><category term="sid"></category><category term="windows"></category><category term="pstools"></category><category term="sysprep"></category></entry><entry><title>Habilitar execução de scripts powershell</title><link href="http://emilioeiji.com.br/habilitar-execucao-de-scripts-powershell.html" rel="alternate"></link><published>2014-06-27T10:44:00-03:00</published><updated>2014-06-27T10:44:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2014-06-27:/habilitar-execucao-de-scripts-powershell.html</id><summary type="html">&lt;p&gt;Habilitar execução de scripts powershell no windows.&lt;/p&gt;
+&lt;p&gt;Muito simples para habilitar a execução de scripts powershell no
+windows.&lt;/p&gt;
+&lt;p&gt;Execute &lt;em&gt;Get-ExecutionPolicy&lt;/em&gt; para saber se já está habilitado ou não.&lt;/p&gt;
+&lt;p&gt;Em seguinte habilite a execução com o comando &lt;em&gt;Set-ExecutionPolicy
+Unrestricted&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Feito isso o windows já está habilitado para executar scripts
+powershell, mas …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Habilitar execução de scripts powershell no windows.&lt;/p&gt;
+&lt;p&gt;Muito simples para habilitar a execução de scripts powershell no
+windows.&lt;/p&gt;
+&lt;p&gt;Execute &lt;em&gt;Get-ExecutionPolicy&lt;/em&gt; para saber se já está habilitado ou não.&lt;/p&gt;
+&lt;p&gt;Em seguinte habilite a execução com o comando &lt;em&gt;Set-ExecutionPolicy
+Unrestricted&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Feito isso o windows já está habilitado para executar scripts
+powershell, mas lembre-se de desabilitar a execução&amp;nbsp;por questões de
+segurança.&lt;/p&gt;
+</content><category term="windows"></category><category term="powershell"></category></entry><entry><title>Remover segurança reforçada do internet explorer win2k8 e win2k12</title><link href="http://emilioeiji.com.br/remover-seguranca-reforcada-internet-explorer-win2k8-e-win2k12.html" rel="alternate"></link><published>2014-06-03T13:45:00-03:00</published><updated>2014-06-03T13:45:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2014-06-03:/remover-seguranca-reforcada-internet-explorer-win2k8-e-win2k12.html</id><summary type="html">&lt;p&gt;Remover segurança reforçada do internet explorer win2k8 e win2k12.&lt;/p&gt;
+&lt;p&gt;Boas galera, essa parada de ficar pedindo sempre pra adicionar os sites
+como sites seguros ou ficar bloqueando quando tentamos baixar alguma
+coisa é muito chato, sei que a intenção é melhorar a segurança, mas para
+usuários administradores o nível deveria …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Remover segurança reforçada do internet explorer win2k8 e win2k12.&lt;/p&gt;
+&lt;p&gt;Boas galera, essa parada de ficar pedindo sempre pra adicionar os sites
+como sites seguros ou ficar bloqueando quando tentamos baixar alguma
+coisa é muito chato, sei que a intenção é melhorar a segurança, mas para
+usuários administradores o nível deveria ser desabilitado.&lt;/p&gt;
+&lt;p&gt;No print abaixo mostra como desabilitar no windows 2k8&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/ie01.jpg"&gt;&lt;img alt="ie01" src="http://emilioeiji.com.br/images/ie01-300x215.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/ie02.jpg"&gt;&lt;img alt="ie02" src="http://emilioeiji.com.br/images/ie02-300x214.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;No print abaixo mostra como remover do win2k12&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/ie03.png"&gt;&lt;img alt="ie03" src="http://emilioeiji.com.br/images/ie03-300x195.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+</content><category term="windows 2008"></category><category term="windows 2012"></category><category term="windows server"></category><category term="internet explorer"></category></entry><entry><title>Remover vírus do Windows que cria atalho.</title><link href="http://emilioeiji.com.br/remover-virus-windows-cria-atalho.html" rel="alternate"></link><published>2013-10-18T17:38:00-03:00</published><updated>2013-10-18T17:38:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2013-10-18:/remover-virus-windows-cria-atalho.html</id><summary type="html">&lt;p&gt;Boas pessoal...&lt;/p&gt;
+&lt;p&gt;Neste post vou explicar de uma forma bem simples como remover vírus do
+Windows que cria atalho, tanto na maquina como em pendrive.&lt;/p&gt;
+&lt;p&gt;Primeiramente você pode baixar qualquer linux live cd, vou deixar aqui
+como exemplo o &lt;a class="reference external" href="http://www.linuxmint.com/download.php"&gt;Linux Mint.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;De boot pelo cd/pendrive e logo que carregar …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Boas pessoal...&lt;/p&gt;
+&lt;p&gt;Neste post vou explicar de uma forma bem simples como remover vírus do
+Windows que cria atalho, tanto na maquina como em pendrive.&lt;/p&gt;
+&lt;p&gt;Primeiramente você pode baixar qualquer linux live cd, vou deixar aqui
+como exemplo o &lt;a class="reference external" href="http://www.linuxmint.com/download.php"&gt;Linux Mint.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;De boot pelo cd/pendrive e logo que carregar o linux aparecerá na área
+de trabalho as unidades do windows.&lt;/p&gt;
+&lt;p&gt;Quando abrir a unidade o mesmo irá montar a partição automaticamente,
+localize o arquivo wscrip.exe que fica localizado
+em&amp;nbsp;C:/Windows/System32/wscript.exe e pode apagar sem medo. Já fiz em
+várias maquinas e tudo certo.&lt;/p&gt;
+&lt;p&gt;Caso você tenha algum pendrive infectado, conecte em algum pc com linux
+ou de boot com algum live cd e conecte o pendrive e em seguida apague o
+arquivo w.vbs que irá resolver o problema do pendrive.&lt;/p&gt;
+&lt;p&gt;Por hoje é isso pessoal.&lt;/p&gt;
+</content><category term="windows"></category><category term="virus"></category><category term="remover"></category></entry><entry><title>10 sintomas de computadores infectados</title><link href="http://emilioeiji.com.br/10-sintomas-computadores-infectados.html" rel="alternate"></link><published>2013-09-10T10:04:00-03:00</published><updated>2013-09-10T10:04:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2013-09-10:/10-sintomas-computadores-infectados.html</id><summary type="html">&lt;p&gt;A empresa de segurança digital Kaspersky Lab elaborou uma lista com os
+dez sintomas mais comuns que indicam que algo malicioso está ocorrendo
+no computador:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;Bloqueios inesperados:&lt;/strong&gt;&amp;nbsp;se alguma vez isto lhe aconteceu,
+provavelmente já sabe que a tão temida tela azul é sinônimo de que
+algo vai mal no …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;A empresa de segurança digital Kaspersky Lab elaborou uma lista com os
+dez sintomas mais comuns que indicam que algo malicioso está ocorrendo
+no computador:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;Bloqueios inesperados:&lt;/strong&gt;&amp;nbsp;se alguma vez isto lhe aconteceu,
+provavelmente já sabe que a tão temida tela azul é sinônimo de que
+algo vai mal no sistema. Por esse motivo, não perca tempo e analise a
+plataforma em busca de possíveis infecções.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sistema lento:&lt;/strong&gt;&amp;nbsp;se o sistema não está executando aplicações que
+consomem recursos, mas mesmo assim está muito lento, então é possível
+que esteja infectado com um vírus.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Atividade elevada do disco rígido:&lt;/strong&gt;&amp;nbsp;se a atividade do seu disco é
+mais alta do que o normal quando o computador está em descanso, é
+sinal de uma possível infecção.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Janelas estranhas:&lt;/strong&gt;&amp;nbsp;se durante o processo de boot aparecem janelas
+estranhas que alertam para problemas no acesso a diferentes discos no
+sistema, pode ser que o computador esteja infectado por malware.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mensagens estranhas:&lt;/strong&gt;&amp;nbsp;quando o sistema está em execução e aparecem
+janelas avisando que arquivos ou programas não podem ser abertos,
+fique atento, esse é outro sinal para um possível ataque de malware.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Atividade indevida dos programas:&lt;/strong&gt;&amp;nbsp;se os programas não respondem,
+abrem automaticamente ou mostram uma notificação de que uma aplicação
+está tentando acessar a Internet sem o seu consentimento; então, é
+possível que um malware esteja atacando a sua máquina.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Atividade aleatória de rede:&lt;/strong&gt;&amp;nbsp;se o roteador piscar constantemente,
+indicando uma atividade elevada da rede quando não está executando
+algum programa ou não está acessando altos volumes de dados na
+Internet, parta do princípio que existe algo errado com o
+equipamento.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mensagens de e-mail instáveis:&lt;/strong&gt;&amp;nbsp;os seus e-mails não saem da pasta
+ao enviar? Os seus contatos recebem mensagens estranhas que você não
+se recorda de ter enviado? São sinais de que seu sistema está
+comprometido ou alguém roubou sua senha de acesso ao e-mail.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Endereço IP na lista negra:&lt;/strong&gt;&amp;nbsp;se receber uma notificação dizendo
+que seu endereço IP está numa lista negra, existem fortes
+possibilidades de que seu sistema tenha caído nas mãos de criminosos
+e que passou a fazer parte de uma botnet de spam.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Desativação inesperada do antivírus:&lt;/strong&gt;&amp;nbsp;existem muitos programas
+maliciosos desenhados especificamente para desativar o antivírus, se
+encarregue de eliminá-los. Se o seu software de segurança for
+desativado por auto reconstrução, pode ser um pequeno sintoma de que
+algo de errado está acontecendo.&lt;/li&gt;
+&lt;/ul&gt;
+</content><category term="windows"></category></entry><entry><title>Citrix - The remote session was disconnected because there are no terminal server...</title><link href="http://emilioeiji.com.br/citrix-the-remote-session-was-disconnected-because-there-are-no-terminal-server.html" rel="alternate"></link><published>2013-01-28T13:54:00-02:00</published><updated>2013-01-28T13:54:00-02:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2013-01-28:/citrix-the-remote-session-was-disconnected-because-there-are-no-terminal-server.html</id><summary type="html">&lt;p&gt;Pra quem estiver com o mesmo problema que eu, ao conectar a um servidor
+utilizando o citrix retornar a mensagem &amp;quot;The Remote session was
+disconnected because there are no terminal server license servers
+available to provide a license. Please contact the server
+administrator.&amp;quot;, segue a correção.&lt;/p&gt;
+&lt;p&gt;Efetuar um backup do …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pra quem estiver com o mesmo problema que eu, ao conectar a um servidor
+utilizando o citrix retornar a mensagem &amp;quot;The Remote session was
+disconnected because there are no terminal server license servers
+available to provide a license. Please contact the server
+administrator.&amp;quot;, segue a correção.&lt;/p&gt;
+&lt;p&gt;Efetuar um backup do registro e em seguinda apagar a seguinte chave:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[HKEY\_LOCAL\_MACHINESOFTWAREMicrosoftMSLicensingStore]
+&lt;/pre&gt;
+&lt;p&gt;Basta reiniciar a maquina e está conectando normalmente.&lt;/p&gt;
+&lt;p&gt;Abraços&lt;/p&gt;
+</content><category term="windows"></category><category term="citrix"></category></entry><entry><title>Windows 7, dois monitores, dois papeis de parede.</title><link href="http://emilioeiji.com.br/windows-7-dois-monitores-dois-papeis-de-parede.html" rel="alternate"></link><published>2012-04-10T10:06:00-03:00</published><updated>2012-04-10T10:06:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2012-04-10:/windows-7-dois-monitores-dois-papeis-de-parede.html</id><summary type="html">&lt;p&gt;Pesquisando hoje como definir um papel de parede para cada monitor,
+encontrei um software que pode ser baixado
+&lt;a class="reference external" href="http://www.displayfusion.com/Download/"&gt;aqui.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Após baixar o DisplayFusione instalá-lo, basta clicar com o botão
+direito na area de trabalho e selecionar &amp;quot;Papel de parede do
+DisplayFusion&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Fácil&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Pesquisando hoje como definir um papel de parede para cada monitor,
+encontrei um software que pode ser baixado
+&lt;a class="reference external" href="http://www.displayfusion.com/Download/"&gt;aqui.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Após baixar o DisplayFusione instalá-lo, basta clicar com o botão
+direito na area de trabalho e selecionar &amp;quot;Papel de parede do
+DisplayFusion&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Fácil&lt;/p&gt;
+</content><category term="windows 7"></category><category term="windows"></category><category term="dual monitor"></category></entry><entry><title>Pen Boot do Windows 7</title><link href="http://emilioeiji.com.br/pen-boot-do-windows-7.html" rel="alternate"></link><published>2012-02-21T17:19:00-02:00</published><updated>2012-02-21T17:19:00-02:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2012-02-21:/pen-boot-do-windows-7.html</id><summary type="html">&lt;p&gt;Se você estiver executando uma versão do windows 7, basta ir em iniciar,
+executar e ditiar &lt;em&gt;diskpart&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Com o pen drive conectado na nova janel que abriu execute o comando
+&lt;em&gt;list disk&lt;/em&gt; para saber qual o numero de disco seu pendrive pegou.&lt;/p&gt;
+&lt;p&gt;Cuidado para não informar o numero errado e …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Se você estiver executando uma versão do windows 7, basta ir em iniciar,
+executar e ditiar &lt;em&gt;diskpart&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Com o pen drive conectado na nova janel que abriu execute o comando
+&lt;em&gt;list disk&lt;/em&gt; para saber qual o numero de disco seu pendrive pegou.&lt;/p&gt;
+&lt;p&gt;Cuidado para não informar o numero errado e acabar perdendo as
+informações do seu HD.&lt;/p&gt;
+&lt;p&gt;Após identificar seu disco trocar a letra D pelo número e executar os
+comandos abaixo.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+select disk D
+clean
+create partition primary
+select partition 1
+active
+format fs=NTFS
+assign
+exit
+&lt;/pre&gt;
+&lt;p&gt;Após deixar o pendrive no jeito é só copiar os arquivos de alguma .ISO
+para o mesmo e pronto, seu pen boot com windos 7 está pronto.&lt;/p&gt;
+</content><category term="windows 7"></category><category term="penboot"></category><category term="pendrive"></category><category term="boot"></category></entry><entry><title>Problemas com cdrom Windows 7</title><link href="http://emilioeiji.com.br/problemas-com-cdrom.html" rel="alternate"></link><published>2012-01-12T09:56:00-02:00</published><updated>2012-01-12T09:56:00-02:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2012-01-12:/problemas-com-cdrom.html</id><summary type="html">&lt;p&gt;Daew galera.&lt;/p&gt;
+&lt;p&gt;Quando tiverem problemas com Drive de CDrom no windows 7, tentem
+executar esse fix que provavelmente resolva.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://support.microsoft.com/mats/cd_dvd_drive_problems"&gt;http://support.microsoft.com/mats/cd_dvd_drive_problems&lt;/a&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Daew galera.&lt;/p&gt;
+&lt;p&gt;Quando tiverem problemas com Drive de CDrom no windows 7, tentem
+executar esse fix que provavelmente resolva.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://support.microsoft.com/mats/cd_dvd_drive_problems"&gt;http://support.microsoft.com/mats/cd_dvd_drive_problems&lt;/a&gt;&lt;/p&gt;
+</content><category term="windows 7"></category></entry><entry><title>PenDrive Bootável com Windows 7</title><link href="http://emilioeiji.com.br/pendrive-bootavel-com-windows-7.html" rel="alternate"></link><published>2011-04-21T11:46:00-03:00</published><updated>2011-04-21T11:46:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2011-04-21:/pendrive-bootavel-com-windows-7.html</id><summary type="html">&lt;p&gt;Procedimentos para preparar o pendriveAntes de começar, espete seu
+pendrive na porta USB&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;Abra o prompt de comando (Iniciar &amp;gt;&amp;gt; All Programs &amp;gt;&amp;gt; Acessories &amp;gt;&amp;gt;
+Command Prompt).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Digite os comandos abaixo, sempre pressionando Enter após cada um:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+Diskpart (Uma nova janela será aberta, espere até o cursor aparecer)
+List Disk
+Select Disk 1 …&lt;/pre&gt;&lt;/blockquote&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;Procedimentos para preparar o pendriveAntes de começar, espete seu
+pendrive na porta USB&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;Abra o prompt de comando (Iniciar &amp;gt;&amp;gt; All Programs &amp;gt;&amp;gt; Acessories &amp;gt;&amp;gt;
+Command Prompt).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Digite os comandos abaixo, sempre pressionando Enter após cada um:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+Diskpart (Uma nova janela será aberta, espere até o cursor aparecer)
+List Disk
+Select Disk 1 (substitua o 1 pelo número referente ao seu pendrive)
+Clean
+Create partition primary
+Active
+Format fs=fat32 quick
+Assign
+Exit
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Copiando os arquivos&lt;/p&gt;
+&lt;p&gt;Agora, coloque o DVD do Windows 7 no drive e copie todo o conteúdo para
+o pendrive.&lt;/p&gt;
+&lt;p&gt;Agora basta colocar seu pendrive na máquina desejada, iniciar o sistema
+por ele e fazer a instalação.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://emilioeiji.com.br/images/18893-pasta_i.gif" /&gt;Fonte:&lt;a class="reference external" href="http://www.babooforum.com.br/forum/Como-instalar-o-Windows-7-a-partir-de-um-pendrive-t675141.html"&gt;Fórum do
+BABOO&lt;/a&gt;&lt;/p&gt;
+</content><category term="penboot"></category><category term="windows"></category><category term="windows 7"></category><category term="pendrive"></category></entry><entry><title>Analisar Processos Do Windows</title><link href="http://emilioeiji.com.br/analisar-processos-do-windows.html" rel="alternate"></link><published>2010-03-03T13:46:00-03:00</published><updated>2010-03-03T13:46:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2010-03-03:/analisar-processos-do-windows.html</id><summary type="html">&lt;p&gt;Ao abrir o gestor de tarefas (CTRL+ALT+DEL ou CTRL+SHIFT+ESC) para
+verificar os processos que correm no seu computador, certamente já se
+deparou com processos &amp;quot;estranhos&amp;quot; que você desconhece. Ao pesquisar na
+Internet sobre esses mesmos processos rapidamente encontra vários sites
+afirmando que se trata de um …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ao abrir o gestor de tarefas (CTRL+ALT+DEL ou CTRL+SHIFT+ESC) para
+verificar os processos que correm no seu computador, certamente já se
+deparou com processos &amp;quot;estranhos&amp;quot; que você desconhece. Ao pesquisar na
+Internet sobre esses mesmos processos rapidamente encontra vários sites
+afirmando que se trata de um vírus, worm, spyware, etc.&lt;/p&gt;
+&lt;p&gt;analisar processos computador&lt;/p&gt;
+&lt;p&gt;Verdade seja dita, qualquer processo do seu sistema operativo pode ser
+contaminado, relembrámos o Lsass.exe, vítima do sasser.&lt;/p&gt;
+&lt;p&gt;No entanto, não é preciso entrar em &amp;quot;pânico&amp;quot;, nem é preciso instalar um
+monte de programas milagrosos que muitos sites lhe oferecem.&lt;/p&gt;
+&lt;p&gt;A&lt;/p&gt;
+&lt;p&gt;asdsdsd.exe -&amp;gt; processo relacionado a um trojan. Deve remover o
+asdsdsd.exe com o MalwareBytes Anti-Malware (link no fim da página).&lt;/p&gt;
+&lt;p&gt;B&lt;/p&gt;
+&lt;p&gt;bndmss.exe -&amp;gt; vírus perigoso, deve remover o bndmss.exe com o
+MalwareBytes Anti-Malware (link fim da página).&lt;/p&gt;
+&lt;p&gt;C&lt;/p&gt;
+&lt;p&gt;ckvo.exe -&amp;gt; processo malicioso. Deve remover o ckvo.exe com o
+MalwareBytes Anti-Malware (link fim da página).&lt;/p&gt;
+&lt;p&gt;cmpe.exe -&amp;gt; processo relacionado aos modems da Lightcomm, se usa um, não
+tem com que se preocupar.&lt;/p&gt;
+&lt;p&gt;ctfmon.exe-&amp;gt; processo essencial do Microsoft Office. Não tem o Office?
+Quer remover este processo e ganhar espaço na sua memoria? Veja aqui;&lt;/p&gt;
+&lt;p&gt;ctfn.exe -&amp;gt; processo de um Malware. Faça um scan com um antivírus
+actualizado.&lt;/p&gt;
+&lt;p&gt;csrcs.exe -&amp;gt; Não confunda este processo com o csrss.exe do Windows, o
+csrcs.exe é um malware, actualize o seu antivírus e faça um scan
+completo ao PC, caso o vírus não seja removido, use o Combo Fix (link
+fim da página).&lt;/p&gt;
+&lt;p&gt;csrss.exe -&amp;gt; Client Server Runtime Process, processo essencial do seu
+Windows, desactiva-lo pode danificar o sistema operativo. Não deve
+remover o csrss.exe.&lt;/p&gt;
+&lt;p&gt;ctsvccda.exe -&amp;gt; Creative service for CD, processo não essencial, poderá
+desactiva-lo através do msconfig, aba serviços e seleccione &amp;quot;ocultar
+serviços da Microsoft&amp;quot;. Em seguida remova a selecção do processo em
+causa.&lt;/p&gt;
+&lt;p&gt;D&lt;/p&gt;
+&lt;p&gt;drvins32.exe-&amp;gt; driver instalador da Kaspersky;&lt;/p&gt;
+&lt;p&gt;drwtsn32.exe -&amp;gt; Processo do serviço Dr. Watson da Microsoft, um serviço
+de &amp;quot;debug&amp;quot; do sistema operativo, o processo não deve ser desactivado.&lt;/p&gt;
+&lt;p&gt;dwm.exe -&amp;gt; processo do sistema operativo, responsável pelos efeitos 3D e
+pelas transparências. O processo não deve ser desactivado.&lt;/p&gt;
+&lt;p&gt;dotnetfx35setup.exe -&amp;gt; processo de instalação do .Net Framework 3.5,
+processo seguro&lt;/p&gt;
+&lt;p&gt;E&lt;/p&gt;
+&lt;p&gt;egui.exe -&amp;gt; processo do antivírus NOD 32, seguro.&lt;/p&gt;
+&lt;p&gt;I&lt;/p&gt;
+&lt;p&gt;infocard.exe -&amp;gt; Windows CardSpace, para desactivar este processo vá ao
+Menu Iniciar -&amp;gt; executar (Windows XP), barra de pesquisa (Windows vista/
+Windows 7) e digite services.msc -&amp;gt; na janela seguinte procure o Windows
+cardspace e seleccione Propriedades -&amp;gt; por fim seleccione &amp;quot;Tipo de
+arranque&amp;quot; desactivado;&lt;/p&gt;
+&lt;p&gt;iki.exe ou iky.bat -&amp;gt; processo maligno, de um trojan, use o MalwareBytes
+Anti-Malware para o remover (link fim da página).&lt;/p&gt;
+&lt;p&gt;ise32.exe -&amp;gt; um vírus que se espalha pelas pen's, deve remover o
+ise32.exe rapidamente, para conter o alastramento do vírus. Para remover
+o vírus use o ComboFix (link fim da página).&lt;/p&gt;
+&lt;p&gt;installserver.exe -&amp;gt; Processo de um aplicativo &amp;quot;hacker&amp;quot; para remover a
+protecção de segurança em alguns telemóveis (celulares).&lt;/p&gt;
+&lt;p&gt;K&lt;/p&gt;
+&lt;p&gt;klwtblfs.exe -&amp;gt; processo do antivírus Kaspersky, relativo ao componente
+do browser. Para sua protecção não desactive o processo.&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;M&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;mom.exe -&amp;gt; processo ligado às placas gráficas ATI, se encontrar algum
+problema com este processo, experimente instalar os drivers
+actualizados.&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;N&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;nircmd.exe -&amp;gt; processo criado pelo aplicativo ComboFix.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;S&lt;/p&gt;
+&lt;p&gt;sp36684.exe -&amp;gt; processo relacionado ao driver da placa Wireless nos
+Notebook HP.&lt;/p&gt;
+&lt;p&gt;starwindserviceae.exe -&amp;gt; processo do Alcohol 120% DVD/CD, seguro.&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;P&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;pnkbstra.exe, pnkbstrb.exe -&amp;gt; processos essenciais para os jogos
+online. Desactivar estes processos impossibilita que você inicie as
+sessões online de jogos (NFS Pro Street por exemplo).&lt;/p&gt;
+&lt;p&gt;R&lt;/p&gt;
+&lt;p&gt;Recon.exe -&amp;gt; Processo reportado como Keyloggers. Alguns processos
+&amp;quot;Keyloggers&amp;quot; utilizam o mesmo nome de processos conhecidos, uma forma de
+confundir o utilizador.&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;U&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;u88.exe, u91.exe, u96.exe -&amp;gt; processo relacionado à aplicação
+UltraSurf.&lt;/p&gt;
+&lt;p&gt;ubb.exe -&amp;gt; processo maligno, use o Combo Fix para o remover (link no
+final da página).&lt;/p&gt;
+&lt;p&gt;W&lt;/p&gt;
+&lt;p&gt;Wlcomm.exe -&amp;gt; processo essencial do Messenger, ele carrega as
+informações dos contactos;&lt;/p&gt;
+&lt;p&gt;wltuser.exe -&amp;gt; Windows Live Toolbar&lt;/p&gt;
+</content><category term="windows"></category><category term="processos"></category></entry></feed>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Emilio Eiji - Software</title><link>http://emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Thu, 23 May 2013 09:12:00 -0300</lastBuildDate><item><title>Atualizar DokuWiki</title><link>http://emilioeiji.com.br/atualizar-dokuwiki.html</link><description>&lt;p&gt;Daew galera...&lt;/p&gt;
+&lt;p&gt;Hoje tive a necessidade de efetuar uma atualização do DokuWiki e
+vasculhando na net achei uma dica muito rápida e prática do Guto
+Carvalho&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://gutocarvalho.net/octopress/2013/05/20/dokuwiki-atualizando-versao/"&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Então é isso pessoal.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Thu, 23 May 2013 09:12:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2013-05-23:/atualizar-dokuwiki.html</guid><category>atualizar</category><category>atualizar dokuwiki</category><category>dokuwiki</category></item><item><title>OpenFire - Excluir mensagens arquivadas no banco de dados (MySQL)</title><link>http://emilioeiji.com.br/openfire-excluir-mensagens-arquivadas-no-banco-de-dados-mysql.html</link><description>&lt;p&gt;Daew galera!!!&lt;/p&gt;
+&lt;p&gt;Hoje tive problemas com o arquivamento de mensagens no openfire 3.8.1,
+não sei oque aconteceu mas parou de arquivar as mensagens, tentei
+reinstalar o plugin de monitoramento e nada então resolvi limpar as
+tabelas relacionadas ao arquivamento para ver se resolvia e
+aparentemente resolveu =p&lt;/p&gt;
+&lt;p&gt;Vou …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Mon, 06 May 2013 16:33:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2013-05-06:/openfire-excluir-mensagens-arquivadas-no-banco-de-dados-mysql.html</guid><category>openfire</category><category>mysql</category><category>excluir</category><category>mensagens</category></item><item><title>Alterar senha do Cacti</title><link>http://emilioeiji.com.br/alterar-senha-do-cacti.html</link><description>&lt;p&gt;Retirado do &lt;a class="reference external" href="http://www.vivaolinux.com.br/dica/Alterar-a-senha-do-Cacti-via-console"&gt;Viva o
+Linux&lt;/a&gt;
+por Walber Santos&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ mysql -p cacti
+&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;update&lt;/span&gt; &lt;span class="n"&gt;user_auth&lt;/span&gt; &lt;span class="kt"&gt;set&lt;/span&gt; &lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;MD5&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;novasenha&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;where&lt;/span&gt;
+&lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;admin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;De brinde: caso deseje forçar um usuário a trocar a senha no próximo
+login :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;update&lt;/span&gt; &lt;span class="n"&gt;user_auth&lt;/span&gt; &lt;span class="kt"&gt;set&lt;/span&gt; &lt;span class="n"&gt;must_change_password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;on&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;where&lt;/span&gt;
+&lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;admin&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Abraços&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Thu, 12 May 2011 14:06:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2011-05-12:/alterar-senha-do-cacti.html</guid><category>cacti</category><category>alterar senha</category><category>mysql</category><category>reset</category></item></channel></rss>

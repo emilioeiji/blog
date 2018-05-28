@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Over The Wire - War Games Level 11 - 15 | Emilio Eiji</title>
+  <meta charset="utf-8">
+<meta name="description" content="Me empolguei nesse trem heim... A ultima senha que conseguimos foi IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR para conectarmos ao level 11, então bora continuar. Level 11 Nesse nível a senha está cifrada pulando 13 carteres "Cifra de Cesar" contando pelo alfabeto padrão, então a letra A repectivamente se torna a letra N e assim …"><meta name="author" content="Emilio">  <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+  <meta http-equiv="Cache-Control" content="max-age=604800, must-revalidate" />
+  <link href="./theme/css/screen.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link href="./" type="application/atom+xml" rel="alternate" title="Emilio Eiji ATOM Feed" />
+  <link href="./feed/index.html" type="application/rss+xml" rel="alternate" title="Emilio Eiji RSS Feed" />
+</head>
+<body>
+<div id="outer-wrapper">
+<div id="header-wrapper">
+  <!-- <div class="logo"><a href=".">Emilio Eiji</a></div> -->
+  <div class="logo"><a href=".">emilioeiji.com.br</a></div>
+  <div class="small">The power of root</div>
+    <div class="nav">
+  <li><a href="./abop/abop-ptbr.html">Abop</a></li>
+  <li><a href="./archives/">Arquivos</a></li>
+  <li><a href="./focalinux/index.html">FocaLinux</a></li>
+  <li><a href="./about/">Sobre</a></li>
+  <li><a href="./wiki/index.php">WiKi</a></li>
+    </div>
+    <div class="nav social">
+<ul>
+    <li><a href="https://facebook.com/emilioeiji">Facebook</a></li>
+    <li><a href="https://github.com/emilioeiji">GitHub</a></li>
+    <li><a href="https://plus.google.com/+emilioeiji">Google+</a></li>
+    <li><a href="https://br.linkedin.com/pub/emilio-eiji/7a/24b/29/pt">linkedin</a></li>
+    <li><a href="https://twitter.com/emilioeiji">twitter</a></li>
+    <li><a href="https://youtube.com/c/emilioeiji">Youtube</a></li>
+</ul>    </div>
+</div>    <div id="main">
+<h2><a href="./over-the-wire-war-game-11-15.html">Over The Wire - War Games Level 11 - 15</a></h2>
+<h5><i class="icon-feather"></i> Sáb 18 abril 2015
+<i class="icon-bookmarks"></i>
+<span><a href="./tag/wargame.html">wargame</a> / </span>
+<span><a href="./tag/linux.html">linux</a> / </span>
+<span><a href="./tag/hacker.html">hacker</a> / </span>
+<span><a href="./tag/hacking.html">hacking</a> / </span>
+<span><a href="./tag/seguranca.html">seguranca</a> / </span>
+</h5>
+
+<p>Me empolguei nesse trem heim...</p>
+<p>A ultima senha que conseguimos foi <strong>IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR</strong> para conectarmos
+ao level 11, então bora continuar.</p>
+<div class="section" id="level-11">
+<h2>Level 11</h2>
+<p>Nesse nível a senha está cifrada pulando 13 carteres &quot;<a class="reference external" href="http://pt.wikipedia.org/wiki/Cifra_de_C%C3%A9sar">Cifra de Cesar</a>&quot;
+contando pelo alfabeto padrão, então a letra A repectivamente se torna a letra N e assim por
+diante.</p>
+<p>Vou resolver esse nível de duas maneiras, maneira mais simples com domandos do terminal e o
+modo pythonias.</p>
+<ol class="arabic">
+<li><p class="first">No primeiro modo vamos redirecionar o comando <strong>cat</strong> para o comando <strong>tr</strong> que está
+como sugestão de comando para passar de level, o comando tr segundo o manual faz o seguinte:</p>
+<pre class="literal-block">
+Translate, squeeze, and/or delete characters from standard input, writing
+to standard output.
+</pre>
+<p>Ou seja, traduz, encurta ou deleta caracteres.</p>
+<p>A sintax ficaria assim:</p>
+<div class="highlight"><pre><span></span>tr <span class="o">[</span>OPTION<span class="o">]</span>... SET1 <span class="o">[</span>SET2<span class="o">]</span>
+</pre></div>
+<p>Onde SET1 seria o padrão que está cifrado 'A-Za-z' e o SET2 seria o padrão usado para
+decifrar a senha pulando os 13 caracteres 'N-ZA-Mn-za-m', o comando completo ficaria
+assim:</p>
+<div class="highlight"><pre><span></span>bandit11@melinda:~$ ll
+total 24
+drwxr-xr-x   <span class="m">2</span> root     root     <span class="m">4096</span> Nov <span class="m">14</span> 10:32 ./
+drwxr-xr-x <span class="m">167</span> root     root     <span class="m">4096</span> Mar <span class="m">21</span> 06:46 ../
+-rw-r--r--   <span class="m">1</span> root     root      <span class="m">220</span> Apr  <span class="m">9</span>  <span class="m">2014</span> .bash_logout
+-rw-r--r--   <span class="m">1</span> root     root     <span class="m">3637</span> Apr  <span class="m">9</span>  <span class="m">2014</span> .bashrc
+-rw-r--r--   <span class="m">1</span> root     root      <span class="m">675</span> Apr  <span class="m">9</span>  <span class="m">2014</span> .profile
+-rw-r-----   <span class="m">1</span> bandit12 bandit11   <span class="m">49</span> Nov <span class="m">14</span> 10:32 data.txt
+bandit11@melinda:~$ cat data.txt
+Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
+bandit11@melinda:~$ cat data.txt <span class="p">|</span> tr <span class="s1">&#39;A-Za-z&#39;</span> <span class="s1">&#39;N-ZA-Mn-za-m&#39;</span>
+The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+</pre></div>
+</li>
+<li><p class="first">E também conseguimos fazer essa tradução usando o python:</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+<span class="c1"># -*- encoding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">string</span>
+
+<span class="n">padrao</span> <span class="o">=</span> <span class="s1">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&#39;</span>
+<span class="n">cesar</span> <span class="o">=</span> <span class="s1">&#39;NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm&#39;</span>
+<span class="n">cifra</span> <span class="o">=</span> <span class="s1">&#39;Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh&#39;</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">cifra</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">cesar</span><span class="p">)))</span>
+</pre></div>
+<div class="highlight"><pre><span></span>emilio Python $ python ccesar.py
+The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+</pre></div>
+</li>
+</ol>
+</div>
+<div class="section" id="level-12">
+<h2>Level 12</h2>
+<p>Neste nível a coisa está ficando um pouco mais complicada, agora teremos que tratar
+um arquivo em hexa para conseguir descobrir a senha para o próximo nível.</p>
+<p>Primeiramente vamos seguir as orientações e criar um diretório no /tmp e copiar
+o arquivo <strong>data.txt</strong> para dentro desse diretório.</p>
+<div class="highlight"><pre><span></span>bandit12@melinda:~$ mkdir /tmp/emilioeiji
+bandit12@melinda:~$ cp data.txt /tmp/emiloeiji
+bandit12@melinda:~$ <span class="nb">cd</span> /tmp/emilioeiji
+</pre></div>
+<p>Como fiquei perdido resolvi continuar seguindo as sugestões e comecei a ver a man
+page dos comandos sugeridos '<strong>grep, sort, uniq, strings, base64, tr, tar, gzip,
+bzip2, xxd, mkdir, cp, mv</strong>' e encontrei uma luz no comando xxd.</p>
+<pre class="literal-block">
+NAME
+       xxd - make a hexdump or do the reverse.
+
+SYNOPSIS
+       xxd -h[elp]
+       xxd [options] [infile [outfile]]
+       xxd -r[evert] [options] [infile [outfile]]
+</pre>
+<p>Então para tratar o arquivo ficaria assim, gerando um segundo arquivo.</p>
+<div class="highlight"><pre><span></span>xxd -r data.txt arquivo2
+</pre></div>
+<p>Agora temos o arquivo2 porém, rodando um <strong>cat arquivo2</strong> retornou um monte de caracteres
+estranhos portanto podemos deduzir que não se trata de um arquivo texto, pesquisando um pouco
+como podemos descobrir que tipo de arquivo foi gerado encontrei o comando file:</p>
+<pre class="literal-block">
+NAME
+     file — determine file type
+
+SYNOPSIS
+     file [-bchiklLNnprsvz0] [--apple] [--mime-encoding] [--mime-type] [-e testname] [-F separator] [-f namefile] [-m   magicfiles] [-R maxrecursion]
+          file ...
+     file -C [-m magicfiles]
+     file [--help]
+</pre>
+<p>vamos rodar o comando então para descobri que tipo de arquivo é esse.</p>
+<div class="highlight"><pre><span></span>bandit12@melinda:/tmp/emilioeiji$ file arquivo2
+arquivo2: gzip compressed data, was <span class="s2">&quot;data2.bin&quot;</span>, from Unix, last modified: Fri Nov <span class="m">14</span> 10:32:20 2014, max compression
+</pre></div>
+<p>Descobrimos que se trata de um arquivo gzip, tentei descompactar o arquivo2 direto com o comando
+<strong>gzip -d arquivo2</strong> porem tive o retorno que o sulfixo do arquivo era desconhecido, mudei o nome do arquivo
+para .gz e o comando foi executado gerando o arquivo2 novamente.</p>
+<div class="highlight"><pre><span></span>bandit12@melinda:/tmp/emilioeiji$ gzip -d arquivo2
+gzip: arquivo2: unknown suffix -- ignored
+bandit12@melinda:/tmp/emilioeiji$ ls
+arquivo2  data.txt
+bandit12@melinda:/tmp/emilioeiji$ mv arquivo2 arquivo2.gz
+bandit12@melinda:/tmp/emilioeiji$ gzip -d arquivo2.gz
+</pre></div>
+<p>Rodando um <strong>cat arquivo2</strong> retornou novamente os caracteres especiais, para minha surpresa quando rodei
+o <strong>file arquivo2</strong> era outro arquivo compactdo mas agora como gzip2:</p>
+<div class="highlight"><pre><span></span>bandit12@melinda:/tmp/emilioeiji$ file arquivo2
+arquivo2: bzip2 compressed data, block <span class="nv">size</span> <span class="o">=</span> 900k
+</pre></div>
+<p>Vamos descompactar o arquivo bzip2:</p>
+<div class="highlight"><pre><span></span>bandit12@melinda:/tmp/emilioeiji$ bzip2 -d arquivo2
+bzip2: Can<span class="err">&#39;</span>t guess original name <span class="k">for</span> arquivo2 -- using arquivo2.out
+bandit12@melinda:/tmp/emilioeiji$ ls
+arquivo2.out  data.txt
+bandit12@melinda:/tmp/emilioeiji$ file arquivo2.out
+arquivo2.out: gzip compressed data, was <span class="s2">&quot;data4.bin&quot;</span>, from Unix, last modified: Fri Nov <span class="m">14</span> 10:32:20 2014, max compression
+</pre></div>
+<p>Com o comando de descompactaçao foi gerado o <strong>arquivo2.out</strong> e com o comando file obtive novamente que se
+tratava de outro arquivo compactado no formato gzip, vamos acrescentar a extensão .gz e descompactar
+novamente:</p>
+<div class="highlight"><pre><span></span>bandit12@melinda:/tmp/emilioeiji$ mv arquivo2.out arquivo2.gz
+bandit12@melinda:/tmp/emilioeiji$ gzip -d arquivo2.gz
+bandit12@melinda:/tmp/emilioeiji$ ls
+arquivo2  data.txt
+bandit12@melinda:/tmp/emilioeiji$ file arquivo2
+arquivo2: POSIX tar archive <span class="o">(</span>GNU<span class="o">)</span>
+</pre></div>
+<p>Agora temos outro arquivo compactado mas no formato tar, bora descompactá-lo:</p>
+<div class="highlight"><pre><span></span>bandit12@melinda:/tmp/emilioeiji$ tar xvf arquivo2
+data5.bin
+bandit12@melinda:/tmp/emilioeiji$ file data5.bin
+data5.bin: POSIX tar archive <span class="o">(</span>GNU<span class="o">)</span>
+bandit12@melinda:/tmp/emilioeiji$ ls
+arquivo2  data.txt  data5.bin
+bandit12@melinda:/tmp/emilioeiji$ tar xvf data5.bin
+data6.bin
+bandit12@melinda:/tmp/emilioeiji$ ls
+arquivo2  data.txt  data5.bin  data6.bin
+bandit12@melinda:/tmp/emilioeiji$ file data6.bin
+data6.bin: bzip2 compressed data, block <span class="nv">size</span> <span class="o">=</span> 900k
+</pre></div>
+<p>Descompactando o <strong>arquivo2</strong> em formato tar, foi gerado outro arquivo compactado em tar
+novamente, efetuei a descompactação outra vez e foi gerado novamente um arquivo bzip2, vamos
+descompactar de novo:</p>
+<div class="highlight"><pre><span></span>bandit12@melinda:/tmp/emilioeiji$ bzip2 -d data6.bin
+bzip2: Can<span class="err">&#39;</span>t guess original name <span class="k">for</span> data6.bin -- using data6.bin.out
+bandit12@melinda:/tmp/emilioeiji$ ls
+arquivo2  data.txt  data5.bin  data6.bin.out
+bandit12@melinda:/tmp/emilioeiji$ file data6.bin.out
+data6.bin.out: POSIX tar archive <span class="o">(</span>GNU<span class="o">)</span>
+</pre></div>
+<p>Outro arquivo tar.</p>
+<div class="highlight"><pre><span></span>bandit12@melinda:/tmp/emilioeiji$ tar xvf data6.bin.out
+data8.bin
+bandit12@melinda:/tmp/emilioeiji$ ls
+arquivo2  data.txt  data5.bin  data6.bin.out  data8.bin
+bandit12@melinda:/tmp/emilioeiji$ file data8.bin
+data8.bin: gzip compressed data, was <span class="s2">&quot;data9.bin&quot;</span>, from Unix, last modified: Fri Nov <span class="m">14</span> 10:32:20 2014, max compression
+</pre></div>
+<p>Outro arquivo gzip.</p>
+<div class="highlight"><pre><span></span>bandit12@melinda:/tmp/emilioeiji$ mv data8.bin data8.gz
+bandit12@melinda:/tmp/emilioeiji$ gzip -d data8.gz
+bandit12@melinda:/tmp/emilioeiji$ ls
+arquivo2  data.txt  data5.bin  data6.bin.out  data8
+bandit12@melinda:/tmp/emilioeiji$ file data8
+data8: ASCII text
+bandit12@melinda:/tmp/emilioeiji$ cat data8
+The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+</pre></div>
+<p>E finalmente descobrimos a senha <strong>8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL</strong></p>
+<p>Ufa!!! Essa deu trabalho heim...</p>
+</div>
+<div class="section" id="level-13">
+<h2>Level 13</h2>
+<p>Nesse nível temos a senha armazenada no arquivo <strong>/etc/bandit_pass/bandit14</strong> e o mesmo
+só pode ser acessado pelo usuário bandit14 que é do próximo level, foi gerado uma sshkey
+para conexões ssh e como nota foi orientado a conectar por ssh no localhost.</p>
+<p>Primeiro vamos descobrir como conectar via ssh utilizando a chave gerada:</p>
+<pre class="literal-block">
+SSH(1)                                                          BSD General Commands    Manual                                                         SSH(1)
+
+NAME
+     ssh — OpenSSH SSH client (remote login program)
+
+SYNOPSIS
+     ssh [-1246AaCfgKkMNnqsTtVvXxYy] [-b bind_address] [-c cipher_spec] [-D [bind_address:]port] [-E log_file] [-e escape_char]         [-F configfile]
+         [-I pkcs11]     [-i identity_file] [-L [bind_address:]port:host:hostport] [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o       option] [-p      port]
+         [-Q cipher | cipher-auth | mac | kex | key] [-R [bind_address:]port:host:hostport] [-S ctl_path] [-W host:port] [-w    local_tun[:remote_tun]]
+         [user&#64;]hostname [command]
+</pre>
+<pre class="literal-block">
+-i identity_file
+        Selects a file from which the identity (private key) for public key authentication is read.  The default is ~/  identity for protocol
+        sion 1, and ~/.ssh/id    ~/.ssh/id_ecdsa, ~/.ssh/id_ed25519 and ~/.ssh/id_rsa for protocol version 2.  Iden     files may also be spe
+        on a per-host basis i   configuration file.  It is possible to have multiple -i options (and mult       identities specified in confi
+        tion files).  ssh will also try to load certificate information from the filename obtained by appending -cert   to identity filenames.
+</pre>
+<p>Temos que usar o parametro -i e o nome do arquivo:</p>
+<div class="highlight"><pre><span></span>bandit13@melinda:~$ ll
+total 24
+drwxr-xr-x   <span class="m">2</span> root     root     <span class="m">4096</span> Nov <span class="m">14</span> 10:32 ./
+drwxr-xr-x <span class="m">167</span> root     root     <span class="m">4096</span> Mar <span class="m">21</span> 06:46 ../
+-rw-r--r--   <span class="m">1</span> root     root      <span class="m">220</span> Apr  <span class="m">9</span>  <span class="m">2014</span> .bash_logout
+-rw-r--r--   <span class="m">1</span> root     root     <span class="m">3637</span> Apr  <span class="m">9</span>  <span class="m">2014</span> .bashrc
+-rw-r--r--   <span class="m">1</span> root     root      <span class="m">675</span> Apr  <span class="m">9</span>  <span class="m">2014</span> .profile
+-rw-r-----   <span class="m">1</span> bandit14 bandit13 <span class="m">1679</span> Nov <span class="m">14</span> 10:32 sshkey.private
+bandit13@melinda:~$ ssh -i sshkey.private bandit14@localhost
+Could not create directory <span class="s1">&#39;/home/bandit13/.ssh&#39;</span>.
+The authenticity of host <span class="s1">&#39;localhost (127.0.0.1)&#39;</span> can<span class="err">&#39;</span>t be established.
+ECDSA key fingerprint is 05:3a:1c:25:35:0a:ed:2f:cd:87:1c:f6:fe:69:e4:f6.
+Are you sure you want to <span class="k">continue</span> connecting <span class="o">(</span>yes/no<span class="o">)</span>? yes
+bandit14@melinda:~$ cat /etc/bandit_pass/bandit
+bandit0   bandit10  bandit12  bandit14  bandit16  bandit18  bandit2   bandit21  bandit23  bandit25  bandit3   bandit5           bandit7   bandit9
+bandit1   bandit11      bandit13  bandit15  bandit17  bandit19  bandit20  bandit22  bandit24  bandit26  bandit4   bandit6       bandit8
+bandit14@melinda:~$ cat /etc/bandit_pass/bandit14
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+</pre></div>
+<p>Essa com certeza foi muito mais fácil que o level anterior.</p>
+</div>
+<div class="section" id="level-14">
+<h2>Level 14</h2>
+<p>Para obtermos a senha para o próximo nível temos que escutar a porta 30000 e segundo
+a descrição temos que apresentar a senha atual para recebermos a próxima senha.</p>
+<p>Novamente fiquei perdido e comecei a dar o man para os comando sugeridos e achei que o
+<strong>nc</strong> poderia ajudar em alguma coisa:</p>
+<pre class="literal-block">
+NC(1)                                                           BSD General Commands    Manual                                                          NC(1)
+
+NAME
+     nc -- arbitrary TCP and UDP connections and listens
+
+SYNOPSIS
+     nc [-46bCDdhklnrStUuvZz] [-I length] [-i interval] [-O length] [-P proxy_username] [-p source_port] [-q seconds] [-s       source] [-T toskeyword]
+        [-V rtable] [-w time    out] [-X proxy_protocol] [-x proxy_address[:port]] [destination] [port]
+
+DESCRIPTION
+     The nc (or netcat) utility is used for just about anything under the sun involving TCP, UDP, or UNIX-domain sockets.  It   can open TCP connections,
+     send UDP packets, listen on arbitrary TCP and UDP ports, do port scanning, and deal with both IPv4 and IPv6.  Unlike       telnet(1), nc scripts nicely,
+     and separates error messages onto standard error instead of sending them to standard output, as telnet(1) does with some.
+</pre>
+<p>Basicamente o nc abre e escuta conexões tcp e udp então tentei no modo padrão para praticamente
+todo tipo de conexão, comando destino porta.</p>
+<div class="highlight"><pre><span></span>bandit14@melinda:~$ nc localhost 30000
+
+Wrong! Please enter the correct current password
+</pre></div>
+<p>Demorei pra entender um pouco como funcionava esse comando, em primeiro momento parecia ter conectado
+e não aconteceu mais nada, esperei por alguns momentos e resolvi pressionar enter, retornou que a senha
+estava incorreta, resolvi então repetir o procedimento e colocar a senha desse level <strong>4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e</strong>
+e para minha surpresa funcionou.s</p>
+<div class="highlight"><pre><span></span>bandit14@melinda:~$ nc localhost 30000
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+Correct!
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+</pre></div>
+<p>Foi mais fácil que pensei...</p>
+</div>
+<div class="section" id="level-15">
+<h2>Level 15</h2>
+<p>Como no nível anterior temos que conectar em localhost na porta 30001 porém usando
+encriptação SSL e fornecer a senha do nível atual. Pesquisando um pouco sobre ssl descobri que para conectar como cliente
+devemos usar o parametro s_client no comando openssl, ficando assim:</p>
+<div class="highlight"><pre><span></span>bandit15@melinda:~$ openssl s_client -connect 127.0.0.1:30001 -quiet
+<span class="nv">depth</span><span class="o">=</span><span class="m">0</span> <span class="nv">CN</span> <span class="o">=</span> li190-250.members.linode.com
+verify error:num<span class="o">=</span>18:self signed certificate
+verify <span class="k">return</span>:1
+<span class="nv">depth</span><span class="o">=</span><span class="m">0</span> <span class="nv">CN</span> <span class="o">=</span> li190-250.members.linode.com
+verify <span class="k">return</span>:1
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+Correct!
+cluFn7wTiGryunymYOu4RcffSxQluehd
+
+read:errno<span class="o">=</span>0
+</pre></div>
+<p>Está cada vez ficando mais complexo conseguir as senhas, apesar de ser apenas
+um jogo com ele conseguimos aprender algumas coisas legais.</p>
+<p>Abraços até os próximos níveis.</p>
+</div>
+
+
+<p align="center"><a href="#">on the top</a></p>
+<h3>Comments</h3>
+<div id="disqus_thread">
+    <script type="text/javascript">
+       var disqus_identifier = "over-the-wire-war-game-11-15.html";
+       (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://emilioeiji.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+</div>    </div>
+</div>
+<div id="footer-wrapper">
+<ul class="footer">
+     <li class="footer"><a href="./tag/100-linux.html">100-linux&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/abrir-linha.html">abrir linha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/alterar.html">alterar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/alterar-senha.html">alterar senha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/amazon.html">amazon&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/analise.html">análise&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/apache.html">apache&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/apple.html">apple&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/arduino.html">arduino&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ardunio.html">ardunio&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/atualizar.html">atualizar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/atualizar-dokuwiki.html">atualizar dokuwiki&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/backup.html">backup&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/bacula.html">bacula&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/boot.html">boot&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/c.html">C&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/cacti.html">cacti&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/certificacao.html">certificação&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/citrix.html">citrix&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/comandos-vim.html">comandos vim&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/criptografia.html">criptografia&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/curiosidades.html">curiosidades&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dd.html">dd&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/debian.html">debian&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dia.html">dia&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dicas.html">dicas&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dicas-vim.html">dicas vim&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/display.html">display&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dokuwiki.html">dokuwiki&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dual-monitor.html">dual monitor&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dx.html">DX&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ebay.html">ebay&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/empresas.html">empresas&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/excluir.html">excluir&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/externo.html">externo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/facebook.html">facebook&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/filezilla.html">filezilla&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/firefox.html">firefox&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/flask.html">flask&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/fluxbox.html">fluxbox&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/freenas.html">freenas&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/geany.html">geany&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/google.html">google&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/grub.html">grub&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hacker.html">hacker&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hacking.html">hacking&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hc-sr04.html">HC-SR04&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hd.html">hd&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hora.html">hora&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hostgator.html">hostgator&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hostinger.html">hostinger&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hp.html">hp&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/idrac.html">idrac&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ilo.html">ilo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/imagem.html">imagem&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/imm.html">imm&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/instalacao.html">instalação&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/instalando.html">instalando&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/internet-explorer.html">internet explorer&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/iso.html">iso&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/java.html">java&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/keepass.html">keepass&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/lamp.html">lamp&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ldr.html">ldr&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/led.html">led&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/led-zeppelin.html">led zeppelin&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/libreoffice.html">libreoffice&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linha.html">linha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linkedin.html">linkedin&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linux.html">linux&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linux-mint.html">linux mint&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/lm35.html">lm35&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/lucro.html">lucro&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mcsa.html">mcsa&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mecanismo.html">mecanismo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mensagens.html">mensagens&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/microsoft.html">microsoft&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/moonlight.html">moonlight&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mssql.html">mssql&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/musica.html">musica&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mysql.html">mysql&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mysql-client.html">mysql client&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/net-rpc.html">net rpc&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/netinst.html">netinst&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ntp.html">ntp&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/off-topic.html">off-topic&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/openfire.html">openfire&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pelican.html">pelican&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/penboot.html">penboot&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pendrive.html">pendrive&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pesquisa.html">pesquisa&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/petra.html">petra&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/php.html">php&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pipelight.html">pipelight&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/powershell.html">powershell&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/processos.html">processos&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/programacao.html">programação&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pstools.html">pstools&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/python.html">python&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/raid.html">raid&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/raspberrypi.html">RaspberryPi&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/reiniciar.html">reiniciar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/rele.html">relé&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/remoto.html">remoto&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/remover.html">remover&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/reset.html">reset&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/resetar.html">resetar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/restart.html">restart&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/rock-n-roll.html">rock n roll&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/root.html">root&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/rsync.html">rsync&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/samsung.html">samsung&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sed.html">sed&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/seguranca.html">seguranca&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/semaforo.html">semaforo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sensor.html">Sensor&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/server.html">server&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/servico.html">serviço&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/servicos-windows.html">serviços windows&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sid.html">sid&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/silverlight.html">silverlight&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sony.html">sony&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sysprep.html">sysprep&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/tecnologia.html">tecnologia&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/transmission.html">transmission&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/vim.html">vim&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/vim-abrir-linha.html">vim abrir linha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/virtualbox.html">virtualbox&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/virus.html">virus&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/wargame.html">wargame&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/wheezy.html">wheezy&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows.html">windows&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-2003.html">windows 2003&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-2008.html">windows 2008&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-2012.html">windows 2012&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-7.html">windows 7&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-8.html">windows 8&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-server.html">windows server&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-services.html">windows services&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/xchat.html">xchat&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/yahoo.html">yahoo</a></li>
+</ul><ul class="footer">
+    <li class="footer">&copy;&nbsp;2015&nbsp;::</li>
+    <li class="footer"><a href=".">Emilio Eiji </a>&nbsp;::</li>
+<!--    <li class="footer">powered by <a href="https://github.com/getpelican">pelican</a>&nbsp;::</li> -->
+    <li class="footer"><a href="http://creativecommons.org/licenses/by-nc/3.0/deed.ru">CC BY-NC</a></li>
+</ul>
+</div><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41240903-2', 'emilioeiji.com.br');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Analisar Processos Do Windows | Emilio Eiji</title>
+  <meta charset="utf-8">
+<meta name="description" content="Ao abrir o gestor de tarefas (CTRL+ALT+DEL ou CTRL+SHIFT+ESC) para verificar os processos que correm no seu computador, certamente já se deparou com processos "estranhos" que você desconhece. Ao pesquisar na Internet sobre esses mesmos processos rapidamente encontra vários sites afirmando que se trata de um …"><meta name="author" content="Emilio">  <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+  <meta http-equiv="Cache-Control" content="max-age=604800, must-revalidate" />
+  <link href="./theme/css/screen.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link href="./" type="application/atom+xml" rel="alternate" title="Emilio Eiji ATOM Feed" />
+  <link href="./feed/index.html" type="application/rss+xml" rel="alternate" title="Emilio Eiji RSS Feed" />
+</head>
+<body>
+<div id="outer-wrapper">
+<div id="header-wrapper">
+  <!-- <div class="logo"><a href=".">Emilio Eiji</a></div> -->
+  <div class="logo"><a href=".">emilioeiji.com.br</a></div>
+  <div class="small">The power of root</div>
+    <div class="nav">
+  <li><a href="./abop/abop-ptbr.html">Abop</a></li>
+  <li><a href="./archives/">Arquivos</a></li>
+  <li><a href="./focalinux/index.html">FocaLinux</a></li>
+  <li><a href="./about/">Sobre</a></li>
+  <li><a href="./wiki/index.php">WiKi</a></li>
+    </div>
+    <div class="nav social">
+<ul>
+    <li><a href="https://facebook.com/emilioeiji">Facebook</a></li>
+    <li><a href="https://github.com/emilioeiji">GitHub</a></li>
+    <li><a href="https://plus.google.com/+emilioeiji">Google+</a></li>
+    <li><a href="https://br.linkedin.com/pub/emilio-eiji/7a/24b/29/pt">linkedin</a></li>
+    <li><a href="https://twitter.com/emilioeiji">twitter</a></li>
+    <li><a href="https://youtube.com/c/emilioeiji">Youtube</a></li>
+</ul>    </div>
+</div>    <div id="main">
+<h2><a href="./analisar-processos-do-windows.html">Analisar Processos Do Windows</a></h2>
+<h5><i class="icon-feather"></i> Qua 03 março 2010
+<i class="icon-bookmarks"></i>
+<span><a href="./tag/windows.html">windows</a> / </span>
+<span><a href="./tag/processos.html">processos</a> / </span>
+</h5>
+
+<p>Ao abrir o gestor de tarefas (CTRL+ALT+DEL ou CTRL+SHIFT+ESC) para
+verificar os processos que correm no seu computador, certamente já se
+deparou com processos &quot;estranhos&quot; que você desconhece. Ao pesquisar na
+Internet sobre esses mesmos processos rapidamente encontra vários sites
+afirmando que se trata de um vírus, worm, spyware, etc.</p>
+<p>analisar processos computador</p>
+<p>Verdade seja dita, qualquer processo do seu sistema operativo pode ser
+contaminado, relembrámos o Lsass.exe, vítima do sasser.</p>
+<p>No entanto, não é preciso entrar em &quot;pânico&quot;, nem é preciso instalar um
+monte de programas milagrosos que muitos sites lhe oferecem.</p>
+<p>A</p>
+<p>asdsdsd.exe -&gt; processo relacionado a um trojan. Deve remover o
+asdsdsd.exe com o MalwareBytes Anti-Malware (link no fim da página).</p>
+<p>B</p>
+<p>bndmss.exe -&gt; vírus perigoso, deve remover o bndmss.exe com o
+MalwareBytes Anti-Malware (link fim da página).</p>
+<p>C</p>
+<p>ckvo.exe -&gt; processo malicioso. Deve remover o ckvo.exe com o
+MalwareBytes Anti-Malware (link fim da página).</p>
+<p>cmpe.exe -&gt; processo relacionado aos modems da Lightcomm, se usa um, não
+tem com que se preocupar.</p>
+<p>ctfmon.exe-&gt; processo essencial do Microsoft Office. Não tem o Office?
+Quer remover este processo e ganhar espaço na sua memoria? Veja aqui;</p>
+<p>ctfn.exe -&gt; processo de um Malware. Faça um scan com um antivírus
+actualizado.</p>
+<p>csrcs.exe -&gt; Não confunda este processo com o csrss.exe do Windows, o
+csrcs.exe é um malware, actualize o seu antivírus e faça um scan
+completo ao PC, caso o vírus não seja removido, use o Combo Fix (link
+fim da página).</p>
+<p>csrss.exe -&gt; Client Server Runtime Process, processo essencial do seu
+Windows, desactiva-lo pode danificar o sistema operativo. Não deve
+remover o csrss.exe.</p>
+<p>ctsvccda.exe -&gt; Creative service for CD, processo não essencial, poderá
+desactiva-lo através do msconfig, aba serviços e seleccione &quot;ocultar
+serviços da Microsoft&quot;. Em seguida remova a selecção do processo em
+causa.</p>
+<p>D</p>
+<p>drvins32.exe-&gt; driver instalador da Kaspersky;</p>
+<p>drwtsn32.exe -&gt; Processo do serviço Dr. Watson da Microsoft, um serviço
+de &quot;debug&quot; do sistema operativo, o processo não deve ser desactivado.</p>
+<p>dwm.exe -&gt; processo do sistema operativo, responsável pelos efeitos 3D e
+pelas transparências. O processo não deve ser desactivado.</p>
+<p>dotnetfx35setup.exe -&gt; processo de instalação do .Net Framework 3.5,
+processo seguro</p>
+<p>E</p>
+<p>egui.exe -&gt; processo do antivírus NOD 32, seguro.</p>
+<p>I</p>
+<p>infocard.exe -&gt; Windows CardSpace, para desactivar este processo vá ao
+Menu Iniciar -&gt; executar (Windows XP), barra de pesquisa (Windows vista/
+Windows 7) e digite services.msc -&gt; na janela seguinte procure o Windows
+cardspace e seleccione Propriedades -&gt; por fim seleccione &quot;Tipo de
+arranque&quot; desactivado;</p>
+<p>iki.exe ou iky.bat -&gt; processo maligno, de um trojan, use o MalwareBytes
+Anti-Malware para o remover (link fim da página).</p>
+<p>ise32.exe -&gt; um vírus que se espalha pelas pen's, deve remover o
+ise32.exe rapidamente, para conter o alastramento do vírus. Para remover
+o vírus use o ComboFix (link fim da página).</p>
+<p>installserver.exe -&gt; Processo de um aplicativo &quot;hacker&quot; para remover a
+protecção de segurança em alguns telemóveis (celulares).</p>
+<p>K</p>
+<p>klwtblfs.exe -&gt; processo do antivírus Kaspersky, relativo ao componente
+do browser. Para sua protecção não desactive o processo.</p>
+<div class="line-block">
+<div class="line">M</div>
+<div class="line"><br /></div>
+</div>
+<p>mom.exe -&gt; processo ligado às placas gráficas ATI, se encontrar algum
+problema com este processo, experimente instalar os drivers
+actualizados.</p>
+<div class="line-block">
+<div class="line">N</div>
+<div class="line-block">
+<div class="line">nircmd.exe -&gt; processo criado pelo aplicativo ComboFix.</div>
+</div>
+</div>
+<p>S</p>
+<p>sp36684.exe -&gt; processo relacionado ao driver da placa Wireless nos
+Notebook HP.</p>
+<p>starwindserviceae.exe -&gt; processo do Alcohol 120% DVD/CD, seguro.</p>
+<div class="line-block">
+<div class="line">P</div>
+<div class="line"><br /></div>
+</div>
+<p>pnkbstra.exe, pnkbstrb.exe -&gt; processos essenciais para os jogos
+online. Desactivar estes processos impossibilita que você inicie as
+sessões online de jogos (NFS Pro Street por exemplo).</p>
+<p>R</p>
+<p>Recon.exe -&gt; Processo reportado como Keyloggers. Alguns processos
+&quot;Keyloggers&quot; utilizam o mesmo nome de processos conhecidos, uma forma de
+confundir o utilizador.</p>
+<div class="line-block">
+<div class="line">U</div>
+<div class="line"><br /></div>
+</div>
+<p>u88.exe, u91.exe, u96.exe -&gt; processo relacionado à aplicação
+UltraSurf.</p>
+<p>ubb.exe -&gt; processo maligno, use o Combo Fix para o remover (link no
+final da página).</p>
+<p>W</p>
+<p>Wlcomm.exe -&gt; processo essencial do Messenger, ele carrega as
+informações dos contactos;</p>
+<p>wltuser.exe -&gt; Windows Live Toolbar</p>
+
+
+<p align="center"><a href="#">on the top</a></p>
+<h3>Comments</h3>
+<div id="disqus_thread">
+    <script type="text/javascript">
+       var disqus_identifier = "analisar-processos-do-windows.html";
+       (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://emilioeiji.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+</div>    </div>
+</div>
+<div id="footer-wrapper">
+<ul class="footer">
+     <li class="footer"><a href="./tag/100-linux.html">100-linux&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/abrir-linha.html">abrir linha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/alterar.html">alterar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/alterar-senha.html">alterar senha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/amazon.html">amazon&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/analise.html">análise&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/apache.html">apache&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/apple.html">apple&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/arduino.html">arduino&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ardunio.html">ardunio&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/atualizar.html">atualizar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/atualizar-dokuwiki.html">atualizar dokuwiki&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/backup.html">backup&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/bacula.html">bacula&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/boot.html">boot&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/c.html">C&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/cacti.html">cacti&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/certificacao.html">certificação&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/citrix.html">citrix&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/comandos-vim.html">comandos vim&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/criptografia.html">criptografia&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/curiosidades.html">curiosidades&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dd.html">dd&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/debian.html">debian&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dia.html">dia&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dicas.html">dicas&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dicas-vim.html">dicas vim&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/display.html">display&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dokuwiki.html">dokuwiki&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dual-monitor.html">dual monitor&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dx.html">DX&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ebay.html">ebay&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/empresas.html">empresas&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/excluir.html">excluir&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/externo.html">externo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/facebook.html">facebook&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/filezilla.html">filezilla&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/firefox.html">firefox&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/flask.html">flask&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/fluxbox.html">fluxbox&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/freenas.html">freenas&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/geany.html">geany&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/google.html">google&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/grub.html">grub&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hacker.html">hacker&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hacking.html">hacking&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hc-sr04.html">HC-SR04&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hd.html">hd&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hora.html">hora&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hostgator.html">hostgator&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hostinger.html">hostinger&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hp.html">hp&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/idrac.html">idrac&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ilo.html">ilo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/imagem.html">imagem&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/imm.html">imm&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/instalacao.html">instalação&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/instalando.html">instalando&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/internet-explorer.html">internet explorer&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/iso.html">iso&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/java.html">java&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/keepass.html">keepass&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/lamp.html">lamp&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ldr.html">ldr&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/led.html">led&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/led-zeppelin.html">led zeppelin&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/libreoffice.html">libreoffice&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linha.html">linha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linkedin.html">linkedin&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linux.html">linux&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linux-mint.html">linux mint&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/lm35.html">lm35&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/lucro.html">lucro&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mcsa.html">mcsa&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mecanismo.html">mecanismo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mensagens.html">mensagens&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/microsoft.html">microsoft&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/moonlight.html">moonlight&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mssql.html">mssql&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/musica.html">musica&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mysql.html">mysql&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mysql-client.html">mysql client&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/net-rpc.html">net rpc&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/netinst.html">netinst&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ntp.html">ntp&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/off-topic.html">off-topic&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/openfire.html">openfire&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pelican.html">pelican&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/penboot.html">penboot&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pendrive.html">pendrive&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pesquisa.html">pesquisa&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/petra.html">petra&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/php.html">php&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pipelight.html">pipelight&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/powershell.html">powershell&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/processos.html">processos&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/programacao.html">programação&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pstools.html">pstools&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/python.html">python&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/raid.html">raid&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/raspberrypi.html">RaspberryPi&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/reiniciar.html">reiniciar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/rele.html">relé&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/remoto.html">remoto&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/remover.html">remover&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/reset.html">reset&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/resetar.html">resetar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/restart.html">restart&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/rock-n-roll.html">rock n roll&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/root.html">root&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/rsync.html">rsync&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/samsung.html">samsung&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sed.html">sed&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/seguranca.html">seguranca&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/semaforo.html">semaforo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sensor.html">Sensor&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/server.html">server&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/servico.html">serviço&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/servicos-windows.html">serviços windows&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sid.html">sid&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/silverlight.html">silverlight&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sony.html">sony&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sysprep.html">sysprep&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/tecnologia.html">tecnologia&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/transmission.html">transmission&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/vim.html">vim&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/vim-abrir-linha.html">vim abrir linha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/virtualbox.html">virtualbox&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/virus.html">virus&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/wargame.html">wargame&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/wheezy.html">wheezy&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows.html">windows&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-2003.html">windows 2003&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-2008.html">windows 2008&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-2012.html">windows 2012&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-7.html">windows 7&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-8.html">windows 8&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-server.html">windows server&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-services.html">windows services&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/xchat.html">xchat&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/yahoo.html">yahoo</a></li>
+</ul><ul class="footer">
+    <li class="footer">&copy;&nbsp;2015&nbsp;::</li>
+    <li class="footer"><a href=".">Emilio Eiji </a>&nbsp;::</li>
+<!--    <li class="footer">powered by <a href="https://github.com/getpelican">pelican</a>&nbsp;::</li> -->
+    <li class="footer"><a href="http://creativecommons.org/licenses/by-nc/3.0/deed.ru">CC BY-NC</a></li>
+</ul>
+</div><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41240903-2', 'emilioeiji.com.br');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

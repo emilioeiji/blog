@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Over The Wire - War Games Level 6 - 10 | Emilio Eiji</title>
+  <meta charset="utf-8">
+<meta name="description" content="Fala galera!!! Vamos continuar subindo de level no Over The Wire. Level 6 A partir daqui parece que a coisa está começando a ficar um pouco mais complexa, estamos começando a usar comandos com alguns parametros, nada muito diferente do level 5 acrescentando apenas 2 parametros a mais. bandit6@melinda …"><meta name="author" content="Emilio">  <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+  <meta http-equiv="Cache-Control" content="max-age=604800, must-revalidate" />
+  <link href="./theme/css/screen.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link href="./" type="application/atom+xml" rel="alternate" title="Emilio Eiji ATOM Feed" />
+  <link href="./feed/index.html" type="application/rss+xml" rel="alternate" title="Emilio Eiji RSS Feed" />
+</head>
+<body>
+<div id="outer-wrapper">
+<div id="header-wrapper">
+  <!-- <div class="logo"><a href=".">Emilio Eiji</a></div> -->
+  <div class="logo"><a href=".">emilioeiji.com.br</a></div>
+  <div class="small">The power of root</div>
+    <div class="nav">
+  <li><a href="./abop/abop-ptbr.html">Abop</a></li>
+  <li><a href="./archives/">Arquivos</a></li>
+  <li><a href="./focalinux/index.html">FocaLinux</a></li>
+  <li><a href="./about/">Sobre</a></li>
+  <li><a href="./wiki/index.php">WiKi</a></li>
+    </div>
+    <div class="nav social">
+<ul>
+    <li><a href="https://facebook.com/emilioeiji">Facebook</a></li>
+    <li><a href="https://github.com/emilioeiji">GitHub</a></li>
+    <li><a href="https://plus.google.com/+emilioeiji">Google+</a></li>
+    <li><a href="https://br.linkedin.com/pub/emilio-eiji/7a/24b/29/pt">linkedin</a></li>
+    <li><a href="https://twitter.com/emilioeiji">twitter</a></li>
+    <li><a href="https://youtube.com/c/emilioeiji">Youtube</a></li>
+</ul>    </div>
+</div>    <div id="main">
+<h2><a href="./over-the-wire-war-game-6-10.html">Over The Wire - War Games Level 6 - 10</a></h2>
+<h5><i class="icon-feather"></i> Sáb 18 abril 2015
+<i class="icon-bookmarks"></i>
+<span><a href="./tag/wargame.html">wargame</a> / </span>
+<span><a href="./tag/linux.html">linux</a> / </span>
+<span><a href="./tag/hacker.html">hacker</a> / </span>
+<span><a href="./tag/hacking.html">hacking</a> / </span>
+<span><a href="./tag/seguranca.html">seguranca</a> / </span>
+</h5>
+
+<p>Fala galera!!! Vamos continuar subindo de level no Over The Wire.</p>
+<div class="section" id="level-6">
+<h2>Level 6</h2>
+<p>A partir daqui parece que a coisa está começando a ficar um pouco mais complexa,
+estamos começando a usar comandos com alguns parametros, nada muito diferente do
+<a class="reference external" href="http://emilioeiji.com.br/over-the-wire-war-game-0-5.html">level 5</a>
+acrescentando apenas 2 parametros a mais.</p>
+<div class="highlight"><pre><span></span>bandit6@melinda:~$ find / -size 33c -group bandit6 -user bandit7
+/var/lib/dpkg/info/bandit7.password
+bandit6@melinda:~$ cat /var/lib/dpkg/info/bandit7.password
+HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+</pre></div>
+<p>Pronto, conseguimos encontrar nosso arquivo.</p>
+</div>
+<div class="section" id="level-7">
+<h2>Level 7</h2>
+<p>Aqui devemos encontrar a senha dentro do arquivo <strong>data.txt</strong> após a palavra millionth
+e se você igual eu deu logo um <strong>cat data.txt</strong> notou que não vai ser fácil encontrar
+a senha desse jeito, devem ter notado que o arquivo segue um padrão, uma palavra seguida
+se uma 'senha', portanto para encontrarmos a linha com o millionth vamos usar o comando grep:</p>
+<p>..code-block:: bash</p>
+<blockquote>
+<a class="reference external" href="mailto:bandit7&#64;melinda">bandit7&#64;melinda</a>:~$ cat data.txt | grep millionth
+millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV</blockquote>
+<p>Pronto, encontramos a nossa senha no meio de tantas linhas.</p>
+</div>
+<div class="section" id="level-8">
+<h2>Level 8</h2>
+<p>Agora ficou um pouco complicado, vamos ler atentamente a descrição do desafio.</p>
+<pre class="literal-block">
+The password for the next level is stored in the file data.txt and is the only
+line of text that occurs only once
+
+Commands you may need to solve this level
+
+grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
+</pre>
+<p>Sabemos que a senha está dentro do arquivo data.txt e que ela é apresentada em uma única linha
+dentro do arquivo. Então vamos elaborar nosso comando:</p>
+<ol class="arabic simple">
+<li>Se simplesmente rodarmos o comando <strong>cat data.txt</strong> vamos receber várias linhas todas embaralhadas.</li>
+<li>Vamos melhorar um pouco entao rodando o comando <strong>cat data.txt | sort</strong>, agora vimos que a listagem
+ficou ordenada, mas com vários registros repetidos, podemos melhorar ainda mais.</li>
+<li>Vamos elimitar os vários registros repetidos com o comando <strong>cat data.txt | sort -u</strong>, opa!!! Está melhorando.</li>
+<li>E por final vamos pedir para retornar apenas os registros que forem únicos dentro do arquivo com o comando
+<strong>cat data.txt | sort | uniq -u</strong>, pronto agora temos a nossa senha.</li>
+</ol>
+<div class="highlight"><pre><span></span>bandit8@melinda:~$ cat data.txt <span class="p">|</span> sort <span class="p">|</span> uniq -u
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+</pre></div>
+</div>
+<div class="section" id="level-9">
+<h2>Level 9</h2>
+<p>Precisamos encontrar a senha dentro do arquivo <strong>data.txt</strong> onde encontra-se após
+vários '=', nesse nível se rodarmos um <strong>cat data.txt</strong> e procurar um pouco podemos
+encontrar a senha masssssss se o arquivo fosse gigantesco se tornaria inviável ficar
+procurando os vários '=', portanto vamos elaborar um pouco o nosso mecanismo de busca
+dentro desse arquivo pegando como dica o comando <strong>strings</strong></p>
+<pre class="literal-block">
+STRINGS(1)                    GNU Development Tools                   STRINGS(1)
+
+NAME
+       strings - print the strings of printable characters in files.
+
+SYNOPSIS
+       strings [-afovV] [-min-len]
+               [-n min-len] [--bytes=min-len]
+               [-t radix] [--radix=radix]
+               [-e encoding] [--encoding=encoding]
+               [-] [--all] [--print-file-name]
+               [-T bfdname] [--target=bfdname]
+               [--help] [--version] file...
+
+DESCRIPTION
+       For each file given, GNU strings prints the printable character sequences
+       that are at least 4 characters long (or the number given with the options
+       below) and are followed by an unprintable character.
+
+       Depending upon how the strings program was configured it will default to
+       either displaying all the printable sequences that it can find in each
+       file, or only those sequences that are in loadable, initialized data
+       sections.  If the file type in unrecognizable, or if strings is reading
+       from stdin then it will always display all of the printable sequences
+       that it can find.
+
+       For backwards compatibility any file that occurs after a command line
+       option of just - will also be scanned in full, regardless of the presence
+       of any -d option.
+
+strings is mainly useful for determining the contents of non-text files.
+</pre>
+<p>O comando strings retornar os caracteres legíveis dentro de um arquivo, quando rodamos o
+<strong>cat data.txt</strong> notamos que o arquivo está cheio e caracteres não legíveis e como sabemos
+que a senha se encontra após vários '=' vamos casar o comando com o <strong>grep =</strong>.</p>
+<div class="highlight"><pre><span></span>bandit9@melinda:~$ strings data.txt <span class="p">|</span> <span class="nv">grep</span> <span class="o">=</span>
+epr~F<span class="o">=</span>K
+7?YD<span class="o">=</span>
+?M<span class="o">=</span>HqAH
+/<span class="o">(</span><span class="nv">Ne</span><span class="o">=</span>
+<span class="nv">C</span><span class="o">=</span>_<span class="s2">&quot;</span>
+<span class="s2">I========== the6</span>
+<span class="s2">z5Y=</span>
+<span class="s2">`h(8=`</span>
+<span class="s2">n\H=;</span>
+<span class="s2">========== password</span>
+<span class="s2">========== ism</span>
+<span class="s2">N</span>$<span class="s2">=&amp;</span>
+<span class="s2">l/a=L)</span>
+<span class="s2">f=C(</span>
+<span class="s2">========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk</span>
+<span class="s2">ie)=5e</span>
+</pre></div>
+<p>A senha para o próximo nível é: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk</p>
+</div>
+<div class="section" id="level-10">
+<h2>Level 10</h2>
+<p>Nesse nívels temos a seguinte string dentro do arquivo <strong>data.txt</strong>:
+VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg== e conforme
+a descrição do desafio a string está codificada em <a class="reference external" href="http://pt.wikipedia.org/wiki/Base64">base64</a></p>
+<p>Podemos encontrar a senha de duas formas:</p>
+<ol class="arabic">
+<li><p class="first">Rodando diretamente o comando base64 com o parametro <strong>-d</strong> para
+decodificar conforme encontra-se nas dicas dos possíveis comandos
+a serem usados:</p>
+<div class="highlight"><pre><span></span>bandit10@melinda:~$ cat data.txt
+<span class="nv">VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg</span><span class="o">==</span>
+bandit10@melinda:~$ base64 -d data.txt
+The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+</pre></div>
+</li>
+<li><p class="first">E do modo pythonista com o seguinte script:</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1"># -*- encoding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">base64</span>
+
+<span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg==&quot;</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">string</span><span class="p">))</span>
+</pre></div>
+<div class="highlight"><pre><span></span>emilio Python $ python3 dec64.py
+b<span class="s1">&#39;The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR\n&#39;</span>
+</pre></div>
+</li>
+</ol>
+<p>Vou encerrando esse post por aqui com a senha para o level 11.</p>
+<p>Abraços</p>
+</div>
+
+
+<p align="center"><a href="#">on the top</a></p>
+<h3>Comments</h3>
+<div id="disqus_thread">
+    <script type="text/javascript">
+       var disqus_identifier = "over-the-wire-war-game-6-10.html";
+       (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://emilioeiji.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+</div>    </div>
+</div>
+<div id="footer-wrapper">
+<ul class="footer">
+     <li class="footer"><a href="./tag/100-linux.html">100-linux&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/abrir-linha.html">abrir linha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/alterar.html">alterar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/alterar-senha.html">alterar senha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/amazon.html">amazon&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/analise.html">análise&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/apache.html">apache&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/apple.html">apple&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/arduino.html">arduino&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ardunio.html">ardunio&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/atualizar.html">atualizar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/atualizar-dokuwiki.html">atualizar dokuwiki&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/backup.html">backup&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/bacula.html">bacula&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/boot.html">boot&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/c.html">C&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/cacti.html">cacti&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/certificacao.html">certificação&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/citrix.html">citrix&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/comandos-vim.html">comandos vim&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/criptografia.html">criptografia&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/curiosidades.html">curiosidades&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dd.html">dd&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/debian.html">debian&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dia.html">dia&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dicas.html">dicas&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dicas-vim.html">dicas vim&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/display.html">display&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dokuwiki.html">dokuwiki&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dual-monitor.html">dual monitor&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/dx.html">DX&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ebay.html">ebay&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/empresas.html">empresas&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/excluir.html">excluir&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/externo.html">externo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/facebook.html">facebook&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/filezilla.html">filezilla&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/firefox.html">firefox&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/flask.html">flask&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/fluxbox.html">fluxbox&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/freenas.html">freenas&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/geany.html">geany&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/google.html">google&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/grub.html">grub&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hacker.html">hacker&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hacking.html">hacking&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hc-sr04.html">HC-SR04&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hd.html">hd&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hora.html">hora&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hostgator.html">hostgator&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hostinger.html">hostinger&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/hp.html">hp&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/idrac.html">idrac&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ilo.html">ilo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/imagem.html">imagem&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/imm.html">imm&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/instalacao.html">instalação&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/instalando.html">instalando&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/internet-explorer.html">internet explorer&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/iso.html">iso&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/java.html">java&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/keepass.html">keepass&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/lamp.html">lamp&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ldr.html">ldr&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/led.html">led&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/led-zeppelin.html">led zeppelin&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/libreoffice.html">libreoffice&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linha.html">linha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linkedin.html">linkedin&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linux.html">linux&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/linux-mint.html">linux mint&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/lm35.html">lm35&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/lucro.html">lucro&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mcsa.html">mcsa&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mecanismo.html">mecanismo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mensagens.html">mensagens&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/microsoft.html">microsoft&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/moonlight.html">moonlight&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mssql.html">mssql&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/musica.html">musica&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mysql.html">mysql&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/mysql-client.html">mysql client&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/net-rpc.html">net rpc&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/netinst.html">netinst&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/ntp.html">ntp&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/off-topic.html">off-topic&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/openfire.html">openfire&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pelican.html">pelican&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/penboot.html">penboot&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pendrive.html">pendrive&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pesquisa.html">pesquisa&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/petra.html">petra&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/php.html">php&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pipelight.html">pipelight&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/powershell.html">powershell&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/processos.html">processos&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/programacao.html">programação&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/pstools.html">pstools&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/python.html">python&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/raid.html">raid&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/raspberrypi.html">RaspberryPi&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/reiniciar.html">reiniciar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/rele.html">relé&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/remoto.html">remoto&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/remover.html">remover&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/reset.html">reset&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/resetar.html">resetar&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/restart.html">restart&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/rock-n-roll.html">rock n roll&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/root.html">root&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/rsync.html">rsync&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/samsung.html">samsung&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sed.html">sed&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/seguranca.html">seguranca&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/semaforo.html">semaforo&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sensor.html">Sensor&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/server.html">server&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/servico.html">serviço&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/servicos-windows.html">serviços windows&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sid.html">sid&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/silverlight.html">silverlight&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sony.html">sony&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/sysprep.html">sysprep&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/tecnologia.html">tecnologia&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/transmission.html">transmission&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/vim.html">vim&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/vim-abrir-linha.html">vim abrir linha&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/virtualbox.html">virtualbox&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/virus.html">virus&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/wargame.html">wargame&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/wheezy.html">wheezy&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows.html">windows&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-2003.html">windows 2003&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-2008.html">windows 2008&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-2012.html">windows 2012&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-7.html">windows 7&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-8.html">windows 8&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-server.html">windows server&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/windows-services.html">windows services&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/xchat.html">xchat&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/yahoo.html">yahoo</a></li>
+</ul><ul class="footer">
+    <li class="footer">&copy;&nbsp;2015&nbsp;::</li>
+    <li class="footer"><a href=".">Emilio Eiji </a>&nbsp;::</li>
+<!--    <li class="footer">powered by <a href="https://github.com/getpelican">pelican</a>&nbsp;::</li> -->
+    <li class="footer"><a href="http://creativecommons.org/licenses/by-nc/3.0/deed.ru">CC BY-NC</a></li>
+</ul>
+</div><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41240903-2', 'emilioeiji.com.br');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

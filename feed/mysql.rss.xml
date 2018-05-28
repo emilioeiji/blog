@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Emilio Eiji - MySQL</title><link>http://emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Mon, 09 Jun 2014 11:24:00 -0300</lastBuildDate><item><title>MySQL Vs. MS SQL</title><link>http://emilioeiji.com.br/mysql-vs-ms-sql.html</link><description>&lt;img alt="MySQL vs MSSQL" class="align-center" src="/images/mysqlvsmicsql.png" /&gt;
+&lt;p&gt;&lt;strong&gt;MySQL Vs. MS SQL&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Hoje estava assistindo ao treinamento do MS SQL 2012/2014 do meu amigo
+Bruxo Alexandre =p e veio em minha mente quais as principais diferenças
+entre os dois SGBDs (Sistema de Gerenciamento de Banco de Dados) Onde um
+se sobressai ao outro.&lt;/p&gt;
+&lt;p&gt;Para começar as duas …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Mon, 09 Jun 2014 11:24:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2014-06-09:/mysql-vs-ms-sql.html</guid><category>análise</category><category>mssql</category><category>mysql</category></item><item><title>ERROR 29 (HY000): File 'arquivo.csv' not found (Errcode: 2)</title><link>http://emilioeiji.com.br/error-29-hy000-file-arquivo-csv-found-errcode-2.html</link><description>&lt;p&gt;Olá.&lt;/p&gt;
+&lt;p&gt;Estava tentando efetuar a importação de um arquivo .csv direto na linha
+de comando e estava me deparando com o seguinte erro: &amp;quot;ERROR 29 (HY000):
+File 'arquivo.csv' not found (Errcode: 2)&amp;quot;&lt;/p&gt;
+&lt;p&gt;O comando em questão era o seguinte:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;LOAD&lt;/span&gt; &lt;span class="n"&gt;DATA&lt;/span&gt; &lt;span class="k"&gt;INFILE&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;arquivo.csv&amp;#39;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;INTO&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;cadastro&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;FIELDS …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Fri, 27 Dec 2013 09:29:00 -0200</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2013-12-27:/error-29-hy000-file-arquivo-csv-found-errcode-2.html</guid><category>linux</category><category>mysql</category><category>mysql client</category></item></channel></rss>

@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - Wargame</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/wargame.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2015-04-18T13:31:00-03:00</updated><entry><title>Over The Wire - War Games Level 11 - 15</title><link href="http://emilioeiji.com.br/over-the-wire-war-game-11-15.html" rel="alternate"></link><published>2015-04-18T13:31:00-03:00</published><updated>2015-04-18T13:31:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2015-04-18:/over-the-wire-war-game-11-15.html</id><summary type="html">&lt;p&gt;Me empolguei nesse trem heim...&lt;/p&gt;
+&lt;p&gt;A ultima senha que conseguimos foi &lt;strong&gt;IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR&lt;/strong&gt; para conectarmos
+ao level 11, então bora continuar.&lt;/p&gt;
+&lt;div class="section" id="level-11"&gt;
+&lt;h2&gt;Level 11&lt;/h2&gt;
+&lt;p&gt;Nesse nível a senha está cifrada pulando 13 carteres &amp;quot;&lt;a class="reference external" href="http://pt.wikipedia.org/wiki/Cifra_de_C%C3%A9sar"&gt;Cifra de Cesar&lt;/a&gt;&amp;quot;
+contando pelo alfabeto padrão, então a letra A repectivamente se torna a letra N e assim …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Me empolguei nesse trem heim...&lt;/p&gt;
+&lt;p&gt;A ultima senha que conseguimos foi &lt;strong&gt;IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR&lt;/strong&gt; para conectarmos
+ao level 11, então bora continuar.&lt;/p&gt;
+&lt;div class="section" id="level-11"&gt;
+&lt;h2&gt;Level 11&lt;/h2&gt;
+&lt;p&gt;Nesse nível a senha está cifrada pulando 13 carteres &amp;quot;&lt;a class="reference external" href="http://pt.wikipedia.org/wiki/Cifra_de_C%C3%A9sar"&gt;Cifra de Cesar&lt;/a&gt;&amp;quot;
+contando pelo alfabeto padrão, então a letra A repectivamente se torna a letra N e assim por
+diante.&lt;/p&gt;
+&lt;p&gt;Vou resolver esse nível de duas maneiras, maneira mais simples com domandos do terminal e o
+modo pythonias.&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;No primeiro modo vamos redirecionar o comando &lt;strong&gt;cat&lt;/strong&gt; para o comando &lt;strong&gt;tr&lt;/strong&gt; que está
+como sugestão de comando para passar de level, o comando tr segundo o manual faz o seguinte:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Translate, squeeze, and/or delete characters from standard input, writing
+to standard output.
+&lt;/pre&gt;
+&lt;p&gt;Ou seja, traduz, encurta ou deleta caracteres.&lt;/p&gt;
+&lt;p&gt;A sintax ficaria assim:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tr &lt;span class="o"&gt;[&lt;/span&gt;OPTION&lt;span class="o"&gt;]&lt;/span&gt;... SET1 &lt;span class="o"&gt;[&lt;/span&gt;SET2&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Onde SET1 seria o padrão que está cifrado 'A-Za-z' e o SET2 seria o padrão usado para
+decifrar a senha pulando os 13 caracteres 'N-ZA-Mn-za-m', o comando completo ficaria
+assim:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit11@melinda:~$ ll
+total 24
+drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ./
+drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; 06:46 ../
+-rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root      &lt;span class="m"&gt;220&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bash_logout
+-rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root     &lt;span class="m"&gt;3637&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bashrc
+-rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root      &lt;span class="m"&gt;675&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .profile
+-rw-r-----   &lt;span class="m"&gt;1&lt;/span&gt; bandit12 bandit11   &lt;span class="m"&gt;49&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 data.txt
+bandit11@melinda:~$ cat data.txt
+Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
+bandit11@melinda:~$ cat data.txt &lt;span class="p"&gt;|&lt;/span&gt; tr &lt;span class="s1"&gt;&amp;#39;A-Za-z&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;N-ZA-Mn-za-m&amp;#39;&lt;/span&gt;
+The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;E também conseguimos fazer essa tradução usando o python:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/usr/bin/python3&lt;/span&gt;
+&lt;span class="c1"&gt;# -*- encoding: utf-8 -*-&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;string&lt;/span&gt;
+
+&lt;span class="n"&gt;padrao&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;cesar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;cifra&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh&amp;#39;&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cifra&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;translate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;maketrans&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;padrao&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cesar&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;emilio Python $ python ccesar.py
+The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-12"&gt;
+&lt;h2&gt;Level 12&lt;/h2&gt;
+&lt;p&gt;Neste nível a coisa está ficando um pouco mais complicada, agora teremos que tratar
+um arquivo em hexa para conseguir descobrir a senha para o próximo nível.&lt;/p&gt;
+&lt;p&gt;Primeiramente vamos seguir as orientações e criar um diretório no /tmp e copiar
+o arquivo &lt;strong&gt;data.txt&lt;/strong&gt; para dentro desse diretório.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit12@melinda:~$ mkdir /tmp/emilioeiji
+bandit12@melinda:~$ cp data.txt /tmp/emiloeiji
+bandit12@melinda:~$ &lt;span class="nb"&gt;cd&lt;/span&gt; /tmp/emilioeiji
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Como fiquei perdido resolvi continuar seguindo as sugestões e comecei a ver a man
+page dos comandos sugeridos '&lt;strong&gt;grep, sort, uniq, strings, base64, tr, tar, gzip,
+bzip2, xxd, mkdir, cp, mv&lt;/strong&gt;' e encontrei uma luz no comando xxd.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+NAME
+       xxd - make a hexdump or do the reverse.
+
+SYNOPSIS
+       xxd -h[elp]
+       xxd [options] [infile [outfile]]
+       xxd -r[evert] [options] [infile [outfile]]
+&lt;/pre&gt;
+&lt;p&gt;Então para tratar o arquivo ficaria assim, gerando um segundo arquivo.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;xxd -r data.txt arquivo2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Agora temos o arquivo2 porém, rodando um &lt;strong&gt;cat arquivo2&lt;/strong&gt; retornou um monte de caracteres
+estranhos portanto podemos deduzir que não se trata de um arquivo texto, pesquisando um pouco
+como podemos descobrir que tipo de arquivo foi gerado encontrei o comando file:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+NAME
+     file — determine file type
+
+SYNOPSIS
+     file [-bchiklLNnprsvz0] [--apple] [--mime-encoding] [--mime-type] [-e testname] [-F separator] [-f namefile] [-m   magicfiles] [-R maxrecursion]
+          file ...
+     file -C [-m magicfiles]
+     file [--help]
+&lt;/pre&gt;
+&lt;p&gt;vamos rodar o comando então para descobri que tipo de arquivo é esse.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit12@melinda:/tmp/emilioeiji$ file arquivo2
+arquivo2: gzip compressed data, was &lt;span class="s2"&gt;&amp;quot;data2.bin&amp;quot;&lt;/span&gt;, from Unix, last modified: Fri Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32:20 2014, max compression
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Descobrimos que se trata de um arquivo gzip, tentei descompactar o arquivo2 direto com o comando
+&lt;strong&gt;gzip -d arquivo2&lt;/strong&gt; porem tive o retorno que o sulfixo do arquivo era desconhecido, mudei o nome do arquivo
+para .gz e o comando foi executado gerando o arquivo2 novamente.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit12@melinda:/tmp/emilioeiji$ gzip -d arquivo2
+gzip: arquivo2: unknown suffix -- ignored
+bandit12@melinda:/tmp/emilioeiji$ ls
+arquivo2  data.txt
+bandit12@melinda:/tmp/emilioeiji$ mv arquivo2 arquivo2.gz
+bandit12@melinda:/tmp/emilioeiji$ gzip -d arquivo2.gz
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Rodando um &lt;strong&gt;cat arquivo2&lt;/strong&gt; retornou novamente os caracteres especiais, para minha surpresa quando rodei
+o &lt;strong&gt;file arquivo2&lt;/strong&gt; era outro arquivo compactdo mas agora como gzip2:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit12@melinda:/tmp/emilioeiji$ file arquivo2
+arquivo2: bzip2 compressed data, block &lt;span class="nv"&gt;size&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; 900k
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Vamos descompactar o arquivo bzip2:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit12@melinda:/tmp/emilioeiji$ bzip2 -d arquivo2
+bzip2: Can&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;t guess original name &lt;span class="k"&gt;for&lt;/span&gt; arquivo2 -- using arquivo2.out
+bandit12@melinda:/tmp/emilioeiji$ ls
+arquivo2.out  data.txt
+bandit12@melinda:/tmp/emilioeiji$ file arquivo2.out
+arquivo2.out: gzip compressed data, was &lt;span class="s2"&gt;&amp;quot;data4.bin&amp;quot;&lt;/span&gt;, from Unix, last modified: Fri Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32:20 2014, max compression
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Com o comando de descompactaçao foi gerado o &lt;strong&gt;arquivo2.out&lt;/strong&gt; e com o comando file obtive novamente que se
+tratava de outro arquivo compactado no formato gzip, vamos acrescentar a extensão .gz e descompactar
+novamente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit12@melinda:/tmp/emilioeiji$ mv arquivo2.out arquivo2.gz
+bandit12@melinda:/tmp/emilioeiji$ gzip -d arquivo2.gz
+bandit12@melinda:/tmp/emilioeiji$ ls
+arquivo2  data.txt
+bandit12@melinda:/tmp/emilioeiji$ file arquivo2
+arquivo2: POSIX tar archive &lt;span class="o"&gt;(&lt;/span&gt;GNU&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Agora temos outro arquivo compactado mas no formato tar, bora descompactá-lo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit12@melinda:/tmp/emilioeiji$ tar xvf arquivo2
+data5.bin
+bandit12@melinda:/tmp/emilioeiji$ file data5.bin
+data5.bin: POSIX tar archive &lt;span class="o"&gt;(&lt;/span&gt;GNU&lt;span class="o"&gt;)&lt;/span&gt;
+bandit12@melinda:/tmp/emilioeiji$ ls
+arquivo2  data.txt  data5.bin
+bandit12@melinda:/tmp/emilioeiji$ tar xvf data5.bin
+data6.bin
+bandit12@melinda:/tmp/emilioeiji$ ls
+arquivo2  data.txt  data5.bin  data6.bin
+bandit12@melinda:/tmp/emilioeiji$ file data6.bin
+data6.bin: bzip2 compressed data, block &lt;span class="nv"&gt;size&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; 900k
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Descompactando o &lt;strong&gt;arquivo2&lt;/strong&gt; em formato tar, foi gerado outro arquivo compactado em tar
+novamente, efetuei a descompactação outra vez e foi gerado novamente um arquivo bzip2, vamos
+descompactar de novo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit12@melinda:/tmp/emilioeiji$ bzip2 -d data6.bin
+bzip2: Can&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;t guess original name &lt;span class="k"&gt;for&lt;/span&gt; data6.bin -- using data6.bin.out
+bandit12@melinda:/tmp/emilioeiji$ ls
+arquivo2  data.txt  data5.bin  data6.bin.out
+bandit12@melinda:/tmp/emilioeiji$ file data6.bin.out
+data6.bin.out: POSIX tar archive &lt;span class="o"&gt;(&lt;/span&gt;GNU&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Outro arquivo tar.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit12@melinda:/tmp/emilioeiji$ tar xvf data6.bin.out
+data8.bin
+bandit12@melinda:/tmp/emilioeiji$ ls
+arquivo2  data.txt  data5.bin  data6.bin.out  data8.bin
+bandit12@melinda:/tmp/emilioeiji$ file data8.bin
+data8.bin: gzip compressed data, was &lt;span class="s2"&gt;&amp;quot;data9.bin&amp;quot;&lt;/span&gt;, from Unix, last modified: Fri Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32:20 2014, max compression
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Outro arquivo gzip.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit12@melinda:/tmp/emilioeiji$ mv data8.bin data8.gz
+bandit12@melinda:/tmp/emilioeiji$ gzip -d data8.gz
+bandit12@melinda:/tmp/emilioeiji$ ls
+arquivo2  data.txt  data5.bin  data6.bin.out  data8
+bandit12@melinda:/tmp/emilioeiji$ file data8
+data8: ASCII text
+bandit12@melinda:/tmp/emilioeiji$ cat data8
+The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E finalmente descobrimos a senha &lt;strong&gt;8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ufa!!! Essa deu trabalho heim...&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-13"&gt;
+&lt;h2&gt;Level 13&lt;/h2&gt;
+&lt;p&gt;Nesse nível temos a senha armazenada no arquivo &lt;strong&gt;/etc/bandit_pass/bandit14&lt;/strong&gt; e o mesmo
+só pode ser acessado pelo usuário bandit14 que é do próximo level, foi gerado uma sshkey
+para conexões ssh e como nota foi orientado a conectar por ssh no localhost.&lt;/p&gt;
+&lt;p&gt;Primeiro vamos descobrir como conectar via ssh utilizando a chave gerada:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+SSH(1)                                                          BSD General Commands    Manual                                                         SSH(1)
+
+NAME
+     ssh — OpenSSH SSH client (remote login program)
+
+SYNOPSIS
+     ssh [-1246AaCfgKkMNnqsTtVvXxYy] [-b bind_address] [-c cipher_spec] [-D [bind_address:]port] [-E log_file] [-e escape_char]         [-F configfile]
+         [-I pkcs11]     [-i identity_file] [-L [bind_address:]port:host:hostport] [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o       option] [-p      port]
+         [-Q cipher | cipher-auth | mac | kex | key] [-R [bind_address:]port:host:hostport] [-S ctl_path] [-W host:port] [-w    local_tun[:remote_tun]]
+         [user&amp;#64;]hostname [command]
+&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;
+-i identity_file
+        Selects a file from which the identity (private key) for public key authentication is read.  The default is ~/  identity for protocol
+        sion 1, and ~/.ssh/id    ~/.ssh/id_ecdsa, ~/.ssh/id_ed25519 and ~/.ssh/id_rsa for protocol version 2.  Iden     files may also be spe
+        on a per-host basis i   configuration file.  It is possible to have multiple -i options (and mult       identities specified in confi
+        tion files).  ssh will also try to load certificate information from the filename obtained by appending -cert   to identity filenames.
+&lt;/pre&gt;
+&lt;p&gt;Temos que usar o parametro -i e o nome do arquivo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit13@melinda:~$ ll
+total 24
+drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ./
+drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; 06:46 ../
+-rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root      &lt;span class="m"&gt;220&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bash_logout
+-rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root     &lt;span class="m"&gt;3637&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bashrc
+-rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root      &lt;span class="m"&gt;675&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .profile
+-rw-r-----   &lt;span class="m"&gt;1&lt;/span&gt; bandit14 bandit13 &lt;span class="m"&gt;1679&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 sshkey.private
+bandit13@melinda:~$ ssh -i sshkey.private bandit14@localhost
+Could not create directory &lt;span class="s1"&gt;&amp;#39;/home/bandit13/.ssh&amp;#39;&lt;/span&gt;.
+The authenticity of host &lt;span class="s1"&gt;&amp;#39;localhost (127.0.0.1)&amp;#39;&lt;/span&gt; can&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;t be established.
+ECDSA key fingerprint is 05:3a:1c:25:35:0a:ed:2f:cd:87:1c:f6:fe:69:e4:f6.
+Are you sure you want to &lt;span class="k"&gt;continue&lt;/span&gt; connecting &lt;span class="o"&gt;(&lt;/span&gt;yes/no&lt;span class="o"&gt;)&lt;/span&gt;? yes
+bandit14@melinda:~$ cat /etc/bandit_pass/bandit
+bandit0   bandit10  bandit12  bandit14  bandit16  bandit18  bandit2   bandit21  bandit23  bandit25  bandit3   bandit5           bandit7   bandit9
+bandit1   bandit11      bandit13  bandit15  bandit17  bandit19  bandit20  bandit22  bandit24  bandit26  bandit4   bandit6       bandit8
+bandit14@melinda:~$ cat /etc/bandit_pass/bandit14
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Essa com certeza foi muito mais fácil que o level anterior.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-14"&gt;
+&lt;h2&gt;Level 14&lt;/h2&gt;
+&lt;p&gt;Para obtermos a senha para o próximo nível temos que escutar a porta 30000 e segundo
+a descrição temos que apresentar a senha atual para recebermos a próxima senha.&lt;/p&gt;
+&lt;p&gt;Novamente fiquei perdido e comecei a dar o man para os comando sugeridos e achei que o
+&lt;strong&gt;nc&lt;/strong&gt; poderia ajudar em alguma coisa:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+NC(1)                                                           BSD General Commands    Manual                                                          NC(1)
+
+NAME
+     nc -- arbitrary TCP and UDP connections and listens
+
+SYNOPSIS
+     nc [-46bCDdhklnrStUuvZz] [-I length] [-i interval] [-O length] [-P proxy_username] [-p source_port] [-q seconds] [-s       source] [-T toskeyword]
+        [-V rtable] [-w time    out] [-X proxy_protocol] [-x proxy_address[:port]] [destination] [port]
+
+DESCRIPTION
+     The nc (or netcat) utility is used for just about anything under the sun involving TCP, UDP, or UNIX-domain sockets.  It   can open TCP connections,
+     send UDP packets, listen on arbitrary TCP and UDP ports, do port scanning, and deal with both IPv4 and IPv6.  Unlike       telnet(1), nc scripts nicely,
+     and separates error messages onto standard error instead of sending them to standard output, as telnet(1) does with some.
+&lt;/pre&gt;
+&lt;p&gt;Basicamente o nc abre e escuta conexões tcp e udp então tentei no modo padrão para praticamente
+todo tipo de conexão, comando destino porta.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit14@melinda:~$ nc localhost 30000
+
+Wrong! Please enter the correct current password
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Demorei pra entender um pouco como funcionava esse comando, em primeiro momento parecia ter conectado
+e não aconteceu mais nada, esperei por alguns momentos e resolvi pressionar enter, retornou que a senha
+estava incorreta, resolvi então repetir o procedimento e colocar a senha desse level &lt;strong&gt;4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e&lt;/strong&gt;
+e para minha surpresa funcionou.s&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit14@melinda:~$ nc localhost 30000
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+Correct!
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Foi mais fácil que pensei...&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-15"&gt;
+&lt;h2&gt;Level 15&lt;/h2&gt;
+&lt;p&gt;Como no nível anterior temos que conectar em localhost na porta 30001 porém usando
+encriptação SSL e fornecer a senha do nível atual. Pesquisando um pouco sobre ssl descobri que para conectar como cliente
+devemos usar o parametro s_client no comando openssl, ficando assim:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit15@melinda:~$ openssl s_client -connect 127.0.0.1:30001 -quiet
+&lt;span class="nv"&gt;depth&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;CN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; li190-250.members.linode.com
+verify error:num&lt;span class="o"&gt;=&lt;/span&gt;18:self signed certificate
+verify &lt;span class="k"&gt;return&lt;/span&gt;:1
+&lt;span class="nv"&gt;depth&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;CN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; li190-250.members.linode.com
+verify &lt;span class="k"&gt;return&lt;/span&gt;:1
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+Correct!
+cluFn7wTiGryunymYOu4RcffSxQluehd
+
+read:errno&lt;span class="o"&gt;=&lt;/span&gt;0
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Está cada vez ficando mais complexo conseguir as senhas, apesar de ser apenas
+um jogo com ele conseguimos aprender algumas coisas legais.&lt;/p&gt;
+&lt;p&gt;Abraços até os próximos níveis.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="wargame"></category><category term="linux"></category><category term="hacker"></category><category term="hacking"></category><category term="seguranca"></category></entry><entry><title>Over The Wire - War Games Level 6 - 10</title><link href="http://emilioeiji.com.br/over-the-wire-war-game-6-10.html" rel="alternate"></link><published>2015-04-18T08:57:00-03:00</published><updated>2015-04-18T08:57:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2015-04-18:/over-the-wire-war-game-6-10.html</id><summary type="html">&lt;p&gt;Fala galera!!! Vamos continuar subindo de level no Over The Wire.&lt;/p&gt;
+&lt;div class="section" id="level-6"&gt;
+&lt;h2&gt;Level 6&lt;/h2&gt;
+&lt;p&gt;A partir daqui parece que a coisa está começando a ficar um pouco mais complexa,
+estamos começando a usar comandos com alguns parametros, nada muito diferente do
+&lt;a class="reference external" href="http://emilioeiji.com.br/over-the-wire-war-game-0-5.html"&gt;level 5&lt;/a&gt;
+acrescentando apenas 2 parametros a mais.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit6@melinda …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Fala galera!!! Vamos continuar subindo de level no Over The Wire.&lt;/p&gt;
+&lt;div class="section" id="level-6"&gt;
+&lt;h2&gt;Level 6&lt;/h2&gt;
+&lt;p&gt;A partir daqui parece que a coisa está começando a ficar um pouco mais complexa,
+estamos começando a usar comandos com alguns parametros, nada muito diferente do
+&lt;a class="reference external" href="http://emilioeiji.com.br/over-the-wire-war-game-0-5.html"&gt;level 5&lt;/a&gt;
+acrescentando apenas 2 parametros a mais.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit6@melinda:~$ find / -size 33c -group bandit6 -user bandit7
+/var/lib/dpkg/info/bandit7.password
+bandit6@melinda:~$ cat /var/lib/dpkg/info/bandit7.password
+HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Pronto, conseguimos encontrar nosso arquivo.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-7"&gt;
+&lt;h2&gt;Level 7&lt;/h2&gt;
+&lt;p&gt;Aqui devemos encontrar a senha dentro do arquivo &lt;strong&gt;data.txt&lt;/strong&gt; após a palavra millionth
+e se você igual eu deu logo um &lt;strong&gt;cat data.txt&lt;/strong&gt; notou que não vai ser fácil encontrar
+a senha desse jeito, devem ter notado que o arquivo segue um padrão, uma palavra seguida
+se uma 'senha', portanto para encontrarmos a linha com o millionth vamos usar o comando grep:&lt;/p&gt;
+&lt;p&gt;..code-block:: bash&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="mailto:bandit7&amp;#64;melinda"&gt;bandit7&amp;#64;melinda&lt;/a&gt;:~$ cat data.txt | grep millionth
+millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV&lt;/blockquote&gt;
+&lt;p&gt;Pronto, encontramos a nossa senha no meio de tantas linhas.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-8"&gt;
+&lt;h2&gt;Level 8&lt;/h2&gt;
+&lt;p&gt;Agora ficou um pouco complicado, vamos ler atentamente a descrição do desafio.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+The password for the next level is stored in the file data.txt and is the only
+line of text that occurs only once
+
+Commands you may need to solve this level
+
+grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
+&lt;/pre&gt;
+&lt;p&gt;Sabemos que a senha está dentro do arquivo data.txt e que ela é apresentada em uma única linha
+dentro do arquivo. Então vamos elaborar nosso comando:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Se simplesmente rodarmos o comando &lt;strong&gt;cat data.txt&lt;/strong&gt; vamos receber várias linhas todas embaralhadas.&lt;/li&gt;
+&lt;li&gt;Vamos melhorar um pouco entao rodando o comando &lt;strong&gt;cat data.txt | sort&lt;/strong&gt;, agora vimos que a listagem
+ficou ordenada, mas com vários registros repetidos, podemos melhorar ainda mais.&lt;/li&gt;
+&lt;li&gt;Vamos elimitar os vários registros repetidos com o comando &lt;strong&gt;cat data.txt | sort -u&lt;/strong&gt;, opa!!! Está melhorando.&lt;/li&gt;
+&lt;li&gt;E por final vamos pedir para retornar apenas os registros que forem únicos dentro do arquivo com o comando
+&lt;strong&gt;cat data.txt | sort | uniq -u&lt;/strong&gt;, pronto agora temos a nossa senha.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit8@melinda:~$ cat data.txt &lt;span class="p"&gt;|&lt;/span&gt; sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -u
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-9"&gt;
+&lt;h2&gt;Level 9&lt;/h2&gt;
+&lt;p&gt;Precisamos encontrar a senha dentro do arquivo &lt;strong&gt;data.txt&lt;/strong&gt; onde encontra-se após
+vários '=', nesse nível se rodarmos um &lt;strong&gt;cat data.txt&lt;/strong&gt; e procurar um pouco podemos
+encontrar a senha masssssss se o arquivo fosse gigantesco se tornaria inviável ficar
+procurando os vários '=', portanto vamos elaborar um pouco o nosso mecanismo de busca
+dentro desse arquivo pegando como dica o comando &lt;strong&gt;strings&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+STRINGS(1)                    GNU Development Tools                   STRINGS(1)
+
+NAME
+       strings - print the strings of printable characters in files.
+
+SYNOPSIS
+       strings [-afovV] [-min-len]
+               [-n min-len] [--bytes=min-len]
+               [-t radix] [--radix=radix]
+               [-e encoding] [--encoding=encoding]
+               [-] [--all] [--print-file-name]
+               [-T bfdname] [--target=bfdname]
+               [--help] [--version] file...
+
+DESCRIPTION
+       For each file given, GNU strings prints the printable character sequences
+       that are at least 4 characters long (or the number given with the options
+       below) and are followed by an unprintable character.
+
+       Depending upon how the strings program was configured it will default to
+       either displaying all the printable sequences that it can find in each
+       file, or only those sequences that are in loadable, initialized data
+       sections.  If the file type in unrecognizable, or if strings is reading
+       from stdin then it will always display all of the printable sequences
+       that it can find.
+
+       For backwards compatibility any file that occurs after a command line
+       option of just - will also be scanned in full, regardless of the presence
+       of any -d option.
+
+strings is mainly useful for determining the contents of non-text files.
+&lt;/pre&gt;
+&lt;p&gt;O comando strings retornar os caracteres legíveis dentro de um arquivo, quando rodamos o
+&lt;strong&gt;cat data.txt&lt;/strong&gt; notamos que o arquivo está cheio e caracteres não legíveis e como sabemos
+que a senha se encontra após vários '=' vamos casar o comando com o &lt;strong&gt;grep =&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit9@melinda:~$ strings data.txt &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nv"&gt;grep&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+epr~F&lt;span class="o"&gt;=&lt;/span&gt;K
+7?YD&lt;span class="o"&gt;=&lt;/span&gt;
+?M&lt;span class="o"&gt;=&lt;/span&gt;HqAH
+/&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Ne&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="nv"&gt;C&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;_&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="s2"&gt;I========== the6&lt;/span&gt;
+&lt;span class="s2"&gt;z5Y=&lt;/span&gt;
+&lt;span class="s2"&gt;`h(8=`&lt;/span&gt;
+&lt;span class="s2"&gt;n\H=;&lt;/span&gt;
+&lt;span class="s2"&gt;========== password&lt;/span&gt;
+&lt;span class="s2"&gt;========== ism&lt;/span&gt;
+&lt;span class="s2"&gt;N&lt;/span&gt;$&lt;span class="s2"&gt;=&amp;amp;&lt;/span&gt;
+&lt;span class="s2"&gt;l/a=L)&lt;/span&gt;
+&lt;span class="s2"&gt;f=C(&lt;/span&gt;
+&lt;span class="s2"&gt;========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk&lt;/span&gt;
+&lt;span class="s2"&gt;ie)=5e&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A senha para o próximo nível é: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-10"&gt;
+&lt;h2&gt;Level 10&lt;/h2&gt;
+&lt;p&gt;Nesse nívels temos a seguinte string dentro do arquivo &lt;strong&gt;data.txt&lt;/strong&gt;:
+VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg== e conforme
+a descrição do desafio a string está codificada em &lt;a class="reference external" href="http://pt.wikipedia.org/wiki/Base64"&gt;base64&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Podemos encontrar a senha de duas formas:&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;Rodando diretamente o comando base64 com o parametro &lt;strong&gt;-d&lt;/strong&gt; para
+decodificar conforme encontra-se nas dicas dos possíveis comandos
+a serem usados:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit10@melinda:~$ cat data.txt
+&lt;span class="nv"&gt;VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;
+bandit10@melinda:~$ base64 -d data.txt
+The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;E do modo pythonista com o seguinte script:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/usr/bin/python&lt;/span&gt;
+&lt;span class="c1"&gt;# -*- encoding: utf-8 -*-&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;base64&lt;/span&gt;
+
+&lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg==&amp;quot;&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;base64&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;b64decode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;emilio Python $ python3 dec64.py
+b&lt;span class="s1"&gt;&amp;#39;The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR\n&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Vou encerrando esse post por aqui com a senha para o level 11.&lt;/p&gt;
+&lt;p&gt;Abraços&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="wargame"></category><category term="linux"></category><category term="hacker"></category><category term="hacking"></category><category term="seguranca"></category></entry><entry><title>Over The Wire - War Games Level 0 - 5</title><link href="http://emilioeiji.com.br/over-the-wire-war-game-0-5.html" rel="alternate"></link><published>2015-04-17T23:34:00-03:00</published><updated>2015-04-17T23:34:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2015-04-17:/over-the-wire-war-game-0-5.html</id><summary type="html">&lt;p&gt;Olá galera, já faz algum tempo que não posto nada aqui e como estou de férias e com
+&amp;quot;tempo sobrando&amp;quot; resolvi distrair um pouco e brincar com aqueles 'War Games', pesquisando
+um pouco encontrei o &lt;a class="reference external" href="http://overthewire.org/wargames/"&gt;Over The Wire&lt;/a&gt; ,
+existem vários vídeos no youtube do Hacker GeoHot conseguindo
+solucionar os vários …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Olá galera, já faz algum tempo que não posto nada aqui e como estou de férias e com
+&amp;quot;tempo sobrando&amp;quot; resolvi distrair um pouco e brincar com aqueles 'War Games', pesquisando
+um pouco encontrei o &lt;a class="reference external" href="http://overthewire.org/wargames/"&gt;Over The Wire&lt;/a&gt; ,
+existem vários vídeos no youtube do Hacker GeoHot conseguindo
+solucionar os vários níveis do jogo.&lt;/p&gt;
+&lt;p&gt;No Over The Wire temos vários níveis de jogo, mas conforme sugerido pelo mesmo vou tentar
+do mais fácil, o &lt;a class="reference external" href="http://overthewire.org/wargames/bandit/bandit0.html"&gt;Bandit&lt;/a&gt; :)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Bandit&lt;/li&gt;
+&lt;li&gt;Leviathan or Natas or Krypton&lt;/li&gt;
+&lt;li&gt;Narnia&lt;/li&gt;
+&lt;li&gt;Behemoth&lt;/li&gt;
+&lt;li&gt;Utumno&lt;/li&gt;
+&lt;li&gt;Maze&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Conforme eu conseguir passar os níveis vou postando aqui o meu progresso mas como as minhas
+férias já estão acabando pode ser que demore um pouco para postar outros níveis.&lt;/p&gt;
+&lt;p&gt;O wargame Bandit é o básico do básico, é indicado pra quem está começando no mundo *unix
+agora, onde aprende-se a listar conteúdo de arquivos, ssh, etc.&lt;/p&gt;
+&lt;div class="section" id="level-0"&gt;
+&lt;h2&gt;Level 0&lt;/h2&gt;
+&lt;p&gt;No primeiro nível temos que conseguir conectar por ssh no host bandit.labs.overthewire.org
+com o usuário e senha bandit0.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/bandit-0-1.png"&gt;&lt;img alt="bandit-0-1" src="http://emilioeiji.com.br/images/bandit-0-1.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;No arquivo readme temos a senha para o nível 1.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+&lt;/pre&gt;
+&lt;p&gt;Pronto, agora que já conseguimos a senha vamos logar agora com o usuário bandit1 e colocar a senha
+que acabamos de encontrar.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-1"&gt;
+&lt;h2&gt;Level 1&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/bandit-1-1.png"&gt;&lt;img alt="bandit-1-1" src="http://emilioeiji.com.br/images/bandit-1-1.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Dentro do arquivo com o nome - isso mesmo o nome do arquivo é um hífen, se tentarmos listar direto com
+o cat vamos notar que o comando não retornar as informações do arquivo, porque arquivos que começam com
+hífen no unix tem que ser tratados diferente, com o comando a baixo podemos listar o conteúdo do arquivo
+e respectivamente a senha para o level 2.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ls -lh
+cat ./-
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/bandit-1-2.png"&gt;&lt;img alt="bandit-1-2" src="http://emilioeiji.com.br/images/bandit-1-2.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Agora temos a seguinte senha para acessar o level 2:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-2"&gt;
+&lt;h2&gt;Level 2&lt;/h2&gt;
+&lt;p&gt;No level 2 temos apenas que listar o arquivo &lt;strong&gt;spaces in this filename&lt;/strong&gt; e quem já trabalhou com o bash
+deve saber que para tratar os arquivos com espaços devemos usar o antes do espaço ou colocar o nome do
+arquivo entre &amp;quot;&amp;quot;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit2@melinda:~$ ll
+total 24
+drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ./
+drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; 06:46 ../
+-rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root    root     &lt;span class="m"&gt;220&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bash_logout
+-rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root    root    &lt;span class="m"&gt;3637&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bashrc
+-rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root    root     &lt;span class="m"&gt;675&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .profile
+-rw-r-----   &lt;span class="m"&gt;1&lt;/span&gt; bandit3 bandit2   &lt;span class="m"&gt;33&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 spaces in this filename
+bandit2@melinda:~$ cat spaces&lt;span class="se"&gt;\ &lt;/span&gt;in&lt;span class="se"&gt;\ &lt;/span&gt;this&lt;span class="se"&gt;\ &lt;/span&gt;filename
+UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+bandit2@melinda:~$ cat &lt;span class="s2"&gt;&amp;quot;spaces in this filename&amp;quot;&lt;/span&gt;
+UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Agora que temos a senha vamos partir para o level 3.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-3"&gt;
+&lt;h2&gt;Level 3&lt;/h2&gt;
+&lt;p&gt;No level 3 temos que pegar a senha dentro de um arquivo oculto que está dentro do diretório &lt;strong&gt;inhere&lt;/strong&gt;,
+para ocultar tanto diretório como arquivo bastar colocar um . na frente do nome e para listar
+todos os arquivos de um diretório podemos usar vários comandos, mas os mais comuns são o &lt;strong&gt;ll&lt;/strong&gt;
+que é um atalho para o &lt;strong&gt;ls -lai&lt;/strong&gt;. Após conseguirmos encontrar o arquivo chamado &lt;strong&gt;.hidden&lt;/strong&gt; podemos
+listar o conteúdo dele com os comandos abaixo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit3@melinda:~$ ll
+total 24
+drwxr-xr-x   &lt;span class="m"&gt;3&lt;/span&gt; root root &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ./
+drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root root &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; 06:46 ../
+-rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root root  &lt;span class="m"&gt;220&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bash_logout
+-rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root root &lt;span class="m"&gt;3637&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bashrc
+-rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root root  &lt;span class="m"&gt;675&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .profile
+drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root root &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 inhere/
+bandit3@melinda:~$ ll inhere/
+total 12
+drwxr-xr-x &lt;span class="m"&gt;2&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ./
+drwxr-xr-x &lt;span class="m"&gt;3&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ../
+-rw-r----- &lt;span class="m"&gt;1&lt;/span&gt; bandit4 bandit3   &lt;span class="m"&gt;33&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 .hidden
+bandit3@melinda:~$ cat inhere/.hidden
+pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bora para o level 4.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-4"&gt;
+&lt;h2&gt;Level 4&lt;/h2&gt;
+&lt;p&gt;No level 4 temos que encontrar o arquivo onde encontra-se a senha em texto puro, nos outros
+arquivos aparenta estar cifrada, não muda nada doque fizemos até aqui:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/bandit-4-1.png"&gt;&lt;img alt="bandit-4-1" src="http://emilioeiji.com.br/images/bandit-4-1.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Pode notar que a senha está dentro do arquivo &lt;strong&gt;-file07&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+&lt;/pre&gt;
+&lt;p&gt;Go go go level 5.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="level-5"&gt;
+&lt;h2&gt;Level 5&lt;/h2&gt;
+&lt;p&gt;No level 5 temos alguns parametros para encontrar nosso arquivo com a senha dentro, na descrição
+está dizendo que o arquivo tem 1033 bytes e não é executável, ou seja legível. Podemos efetuar
+a busca de duas formas:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;Listando diretório por diretório com o comando &lt;strong&gt;ls -lai&lt;/strong&gt; e tentando encontrar o arquivo com o
+tamanho de 1033 bytes&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Utilizando o comando find e deixando ele se encarregar de buscar em todos os diretórios.
+.. code-block:: bash&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class="reference external" href="mailto:bandit5&amp;#64;melinda"&gt;bandit5&amp;#64;melinda&lt;/a&gt;:~$ find ./* -size 1033c -readable
+./inhere/maybehere07/.file2
+&lt;a class="reference external" href="mailto:bandit5&amp;#64;melinda"&gt;bandit5&amp;#64;melinda&lt;/a&gt;:~$ cat inhere/maybehere07/.file2
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Pronto, com isso já temos a senha para o próximo level.&lt;/p&gt;
+&lt;p&gt;Mas neste post vou ficando por aqui, logo mais volto com mais levels pra vocês.&lt;/p&gt;
+&lt;p&gt;Abraços&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="wargame"></category><category term="linux"></category><category term="hacker"></category><category term="hacking"></category><category term="seguranca"></category></entry></feed>

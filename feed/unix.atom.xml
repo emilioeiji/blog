@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - Unix</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/unix.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2015-02-14T21:23:00-02:00</updated><entry><title>Reiniciando serviços do windows remotamente através do linux</title><link href="http://emilioeiji.com.br/reiniciando-servicos-windows-remotamente-atraves-linux.html" rel="alternate"></link><published>2015-02-14T21:23:00-02:00</published><updated>2015-02-14T21:23:00-02:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2015-02-14:/reiniciando-servicos-windows-remotamente-atraves-linux.html</id><summary type="html">&lt;p&gt;Como puderam ver no post anterior, estou trabalhando na padronização
+das rotinas de backups onde eu trabalho, estou utilizando a ferramenta
+de backup bacula, fácil, versátil e muito poderosa.&lt;/p&gt;
+&lt;p&gt;Com isso vou precisar desenvolver alguns scripts para facilitar os
+meus backups. Atualmente no meu cenário tenho um servidor que que …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Como puderam ver no post anterior, estou trabalhando na padronização
+das rotinas de backups onde eu trabalho, estou utilizando a ferramenta
+de backup bacula, fácil, versátil e muito poderosa.&lt;/p&gt;
+&lt;p&gt;Com isso vou precisar desenvolver alguns scripts para facilitar os
+meus backups. Atualmente no meu cenário tenho um servidor que que irá
+executar um backup full no primeiro domingo do mês e nos demais domingos
+um backup incremental, durante os dia se semana irá executar um backup
+diferencial que é startado por um usuário, ainda não pensei em como
+fazer pra esse usuário iniciar o bakcup mas uma das primeiras coisas que
+precisei foi pesquisar como parar e iniciar os serviços windows através
+do linux. Eis que encontrei o net rpc :)&lt;/p&gt;
+&lt;p&gt;Para conseguir utilizar o net rcp precisa ter instalado em sua
+distribuição o pacote samba-common ou correspondente. Se você como eu
+utiliza alguma distribuição &lt;em&gt;debian like&lt;/em&gt; pode utilizar o seguinte
+comando para instalar o pacote.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install samba-common
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A utilização do comando é bem simples, primeiro vamos listar os serviços
+disponíveis com o comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;net rpc service list -I endereçoIP/nomemaquina -U usuario%senha
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;emilio@emilio-linux ~ $ net rpc service list -I vsrv-iis -U administrador%123
+AeLookupSvc             &lt;span class="s2"&gt;&amp;quot;Serviço de Busca de Experiência com Aplicativo&amp;quot;&lt;/span&gt;
+Alerter                 &lt;span class="s2"&gt;&amp;quot;Alerta&amp;quot;&lt;/span&gt;
+ALG                     &lt;span class="s2"&gt;&amp;quot;Serviço &amp;#39;Gateway de camada de aplicativo&amp;#39;&amp;quot;&lt;/span&gt;
+AppMgmt                 &lt;span class="s2"&gt;&amp;quot;Gerenciamento de aplicativo&amp;quot;&lt;/span&gt;
+AudioSrv                &lt;span class="s2"&gt;&amp;quot;Áudio do Windows&amp;quot;&lt;/span&gt;
+BITS                    &lt;span class="s2"&gt;&amp;quot;Serviço de transferência inteligente de plano de fundo&amp;quot;&lt;/span&gt;
+Browser                 &lt;span class="s2"&gt;&amp;quot;Localizador de computadores&amp;quot;&lt;/span&gt;
+CiSvc                   &lt;span class="s2"&gt;&amp;quot;Serviço de indexação&amp;quot;&lt;/span&gt;
+ClipSrv                 &lt;span class="s2"&gt;&amp;quot;Área de armazenamento&amp;quot;&lt;/span&gt;
+COMSysApp               &lt;span class="s2"&gt;&amp;quot;Aplicativo de sistema COM+&amp;quot;&lt;/span&gt;
+CryptSvc                &lt;span class="s2"&gt;&amp;quot;Serviços de criptografia&amp;quot;&lt;/span&gt;
+DcomLaunch              &lt;span class="s2"&gt;&amp;quot;Inicializador de Processo de Servidor DCOM&amp;quot;&lt;/span&gt;
+Dfs                     &lt;span class="s2"&gt;&amp;quot;Sistema de arquivos distribuídos&amp;quot;&lt;/span&gt;
+Dhcp                    &lt;span class="s2"&gt;&amp;quot;Cliente DHCP&amp;quot;&lt;/span&gt;
+dmadmin                 &lt;span class="s2"&gt;&amp;quot;Serviço administrativo do gerenciador de disco lógico&amp;quot;&lt;/span&gt;
+dmserver                &lt;span class="s2"&gt;&amp;quot;Gerenciador de discos lógicos&amp;quot;&lt;/span&gt;
+Dnscache                &lt;span class="s2"&gt;&amp;quot;Cliente DNS&amp;quot;&lt;/span&gt;
+ERSvc                   &lt;span class="s2"&gt;&amp;quot;Erro ao informar o serviço&amp;quot;&lt;/span&gt;
+Eventlog                &lt;span class="s2"&gt;&amp;quot;Log de eventos&amp;quot;&lt;/span&gt;
+EventSystem             &lt;span class="s2"&gt;&amp;quot;Sistema de Eventos de COM+&amp;quot;&lt;/span&gt;
+gupdate                 &lt;span class="s2"&gt;&amp;quot;Serviço do Google Update (gupdate)&amp;quot;&lt;/span&gt;
+gupdatem                &lt;span class="s2"&gt;&amp;quot;Serviço do Google Update (gupdatem)&amp;quot;&lt;/span&gt;
+helpsvc                 &lt;span class="s2"&gt;&amp;quot;Ajuda e suporte&amp;quot;&lt;/span&gt;
+HidServ                 &lt;span class="s2"&gt;&amp;quot;Acesso a dispositivo de interface humana&amp;quot;&lt;/span&gt;
+HTTPFilter              &lt;span class="s2"&gt;&amp;quot;HTTP SSL&amp;quot;&lt;/span&gt;
+ImapiService            &lt;span class="s2"&gt;&amp;quot;IMAPI CD-Burning COM Service&amp;quot;&lt;/span&gt;
+IsmServ                 &lt;span class="s2"&gt;&amp;quot;Mensagens entre sites&amp;quot;&lt;/span&gt;
+kdc                     &lt;span class="s2"&gt;&amp;quot;Centro de distribuição de chaves Kerberos&amp;quot;&lt;/span&gt;
+lanmanserver            &lt;span class="s2"&gt;&amp;quot;Server&amp;quot;&lt;/span&gt;
+lanmanworkstation       &lt;span class="s2"&gt;&amp;quot;Estação de trabalho&amp;quot;&lt;/span&gt;
+LicenseService          &lt;span class="s2"&gt;&amp;quot;Registro de licenças&amp;quot;&lt;/span&gt;
+LmHosts                 &lt;span class="s2"&gt;&amp;quot;Auxiliar NetBIOS TCP/IP&amp;quot;&lt;/span&gt;
+Messenger               &lt;span class="s2"&gt;&amp;quot;Mensageiro&amp;quot;&lt;/span&gt;
+mnmsrvc                 &lt;span class="s2"&gt;&amp;quot;Compartilhamento remoto da área de trabalho do NetMeeting&amp;quot;&lt;/span&gt;
+MozillaMaintenance      &lt;span class="s2"&gt;&amp;quot;Mozilla Maintenance Service&amp;quot;&lt;/span&gt;
+MSDTC                   &lt;span class="s2"&gt;&amp;quot;Coordenador de transações distribuídas&amp;quot;&lt;/span&gt;
+MSIServer               &lt;span class="s2"&gt;&amp;quot;Windows Installer&amp;quot;&lt;/span&gt;
+NetDDE                  &lt;span class="s2"&gt;&amp;quot;DDE de rede&amp;quot;&lt;/span&gt;
+NetDDEdsdm              &lt;span class="s2"&gt;&amp;quot;DSDM de DDE de rede&amp;quot;&lt;/span&gt;
+Netlogon                &lt;span class="s2"&gt;&amp;quot;Logon de rede&amp;quot;&lt;/span&gt;
+Netman                  &lt;span class="s2"&gt;&amp;quot;Conexões de rede&amp;quot;&lt;/span&gt;
+Nla                     &lt;span class="s2"&gt;&amp;quot;Reconhecimento de local da rede (NLA)&amp;quot;&lt;/span&gt;
+NtFrs                   &lt;span class="s2"&gt;&amp;quot;Duplicação de arquivo&amp;quot;&lt;/span&gt;
+NtLmSsp                 &lt;span class="s2"&gt;&amp;quot;Fornecedor de suporte de segurança NT LM&amp;quot;&lt;/span&gt;
+NtmsSvc                 &lt;span class="s2"&gt;&amp;quot;Armazenamento removível&amp;quot;&lt;/span&gt;
+PlugPlay                &lt;span class="s2"&gt;&amp;quot;Plug and Play&amp;quot;&lt;/span&gt;
+PolicyAgent             &lt;span class="s2"&gt;&amp;quot;Serviços IPSEC&amp;quot;&lt;/span&gt;
+ProtectedStorage        &lt;span class="s2"&gt;&amp;quot;Armazenamento protegido&amp;quot;&lt;/span&gt;
+RasAuto                 &lt;span class="s2"&gt;&amp;quot;Gerenciador de conexão de acesso remoto automático&amp;quot;&lt;/span&gt;
+RasMan                  &lt;span class="s2"&gt;&amp;quot;Gerenciador de conexão de acesso remoto&amp;quot;&lt;/span&gt;
+RDSessMgr               &lt;span class="s2"&gt;&amp;quot;Gerenciador de sessão de ajuda de área de trabalho remota&amp;quot;&lt;/span&gt;
+RemoteAccess            &lt;span class="s2"&gt;&amp;quot;Roteamento e acesso remoto&amp;quot;&lt;/span&gt;
+RemoteRegistry          &lt;span class="s2"&gt;&amp;quot;Registro remoto&amp;quot;&lt;/span&gt;
+RpcLocator              &lt;span class="s2"&gt;&amp;quot;Alocador Remote Procedure Call (RPC)&amp;quot;&lt;/span&gt;
+RpcSs                   &lt;span class="s2"&gt;&amp;quot;Chamada de procedimento remoto (RPC)&amp;quot;&lt;/span&gt;
+RSoPProv                &lt;span class="s2"&gt;&amp;quot;Conjunto resultante do provedor de diretivas&amp;quot;&lt;/span&gt;
+sacsvr                  &lt;span class="s2"&gt;&amp;quot;Assistente de console de administração especial&amp;quot;&lt;/span&gt;
+SamSs                   &lt;span class="s2"&gt;&amp;quot;Gerenciador de contas de segurança&amp;quot;&lt;/span&gt;
+SCardSvr                &lt;span class="s2"&gt;&amp;quot;Cartão inteligente&amp;quot;&lt;/span&gt;
+Schedule                &lt;span class="s2"&gt;&amp;quot;Agendador de tarefas&amp;quot;&lt;/span&gt;
+seclogon                &lt;span class="s2"&gt;&amp;quot;Logon secundário&amp;quot;&lt;/span&gt;
+SENS                    &lt;span class="s2"&gt;&amp;quot;Notificação de eventos de sistema&amp;quot;&lt;/span&gt;
+SharedAccess            &lt;span class="s2"&gt;&amp;quot;Firewall do Windows/Compart. conexão c/ Internet (ICS)&amp;quot;&lt;/span&gt;
+ShellHWDetection        &lt;span class="s2"&gt;&amp;quot;Detecção do hardware do shell&amp;quot;&lt;/span&gt;
+Spooler                 &lt;span class="s2"&gt;&amp;quot;Spooler de impressão&amp;quot;&lt;/span&gt;
+stisvc                  &lt;span class="s2"&gt;&amp;quot;Assistente de aquisição de imagens do Windows (WIA)&amp;quot;&lt;/span&gt;
+swprv                   &lt;span class="s2"&gt;&amp;quot;Microsoft Software Shadow Copy Provider&amp;quot;&lt;/span&gt;
+SysmonLog               &lt;span class="s2"&gt;&amp;quot;Logs e alertas de desempenho&amp;quot;&lt;/span&gt;
+TapiSrv                 &lt;span class="s2"&gt;&amp;quot;Telefonia&amp;quot;&lt;/span&gt;
+TermService             &lt;span class="s2"&gt;&amp;quot;Serviços de terminal&amp;quot;&lt;/span&gt;
+Themes                  &lt;span class="s2"&gt;&amp;quot;Temas&amp;quot;&lt;/span&gt;
+TlntSvr                 &lt;span class="s2"&gt;&amp;quot;Telnet&amp;quot;&lt;/span&gt;
+TrkSvr                  &lt;span class="s2"&gt;&amp;quot;Servidor de rastreamento de link distribuído&amp;quot;&lt;/span&gt;
+TrkWks                  &lt;span class="s2"&gt;&amp;quot;Cliente de rastreamento de link distribuído&amp;quot;&lt;/span&gt;
+Tssdis                  &lt;span class="s2"&gt;&amp;quot;Diretório de sessão dos serviços de terminal&amp;quot;&lt;/span&gt;
+UMWdf                   &lt;span class="s2"&gt;&amp;quot;Estrutura de Driver do Modo de Usuário do Windows&amp;quot;&lt;/span&gt;
+UPS                     &lt;span class="s2"&gt;&amp;quot;Sistema de alimentação ininterrupta&amp;quot;&lt;/span&gt;
+VBoxService             &lt;span class="s2"&gt;&amp;quot;VirtualBox Guest Additions Service&amp;quot;&lt;/span&gt;
+vds                     &lt;span class="s2"&gt;&amp;quot;Serviço de disco virtual&amp;quot;&lt;/span&gt;
+VSS                     &lt;span class="s2"&gt;&amp;quot;Cópia de sombra de volume&amp;quot;&lt;/span&gt;
+W32Time                 &lt;span class="s2"&gt;&amp;quot;Horário do Windows&amp;quot;&lt;/span&gt;
+WebClient               &lt;span class="s2"&gt;&amp;quot;Cliente da Web&amp;quot;&lt;/span&gt;
+WinHttpAutoProxySvc     &lt;span class="s2"&gt;&amp;quot;Serviço de descoberta automática de proxy da Web para WinHTTP&amp;quot;&lt;/span&gt;
+winmgmt                 &lt;span class="s2"&gt;&amp;quot;Testador de instrumentação de gerenciam. do Windows&amp;quot;&lt;/span&gt;
+WmdmPmSN                &lt;span class="s2"&gt;&amp;quot;Portable Media Serial Number Service&amp;quot;&lt;/span&gt;
+Wmi                     &lt;span class="s2"&gt;&amp;quot;Extensões de driver de instrum. gerenc. do Windows&amp;quot;&lt;/span&gt;
+WmiApSrv                &lt;span class="s2"&gt;&amp;quot;Adaptador de desempenho WMI&amp;quot;&lt;/span&gt;
+wuauserv                &lt;span class="s2"&gt;&amp;quot;Atualizações Automáticas&amp;quot;&lt;/span&gt;
+WZCSVC                  &lt;span class="s2"&gt;&amp;quot;Configuração sem fio&amp;quot;&lt;/span&gt;
+xmlprov                 &lt;span class="s2"&gt;&amp;quot;Serviço de Configuração de Rede&amp;quot;&lt;/span&gt;
+OpenVPNService          &lt;span class="s2"&gt;&amp;quot;OpenVPN Service&amp;quot;&lt;/span&gt;
+IISADMIN                &lt;span class="s2"&gt;&amp;quot;Serviço de administração do IIS&amp;quot;&lt;/span&gt;
+w3svc                   &lt;span class="s2"&gt;&amp;quot;Serviço de publicação na World Wide Web&amp;quot;&lt;/span&gt;
+aspnet_state            &lt;span class="s2"&gt;&amp;quot;Serviço de estado do ASP.NET&amp;quot;&lt;/span&gt;
+emilio@emilio-linux ~ $
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Para parar o serviço utilizamos o seguinte comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;net rpc service stop NomeDoServiço -I endereçoIP/nomemaquina -U usuario%senha
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;emilio@emilio-linux ~ $ net rpc service stop TlntSvr -I vsrv-iis -U administrador%123
+.
+TlntSvr service is stopped.
+emilio@emilio-linux ~ $
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Para iniciar o serviço utilizamos o mesmo comando que utilizamos para
+parar porém com o argumento start:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;net rpc service start NomeDoServiço -I endereçoIP/nomemaquina -U usuario%senha
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;emilio@emilio-linux ~ $ net rpc service start TlntSvr -I vsrv-iis -U administrador%123
+...........
+Successfully started service: TlntSvr
+emilio@emilio-linux ~ $
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Abaixo um vídeo do procedimento:&lt;/p&gt;
+&lt;div class="youtube youtube-16x9"&gt;&lt;iframe src="https://www.youtube.com/embed/YO1M0hwxx-U" allowfullscreen seamless frameBorder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;</content><category term="linux"></category><category term="net rpc"></category><category term="reiniciar"></category><category term="remoto"></category><category term="restart"></category><category term="serviço"></category><category term="serviços windows"></category><category term="windows services"></category></entry></feed>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Emilio Eiji - Wargame</title><link>http://emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Sat, 18 Apr 2015 13:31:00 -0300</lastBuildDate><item><title>Over The Wire - War Games Level 11 - 15</title><link>http://emilioeiji.com.br/over-the-wire-war-game-11-15.html</link><description>&lt;p&gt;Me empolguei nesse trem heim...&lt;/p&gt;
+&lt;p&gt;A ultima senha que conseguimos foi &lt;strong&gt;IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR&lt;/strong&gt; para conectarmos
+ao level 11, então bora continuar.&lt;/p&gt;
+&lt;div class="section" id="level-11"&gt;
+&lt;h2&gt;Level 11&lt;/h2&gt;
+&lt;p&gt;Nesse nível a senha está cifrada pulando 13 carteres &amp;quot;&lt;a class="reference external" href="http://pt.wikipedia.org/wiki/Cifra_de_C%C3%A9sar"&gt;Cifra de Cesar&lt;/a&gt;&amp;quot;
+contando pelo alfabeto padrão, então a letra A repectivamente se torna a letra N e assim …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Sat, 18 Apr 2015 13:31:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2015-04-18:/over-the-wire-war-game-11-15.html</guid><category>wargame</category><category>linux</category><category>hacker</category><category>hacking</category><category>seguranca</category></item><item><title>Over The Wire - War Games Level 6 - 10</title><link>http://emilioeiji.com.br/over-the-wire-war-game-6-10.html</link><description>&lt;p&gt;Fala galera!!! Vamos continuar subindo de level no Over The Wire.&lt;/p&gt;
+&lt;div class="section" id="level-6"&gt;
+&lt;h2&gt;Level 6&lt;/h2&gt;
+&lt;p&gt;A partir daqui parece que a coisa está começando a ficar um pouco mais complexa,
+estamos começando a usar comandos com alguns parametros, nada muito diferente do
+&lt;a class="reference external" href="http://emilioeiji.com.br/over-the-wire-war-game-0-5.html"&gt;level 5&lt;/a&gt;
+acrescentando apenas 2 parametros a mais.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit6@melinda …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Sat, 18 Apr 2015 08:57:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2015-04-18:/over-the-wire-war-game-6-10.html</guid><category>wargame</category><category>linux</category><category>hacker</category><category>hacking</category><category>seguranca</category></item><item><title>Over The Wire - War Games Level 0 - 5</title><link>http://emilioeiji.com.br/over-the-wire-war-game-0-5.html</link><description>&lt;p&gt;Olá galera, já faz algum tempo que não posto nada aqui e como estou de férias e com
+&amp;quot;tempo sobrando&amp;quot; resolvi distrair um pouco e brincar com aqueles 'War Games', pesquisando
+um pouco encontrei o &lt;a class="reference external" href="http://overthewire.org/wargames/"&gt;Over The Wire&lt;/a&gt; ,
+existem vários vídeos no youtube do Hacker GeoHot conseguindo
+solucionar os vários …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Fri, 17 Apr 2015 23:34:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2015-04-17:/over-the-wire-war-game-0-5.html</guid><category>wargame</category><category>linux</category><category>hacker</category><category>hacking</category><category>seguranca</category></item></channel></rss>

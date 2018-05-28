@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - vim</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/vim.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2013-06-02T20:49:00-03:00</updated><entry><title>100 comandos para turbinar a utilização do vim.</title><link href="http://emilioeiji.com.br/100-comandos-para-vim.html" rel="alternate"></link><published>2013-06-02T20:49:00-03:00</published><updated>2013-06-02T20:49:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2013-06-02:/100-comandos-para-vim.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;100 comandos para turbinar a utilização do vim.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/vim.jpg"&gt;&lt;img alt="vim" src="http://emilioeiji.com.br/images/vim-300x167.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Busca&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/palavra: Procura por “palavra” do início para o fim
+?palavra: Procura por “palavra” do fim para o início
+/Mari[oa]: Procura por “Mario” ou “Maria”
+/&amp;lt;pal: Procura por expressões que começem com “pala” como, “palavra” ou “palíndromo”
+/ismo&amp;gt;: Procura por expressões …&lt;/pre&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;100 comandos para turbinar a utilização do vim.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/vim.jpg"&gt;&lt;img alt="vim" src="http://emilioeiji.com.br/images/vim-300x167.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Busca&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/palavra: Procura por “palavra” do início para o fim
+?palavra: Procura por “palavra” do fim para o início
+/Mari[oa]: Procura por “Mario” ou “Maria”
+/&amp;lt;pal: Procura por expressões que começem com “pala” como, “palavra” ou “palíndromo”
+/ismo&amp;gt;: Procura por expressões que terminem com “ismo” como, “autismo”
+/&amp;lt;para&amp;gt;: Procura pela palavra “para”
+/&amp;lt;…&amp;gt;: Procura por todas as palavras com 3 letras
+/maria|joao: Procura por maria ou joao
+/&amp;lt;dddd&amp;gt;: Procura exatamente por 4 dígitos numéricos
+/^n{3}: Procura por três linhas em branco
+:bufdo /palavra/: Procura “palavra” em todos os arquivos abertos
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Substituição&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:%s/antigo/novo/g: Substitui todas as ocorrências de “antigo” por “novo” no arquivo
+:%s/antigo/novo/gw: Substitui todas as ocorrências com confirmação
+:2,35s/antigo/novo/g: Substitui todas as ocorrências entre as linhas 2 e 35
+:5,$s/antigo/novo/g: Substitui todas as ocorrências da linha 5 até EOF (fim da linha)
+:%s/^/legal/g: Substitui o começo de cada linha com “legal”
+:%s/$/Oh/g: Substitui o fim de cada linha por “Oh”
+:%s/antigo/novo/gi: Substitui “antigo” por “novo” desconsiderando maíusculas e/ou minúsculas
+:%s/ *$//g: Apaga todos os espaços em branco
+:g/palavra/d: Apaga todas as linhas contendo “palavra”
+:v/palavra/d: Apaga todas as linhas que não contém “palavra”
+:s/maria/joao/: Substitui a primeira ocorrência de “maria” por “joao” na linha corrente
+:s/maria/joao/g: Substitui todas as ocorrências de “maria” por “joao” na linha corrente
+:%s/maria/joao/g: Substitui “maria” por “joao” em todo o arquivo
+:%s/r//g: Apaga retornos de carro do windows (n)
+:%s/r/r/g: Transforma os retornos de carro do windows (n) em retornos do Linux (r)
+:%s#&amp;lt;[^&amp;gt;]+&amp;gt;##g: Apaga tags HTML mas mantêm o texto
+:%s/^(.*)n1$/1/: Apaga linhas repetidas
+Ctrl+a: Incrementa o número sob o cursor
+Ctrl+x: Decrementa o número sob o cursor
+ggVGg?: Muda o texto usando Rot13
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Minúsculo/Maiúsculo&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Vu: Torna todos os caracteres da linha minúsculos
+VU: Torna todos os caracteres da linha maiúsculos
+g~~: Inverte os caracteres do texto inteiro
+vEU: Coloca as letras da palavra em maiúsculas
+vE~~: Inverte os caracteres da palavra selecionada
+ggguG: Coloca todo o texto em minúsculas
+:set ignorecase: Ignora minúsculos/maiúsculos nas buscas
+:set smartcase: Ignora minúsculos/maiúsculos em buscas exceto quando uma letra msiúscula é usada
+:%s/&amp;lt;./u&amp;amp;/g: Coloca a primeira letra de cada palavra em maiúscula
+:%s/&amp;lt;./l&amp;amp;/g: Coloca a primeira letra de cada palavra em minúscula
+:%s/.*/u&amp;amp;: Coloca a primeira letra de cada linha em maiúscula
+:%s/.*/l&amp;amp;: Coloca a primeira letra de cada linha em minúscula
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Lendo/Gravando arquivos&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:1,10 w arquivo: Salva as linhas de 1 a 10 em “arquivo”
+:1,10 w &amp;gt;&amp;gt; arquivo: Adiciona as linhas de 1 a 10 em “Arquivo”
+:r arquivo: Insere o conteúdo de “arquivo” no atual
+:23r arquivo: Insere o conteúdo de “arquivo” a partir da linha 23
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Explorando arquivos&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:e .: Abre o gerenciador de arquivos integrado do Vim
+:Sex: Divide a janela e abre o gerenciador de arquivos integrado
+:browse e: Abre o gerenciador de arquivos integrado na janela corrente
+:ls: Lista os buffers carregados
+:cd ..: Move para a pasta superior
+:args: Lista os arquivos
+:args *.php: Abre lista de arquivos
+:grep expressao *.php: retorna uma lista de arquivos .php que contenham a expressão informada
+gf: Abre o arquivo sob o cursor
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Interação com o Linux&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:!pwd: Executa o comando “pwd” e retorna para o Vim
+!!pwd: Executa o comando “pwd” e insere a saída no buffer
+:sh: Retorna temporariamente para o shell
+exit: Retorna para o Vim
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Alinhamento&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:%!fmt: Alinha todas as linhas
+!}fmt: Alinha todas as linhas a partir da posição corrente
+5!!fmt: Alinha as próximas 5 linhas
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Abas&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:tabnew: Cria uma nova aba
+gt: Mostra a próxima aba
+:tabfirst: Mostra a primeira aba
+:tablast: Mostra a última aba
+:tabm n(posicao): Reorganiza as abas
+:tabdo %s/foo/bar/g: Executa um comando em todas as abas
+:tab ball: Coloca todos os arquivos abertos em abas
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Divisão da janela do Vim&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:e arquivo: Edita “arquivo” na janela corrente
+:split arquivo: Divide a janela e abre “arquivo”
+ctrl-w “seta para cima”: Coloca o cursor na janela do topo
+ctrl-w ctrl-w: Coloca o cursor na próxima janela
+ctrl-w_: Maximiza a janela corrente
+ctrl-w=: Coloca todas as janelas com o mesmo tamanho
+10 ctrl-w+: Adiciona 10 linhas de tamanho na janela corrente
+:vsplit arquivo: Divide a janela verticalmente
+:sview arquivo: O mesmo que split, mas em modo somente-leitura
+:hide: Fecha a janela corrente
+:only: Fecha todas as janelas, exceto a janela atual
+:b 2: Abre #2 na janela corrente
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Auto-completion do texto&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Ctrl+n Ctrl+p (em modo de inserção): Completa palavra
+Ctrl+x Ctrl+l: Completa linha
+:set dictionary=dict: Define dict como o dicionário atual
+Ctrl+x Ctrl+k: Completa usando o dicionário
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Marcações&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+mk: Marca a posição corrente como k
+‘k: Move o cursor para a marca k
+d’k: Apaga tudo até a marca k
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Abreviações&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:ab email me&amp;#64;me.com: Define email como abreviação de me&amp;#64;me.com
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Identação de Texto&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:set autoindent: Liga a identação automática
+:set smartindent: Liga a identação inteligente
+:set shiftwidth=4: Define o tamanho da identação em 4 espaços
+ctrl-t, ctrl-d: Identa/Deidenta no modo de inserção
+&amp;gt;&amp;gt;: Identa
+&amp;lt;&amp;lt;: Deidenta
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Marcação de sintaxe&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:syntax on: Liga a marcação de sintaxe
+:syntax off: Desliga a marcação de sintaxe
+:set syntax=perl: Força a usar a marcação de sintaxe do perl
+&lt;/pre&gt;
+</content><category term="comandos vim"></category><category term="dicas"></category><category term="dicas vim"></category><category term="vim"></category></entry><entry><title>Vim abrir direto em uma determinada linha</title><link href="http://emilioeiji.com.br/vim-abrir-direto-em-uma-determinada-linha.html" rel="alternate"></link><published>2013-05-22T16:49:00-03:00</published><updated>2013-05-22T16:49:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2013-05-22:/vim-abrir-direto-em-uma-determinada-linha.html</id><summary type="html">&lt;p&gt;Daew galera blz?&lt;/p&gt;
+&lt;p&gt;Hoje estava tentando lembrar como fazia para abrir algum arquivo no vim
+direto em um alinha, para tanto basta adicionar + e o numero da linha
+desejada;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ vim arquivo +123
+&lt;/pre&gt;
+&lt;p&gt;Pronto, conforme o exemplo acima o vim vai abrir o arquivo na linha 123, muito útil
+para debugar …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Daew galera blz?&lt;/p&gt;
+&lt;p&gt;Hoje estava tentando lembrar como fazia para abrir algum arquivo no vim
+direto em um alinha, para tanto basta adicionar + e o numero da linha
+desejada;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ vim arquivo +123
+&lt;/pre&gt;
+&lt;p&gt;Pronto, conforme o exemplo acima o vim vai abrir o arquivo na linha 123, muito útil
+para debugar onde os logs retornam quais linhas estão com problemas.&lt;/p&gt;
+</content><category term="abrir linha"></category><category term="linha"></category><category term="linux"></category><category term="vim"></category><category term="vim abrir linha"></category></entry></feed>

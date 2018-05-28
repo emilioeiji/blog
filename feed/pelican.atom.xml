@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - Pelican</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/pelican.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2015-03-07T18:27:00-03:00</updated><entry><title>Primeiro post no pelican</title><link href="http://emilioeiji.com.br/primeiro-post-no-pelican.html" rel="alternate"></link><published>2015-03-07T18:27:00-03:00</published><updated>2015-03-07T18:27:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2015-03-07:/primeiro-post-no-pelican.html</id><summary type="html">&lt;p&gt;Bom galera, estou tentando deixar o blog mais hardcore e
+estou migrando do wordpress para pelican. Não que o WP seja ruim
+ou não estivesse atendendo as minhas necessidades, mas como estou
+engajado em aprender python nada melhor doque fazer tudo em python.&lt;/p&gt;
+&lt;p&gt;Como base nessa empreitada me inspirei no …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Bom galera, estou tentando deixar o blog mais hardcore e
+estou migrando do wordpress para pelican. Não que o WP seja ruim
+ou não estivesse atendendo as minhas necessidades, mas como estou
+engajado em aprender python nada melhor doque fazer tudo em python.&lt;/p&gt;
+&lt;p&gt;Como base nessa empreitada me inspirei no blog de um dos criadores do
+Hack N' Cast, &lt;a class="reference external" href="http://mindbending.org"&gt;Magnun Leno&lt;/a&gt; e segui algumas
+dicas postadas por ele &lt;a class="reference external" href="http://mindbending.org/pt/migrando-do-wordpress-para-o-pelican"&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;O processo é bem trabalhoso pois temos que parametrizar vários detalhes,
+mas nada que com algumas horas de sono a menos não consigamos resolver.
+Consegui rodar o make html do pelican sem erros, mas ainda tenho que corrigir
+vários links e referencias, artigo por artigo. Mas que eu estou querendo testar
+em primeiro momento é a mensão aos códigos, ainda não descobri como fazer
+para destacar o código, coisa de noob que está começando a trabalhar com a
+ferramenta agora :p&lt;/p&gt;
+&lt;p&gt;Bom abaixo vai um teste:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+.. code:: python
+
+        print('Teste de sintax python no pelican.')
+&lt;/pre&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Teste de sintax python no pelican.'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;
+.. code-block:: python
+
+   print('Teste de sintax python no pelican.')
+&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Teste de sintax python no pelican.&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;pre class="literal-block"&gt;
+#!python
+print('Teste de sintax python no pelican.')
+&lt;/pre&gt;
+&lt;p&gt;#!python
+print('Teste de sintax python no pelican.')&lt;/p&gt;
+&lt;p&gt;Como nenhuma das opções acima não deu certo, acredito que não seja problema
+problema ao escrever o artigo, visto que o código está sendo destacado
+apenas não está rolando o syntax highlight.&lt;/p&gt;
+&lt;p&gt;Bom, mas vou continuar testando até conseguir :p Agora já são 18:51
+hora de começar a se arrumar pra ir na missa, vamos ver que horas vou
+conseguir resolver essa problema hehehehehe.&lt;/p&gt;
+&lt;p&gt;Bom, voltei agora 23:50, após assistir a missa e comer muuuuito...&lt;/p&gt;
+&lt;p&gt;Agora o jeito é tomar um café espresso pra dar uma despertada e focar
+na pesquisa pra descobrir como funciona o syntax highlight desse trem.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Teste de sintax python no pelican.&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Teste de sintax python no pelican.&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="hll"&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Teste de sintax python no pelican.&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Depois de muito quebrar a cabeça eu finalmente descobri qual era o problema
+com o syntax highlight do pelican, o Tema. Pois é... o tema que mais
+gostei não faz o destaque dos código :(
+O tema que estava utilizando era o BT3, estou usando provisóriamente o blueidea
+até encontrar outro similar ao BT3.&lt;/p&gt;
+</content><category term="pelican"></category></entry></feed>

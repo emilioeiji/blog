@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Emilio Eiji - Linux</title><link>http://emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Mon, 28 May 2018 14:37:00 -0300</lastBuildDate><item><title>SED - Alterar string em arquivos.</title><link>http://emilioeiji.com.br/sed-alterar-string-arquivos.html</link><description>&lt;div class="section" id="alterar-strig-em-varios-arquivos-utilizando-o-sed"&gt;
+&lt;h2&gt;Alterar strig em vários arquivos utilizando o SED.&lt;/h2&gt;
+&lt;p&gt;Estou reinstalando o Pelican para voltar a publicar algumas coisas no site e me deparei com a seguinte situação:
+Após reinstalar o pelican e suas dependencias, ao tentar rodar o make html o mesmo estava retorando o erro abaixo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;CRITICAL: AttributeError: &lt;span class="s1"&gt;&amp;#39;str …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Mon, 28 May 2018 14:37:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2018-05-28:/sed-alterar-string-arquivos.html</guid><category>sed</category><category>linux</category></item><item><title>RAID via software no linux</title><link>http://emilioeiji.com.br/RAID-via-software-no-linux.html</link><description>&lt;p&gt;Olá pessoal.&lt;/p&gt;
+&lt;p&gt;Hoje estou configurando um computador com o bacula e preciso configurar os HD's em RAID, como os backups ficarão armazenados local na maquina e em outro NAS vou configurá-los com RAID 0.&lt;/p&gt;
+&lt;p&gt;Na maquina estou rodando o Debian portanto os comandos abaixo podem ser executados na maioria das …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Thu, 03 Sep 2015 12:40:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2015-09-03:/RAID-via-software-no-linux.html</guid><category>hd</category><category>raid</category></item><item><title>Criptografando HD Externo</title><link>http://emilioeiji.com.br/criptografando-hd-externo.html</link><description>&lt;p&gt;Olá pessoal.&lt;/p&gt;
+&lt;p&gt;Como estou prestes a trocar o hd do meu notebook por um SSD e reduzindo muito o tamanho do disco, tive a necessidade de salvar os meus arquivos em um hd externo. Como tenho muitos arquivos &amp;quot;confidenciais&amp;quot; é de extrema importancia que os dados fiquem seguros em caso …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Wed, 19 Aug 2015 22:30:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2015-08-19:/criptografando-hd-externo.html</guid><category>criptografia</category><category>hd</category><category>externo</category></item><item><title>Instalando Debian Netinst</title><link>http://emilioeiji.com.br/instalando-debian-netinst.html</link><description>&lt;p&gt;Boas galera, como estou precisando instalar o Debian para estudos, abaixo vou mostrar
+como fazer a instalação do &lt;a class="reference external" href="https://www.debian.org/CD/netinst/"&gt;netinst&lt;/a&gt; do zero.&lt;/p&gt;
+&lt;p&gt;Para efetuar o download da iso clique &lt;a class="reference external" href="https://www.debian.org/distrib/netinst"&gt;aqui&lt;/a&gt;
+e após o término do download podemos gravar a iso em um cd ou criaros um &lt;a class="reference external" href="http://emilioeiji.com.br/imagens-iso-no-pendrive.html"&gt;pendrive de boot&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;Em seguida …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Sun, 29 Mar 2015 14:06:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2015-03-29:/instalando-debian-netinst.html</guid><category>linux</category><category>debian</category><category>100-linux</category><category>netinst</category><category>instalação</category><category>instalando</category></item><item><title>Bacula - Ferramenta Livre de Backup</title><link>http://emilioeiji.com.br/bacula-ferramenta-livre-de-backup.html</link><description>&lt;p&gt;I aew pessoal...&lt;/p&gt;
+&lt;p&gt;Como estou configurando um novo servidor de backup com o Bacula,
+segue abaixo um livro pra quem quer dar uma geral na ferramenta.&lt;/p&gt;
+&lt;p&gt;O nome do livro é:&lt;a class="reference external" href="https://books.google.com.br/books?id=P1unBAAAQBAJ&amp;amp;lpg=PA155&amp;amp;ots=1ju0sDX_L9&amp;amp;dq=bacula%20python&amp;amp;hl=pt-BR&amp;amp;pg=PP1#v=onepage&amp;amp;q&amp;amp;f=false"&gt;Bacula - Ferramenta Livre de
+Backup.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Em breve postarei algumas dicas na configuração do servidor Bacula.&lt;/p&gt;
+&lt;p&gt;Abraços&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Mon, 09 Feb 2015 20:10:00 -0200</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2015-02-09:/bacula-ferramenta-livre-de-backup.html</guid><category>backup</category><category>bacula</category><category>linux</category></item><item><title>Atualizando linux mint 17 para 17.1</title><link>http://emilioeiji.com.br/atualizando-linux-mint-17-para-17-1.html</link><description>&lt;p&gt;Boas galera.&lt;/p&gt;
+&lt;p&gt;No vídeo abaixo segue os passos que segui para atualizar o linux mint 17
+(Qiana) para 17.1 (Rebecca).&lt;/p&gt;
+&lt;div class="youtube youtube-16x9"&gt;&lt;iframe src="https://www.youtube.com/embed/Mc5btmBvPI0" allowfullscreen seamless frameBorder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;Como a base do linut mint continuou a mesma (ubuntu 14.04 lts) acredito
+que a atualização via linha de comando seja segura.&lt;/p&gt;
+&lt;p&gt;Segue os comandos executados:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Verificando a …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Tue, 02 Dec 2014 12:17:00 -0200</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2014-12-02:/atualizando-linux-mint-17-para-17-1.html</guid><category>linux</category><category>linux mint</category></item><item><title>Flash player em tela cheia com dois monitores no linux.</title><link>http://emilioeiji.com.br/flash-player-em-tela-cheia-com-dois-monitores-linux.html</link><description>&lt;p&gt;Um dos problemas que eu tive com o dual monitor foi a execução do flash
+player em tela cheia com dois monitores no linux, quando executando
+algum vídeo no segundo monitor e efetuasse qualquer ação no monitor
+primário o vídeo voltava ao tamanho normal.&lt;/p&gt;
+&lt;p&gt;Efetuando uma pesquisa encontrei uma maneira …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Sun, 21 Sep 2014 23:51:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2014-09-21:/flash-player-em-tela-cheia-com-dois-monitores-linux.html</guid><category>dual monitor</category><category>linux mint</category><category>linux</category></item><item><title>100% Linux Parte 2</title><link>http://emilioeiji.com.br/100-linux-parte-2.html</link><description>&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;100% Linux Parte 2&lt;/h2&gt;
+&lt;p&gt;Como postei &lt;a class="reference external" href="http://blog.emilioeiji.com.br/100-linux-parte-1/"&gt;aqui&lt;/a&gt;,
+estou na batalha para me converter 100% em Linux e uma das minhas
+dificuldades que consegui superar hoje, na verdade se eu
+tivesse dado uma pesquisadinha mais a fundo teria conseguindo solucionar
+antes, mas eu confesso que estava procrastinando] era o uso do …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Sun, 17 Aug 2014 00:55:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2014-08-17:/100-linux-parte-2.html</guid><category>linux</category><category>linux mint</category><category>pipelight</category><category>silverlight</category><category>100-linux</category></item><item><title>Easter Eggs com aptitude</title><link>http://emilioeiji.com.br/easter-eggs-com-aptitude.html</link><description>&lt;p&gt;Achei legalzinho esse&amp;nbsp;Easter Eggs com aptitude haoiuahoaiuaha então vou
+compartilhar.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="http://emilioeiji.com.br/images/Captura-de-tela-de-2014-08-08-115124.png"&gt;&lt;img alt="Captura de tela de 2014-08-08 11:51:24" src="http://emilioeiji.com.br/images/Captura-de-tela-de-2014-08-08-115124.png" /&gt;&lt;/a&gt;&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Fri, 08 Aug 2014 11:53:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2014-08-08:/easter-eggs-com-aptitude.html</guid></item><item><title>LibreOffice Brasil</title><link>http://emilioeiji.com.br/libreoffice-brasil.html</link><description>&lt;p&gt;Animação bacana apresentando o LibreOffice feito por brasileiros e
+produzida 100% com softwares opensource.&lt;/p&gt;
+&lt;div class="youtube youtube-16x9"&gt;&lt;iframe src="https://www.youtube.com/embed/rYoLBPAGLbo" allowfullscreen seamless frameBorder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Wed, 30 Jul 2014 11:13:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2014-07-30:/libreoffice-brasil.html</guid><category>linux</category><category>libreoffice</category></item><item><title>Linux + Windows 8</title><link>http://emilioeiji.com.br/linux-windows-8.html</link><description>&lt;p&gt;Essa vai pra quem usa Linux + Windows 8&lt;/p&gt;
+&lt;p&gt;Certamente quem tem os dois sistemas em dual boot já teve o problema de
+iniciar o Linux e ao tentar acessar as partições NTFS retornar erro:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+The disk contains an unclean file system (0, 0).
+Metadata kept in Windows cache, refused to …&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Sat, 17 May 2014 09:26:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2014-05-17:/linux-windows-8.html</guid><category>linux</category><category>windows 8</category></item><item><title>Linux Mint 16 - Google como mecanismo de pesquisa no firefox.</title><link>http://emilioeiji.com.br/linux-mint-16-google-como-mecanismo-de-pesquisa-firefox.html</link><description>&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;Linux Mint 16 - Google como mecanismo de pesquisa no firefox.&lt;/h2&gt;
+&lt;p&gt;Ficou muito simples colocar o Google como mecanismo de pesquisa no
+firefox, por padrão do linux mint o mecanismo padrão é o Startpage,
+razoavelmente bom porém, está longe do google.&lt;/p&gt;
+&lt;p&gt;Para colocar o google como padrão, acesse esse
+&lt;a class="reference external" href="http://www.linuxmint.com/searchengines/anse.php?sen=Google&amp;amp;c=y"&gt;Link.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Após …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Wed, 30 Apr 2014 22:19:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2014-04-30:/linux-mint-16-google-como-mecanismo-de-pesquisa-firefox.html</guid><category>firefox</category><category>google</category><category>linux mint</category><category>mecanismo</category><category>pesquisa</category><category>petra</category></item><item><title>100% Linux Parte 1</title><link>http://emilioeiji.com.br/100-linux-parte-1.html</link><description>&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;100% Linux Parte 1&lt;/h2&gt;
+&lt;p&gt;Boas pessoal, nesse post vou descrever a minha luta para migrar meu
+notebook 100% para linux. Bastante coisa já encontrei uma solução para
+contornar e outras estou na luta ainda, vou tentar descrever abaixa a
+minha saga =)&lt;/p&gt;
+&lt;p&gt;Estou usando hoje o&lt;a class="reference external" href="http://www.linuxmint.com/"&gt;Linux Mint 16&lt;/a&gt; em um …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Mon, 31 Mar 2014 13:52:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2014-03-31:/100-linux-parte-1.html</guid><category>100% linux</category><category>dia</category><category>filezilla</category><category>geany</category><category>keepass</category><category>linux</category><category>linux mint</category><category>moonlight</category><category>silverlight</category><category>transmission</category><category>virtualbox</category><category>xchat</category></item><item><title>Debian Wheezy + FluxBox</title><link>http://emilioeiji.com.br/debian-wheezy-fluxbox.html</link><description>&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;&lt;strong&gt;Debian Wheezy + FluxBox&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Olá galera, neste post vou mostrar a evolução do meu Debian Wheezy +
+FluxBox , já vou adiantando que não sou nenhum expert em personalização,
+portante criticas e sugestões são bem vindas =)&lt;/p&gt;
+&lt;p&gt;Logo de inicio vou postar 2 prints que tirei, o primeiro eu já tinha
+feito algumas modificações …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Tue, 16 Jul 2013 14:16:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2013-07-16:/debian-wheezy-fluxbox.html</guid><category>linux</category><category>debian</category><category>wheezy</category><category>fluxbox</category></item><item><title>Imagens iso no pendrive</title><link>http://emilioeiji.com.br/imagens-iso-no-pendrive.html</link><description>&lt;p&gt;Segue dois programinhas bem legais para quem quer gravar imagens iso
+no pendrive.&lt;/p&gt;
+&lt;p&gt;É bem fácil de usar, praticamente modelo NNF =)&lt;/p&gt;
+&lt;p&gt;Baixe aqui os dois
+programinhas&amp;nbsp;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/wp-content/uploads/2013/06/usb-iso.rar"&gt;usb-iso&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Para quem tiver alguma dificuldade com um desses dois programinhas e
+utilizam o linux podemos fazer a mesma coisa com o comando &lt;strong&gt;dd …&lt;/strong&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Wed, 19 Jun 2013 09:50:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2013-06-19:/imagens-iso-no-pendrive.html</guid><category>linux</category><category>iso</category><category>dd</category><category>imagem</category></item><item><title>Linux mint 12 - Alterar ordem de boot</title><link>http://emilioeiji.com.br/linux-mint-12-alterar-ordem-de-boot.html</link><description>&lt;p&gt;Boas pessoal...&lt;/p&gt;
+&lt;p&gt;Aqui vai um gerenciador simples do grub, com ele é possível alterar
+facilmente a ordem de boot do seu linux.&lt;/p&gt;
+&lt;p&gt;Para instalar basta executar o comando.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# apt-get install startupmanager
+&lt;/pre&gt;
+&lt;p&gt;E em seguida chamar o programa.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# sudo startupmanager
+&lt;/pre&gt;
+&lt;p&gt;Ira carregar a tela do programa com a lista de boot …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Thu, 01 Mar 2012 20:54:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2012-03-01:/linux-mint-12-alterar-ordem-de-boot.html</guid><category>grub</category><category>linux</category><category>linux mint</category></item><item><title>Resetar senha de Root no debian Squeeze</title><link>http://emilioeiji.com.br/resetar-senha-de-root-no-debian-squeeze.html</link><description>&lt;p&gt;Na tela do &lt;em&gt;Grub&lt;/em&gt;, precione a tecla ' e '.&lt;/p&gt;
+&lt;p&gt;Procure a linha parecida com esta:&lt;/p&gt;
+&lt;div&gt;&lt;p&gt;linux /boot/vmlinuz-2.6.xx-x-xxx root=........ ...... ro quiet&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/thumb_1328275626.imagem1.jpg"&gt;&lt;img alt="image0" src="http://emilioeiji.com.br/images/thumb_1328275626.imagem1.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;Acrescente o seguinte comando, no final da linha:&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;init=/bin/bash&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Exemplo:&lt;/p&gt;
+&lt;div&gt;&lt;p&gt;linux /boot/vmlinuz-2.6.xx-x-xxx root=........ ...... ro quiet
+init=/bin/bash&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/thumb_1328275626.imagem2.jpg"&gt;&lt;img alt="image1" src="http://emilioeiji.com.br/images/thumb_1328275626.imagem2.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;Pressione: 'Ctrl+X', para continuar …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Mon, 06 Feb 2012 09:28:00 -0200</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2012-02-06:/resetar-senha-de-root-no-debian-squeeze.html</guid><category>debian</category><category>linux</category><category>resetar</category><category>root</category></item><item><title>Linux - Remover linhas em branco de arquivo</title><link>http://emilioeiji.com.br/linux-remover-linhas-em-branco-de-arquivo.html</link><description>&lt;p&gt;Para remover as linhas em brando de um arquivo muito extenso, execute o
+comando abaixo.&lt;/p&gt;
+&lt;p&gt;No exemplo estou removendo as linhas do arquivo de configuração do
+squid.&lt;/p&gt;
+&lt;p&gt;Onde o /etc/squid/squid.temp e /etc/squid/squid.conf devem ser
+alterados para o aquivo que desejam alterar.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+egrep -v &amp;quot;^&amp;gt;\|^$&amp;quot; /etc …&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Thu, 12 Jan 2012 10:15:00 -0200</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2012-01-12:/linux-remover-linhas-em-branco-de-arquivo.html</guid><category>linux</category></item><item><title>Debian Lenny em Desktop</title><link>http://emilioeiji.com.br/debian-lenny-em-desktop.html</link><description>&lt;p&gt;Sempre que faço uma nova instalação do Debian Lenny em um desktop, uso
+essas dicas para deixá-lo mais perfeito do que já é. =)&lt;/p&gt;
+&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;As dicas são de&amp;nbsp;Julio Cesar Bessa Monqueiroencontrados no site do &lt;a class="reference external" href="http://guiadohardware.net/"&gt;Guia
+do Hardware&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.guiadohardware.net/tutoriais/debian-desktop/"&gt;**O básico para Debian Lenny no Desktop
+(Atualizado)**&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Sun, 21 Mar 2010 11:57:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2010-03-21:/debian-lenny-em-desktop.html</guid></item><item><title>Documentação Debian</title><link>http://emilioeiji.com.br/documentacao-debian.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://www.debian.org/doc/manuals/debian-reference/index.pt-br.html"&gt;Guida de
+Referencia.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.debian.org/releases/stable/i386/index.html.pt_BR"&gt;Guia de
+Instalção.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.debian.org/doc/manuals/securing-debian-howto/index.pt-br.html"&gt;Manual de
+Segurança.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.debian.org/doc/manuals/apt-howto/index.pt-br.html"&gt;Manual do
+APT.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Font: &lt;a class="reference external" href="http://www.vivaolinux.com.br/"&gt;Viva o linux&lt;/a&gt; /
+&lt;a class="reference external" href="http://www.debian.org/"&gt;Debian.org&lt;/a&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Thu, 18 Mar 2010 14:31:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2010-03-18:/documentacao-debian.html</guid></item><item><title>Debian - Desativar boot modo gráfico.</title><link>http://emilioeiji.com.br/debian-desativar-boot-modo-grafico.html</link><description>&lt;p&gt;Dica boa para quem quer remover o boot pelo modo gráfico no Debian.&lt;/p&gt;
+&lt;p&gt;Para desativar digite o seguinte comando:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+update-rc.d -f gdm remove
+&lt;/pre&gt;
+&lt;p&gt;(Lembrando que terá que substituir pelo
+gerenciado de seu ambiente gráfico (GDM, XDM, KDM))&lt;/p&gt;
+&lt;p&gt;Para ativar o boot&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+update-rc.d -f gdm defaults
+&lt;/pre&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Tue, 16 Mar 2010 23:32:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2010-03-16:/debian-desativar-boot-modo-grafico.html</guid><category>linux</category><category>debian</category></item><item><title>LAMP com Debian Lenny (Ambiente Simples para Testes)</title><link>http://emilioeiji.com.br/lamp-com-debian-lenny-ambiente-simples-para-testes.html</link><description>&lt;p&gt;&lt;strong&gt;Instalando o apache2:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+apt-get install apache2 apache2-doc apache2-mpm-prefork
+apache2-utils libexpat1 ssl-cert
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Instalando Suporte ao PHP5 no apache:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+apt-get install libapache2-mod-php5 php5 php5-common php5-curl
+php5-dev php5-gd php5-idn php-pear php5-imagick php5-imap php5-json
+php5-mcrypt php5-memcache php5-mhash php5-ming php5-mysql php5-ps
+php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc
+php5-xsl
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Edite o arquivo *dir.conf*&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+vim /etc …&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Thu, 17 Sep 2009 16:31:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2009-09-17:/lamp-com-debian-lenny-ambiente-simples-para-testes.html</guid><category>lamp</category><category>debian</category><category>linux</category><category>mysql</category><category>apache</category><category>php</category></item><item><title>Mantendo seu servidor com data e hora atualziados utilizando o protocolo NTP</title><link>http://emilioeiji.com.br/mantendo-seu-servidor-com-data-e-hora-atualziados-utilizando-o-protocolo-ntp.html</link><description>&lt;p&gt;Uma dica boa e simples para deixar seu servidor ou desktop com data e
+hora atualizado, é utilizar o protocolo NTP.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Instalação:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+apt-get install ntpdate ntp-doc ntp ntp-doc
+&lt;/pre&gt;
+&lt;p&gt;Verifique o fuso com o seguinte comando:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+cat /etc/timezone
+&lt;/pre&gt;
+&lt;p&gt;Caso deseje alterar, utilize:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+dpkg-reconfigure tzdata
+&lt;/pre&gt;
+&lt;p&gt;E selecione a opção desejada.&lt;/p&gt;
+&lt;p&gt;O …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Thu, 17 Sep 2009 15:33:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2009-09-17:/mantendo-seu-servidor-com-data-e-hora-atualziados-utilizando-o-protocolo-ntp.html</guid><category>ntp</category><category>linux</category><category>hora</category></item></channel></rss>

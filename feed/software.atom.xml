@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - Software</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/software.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2013-05-23T09:12:00-03:00</updated><entry><title>Atualizar DokuWiki</title><link href="http://emilioeiji.com.br/atualizar-dokuwiki.html" rel="alternate"></link><published>2013-05-23T09:12:00-03:00</published><updated>2013-05-23T09:12:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2013-05-23:/atualizar-dokuwiki.html</id><summary type="html">&lt;p&gt;Daew galera...&lt;/p&gt;
+&lt;p&gt;Hoje tive a necessidade de efetuar uma atualização do DokuWiki e
+vasculhando na net achei uma dica muito rápida e prática do Guto
+Carvalho&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://gutocarvalho.net/octopress/2013/05/20/dokuwiki-atualizando-versao/"&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Então é isso pessoal.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Daew galera...&lt;/p&gt;
+&lt;p&gt;Hoje tive a necessidade de efetuar uma atualização do DokuWiki e
+vasculhando na net achei uma dica muito rápida e prática do Guto
+Carvalho&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://gutocarvalho.net/octopress/2013/05/20/dokuwiki-atualizando-versao/"&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Então é isso pessoal.&lt;/p&gt;
+</content><category term="atualizar"></category><category term="atualizar dokuwiki"></category><category term="dokuwiki"></category></entry><entry><title>OpenFire - Excluir mensagens arquivadas no banco de dados (MySQL)</title><link href="http://emilioeiji.com.br/openfire-excluir-mensagens-arquivadas-no-banco-de-dados-mysql.html" rel="alternate"></link><published>2013-05-06T16:33:00-03:00</published><updated>2013-05-06T16:33:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2013-05-06:/openfire-excluir-mensagens-arquivadas-no-banco-de-dados-mysql.html</id><summary type="html">&lt;p&gt;Daew galera!!!&lt;/p&gt;
+&lt;p&gt;Hoje tive problemas com o arquivamento de mensagens no openfire 3.8.1,
+não sei oque aconteceu mas parou de arquivar as mensagens, tentei
+reinstalar o plugin de monitoramento e nada então resolvi limpar as
+tabelas relacionadas ao arquivamento para ver se resolvia e
+aparentemente resolveu =p&lt;/p&gt;
+&lt;p&gt;Vou …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Daew galera!!!&lt;/p&gt;
+&lt;p&gt;Hoje tive problemas com o arquivamento de mensagens no openfire 3.8.1,
+não sei oque aconteceu mas parou de arquivar as mensagens, tentei
+reinstalar o plugin de monitoramento e nada então resolvi limpar as
+tabelas relacionadas ao arquivamento para ver se resolvia e
+aparentemente resolveu =p&lt;/p&gt;
+&lt;p&gt;Vou passar oque fiz com o meu Debian&amp;nbsp;+ Openfire.&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;Antes de tudo precisamos parar o servidor do openfire:&amp;nbsp;&lt;strong&gt;~#
+/etc/init.d/openfire stop&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Conectar no mysql com algum usuario com privilégios para editar o
+banco e a tabela:&amp;nbsp;&lt;strong&gt;~# mysql -u root -p&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Agora vamos conectar no banco e limpar as tabelas:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="n"&gt;openfire&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;truncate&lt;/span&gt; &lt;span class="k"&gt;table&lt;/span&gt; &lt;span class="n"&gt;ofConversation&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;truncate&lt;/span&gt; &lt;span class="k"&gt;table&lt;/span&gt; &lt;span class="n"&gt;ofMessageArchive&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;truncate&lt;/span&gt; &lt;span class="k"&gt;table&lt;/span&gt; &lt;span class="n"&gt;ofConParticipant&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Agora é só iniciar o openfire e dar um tempinho que as conversas
+começam a serem arquivadas novamente:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# /etc/init.d/openfire
+start**
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Então galera, esse procedimento a cima pode ser usado tanto para limpar
+os arquivamentos como para tentar resolver algum problema como foi o meu
+caso.&lt;/p&gt;
+&lt;p&gt;Abraços&lt;/p&gt;
+</content><category term="openfire"></category><category term="mysql"></category><category term="excluir"></category><category term="mensagens"></category></entry><entry><title>Alterar senha do Cacti</title><link href="http://emilioeiji.com.br/alterar-senha-do-cacti.html" rel="alternate"></link><published>2011-05-12T14:06:00-03:00</published><updated>2011-05-12T14:06:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2011-05-12:/alterar-senha-do-cacti.html</id><summary type="html">&lt;p&gt;Retirado do &lt;a class="reference external" href="http://www.vivaolinux.com.br/dica/Alterar-a-senha-do-Cacti-via-console"&gt;Viva o
+Linux&lt;/a&gt;
+por Walber Santos&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ mysql -p cacti
+&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;update&lt;/span&gt; &lt;span class="n"&gt;user_auth&lt;/span&gt; &lt;span class="kt"&gt;set&lt;/span&gt; &lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;MD5&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;novasenha&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;where&lt;/span&gt;
+&lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;admin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;De brinde: caso deseje forçar um usuário a trocar a senha no próximo
+login :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;update&lt;/span&gt; &lt;span class="n"&gt;user_auth&lt;/span&gt; &lt;span class="kt"&gt;set&lt;/span&gt; &lt;span class="n"&gt;must_change_password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;on&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;where&lt;/span&gt;
+&lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;admin&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Abraços&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Retirado do &lt;a class="reference external" href="http://www.vivaolinux.com.br/dica/Alterar-a-senha-do-Cacti-via-console"&gt;Viva o
+Linux&lt;/a&gt;
+por Walber Santos&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ mysql -p cacti
+&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;update&lt;/span&gt; &lt;span class="n"&gt;user_auth&lt;/span&gt; &lt;span class="kt"&gt;set&lt;/span&gt; &lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;MD5&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;novasenha&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;where&lt;/span&gt;
+&lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;admin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;De brinde: caso deseje forçar um usuário a trocar a senha no próximo
+login :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;update&lt;/span&gt; &lt;span class="n"&gt;user_auth&lt;/span&gt; &lt;span class="kt"&gt;set&lt;/span&gt; &lt;span class="n"&gt;must_change_password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;on&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;where&lt;/span&gt;
+&lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;admin&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Abraços&lt;/p&gt;
+</content><category term="cacti"></category><category term="alterar senha"></category><category term="mysql"></category><category term="reset"></category></entry></feed>
