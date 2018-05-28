@@ -26,6 +26,7 @@
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git push -u origin master
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Com isso, o blog fica salvo no github e fácil de alterar as informações.&lt;/p&gt;
+&lt;p&gt;Estou tentando ver a melhor forma de sincronização ainda.&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="git"></category><category term="linux"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>SED - Alterar string em arquivos.</title><link href="http://emilioeiji.com.br/sed-alterar-string-arquivos.html" rel="alternate"></link><published>2018-05-28T14:37:00-03:00</published><updated>2018-05-28T14:37:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2018-05-28:/sed-alterar-string-arquivos.html</id><summary type="html">&lt;div class="section" id="alterar-strig-em-varios-arquivos-utilizando-o-sed"&gt;
 &lt;h2&gt;Alterar strig em vários arquivos utilizando o SED.&lt;/h2&gt;
