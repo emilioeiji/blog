@@ -63,7 +63,18 @@
 <div class="highlight"><pre><span></span>git push -u origin master
 </pre></div>
 <p>Com isso, o blog fica salvo no github e fácil de alterar as informações.</p>
-<p>Estou tentando ver a melhor forma de sincronização ainda.</p>
+<p>No servidor rodei um:</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/emilioeiji/blog.git
+</pre></div>
+<p>E quando houver novos posts, em minha maquina local terei que rodar:</p>
+<div class="highlight"><pre><span></span>git add *
+git commit -m <span class="s2">&quot;Artigo que será publicado&quot;</span>
+git push -u origin master
+</pre></div>
+<p>No servidor</p>
+<div class="highlight"><pre><span></span>git pull origin master
+</pre></div>
+<p>Esse post não é muito explicativo mas é uma forma de deixar documentado para mim como subir as informações :p</p>
 </div>
 
 
