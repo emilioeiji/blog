@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - Linux</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/linux.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2018-05-28T14:37:00-03:00</updated><entry><title>SED - Alterar string em arquivos.</title><link href="http://emilioeiji.com.br/sed-alterar-string-arquivos.html" rel="alternate"></link><published>2018-05-28T14:37:00-03:00</published><updated>2018-05-28T14:37:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2018-05-28:/sed-alterar-string-arquivos.html</id><summary type="html">&lt;div class="section" id="alterar-strig-em-varios-arquivos-utilizando-o-sed"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - Linux</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/linux.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2018-05-30T17:33:00-03:00</updated><entry><title>Gravar DVD do xbox 360 no linux.</title><link href="http://emilioeiji.com.br/gravando-dvd-xbox360.html" rel="alternate"></link><published>2018-05-30T17:33:00-03:00</published><updated>2018-05-30T17:33:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2018-05-30:/gravando-dvd-xbox360.html</id><summary type="html">&lt;div class="section" id="gravando-dvd-do-xbox360-via-linha-de-comando-no-linux"&gt;
+&lt;h2&gt;Gravando DVD do XBOX360 via linha de comando no linux.&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Atenção&lt;/em&gt; Não testei esse procedimento ainda, mas estou plublicando para efetuar os testes posteriormente.&lt;/p&gt;
+&lt;p&gt;Corrigindo o patch:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abgx360 --af3 /path/to/game.iso
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Vamos gravar as imagens utilizando o terminal.&lt;/p&gt;
+&lt;p&gt;XGD1/XGD2:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;growisofs -use-the-force-luke&lt;span class="o"&gt;=&lt;/span&gt;dao -use-the-force-luke&lt;span class="o"&gt;=&lt;/span&gt;break:1913760 -dvd-compat -speed …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="gravando-dvd-do-xbox360-via-linha-de-comando-no-linux"&gt;
+&lt;h2&gt;Gravando DVD do XBOX360 via linha de comando no linux.&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Atenção&lt;/em&gt; Não testei esse procedimento ainda, mas estou plublicando para efetuar os testes posteriormente.&lt;/p&gt;
+&lt;p&gt;Corrigindo o patch:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abgx360 --af3 /path/to/game.iso
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Vamos gravar as imagens utilizando o terminal.&lt;/p&gt;
+&lt;p&gt;XGD1/XGD2:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;growisofs -use-the-force-luke&lt;span class="o"&gt;=&lt;/span&gt;dao -use-the-force-luke&lt;span class="o"&gt;=&lt;/span&gt;break:1913760 -dvd-compat -speed&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; -Z /dev/sr0&lt;span class="o"&gt;=&lt;/span&gt;/path/to/game.iso
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;XGD3:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;growisofs -use-the-force-luke&lt;span class="o"&gt;=&lt;/span&gt;dao -use-the-force-luke&lt;span class="o"&gt;=&lt;/span&gt;break:2133520 -dvd-compat -speed&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; -Z /dev/sr0&lt;span class="o"&gt;=&lt;/span&gt;/path/to/game.iso
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Burning_Xbox_360_games"&gt;Peguei essa dica aqui!&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="xbox360"></category><category term="xbox"></category><category term="360"></category><category term="rip"></category><category term="growisofs"></category><category term="iso"></category><category term="gravar"></category><category term="dvd"></category><category term="linux"></category></entry><entry><title>SED - Alterar string em arquivos.</title><link href="http://emilioeiji.com.br/sed-alterar-string-arquivos.html" rel="alternate"></link><published>2018-05-28T14:37:00-03:00</published><updated>2018-05-28T14:37:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2018-05-28:/sed-alterar-string-arquivos.html</id><summary type="html">&lt;div class="section" id="alterar-strig-em-varios-arquivos-utilizando-o-sed"&gt;
 &lt;h2&gt;Alterar strig em vários arquivos utilizando o SED.&lt;/h2&gt;
 &lt;p&gt;Estou reinstalando o Pelican para voltar a publicar algumas coisas no site e me deparei com a seguinte situação:
 Após reinstalar o pelican e suas dependencias, ao tentar rodar o make html o mesmo estava retorando o erro abaixo:&lt;/p&gt;
