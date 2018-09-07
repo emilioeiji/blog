@@ -72,7 +72,7 @@ Após reinstalar o pelican e suas dependencias, ao tentar rodar o make html o me
 Após reinstalar o pelican e suas dependencias, ao tentar rodar o make html o mesmo estava retorando o erro abaixo:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;CRITICAL: AttributeError: &lt;span class="s1"&gt;&amp;#39;str&amp;#39;&lt;/span&gt; object has no attribute &lt;span class="s1"&gt;&amp;#39;slug&amp;#39;&lt;/span&gt;
 Makefile:65: recipe &lt;span class="k"&gt;for&lt;/span&gt; target &lt;span class="s1"&gt;&amp;#39;html&amp;#39;&lt;/span&gt; failed
-make: *** &lt;span class="o"&gt;[&lt;/span&gt;html&lt;span class="o"&gt;]&lt;/span&gt; Error 1
+make: *** &lt;span class="o"&gt;[&lt;/span&gt;html&lt;span class="o"&gt;]&lt;/span&gt; Error &lt;span class="m"&gt;1&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Notei que nos arquivos .rst para a geração dos artigos alguns arquivos no cabeçalho estavam com :tag: e outros com :tags:, onde os arquivos que estavam com :tag: estavam retornando erro.&lt;/p&gt;
 &lt;p&gt;Para alterar todos os arquivos substituindo :tag: para :tags: rodei o seguinte comando:&lt;/p&gt;
@@ -100,15 +100,15 @@ Os NOVOS pacotes a seguir serão instalados:
   mdadm
 &lt;span class="m"&gt;0&lt;/span&gt; pacotes atualizados, &lt;span class="m"&gt;1&lt;/span&gt; pacotes novos instalados, &lt;span class="m"&gt;0&lt;/span&gt; a serem removidos e &lt;span class="m"&gt;9&lt;/span&gt; não atualizados.
 É preciso baixar &lt;span class="m"&gt;566&lt;/span&gt; kB de arquivos.
-Depois desta operação, 1.098 kB adicionais de espaço em disco serão usados.
-Obter:1 http://ftp.br.debian.org/debian/ wheezy/main mdadm i386 3.2.5-5 &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;566&lt;/span&gt; kB&lt;span class="o"&gt;]&lt;/span&gt;
+Depois desta operação, &lt;span class="m"&gt;1&lt;/span&gt;.098 kB adicionais de espaço em disco serão usados.
+Obter:1 http://ftp.br.debian.org/debian/ wheezy/main mdadm i386 &lt;span class="m"&gt;3&lt;/span&gt;.2.5-5 &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;566&lt;/span&gt; kB&lt;span class="o"&gt;]&lt;/span&gt;
 Baixados &lt;span class="m"&gt;566&lt;/span&gt; kB em 1s &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;353&lt;/span&gt; kB/s&lt;span class="o"&gt;)&lt;/span&gt;
 Pré-configurando pacotes ...
 A seleccionar pacote anteriormente não seleccionado mdadm.
 &lt;span class="o"&gt;(&lt;/span&gt;Lendo banco de dados ... &lt;span class="m"&gt;70717&lt;/span&gt; ficheiros e directórios actualmente instalados.&lt;span class="o"&gt;)&lt;/span&gt;
 Desempacotando mdadm &lt;span class="o"&gt;(&lt;/span&gt;de .../mdadm_3.2.5-5_i386.deb&lt;span class="o"&gt;)&lt;/span&gt; ...
 Processando gatilhos para man-db ...
-Configurando mdadm &lt;span class="o"&gt;(&lt;/span&gt;3.2.5-5&lt;span class="o"&gt;)&lt;/span&gt; ...
+Configurando mdadm &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.2.5-5&lt;span class="o"&gt;)&lt;/span&gt; ...
 Generating array device nodes... &lt;span class="k"&gt;done&lt;/span&gt;.
 Generating mdadm.conf... &lt;span class="k"&gt;done&lt;/span&gt;.
 update-initramfs: deferring update &lt;span class="o"&gt;(&lt;/span&gt;trigger activated&lt;span class="o"&gt;)&lt;/span&gt;
@@ -126,7 +126,7 @@ W: mdadm: no arrays defined in configuration file.
 &lt;p&gt;Agora vamos identificar os discos com o comando fdis -l, geralmente os discos são /dev/sd*.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@srv-bacula:~# fdisk -l
 
-Disk /dev/sda: 250.1 GB, &lt;span class="m"&gt;250059350016&lt;/span&gt; bytes
+Disk /dev/sda: &lt;span class="m"&gt;250&lt;/span&gt;.1 GB, &lt;span class="m"&gt;250059350016&lt;/span&gt; bytes
 &lt;span class="m"&gt;255&lt;/span&gt; heads, &lt;span class="m"&gt;63&lt;/span&gt; sectors/track, &lt;span class="m"&gt;30401&lt;/span&gt; cylinders, total &lt;span class="m"&gt;488397168&lt;/span&gt; sectors
 &lt;span class="nv"&gt;Units&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; setores of &lt;span class="m"&gt;1&lt;/span&gt; * &lt;span class="nv"&gt;512&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;512&lt;/span&gt; bytes
 Sector size &lt;span class="o"&gt;(&lt;/span&gt;logical/physical&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
@@ -138,7 +138,7 @@ Dispositivo Boot      Start         End      Blocks   Id  System
 /dev/sda2       &lt;span class="m"&gt;484249598&lt;/span&gt;   &lt;span class="m"&gt;488396799&lt;/span&gt;     &lt;span class="m"&gt;2073601&lt;/span&gt;    &lt;span class="m"&gt;5&lt;/span&gt;  Estendida
 /dev/sda5       &lt;span class="m"&gt;484249600&lt;/span&gt;   &lt;span class="m"&gt;488396799&lt;/span&gt;     &lt;span class="m"&gt;2073600&lt;/span&gt;   &lt;span class="m"&gt;82&lt;/span&gt;  Linux swap / Solaris
 
-Disk /dev/sdb: 250.1 GB, &lt;span class="m"&gt;250059350016&lt;/span&gt; bytes
+Disk /dev/sdb: &lt;span class="m"&gt;250&lt;/span&gt;.1 GB, &lt;span class="m"&gt;250059350016&lt;/span&gt; bytes
 &lt;span class="m"&gt;255&lt;/span&gt; heads, &lt;span class="m"&gt;63&lt;/span&gt; sectors/track, &lt;span class="m"&gt;30401&lt;/span&gt; cylinders, total &lt;span class="m"&gt;488397168&lt;/span&gt; sectors
 &lt;span class="nv"&gt;Units&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; setores of &lt;span class="m"&gt;1&lt;/span&gt; * &lt;span class="nv"&gt;512&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;512&lt;/span&gt; bytes
 Sector size &lt;span class="o"&gt;(&lt;/span&gt;logical/physical&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
@@ -147,7 +147,7 @@ Disk identifier: 0x00000000
 
 Dispositivo Boot      Start         End      Blocks   Id  System
 
-Disk /dev/sdd: 1000.2 GB, &lt;span class="m"&gt;1000204886016&lt;/span&gt; bytes
+Disk /dev/sdd: &lt;span class="m"&gt;1000&lt;/span&gt;.2 GB, &lt;span class="m"&gt;1000204886016&lt;/span&gt; bytes
 &lt;span class="m"&gt;255&lt;/span&gt; heads, &lt;span class="m"&gt;63&lt;/span&gt; sectors/track, &lt;span class="m"&gt;121601&lt;/span&gt; cylinders, total &lt;span class="m"&gt;1953525168&lt;/span&gt; sectors
 &lt;span class="nv"&gt;Units&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; setores of &lt;span class="m"&gt;1&lt;/span&gt; * &lt;span class="nv"&gt;512&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;512&lt;/span&gt; bytes
 Sector size &lt;span class="o"&gt;(&lt;/span&gt;logical/physical&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
@@ -156,7 +156,7 @@ Disk identifier: 0x00000000
 
 Dispositivo Boot      Start         End      Blocks   Id  System
 
-Disk /dev/sdc: 250.1 GB, &lt;span class="m"&gt;250059350016&lt;/span&gt; bytes
+Disk /dev/sdc: &lt;span class="m"&gt;250&lt;/span&gt;.1 GB, &lt;span class="m"&gt;250059350016&lt;/span&gt; bytes
 &lt;span class="m"&gt;255&lt;/span&gt; heads, &lt;span class="m"&gt;63&lt;/span&gt; sectors/track, &lt;span class="m"&gt;30401&lt;/span&gt; cylinders, total &lt;span class="m"&gt;488397168&lt;/span&gt; sectors
 &lt;span class="nv"&gt;Units&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; setores of &lt;span class="m"&gt;1&lt;/span&gt; * &lt;span class="nv"&gt;512&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;512&lt;/span&gt; bytes
 Sector size &lt;span class="o"&gt;(&lt;/span&gt;logical/physical&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
@@ -165,7 +165,7 @@ Disk identifier: 0x00000000
 
 Dispositivo Boot      Start         End      Blocks   Id  System
 
-Disk /dev/sde: 1000.2 GB, &lt;span class="m"&gt;1000204886016&lt;/span&gt; bytes
+Disk /dev/sde: &lt;span class="m"&gt;1000&lt;/span&gt;.2 GB, &lt;span class="m"&gt;1000204886016&lt;/span&gt; bytes
 &lt;span class="m"&gt;255&lt;/span&gt; heads, &lt;span class="m"&gt;63&lt;/span&gt; sectors/track, &lt;span class="m"&gt;121601&lt;/span&gt; cylinders, total &lt;span class="m"&gt;1953525168&lt;/span&gt; sectors
 &lt;span class="nv"&gt;Units&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; setores of &lt;span class="m"&gt;1&lt;/span&gt; * &lt;span class="nv"&gt;512&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;512&lt;/span&gt; bytes
 Sector size &lt;span class="o"&gt;(&lt;/span&gt;logical/physical&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;4096&lt;/span&gt; bytes
@@ -185,27 +185,27 @@ Dispositivo Boot      Start         End      Blocks   Id  System
 &lt;p&gt;Onde criarei abaixo um grupo com 2 HD's de 250GB (MD0) e outro grupo com mais 2 HD's de 1TB (MD1).&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@srv-bacula:~# mdadm --create /dev/md0 --level&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; --raid-devices&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; /dev/sdb /dev/sdc
 mdadm: /dev/sdb appears to be part of a raid array:
-    &lt;span class="nv"&gt;level&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;raid0 &lt;span class="nv"&gt;devices&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;ctime&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Wed Dec &lt;span class="m"&gt;31&lt;/span&gt; 21:00:00 1969
+    &lt;span class="nv"&gt;level&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;raid0 &lt;span class="nv"&gt;devices&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;ctime&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Wed Dec &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt;:00:00 &lt;span class="m"&gt;1969&lt;/span&gt;
 mdadm: partition table exists on /dev/sdb but will be lost or
        meaningless after creating array
 mdadm: /dev/sdc appears to be part of a raid array:
-    &lt;span class="nv"&gt;level&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;raid0 &lt;span class="nv"&gt;devices&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;ctime&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Wed Dec &lt;span class="m"&gt;31&lt;/span&gt; 21:00:00 1969
+    &lt;span class="nv"&gt;level&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;raid0 &lt;span class="nv"&gt;devices&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;ctime&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Wed Dec &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt;:00:00 &lt;span class="m"&gt;1969&lt;/span&gt;
 mdadm: partition table exists on /dev/sdc but will be lost or
        meaningless after creating array
 Continue creating array? y
-mdadm: Defaulting to version 1.2 metadata
+mdadm: Defaulting to version &lt;span class="m"&gt;1&lt;/span&gt;.2 metadata
 mdadm: array /dev/md0 started.
 root@srv-bacula:~# mdadm --create /dev/md1 --level&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; --raid-devices&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; /dev/sdd /dev/sde
 mdadm: /dev/sdd appears to be part of a raid array:
-    &lt;span class="nv"&gt;level&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;raid0 &lt;span class="nv"&gt;devices&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;ctime&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Wed Dec &lt;span class="m"&gt;31&lt;/span&gt; 21:00:00 1969
+    &lt;span class="nv"&gt;level&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;raid0 &lt;span class="nv"&gt;devices&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;ctime&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Wed Dec &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt;:00:00 &lt;span class="m"&gt;1969&lt;/span&gt;
 mdadm: partition table exists on /dev/sdd but will be lost or
        meaningless after creating array
 mdadm: /dev/sde appears to be part of a raid array:
-    &lt;span class="nv"&gt;level&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;raid0 &lt;span class="nv"&gt;devices&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;ctime&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Wed Dec &lt;span class="m"&gt;31&lt;/span&gt; 21:00:00 1969
+    &lt;span class="nv"&gt;level&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;raid0 &lt;span class="nv"&gt;devices&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;ctime&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Wed Dec &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt;:00:00 &lt;span class="m"&gt;1969&lt;/span&gt;
 mdadm: partition table exists on /dev/sde but will be lost or
        meaningless after creating array
 Continue creating array? y
-mdadm: Defaulting to version 1.2 metadata
+mdadm: Defaulting to version &lt;span class="m"&gt;1&lt;/span&gt;.2 metadata
 mdadm: array /dev/md1 started.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Vamos entender o comando:&lt;/p&gt;
@@ -213,10 +213,10 @@ mdadm: array /dev/md1 started.
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mdadm --create /dev/md0
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;O --level= define qual o nível de RAID será criado&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;--level&lt;span class="o"&gt;=&lt;/span&gt;0
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;--level&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Com o parametro --raid-devices=2 estamos definindo que vamos utilizar 2 dispositivos.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;--raid-devices&lt;span class="o"&gt;=&lt;/span&gt;2
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;--raid-devices&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;E no final passamos quais dispositivos vamos utilizar&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/dev/sdb /dev/sdc
@@ -224,11 +224,11 @@ mdadm: array /dev/md1 started.
 &lt;p&gt;Após criados os grupos, vamos validar se está tudo certo com o RAID:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@srv-bacula:~# cat /proc/mdstat
 Personalities : &lt;span class="o"&gt;[&lt;/span&gt;raid0&lt;span class="o"&gt;]&lt;/span&gt;
-md1 : active raid0 sde&lt;span class="o"&gt;[&lt;/span&gt;1&lt;span class="o"&gt;]&lt;/span&gt; sdd&lt;span class="o"&gt;[&lt;/span&gt;0&lt;span class="o"&gt;]&lt;/span&gt;
-      &lt;span class="m"&gt;1953524736&lt;/span&gt; blocks super 1.2 512k chunks
+md1 : active raid0 sde&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; sdd&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+      &lt;span class="m"&gt;1953524736&lt;/span&gt; blocks super &lt;span class="m"&gt;1&lt;/span&gt;.2 512k chunks
 
-md0 : active raid0 sdc&lt;span class="o"&gt;[&lt;/span&gt;1&lt;span class="o"&gt;]&lt;/span&gt; sdb&lt;span class="o"&gt;[&lt;/span&gt;0&lt;span class="o"&gt;]&lt;/span&gt;
-      &lt;span class="m"&gt;488396800&lt;/span&gt; blocks super 1.2 512k chunks
+md0 : active raid0 sdc&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; sdb&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+      &lt;span class="m"&gt;488396800&lt;/span&gt; blocks super &lt;span class="m"&gt;1&lt;/span&gt;.2 512k chunks
 
 unused devices: &amp;lt;none&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -248,16 +248,16 @@ Partition type:
    p   primary &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; primary, &lt;span class="m"&gt;0&lt;/span&gt; extended, &lt;span class="m"&gt;4&lt;/span&gt; free&lt;span class="o"&gt;)&lt;/span&gt;
    e   extended
 Select &lt;span class="o"&gt;(&lt;/span&gt;default p&lt;span class="o"&gt;)&lt;/span&gt;: p
-Número da partição &lt;span class="o"&gt;(&lt;/span&gt;1-4, default 1&lt;span class="o"&gt;)&lt;/span&gt;:
-Using default value 1
-Primeiro setor &lt;span class="o"&gt;(&lt;/span&gt;2048-976793599, default 2048&lt;span class="o"&gt;)&lt;/span&gt;:
-Using default value 2048
-Last setor, +setores or +size&lt;span class="o"&gt;{&lt;/span&gt;K,M,G&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;2048-976793599, default 976793599&lt;span class="o"&gt;)&lt;/span&gt;:
-Using default value 976793599
+Número da partição &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;-4, default &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;:
+Using default value &lt;span class="m"&gt;1&lt;/span&gt;
+Primeiro setor &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2048&lt;/span&gt;-976793599, default &lt;span class="m"&gt;2048&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;:
+Using default value &lt;span class="m"&gt;2048&lt;/span&gt;
+Last setor, +setores or +size&lt;span class="o"&gt;{&lt;/span&gt;K,M,G&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2048&lt;/span&gt;-976793599, default &lt;span class="m"&gt;976793599&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;:
+Using default value &lt;span class="m"&gt;976793599&lt;/span&gt;
 
 Comando &lt;span class="o"&gt;(&lt;/span&gt;m para ajuda&lt;span class="o"&gt;)&lt;/span&gt;: p
 
-Disk /dev/md0: 500.1 GB, &lt;span class="m"&gt;500118323200&lt;/span&gt; bytes
+Disk /dev/md0: &lt;span class="m"&gt;500&lt;/span&gt;.1 GB, &lt;span class="m"&gt;500118323200&lt;/span&gt; bytes
 &lt;span class="m"&gt;2&lt;/span&gt; heads, &lt;span class="m"&gt;4&lt;/span&gt; sectors/track, &lt;span class="m"&gt;122099200&lt;/span&gt; cylinders, total &lt;span class="m"&gt;976793600&lt;/span&gt; sectors
 &lt;span class="nv"&gt;Units&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; setores of &lt;span class="m"&gt;1&lt;/span&gt; * &lt;span class="nv"&gt;512&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;512&lt;/span&gt; bytes
 Sector size &lt;span class="o"&gt;(&lt;/span&gt;logical/physical&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
@@ -279,23 +279,23 @@ mkfs.ext4 /dev/md1p1
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Teremos a seguinte saída para o comando acima:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@srv-bacula:~# mkfs.ext4 /dev/md0p1
-mke2fs 1.42.5 &lt;span class="o"&gt;(&lt;/span&gt;29-Jul-2012&lt;span class="o"&gt;)&lt;/span&gt;
+mke2fs &lt;span class="m"&gt;1&lt;/span&gt;.42.5 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;29&lt;/span&gt;-Jul-2012&lt;span class="o"&gt;)&lt;/span&gt;
 Filesystem &lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
 OS type: Linux
-Block &lt;span class="nv"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4096&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;log&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;2&lt;span class="o"&gt;)&lt;/span&gt;
-Fragment &lt;span class="nv"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4096&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;log&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;2&lt;span class="o"&gt;)&lt;/span&gt;
+Block &lt;span class="nv"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4096&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;log&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+Fragment &lt;span class="nv"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4096&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;log&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;span class="nv"&gt;Stride&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;128&lt;/span&gt; blocks, Stripe &lt;span class="nv"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;256&lt;/span&gt; blocks
 &lt;span class="m"&gt;30531584&lt;/span&gt; inodes, &lt;span class="m"&gt;122098944&lt;/span&gt; blocks
-&lt;span class="m"&gt;6104947&lt;/span&gt; blocks &lt;span class="o"&gt;(&lt;/span&gt;5.00%&lt;span class="o"&gt;)&lt;/span&gt; reserved &lt;span class="k"&gt;for&lt;/span&gt; the super user
-First data &lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
-Maximum filesystem &lt;span class="nv"&gt;blocks&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+&lt;span class="m"&gt;6104947&lt;/span&gt; blocks &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;.00%&lt;span class="o"&gt;)&lt;/span&gt; reserved &lt;span class="k"&gt;for&lt;/span&gt; the super user
+First data &lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
+Maximum filesystem &lt;span class="nv"&gt;blocks&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
 &lt;span class="m"&gt;3727&lt;/span&gt; block groups
 &lt;span class="m"&gt;32768&lt;/span&gt; blocks per group, &lt;span class="m"&gt;32768&lt;/span&gt; fragments per group
 &lt;span class="m"&gt;8192&lt;/span&gt; inodes per group
 Superblock backups stored on blocks:
-        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
-        4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
-        102400000
+        &lt;span class="m"&gt;32768&lt;/span&gt;, &lt;span class="m"&gt;98304&lt;/span&gt;, &lt;span class="m"&gt;163840&lt;/span&gt;, &lt;span class="m"&gt;229376&lt;/span&gt;, &lt;span class="m"&gt;294912&lt;/span&gt;, &lt;span class="m"&gt;819200&lt;/span&gt;, &lt;span class="m"&gt;884736&lt;/span&gt;, &lt;span class="m"&gt;1605632&lt;/span&gt;, &lt;span class="m"&gt;2654208&lt;/span&gt;,
+        &lt;span class="m"&gt;4096000&lt;/span&gt;, &lt;span class="m"&gt;7962624&lt;/span&gt;, &lt;span class="m"&gt;11239424&lt;/span&gt;, &lt;span class="m"&gt;20480000&lt;/span&gt;, &lt;span class="m"&gt;23887872&lt;/span&gt;, &lt;span class="m"&gt;71663616&lt;/span&gt;, &lt;span class="m"&gt;78675968&lt;/span&gt;,
+        &lt;span class="m"&gt;102400000&lt;/span&gt;
 
 Allocating group tables: &lt;span class="k"&gt;done&lt;/span&gt;
 Writing inode tables: &lt;span class="k"&gt;done&lt;/span&gt;
@@ -306,22 +306,22 @@ Writing superblocks and filesystem accounting information: &lt;span class="k"&gt
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;      vim /etc/fstab
 
 
-/dev/md0p1          /mnt/md0  ext4    defaults,noatime      &lt;span class="m"&gt;0&lt;/span&gt;      2
-/dev/md1p1          /mnt/md1  ext4    defaults,noatime      &lt;span class="m"&gt;0&lt;/span&gt;      2
+/dev/md0p1          /mnt/md0  ext4    defaults,noatime      &lt;span class="m"&gt;0&lt;/span&gt;      &lt;span class="m"&gt;2&lt;/span&gt;
+/dev/md1p1          /mnt/md1  ext4    defaults,noatime      &lt;span class="m"&gt;0&lt;/span&gt;      &lt;span class="m"&gt;2&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Para montar as partições vamos rodar o comando abaixo:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mount -a
 
 root@srv-bacula:/mnt# df -mh
 Sist. Arq.                                               Tam  Usad Dispon. Uso% Montado em
-rootfs                                                  228G   17G    200G   8% /
-udev                                                     10M     &lt;span class="m"&gt;0&lt;/span&gt;     10M   0% /dev
-tmpfs                                                   405M  288K    404M   1% /run
-/dev/disk/by-uuid/5d3c3f4c-988e-477d-b4fd-c614cb9ec9d2  228G   17G    200G   8% /
-tmpfs                                                   5,0M     &lt;span class="m"&gt;0&lt;/span&gt;    5,0M   0% /run/lock
-tmpfs                                                   1,2G     &lt;span class="m"&gt;0&lt;/span&gt;    1,2G   0% /run/shm
-/dev/md0p1                                              459G  198M    435G   1% /mnt/md0
-/dev/md1p1                                              1,8T  196M    1,7T   1% /mnt/md1
+rootfs                                                  228G   17G    200G   &lt;span class="m"&gt;8&lt;/span&gt;% /
+udev                                                     10M     &lt;span class="m"&gt;0&lt;/span&gt;     10M   &lt;span class="m"&gt;0&lt;/span&gt;% /dev
+tmpfs                                                   405M  288K    404M   &lt;span class="m"&gt;1&lt;/span&gt;% /run
+/dev/disk/by-uuid/5d3c3f4c-988e-477d-b4fd-c614cb9ec9d2  228G   17G    200G   &lt;span class="m"&gt;8&lt;/span&gt;% /
+tmpfs                                                   &lt;span class="m"&gt;5&lt;/span&gt;,0M     &lt;span class="m"&gt;0&lt;/span&gt;    &lt;span class="m"&gt;5&lt;/span&gt;,0M   &lt;span class="m"&gt;0&lt;/span&gt;% /run/lock
+tmpfs                                                   &lt;span class="m"&gt;1&lt;/span&gt;,2G     &lt;span class="m"&gt;0&lt;/span&gt;    &lt;span class="m"&gt;1&lt;/span&gt;,2G   &lt;span class="m"&gt;0&lt;/span&gt;% /run/shm
+/dev/md0p1                                              459G  198M    435G   &lt;span class="m"&gt;1&lt;/span&gt;% /mnt/md0
+/dev/md1p1                                              &lt;span class="m"&gt;1&lt;/span&gt;,8T  196M    &lt;span class="m"&gt;1&lt;/span&gt;,7T   &lt;span class="m"&gt;1&lt;/span&gt;% /mnt/md1
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Pronto, agora temos nosso RAID via software funcionando em nosso linux.&lt;/p&gt;
 &lt;p&gt;Até a próxima.&lt;/p&gt;
@@ -334,7 +334,7 @@ tmpfs                                                   1,2G     &lt;span class=
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install cryptsetup
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Após o pacote instalado, devemos garantir que o disco esteja todo zerado, podemos fazer isso executando o seguinte comando (supondo que o hd externo seja /dev/sdc1 :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dd &lt;span class="nv"&gt;If&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/zero &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/sdc1 &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1M &lt;span class="nv"&gt;count&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;128
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dd &lt;span class="nv"&gt;If&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/zero &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/sdc1 &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1M &lt;span class="nv"&gt;count&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;128&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Agora ao inves de utilizarmos uma partição ext4 por exemplo, vamos criar uma partição LUKS com o seguinte comando:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cryptsetup luksFormat /dev/sdc1
@@ -357,28 +357,28 @@ Informe a frase secreta para /dev/sdc1:
 &lt;p&gt;Onde o hdexterno pode ser trocado por qualquer nome de sua preferencia.&lt;/p&gt;
 &lt;p&gt;Após mapearmos o nosso hd externo o mesmo se encontrará em /dev/mapper/hdexterno, agora vamos efetuar a formatação da partição:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;emilio ~ $ sudo mkfs.ext4 /dev/mapper/hdexterno
-mke2fs 1.42.9 &lt;span class="o"&gt;(&lt;/span&gt;4-Feb-2014&lt;span class="o"&gt;)&lt;/span&gt;
+mke2fs &lt;span class="m"&gt;1&lt;/span&gt;.42.9 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;-Feb-2014&lt;span class="o"&gt;)&lt;/span&gt;
 Rótulo &lt;span class="k"&gt;do&lt;/span&gt; sistema de &lt;span class="nv"&gt;arquivos&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
 OS type: Linux
-Tamanho &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="nv"&gt;bloco&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4096&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;log&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;2&lt;span class="o"&gt;)&lt;/span&gt;
-Tamanho &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="nv"&gt;fragmento&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4096&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;log&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;2&lt;span class="o"&gt;)&lt;/span&gt;
+Tamanho &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="nv"&gt;bloco&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4096&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;log&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+Tamanho &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="nv"&gt;fragmento&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4096&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;log&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;span class="nv"&gt;Stride&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; blocks, Stripe &lt;span class="nv"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; blocks
 &lt;span class="m"&gt;30531584&lt;/span&gt; inodes, &lt;span class="m"&gt;122095488&lt;/span&gt; blocks
-&lt;span class="m"&gt;6104774&lt;/span&gt; blocks &lt;span class="o"&gt;(&lt;/span&gt;5.00%&lt;span class="o"&gt;)&lt;/span&gt; reserved &lt;span class="k"&gt;for&lt;/span&gt; the super user
-Primeiro bloco de &lt;span class="nv"&gt;dados&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
-Máximo de blocos de sistema de &lt;span class="nv"&gt;arquivos&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;4294967296
+&lt;span class="m"&gt;6104774&lt;/span&gt; blocks &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;.00%&lt;span class="o"&gt;)&lt;/span&gt; reserved &lt;span class="k"&gt;for&lt;/span&gt; the super user
+Primeiro bloco de &lt;span class="nv"&gt;dados&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
+Máximo de blocos de sistema de &lt;span class="nv"&gt;arquivos&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4294967296&lt;/span&gt;
 &lt;span class="m"&gt;3727&lt;/span&gt; grupos de blocos
 &lt;span class="m"&gt;32768&lt;/span&gt; blocos por grupo, &lt;span class="m"&gt;32768&lt;/span&gt; fragmentos por grupo
 &lt;span class="m"&gt;8192&lt;/span&gt; inodes por grupo
 Cópias de segurança de superblocos gravadas em blocos:
-        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
-        4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
-        102400000
+        &lt;span class="m"&gt;32768&lt;/span&gt;, &lt;span class="m"&gt;98304&lt;/span&gt;, &lt;span class="m"&gt;163840&lt;/span&gt;, &lt;span class="m"&gt;229376&lt;/span&gt;, &lt;span class="m"&gt;294912&lt;/span&gt;, &lt;span class="m"&gt;819200&lt;/span&gt;, &lt;span class="m"&gt;884736&lt;/span&gt;, &lt;span class="m"&gt;1605632&lt;/span&gt;, &lt;span class="m"&gt;2654208&lt;/span&gt;,
+        &lt;span class="m"&gt;4096000&lt;/span&gt;, &lt;span class="m"&gt;7962624&lt;/span&gt;, &lt;span class="m"&gt;11239424&lt;/span&gt;, &lt;span class="m"&gt;20480000&lt;/span&gt;, &lt;span class="m"&gt;23887872&lt;/span&gt;, &lt;span class="m"&gt;71663616&lt;/span&gt;, &lt;span class="m"&gt;78675968&lt;/span&gt;,
+        &lt;span class="m"&gt;102400000&lt;/span&gt;
 
 Allocating group tables: pronto
 Gravando tabelas inode: pronto
 Creating journal &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;32768&lt;/span&gt; blocks&lt;span class="o"&gt;)&lt;/span&gt;: concluído
-Escrevendo superblocos e informações de contabilidade de sistema de arquivos:    0/concluído
+Escrevendo superblocos e informações de contabilidade de sistema de arquivos:    &lt;span class="m"&gt;0&lt;/span&gt;/concluído
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Agora vamos montar o nosso dispositivo:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;emilio ~ $ sudo mkdir /media/emilio/hdexterno
@@ -577,7 +577,7 @@ O primeiro passo é importar as funções que acabamos de criar no forms.py.&lt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;render_template&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;forms&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ContactForm&lt;/span&gt;
 
-&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;secret_key&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;development key&amp;#39;&lt;/span&gt;
 
@@ -599,7 +599,7 @@ O primeiro passo é importar as funções que acabamos de criar no forms.py.&lt;
         &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
                 &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;render_template&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;contact.html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;form&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;form&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;debug&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Vamos criar também o template para o nosso formulário:&lt;/p&gt;
@@ -640,67 +640,67 @@ configurados. Para que possamos fazer isso vamos editar nosso arquivo main.css
 acrescentando o seguinte conteúdo.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;/* Contact form */&lt;/span&gt;
 &lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="nt"&gt;label&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;font-size&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1.2em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;font-weight&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;bold&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;display&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;padding&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;10px&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;font-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;1.2&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;font-weight&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;bold&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="nn"&gt;#name&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
-&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="nn"&gt;#email&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
-&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="nn"&gt;#subject&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;width&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;400px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;background-color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#fafafa&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;webkit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;3px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-     &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;moz&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;3px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-          &lt;span class="nb"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;3px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;border&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1px&lt;/span&gt; &lt;span class="nb"&gt;solid&lt;/span&gt; &lt;span class="m"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;padding&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;5px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;font-size&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1.1em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="nn"&gt;name&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="nn"&gt;email&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="nn"&gt;subject&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#fafafa&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="kp"&gt;-webkit-&lt;/span&gt;&lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+     &lt;span class="kp"&gt;-moz-&lt;/span&gt;&lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+          &lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="kc"&gt;solid&lt;/span&gt; &lt;span class="mh"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;font-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;1.1&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="nt"&gt;textarea&lt;/span&gt;&lt;span class="nn"&gt;#message&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;width&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;500px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;height&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;100px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;background-color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#fafafa&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;webkit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;3px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-     &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;moz&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;3px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-          &lt;span class="nb"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;3px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;border&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1px&lt;/span&gt; &lt;span class="nb"&gt;solid&lt;/span&gt; &lt;span class="m"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;margin-bottom&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;10px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;padding&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;5px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;font-size&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1.1em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="nt"&gt;textarea&lt;/span&gt;&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="nn"&gt;message&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#fafafa&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="kp"&gt;-webkit-&lt;/span&gt;&lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+     &lt;span class="kp"&gt;-moz-&lt;/span&gt;&lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+          &lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="kc"&gt;solid&lt;/span&gt; &lt;span class="mh"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;margin-bottom&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;font-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;1.1&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="nn"&gt;#submit&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;display&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;webkit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;3px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-     &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;moz&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;3px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-          &lt;span class="nb"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;3px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;border&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;1px&lt;/span&gt; &lt;span class="nb"&gt;solid&lt;/span&gt; &lt;span class="m"&gt;#d8d8d8&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;padding&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;10px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;font-weight&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;bold&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;text-align&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#000000&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;background-color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#f4f4f4&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;background-image&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;webkit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;linear&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;left&lt;/span&gt; &lt;span class="nb"&gt;top&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;left&lt;/span&gt; &lt;span class="nb"&gt;bottom&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;color&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;stop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0%&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#f4f4f4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;color&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;stop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;100%&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#e5e5e5&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
-  &lt;span class="nb"&gt;background-image&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;webkit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;linear&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;top&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#f4f4f4&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#e5e5e5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-  &lt;span class="nb"&gt;background-image&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;moz&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;linear&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;top&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#f4f4f4&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#e5e5e5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-  &lt;span class="nb"&gt;background-image&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ms&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;linear&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;top&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#f4f4f4&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#e5e5e5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-  &lt;span class="nb"&gt;background-image&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;linear&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;top&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#f4f4f4&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#e5e5e5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-  &lt;span class="nb"&gt;background-image&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;linear&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;top&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#f4f4f4&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#e5e5e5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="n"&gt;filter&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;progid&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;DXImageTransform&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Microsoft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GradientType&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="n"&gt;startColorstr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;#f4f4f4&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;endColorstr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;#e5e5e5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="nn"&gt;submit&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="kp"&gt;-webkit-&lt;/span&gt;&lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+     &lt;span class="kp"&gt;-moz-&lt;/span&gt;&lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+          &lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="kc"&gt;solid&lt;/span&gt; &lt;span class="mh"&gt;#d8d8d8&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;font-weight&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kc"&gt;bold&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;text-align&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#000000&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#f4f4f4&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;background-image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;-webkit-&lt;/span&gt;&lt;span class="nf"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;linear&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;left&lt;/span&gt; &lt;span class="kc"&gt;top&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;left&lt;/span&gt; &lt;span class="kc"&gt;bottom&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;color&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nf"&gt;stop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="kt"&gt;%&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#f4f4f4&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="kc"&gt;color&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nf"&gt;stop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="kt"&gt;%&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#e5e5e5&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+  &lt;span class="k"&gt;background-image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;-webkit-&lt;/span&gt;&lt;span class="nb"&gt;linear-gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;top&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#f4f4f4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#e5e5e5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="k"&gt;background-image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;-moz-&lt;/span&gt;&lt;span class="nb"&gt;linear-gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;top&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#f4f4f4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#e5e5e5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="k"&gt;background-image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;-ms-&lt;/span&gt;&lt;span class="nb"&gt;linear-gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;top&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#f4f4f4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#e5e5e5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="k"&gt;background-image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;-o-&lt;/span&gt;&lt;span class="nb"&gt;linear-gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;top&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#f4f4f4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#e5e5e5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="k"&gt;background-image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;linear-gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;top&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#f4f4f4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#e5e5e5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="k"&gt;filter&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;progid&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;DXImageTransform&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Microsoft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GradientType&lt;/span&gt;&lt;span class="err"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;startColorstr&lt;/span&gt;&lt;span class="err"&gt;=&lt;/span&gt;&lt;span class="mh"&gt;#f4f4f4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;endColorstr&lt;/span&gt;&lt;span class="err"&gt;=&lt;/span&gt;&lt;span class="mh"&gt;#e5e5e5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="nn"&gt;#submit&lt;/span&gt;&lt;span class="nd"&gt;:hover&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;cursor&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;pointer&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;border&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="m"&gt;1px&lt;/span&gt; &lt;span class="nb"&gt;solid&lt;/span&gt; &lt;span class="m"&gt;#c1c1c1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;background-color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#dbdbdb&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;background-image&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;webkit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;linear&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;left&lt;/span&gt; &lt;span class="nb"&gt;top&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;left&lt;/span&gt; &lt;span class="nb"&gt;bottom&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;color&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;stop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0%&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="m"&gt;#dbdbdb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;color&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;stop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;100%&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
-  &lt;span class="nb"&gt;background-image&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;webkit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;linear&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;top&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#dbdbdb&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-  &lt;span class="nb"&gt;background-image&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;moz&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;linear&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;top&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#dbdbdb&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-  &lt;span class="nb"&gt;background-image&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ms&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;linear&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;top&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#dbdbdb&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-  &lt;span class="nb"&gt;background-image&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;linear&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;top&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#dbdbdb&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-  &lt;span class="nb"&gt;background-image&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;linear&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;top&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#dbdbdb&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="n"&gt;filter&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;progid&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;DXImageTransform&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Microsoft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GradientType&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="n"&gt;startColorstr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;#dbdbdb&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;endColorstr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="nn"&gt;submit&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;hover&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;cursor&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;pointer&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="kc"&gt;solid&lt;/span&gt; &lt;span class="mh"&gt;#c1c1c1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#dbdbdb&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;background-image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;-webkit-&lt;/span&gt;&lt;span class="nf"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;linear&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;left&lt;/span&gt; &lt;span class="kc"&gt;top&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;left&lt;/span&gt; &lt;span class="kc"&gt;bottom&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;color&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nf"&gt;stop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="kt"&gt;%&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mh"&gt;#dbdbdb&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="kc"&gt;color&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nf"&gt;stop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="kt"&gt;%&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+  &lt;span class="k"&gt;background-image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;-webkit-&lt;/span&gt;&lt;span class="nb"&gt;linear-gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;top&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#dbdbdb&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="k"&gt;background-image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;-moz-&lt;/span&gt;&lt;span class="nb"&gt;linear-gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;top&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#dbdbdb&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="k"&gt;background-image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;-ms-&lt;/span&gt;&lt;span class="nb"&gt;linear-gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;top&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#dbdbdb&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="k"&gt;background-image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;-o-&lt;/span&gt;&lt;span class="nb"&gt;linear-gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;top&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#dbdbdb&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="k"&gt;background-image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;linear-gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;top&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#dbdbdb&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mh"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="k"&gt;filter&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;progid&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;DXImageTransform&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Microsoft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GradientType&lt;/span&gt;&lt;span class="err"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;startColorstr&lt;/span&gt;&lt;span class="err"&gt;=&lt;/span&gt;&lt;span class="mh"&gt;#dbdbdb&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;endColorstr&lt;/span&gt;&lt;span class="err"&gt;=&lt;/span&gt;&lt;span class="mh"&gt;#cccccc&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -792,10 +792,10 @@ e acrescentar o código para apresentar a mensagem de erro.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;E finalmente editar nosso arquivo main.css&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;/* Message flashing */&lt;/span&gt;
-&lt;span class="nc"&gt;.flash&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;background-color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#FBB0B0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;padding&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;10px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;width&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;400px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;flash&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#FBB0B0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Ok, até agora estamos validando se todos os campos foram preenchidos e caso
@@ -851,7 +851,7 @@ que utilizamos até agora vamos instalá-lo&lt;/p&gt;
 
 &lt;span class="n"&gt;mail&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Mail&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 
-&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;secret_key&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;development key&amp;#39;&lt;/span&gt;
 
@@ -1036,7 +1036,7 @@ com o python que estará pronto nosso primeiro aplicativo, veja um exemplo abaix
 &lt;span class="c1"&gt;# -*- encoding: utf-8 -*-&lt;/span&gt;
 
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
-&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;index&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
@@ -1046,7 +1046,7 @@ com o python que estará pronto nosso primeiro aplicativo, veja um exemplo abaix
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
         &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Hello World!&amp;#39;&lt;/span&gt;
 
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Para executá-lo:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python3 hello.py
@@ -1104,13 +1104,13 @@ funções e mapeamentos para que a nossa aplicação funcione corretamente.&lt;/
 &lt;p&gt;Dentro do arquivo app/routes.py vamos codar as seguintes linhas:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;render_template&lt;/span&gt;
 
-&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;home&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;render_template&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;home.html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
   &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;debug&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;ol class="arabic simple"&gt;
@@ -1131,64 +1131,64 @@ Vamos melhorar essa visualização utilizando o arquivo static/css que criaremos
 &lt;p&gt;Vamos criar um arquivo dentro de app/static/css com o nome de main.css e vamos colocar
 o seguinte conteúdo dentro dele.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;margin&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;padding&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;font-family&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Helvetica Neue&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Helvetica&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Arial&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sans&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;        &lt;span class="nb"&gt;serif&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#444&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;font-family&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Helvetica Neue&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Helvetica&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Arial&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sans-&lt;/span&gt;        &lt;span class="kc"&gt;serif&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#444&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nt"&gt;header&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;background-color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#2B2B2B&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;height&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;35px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;width&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;100%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;opacity&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="m"&gt;9&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;margin-bottom&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;10px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#2B2B2B&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;35&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="kt"&gt;%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;opacity&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;.9&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;margin-bottom&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="nt"&gt;header&lt;/span&gt; &lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="nc"&gt;.logo&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;margin&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;font-size&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1.7em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#fff&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;text-transform&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;uppercase&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;float&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;left&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="nt"&gt;header&lt;/span&gt; &lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;logo&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;font-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;1.7&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#fff&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;text-transform&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;uppercase&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;float&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;left&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="nt"&gt;header&lt;/span&gt; &lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="nc"&gt;.logo&lt;/span&gt;&lt;span class="nd"&gt;:hover&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#fff&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;text-decoration&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="nt"&gt;header&lt;/span&gt; &lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;logo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;hover&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#fff&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;text-decoration&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="c"&gt;/*&lt;/span&gt;
 &lt;span class="c"&gt; * Center the body content&lt;/span&gt;
 &lt;span class="c"&gt; */&lt;/span&gt;
 
-&lt;span class="nc"&gt;.container&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;width&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;940px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;margin&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nb"&gt;auto&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;container&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;940&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="kc"&gt;auto&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="nc"&gt;.jumbo&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;padding&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;10px&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;30px&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;background-color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#eeeeee&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;webkit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;6px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
- &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;moz&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;6px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-          &lt;span class="nb"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;6px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;jumbo&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#eeeeee&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="kp"&gt;-webkit-&lt;/span&gt;&lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+ &lt;span class="kp"&gt;-moz-&lt;/span&gt;&lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+          &lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nt"&gt;h2&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;font-size&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;3em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;margin-top&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;40px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;text-align&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;letter-spacing&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;-2px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;font-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;margin-top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;text-align&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;letter-spacing&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;-2&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nt"&gt;h3&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;font-size&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1.7em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;font-weight&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;100&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;margin-top&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;30px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;text-align&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;letter-spacing&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;-1px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#999&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;font-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;1.7&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;font-weight&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;margin-top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;text-align&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;letter-spacing&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;-1&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#999&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Agora vamos alterar nosso arquivo layout.html para que busce nosso arquivo de
@@ -1233,7 +1233,7 @@ de about.html, iniciaremos criando um template para ela em app/templates&lt;/p&g
 &lt;p&gt;Como feito anteriormente precisamos mapear essa página no arquivo routes.py criando uma rota e uma função.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;render_template&lt;/span&gt;
 
-&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;home&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
@@ -1243,7 +1243,7 @@ de about.html, iniciaremos criando um template para ela em app/templates&lt;/p&g
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;about&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;render_template&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;about.html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
   &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;debug&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -1284,22 +1284,22 @@ o arquivo layout.html e fazer nossas alterações.&lt;/p&gt;
 &lt;p&gt;Efetuando apenas o ajuste no layout.html notará que o menu ficou um pouco estranho,
 devemos editar também o nosso arquivo main.css para que seja ajustado o nosso
 menu, para tanto vamos adicionar as seguintes linhas:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nc"&gt;.menu&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;float&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;right&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;margin-top&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;8px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;menu&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;float&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;right&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;margin-top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="nc"&gt;.menu&lt;/span&gt; &lt;span class="nt"&gt;li&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;display&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;inline&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;menu&lt;/span&gt; &lt;span class="nt"&gt;li&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;inline&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="nc"&gt;.menu&lt;/span&gt; &lt;span class="nt"&gt;li&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nt"&gt;li&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;margin-left&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;35px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;menu&lt;/span&gt; &lt;span class="nt"&gt;li&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nt"&gt;li&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;margin-left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;35&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="nc"&gt;.menu&lt;/span&gt; &lt;span class="nt"&gt;li&lt;/span&gt; &lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#999&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nb"&gt;text-decoration&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;menu&lt;/span&gt; &lt;span class="nt"&gt;li&lt;/span&gt; &lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#999&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;text-decoration&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;A pagina ficou bem simples, mas para exemplo conseguimos abordar alguns pontos
@@ -1344,13 +1344,13 @@ to standard output.
 decifrar a senha pulando os 13 caracteres 'N-ZA-Mn-za-m', o comando completo ficaria
 assim:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit11@melinda:~$ ll
-total 24
-drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ./
-drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; 06:46 ../
+total &lt;span class="m"&gt;24&lt;/span&gt;
+drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 ./
+drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:46 ../
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root      &lt;span class="m"&gt;220&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bash_logout
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root     &lt;span class="m"&gt;3637&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bashrc
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root      &lt;span class="m"&gt;675&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .profile
--rw-r-----   &lt;span class="m"&gt;1&lt;/span&gt; bandit12 bandit11   &lt;span class="m"&gt;49&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 data.txt
+-rw-r-----   &lt;span class="m"&gt;1&lt;/span&gt; bandit12 bandit11   &lt;span class="m"&gt;49&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 data.txt
 bandit11@melinda:~$ cat data.txt
 Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
 bandit11@melinda:~$ cat data.txt &lt;span class="p"&gt;|&lt;/span&gt; tr &lt;span class="s1"&gt;&amp;#39;A-Za-z&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;N-ZA-Mn-za-m&amp;#39;&lt;/span&gt;
@@ -1415,7 +1415,7 @@ SYNOPSIS
 &lt;/pre&gt;
 &lt;p&gt;vamos rodar o comando então para descobri que tipo de arquivo é esse.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit12@melinda:/tmp/emilioeiji$ file arquivo2
-arquivo2: gzip compressed data, was &lt;span class="s2"&gt;&amp;quot;data2.bin&amp;quot;&lt;/span&gt;, from Unix, last modified: Fri Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32:20 2014, max compression
+arquivo2: gzip compressed data, was &lt;span class="s2"&gt;&amp;quot;data2.bin&amp;quot;&lt;/span&gt;, from Unix, last modified: Fri Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32:20 &lt;span class="m"&gt;2014&lt;/span&gt;, max compression
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Descobrimos que se trata de um arquivo gzip, tentei descompactar o arquivo2 direto com o comando
 &lt;strong&gt;gzip -d arquivo2&lt;/strong&gt; porem tive o retorno que o sulfixo do arquivo era desconhecido, mudei o nome do arquivo
@@ -1438,7 +1438,7 @@ bzip2: Can&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;t guess original name &l
 bandit12@melinda:/tmp/emilioeiji$ ls
 arquivo2.out  data.txt
 bandit12@melinda:/tmp/emilioeiji$ file arquivo2.out
-arquivo2.out: gzip compressed data, was &lt;span class="s2"&gt;&amp;quot;data4.bin&amp;quot;&lt;/span&gt;, from Unix, last modified: Fri Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32:20 2014, max compression
+arquivo2.out: gzip compressed data, was &lt;span class="s2"&gt;&amp;quot;data4.bin&amp;quot;&lt;/span&gt;, from Unix, last modified: Fri Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32:20 &lt;span class="m"&gt;2014&lt;/span&gt;, max compression
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Com o comando de descompactaçao foi gerado o &lt;strong&gt;arquivo2.out&lt;/strong&gt; e com o comando file obtive novamente que se
 tratava de outro arquivo compactado no formato gzip, vamos acrescentar a extensão .gz e descompactar
@@ -1480,7 +1480,7 @@ data8.bin
 bandit12@melinda:/tmp/emilioeiji$ ls
 arquivo2  data.txt  data5.bin  data6.bin.out  data8.bin
 bandit12@melinda:/tmp/emilioeiji$ file data8.bin
-data8.bin: gzip compressed data, was &lt;span class="s2"&gt;&amp;quot;data9.bin&amp;quot;&lt;/span&gt;, from Unix, last modified: Fri Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32:20 2014, max compression
+data8.bin: gzip compressed data, was &lt;span class="s2"&gt;&amp;quot;data9.bin&amp;quot;&lt;/span&gt;, from Unix, last modified: Fri Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32:20 &lt;span class="m"&gt;2014&lt;/span&gt;, max compression
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Outro arquivo gzip.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit12@melinda:/tmp/emilioeiji$ mv data8.bin data8.gz
@@ -1522,17 +1522,17 @@ SYNOPSIS
 &lt;/pre&gt;
 &lt;p&gt;Temos que usar o parametro -i e o nome do arquivo:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit13@melinda:~$ ll
-total 24
-drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ./
-drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; 06:46 ../
+total &lt;span class="m"&gt;24&lt;/span&gt;
+drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 ./
+drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:46 ../
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root      &lt;span class="m"&gt;220&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bash_logout
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root     &lt;span class="m"&gt;3637&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bashrc
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root      &lt;span class="m"&gt;675&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .profile
--rw-r-----   &lt;span class="m"&gt;1&lt;/span&gt; bandit14 bandit13 &lt;span class="m"&gt;1679&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 sshkey.private
+-rw-r-----   &lt;span class="m"&gt;1&lt;/span&gt; bandit14 bandit13 &lt;span class="m"&gt;1679&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 sshkey.private
 bandit13@melinda:~$ ssh -i sshkey.private bandit14@localhost
 Could not create directory &lt;span class="s1"&gt;&amp;#39;/home/bandit13/.ssh&amp;#39;&lt;/span&gt;.
 The authenticity of host &lt;span class="s1"&gt;&amp;#39;localhost (127.0.0.1)&amp;#39;&lt;/span&gt; can&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;t be established.
-ECDSA key fingerprint is 05:3a:1c:25:35:0a:ed:2f:cd:87:1c:f6:fe:69:e4:f6.
+ECDSA key fingerprint is &lt;span class="m"&gt;05&lt;/span&gt;:3a:1c:25:35:0a:ed:2f:cd:87:1c:f6:fe:69:e4:f6.
 Are you sure you want to &lt;span class="k"&gt;continue&lt;/span&gt; connecting &lt;span class="o"&gt;(&lt;/span&gt;yes/no&lt;span class="o"&gt;)&lt;/span&gt;? yes
 bandit14@melinda:~$ cat /etc/bandit_pass/bandit
 bandit0   bandit10  bandit12  bandit14  bandit16  bandit18  bandit2   bandit21  bandit23  bandit25  bandit3   bandit5           bandit7   bandit9
@@ -1565,7 +1565,7 @@ DESCRIPTION
 &lt;/pre&gt;
 &lt;p&gt;Basicamente o nc abre e escuta conexões tcp e udp então tentei no modo padrão para praticamente
 todo tipo de conexão, comando destino porta.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit14@melinda:~$ nc localhost 30000
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit14@melinda:~$ nc localhost &lt;span class="m"&gt;30000&lt;/span&gt;
 
 Wrong! Please enter the correct current password
 &lt;/pre&gt;&lt;/div&gt;
@@ -1573,7 +1573,7 @@ Wrong! Please enter the correct current password
 e não aconteceu mais nada, esperei por alguns momentos e resolvi pressionar enter, retornou que a senha
 estava incorreta, resolvi então repetir o procedimento e colocar a senha desse level &lt;strong&gt;4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e&lt;/strong&gt;
 e para minha surpresa funcionou.s&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit14@melinda:~$ nc localhost 30000
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit14@melinda:~$ nc localhost &lt;span class="m"&gt;30000&lt;/span&gt;
 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
 Correct!
 BfMYroe26WYalil77FoDi9qh59eK5xNr
@@ -1585,9 +1585,9 @@ BfMYroe26WYalil77FoDi9qh59eK5xNr
 &lt;p&gt;Como no nível anterior temos que conectar em localhost na porta 30001 porém usando
 encriptação SSL e fornecer a senha do nível atual. Pesquisando um pouco sobre ssl descobri que para conectar como cliente
 devemos usar o parametro s_client no comando openssl, ficando assim:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit15@melinda:~$ openssl s_client -connect 127.0.0.1:30001 -quiet
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit15@melinda:~$ openssl s_client -connect &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:30001 -quiet
 &lt;span class="nv"&gt;depth&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;CN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; li190-250.members.linode.com
-verify error:num&lt;span class="o"&gt;=&lt;/span&gt;18:self signed certificate
+verify error:num&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;18&lt;/span&gt;:self signed certificate
 verify &lt;span class="k"&gt;return&lt;/span&gt;:1
 &lt;span class="nv"&gt;depth&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;CN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; li190-250.members.linode.com
 verify &lt;span class="k"&gt;return&lt;/span&gt;:1
@@ -1595,7 +1595,7 @@ BfMYroe26WYalil77FoDi9qh59eK5xNr
 Correct!
 cluFn7wTiGryunymYOu4RcffSxQluehd
 
-read:errno&lt;span class="o"&gt;=&lt;/span&gt;0
+read:errno&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Está cada vez ficando mais complexo conseguir as senhas, apesar de ser apenas
 um jogo com ele conseguimos aprender algumas coisas legais.&lt;/p&gt;
@@ -1704,7 +1704,7 @@ strings is mainly useful for determining the contents of non-text files.
 que a senha se encontra após vários '=' vamos casar o comando com o &lt;strong&gt;grep =&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit9@melinda:~$ strings data.txt &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nv"&gt;grep&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
 epr~F&lt;span class="o"&gt;=&lt;/span&gt;K
-7?YD&lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="m"&gt;7&lt;/span&gt;?YD&lt;span class="o"&gt;=&lt;/span&gt;
 ?M&lt;span class="o"&gt;=&lt;/span&gt;HqAH
 /&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Ne&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
 &lt;span class="nv"&gt;C&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;_&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
@@ -1815,13 +1815,13 @@ CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 deve saber que para tratar os arquivos com espaços devemos usar o antes do espaço ou colocar o nome do
 arquivo entre &amp;quot;&amp;quot;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit2@melinda:~$ ll
-total 24
-drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ./
-drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; 06:46 ../
+total &lt;span class="m"&gt;24&lt;/span&gt;
+drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 ./
+drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:46 ../
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root    root     &lt;span class="m"&gt;220&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bash_logout
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root    root    &lt;span class="m"&gt;3637&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bashrc
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root    root     &lt;span class="m"&gt;675&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .profile
--rw-r-----   &lt;span class="m"&gt;1&lt;/span&gt; bandit3 bandit2   &lt;span class="m"&gt;33&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 spaces in this filename
+-rw-r-----   &lt;span class="m"&gt;1&lt;/span&gt; bandit3 bandit2   &lt;span class="m"&gt;33&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 spaces in this filename
 bandit2@melinda:~$ cat spaces&lt;span class="se"&gt;\ &lt;/span&gt;in&lt;span class="se"&gt;\ &lt;/span&gt;this&lt;span class="se"&gt;\ &lt;/span&gt;filename
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 bandit2@melinda:~$ cat &lt;span class="s2"&gt;&amp;quot;spaces in this filename&amp;quot;&lt;/span&gt;
@@ -1837,18 +1837,18 @@ todos os arquivos de um diretório podemos usar vários comandos, mas os mais co
 que é um atalho para o &lt;strong&gt;ls -lai&lt;/strong&gt;. Após conseguirmos encontrar o arquivo chamado &lt;strong&gt;.hidden&lt;/strong&gt; podemos
 listar o conteúdo dele com os comandos abaixo:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit3@melinda:~$ ll
-total 24
-drwxr-xr-x   &lt;span class="m"&gt;3&lt;/span&gt; root root &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ./
-drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root root &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; 06:46 ../
+total &lt;span class="m"&gt;24&lt;/span&gt;
+drwxr-xr-x   &lt;span class="m"&gt;3&lt;/span&gt; root root &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 ./
+drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root root &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:46 ../
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root root  &lt;span class="m"&gt;220&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bash_logout
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root root &lt;span class="m"&gt;3637&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bashrc
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root root  &lt;span class="m"&gt;675&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .profile
-drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root root &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 inhere/
+drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root root &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 inhere/
 bandit3@melinda:~$ ll inhere/
-total 12
-drwxr-xr-x &lt;span class="m"&gt;2&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ./
-drwxr-xr-x &lt;span class="m"&gt;3&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ../
--rw-r----- &lt;span class="m"&gt;1&lt;/span&gt; bandit4 bandit3   &lt;span class="m"&gt;33&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 .hidden
+total &lt;span class="m"&gt;12&lt;/span&gt;
+drwxr-xr-x &lt;span class="m"&gt;2&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 ./
+drwxr-xr-x &lt;span class="m"&gt;3&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 ../
+-rw-r----- &lt;span class="m"&gt;1&lt;/span&gt; bandit4 bandit3   &lt;span class="m"&gt;33&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 .hidden
 bandit3@melinda:~$ cat inhere/.hidden
 pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 &lt;/pre&gt;&lt;/div&gt;
@@ -3196,33 +3196,33 @@ minha saga =)&lt;/p&gt;
 &lt;a class="reference external" href="http://shop.lenovo.com/br/pt/laptops/essential/g-series/g400s/?cid=br:sem:kdocI9"&gt;lenovo g400s
 touch&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt; emilio@Emilio-Lnx ~ $ lspci
-&lt;span class="p"&gt;|&lt;/span&gt;  00:00.0 Host bridge: Intel Corporation 3rd Gen Core processor
-DRAM Controller &lt;span class="o"&gt;(&lt;/span&gt;rev 09&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;|&lt;/span&gt;  00:02.0 VGA compatible controller: Intel Corporation 3rd Gen Core
-processor Graphics Controller &lt;span class="o"&gt;(&lt;/span&gt;rev 09&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;|&lt;/span&gt;  00:14.0 USB controller: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
-Chipset Family USB xHCI Host Controller &lt;span class="o"&gt;(&lt;/span&gt;rev 04&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;|&lt;/span&gt;  00:16.0 Communication controller: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210
+&lt;span class="p"&gt;|&lt;/span&gt;  &lt;span class="m"&gt;00&lt;/span&gt;:00.0 Host bridge: Intel Corporation 3rd Gen Core processor
+DRAM Controller &lt;span class="o"&gt;(&lt;/span&gt;rev &lt;span class="m"&gt;09&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  &lt;span class="m"&gt;00&lt;/span&gt;:02.0 VGA compatible controller: Intel Corporation 3rd Gen Core
+processor Graphics Controller &lt;span class="o"&gt;(&lt;/span&gt;rev &lt;span class="m"&gt;09&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  &lt;span class="m"&gt;00&lt;/span&gt;:14.0 USB controller: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
+Chipset Family USB xHCI Host Controller &lt;span class="o"&gt;(&lt;/span&gt;rev &lt;span class="m"&gt;04&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  &lt;span class="m"&gt;00&lt;/span&gt;:16.0 Communication controller: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210
 Series Chipset Family MEI Controller &lt;span class="c1"&gt;#1 (rev 04)&lt;/span&gt;
-&lt;span class="p"&gt;|&lt;/span&gt;  00:1a.0 USB controller: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
+&lt;span class="p"&gt;|&lt;/span&gt;  &lt;span class="m"&gt;00&lt;/span&gt;:1a.0 USB controller: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
 Chipset Family USB Enhanced Host Controller &lt;span class="c1"&gt;#2 (rev 04)&lt;/span&gt;
-&lt;span class="p"&gt;|&lt;/span&gt;  00:1b.0 Audio device: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
-Chipset Family High Definition Audio Controller &lt;span class="o"&gt;(&lt;/span&gt;rev 04&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;|&lt;/span&gt;  00:1c.0 PCI bridge: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
+&lt;span class="p"&gt;|&lt;/span&gt;  &lt;span class="m"&gt;00&lt;/span&gt;:1b.0 Audio device: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
+Chipset Family High Definition Audio Controller &lt;span class="o"&gt;(&lt;/span&gt;rev &lt;span class="m"&gt;04&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  &lt;span class="m"&gt;00&lt;/span&gt;:1c.0 PCI bridge: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
 Chipset Family PCI Express Root Port &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;rev c4&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;|&lt;/span&gt;  00:1c.1 PCI bridge: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
+&lt;span class="p"&gt;|&lt;/span&gt;  &lt;span class="m"&gt;00&lt;/span&gt;:1c.1 PCI bridge: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
 Chipset Family PCI Express Root Port &lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;rev c4&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;|&lt;/span&gt;  00:1d.0 USB controller: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
+&lt;span class="p"&gt;|&lt;/span&gt;  &lt;span class="m"&gt;00&lt;/span&gt;:1d.0 USB controller: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series
 Chipset Family USB Enhanced Host Controller &lt;span class="c1"&gt;#1 (rev 04)&lt;/span&gt;
-&lt;span class="p"&gt;|&lt;/span&gt;  00:1f.0 ISA bridge: Intel Corporation HM76 Express Chipset LPC
-Controller &lt;span class="o"&gt;(&lt;/span&gt;rev 04&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;|&lt;/span&gt;  00:1f.2 SATA controller: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series Chipset
-Family 6-port SATA Controller &lt;span class="o"&gt;[&lt;/span&gt;AHCI mode&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;rev 04&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;|&lt;/span&gt;  00:1f.3 SMBus: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series Chipset
-Family SMBus Controller &lt;span class="o"&gt;(&lt;/span&gt;rev 04&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;|&lt;/span&gt;  01:00.0 Ethernet controller: Qualcomm Atheros AR8162 Fast
-Ethernet &lt;span class="o"&gt;(&lt;/span&gt;rev 10&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;|&lt;/span&gt;  02:00.0 Network controller: Intel Corporation Centrino Wireless-N
+&lt;span class="p"&gt;|&lt;/span&gt;  &lt;span class="m"&gt;00&lt;/span&gt;:1f.0 ISA bridge: Intel Corporation HM76 Express Chipset LPC
+Controller &lt;span class="o"&gt;(&lt;/span&gt;rev &lt;span class="m"&gt;04&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  &lt;span class="m"&gt;00&lt;/span&gt;:1f.2 SATA controller: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series Chipset
+Family &lt;span class="m"&gt;6&lt;/span&gt;-port SATA Controller &lt;span class="o"&gt;[&lt;/span&gt;AHCI mode&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;rev &lt;span class="m"&gt;04&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  &lt;span class="m"&gt;00&lt;/span&gt;:1f.3 SMBus: Intel Corporation &lt;span class="m"&gt;7&lt;/span&gt; Series/C210 Series Chipset
+Family SMBus Controller &lt;span class="o"&gt;(&lt;/span&gt;rev &lt;span class="m"&gt;04&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  &lt;span class="m"&gt;01&lt;/span&gt;:00.0 Ethernet controller: Qualcomm Atheros AR8162 Fast
+Ethernet &lt;span class="o"&gt;(&lt;/span&gt;rev &lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;  &lt;span class="m"&gt;02&lt;/span&gt;:00.0 Network controller: Intel Corporation Centrino Wireless-N
 &lt;span class="m"&gt;135&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;rev c4&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Acima segue o resultado do lspci.&lt;/p&gt;

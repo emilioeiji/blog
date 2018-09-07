@@ -30,13 +30,13 @@ to standard output.
 decifrar a senha pulando os 13 caracteres 'N-ZA-Mn-za-m', o comando completo ficaria
 assim:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit11@melinda:~$ ll
-total 24
-drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ./
-drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; 06:46 ../
+total &lt;span class="m"&gt;24&lt;/span&gt;
+drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 ./
+drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:46 ../
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root      &lt;span class="m"&gt;220&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bash_logout
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root     &lt;span class="m"&gt;3637&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bashrc
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root      &lt;span class="m"&gt;675&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .profile
--rw-r-----   &lt;span class="m"&gt;1&lt;/span&gt; bandit12 bandit11   &lt;span class="m"&gt;49&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 data.txt
+-rw-r-----   &lt;span class="m"&gt;1&lt;/span&gt; bandit12 bandit11   &lt;span class="m"&gt;49&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 data.txt
 bandit11@melinda:~$ cat data.txt
 Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
 bandit11@melinda:~$ cat data.txt &lt;span class="p"&gt;|&lt;/span&gt; tr &lt;span class="s1"&gt;&amp;#39;A-Za-z&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;N-ZA-Mn-za-m&amp;#39;&lt;/span&gt;
@@ -101,7 +101,7 @@ SYNOPSIS
 &lt;/pre&gt;
 &lt;p&gt;vamos rodar o comando então para descobri que tipo de arquivo é esse.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit12@melinda:/tmp/emilioeiji$ file arquivo2
-arquivo2: gzip compressed data, was &lt;span class="s2"&gt;&amp;quot;data2.bin&amp;quot;&lt;/span&gt;, from Unix, last modified: Fri Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32:20 2014, max compression
+arquivo2: gzip compressed data, was &lt;span class="s2"&gt;&amp;quot;data2.bin&amp;quot;&lt;/span&gt;, from Unix, last modified: Fri Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32:20 &lt;span class="m"&gt;2014&lt;/span&gt;, max compression
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Descobrimos que se trata de um arquivo gzip, tentei descompactar o arquivo2 direto com o comando
 &lt;strong&gt;gzip -d arquivo2&lt;/strong&gt; porem tive o retorno que o sulfixo do arquivo era desconhecido, mudei o nome do arquivo
@@ -124,7 +124,7 @@ bzip2: Can&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;t guess original name &l
 bandit12@melinda:/tmp/emilioeiji$ ls
 arquivo2.out  data.txt
 bandit12@melinda:/tmp/emilioeiji$ file arquivo2.out
-arquivo2.out: gzip compressed data, was &lt;span class="s2"&gt;&amp;quot;data4.bin&amp;quot;&lt;/span&gt;, from Unix, last modified: Fri Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32:20 2014, max compression
+arquivo2.out: gzip compressed data, was &lt;span class="s2"&gt;&amp;quot;data4.bin&amp;quot;&lt;/span&gt;, from Unix, last modified: Fri Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32:20 &lt;span class="m"&gt;2014&lt;/span&gt;, max compression
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Com o comando de descompactaçao foi gerado o &lt;strong&gt;arquivo2.out&lt;/strong&gt; e com o comando file obtive novamente que se
 tratava de outro arquivo compactado no formato gzip, vamos acrescentar a extensão .gz e descompactar
@@ -166,7 +166,7 @@ data8.bin
 bandit12@melinda:/tmp/emilioeiji$ ls
 arquivo2  data.txt  data5.bin  data6.bin.out  data8.bin
 bandit12@melinda:/tmp/emilioeiji$ file data8.bin
-data8.bin: gzip compressed data, was &lt;span class="s2"&gt;&amp;quot;data9.bin&amp;quot;&lt;/span&gt;, from Unix, last modified: Fri Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32:20 2014, max compression
+data8.bin: gzip compressed data, was &lt;span class="s2"&gt;&amp;quot;data9.bin&amp;quot;&lt;/span&gt;, from Unix, last modified: Fri Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32:20 &lt;span class="m"&gt;2014&lt;/span&gt;, max compression
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Outro arquivo gzip.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit12@melinda:/tmp/emilioeiji$ mv data8.bin data8.gz
@@ -208,17 +208,17 @@ SYNOPSIS
 &lt;/pre&gt;
 &lt;p&gt;Temos que usar o parametro -i e o nome do arquivo:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit13@melinda:~$ ll
-total 24
-drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ./
-drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; 06:46 ../
+total &lt;span class="m"&gt;24&lt;/span&gt;
+drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 ./
+drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root     root     &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:46 ../
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root      &lt;span class="m"&gt;220&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bash_logout
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root     &lt;span class="m"&gt;3637&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bashrc
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root     root      &lt;span class="m"&gt;675&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .profile
--rw-r-----   &lt;span class="m"&gt;1&lt;/span&gt; bandit14 bandit13 &lt;span class="m"&gt;1679&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 sshkey.private
+-rw-r-----   &lt;span class="m"&gt;1&lt;/span&gt; bandit14 bandit13 &lt;span class="m"&gt;1679&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 sshkey.private
 bandit13@melinda:~$ ssh -i sshkey.private bandit14@localhost
 Could not create directory &lt;span class="s1"&gt;&amp;#39;/home/bandit13/.ssh&amp;#39;&lt;/span&gt;.
 The authenticity of host &lt;span class="s1"&gt;&amp;#39;localhost (127.0.0.1)&amp;#39;&lt;/span&gt; can&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;t be established.
-ECDSA key fingerprint is 05:3a:1c:25:35:0a:ed:2f:cd:87:1c:f6:fe:69:e4:f6.
+ECDSA key fingerprint is &lt;span class="m"&gt;05&lt;/span&gt;:3a:1c:25:35:0a:ed:2f:cd:87:1c:f6:fe:69:e4:f6.
 Are you sure you want to &lt;span class="k"&gt;continue&lt;/span&gt; connecting &lt;span class="o"&gt;(&lt;/span&gt;yes/no&lt;span class="o"&gt;)&lt;/span&gt;? yes
 bandit14@melinda:~$ cat /etc/bandit_pass/bandit
 bandit0   bandit10  bandit12  bandit14  bandit16  bandit18  bandit2   bandit21  bandit23  bandit25  bandit3   bandit5           bandit7   bandit9
@@ -251,7 +251,7 @@ DESCRIPTION
 &lt;/pre&gt;
 &lt;p&gt;Basicamente o nc abre e escuta conexões tcp e udp então tentei no modo padrão para praticamente
 todo tipo de conexão, comando destino porta.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit14@melinda:~$ nc localhost 30000
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit14@melinda:~$ nc localhost &lt;span class="m"&gt;30000&lt;/span&gt;
 
 Wrong! Please enter the correct current password
 &lt;/pre&gt;&lt;/div&gt;
@@ -259,7 +259,7 @@ Wrong! Please enter the correct current password
 e não aconteceu mais nada, esperei por alguns momentos e resolvi pressionar enter, retornou que a senha
 estava incorreta, resolvi então repetir o procedimento e colocar a senha desse level &lt;strong&gt;4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e&lt;/strong&gt;
 e para minha surpresa funcionou.s&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit14@melinda:~$ nc localhost 30000
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit14@melinda:~$ nc localhost &lt;span class="m"&gt;30000&lt;/span&gt;
 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
 Correct!
 BfMYroe26WYalil77FoDi9qh59eK5xNr
@@ -271,9 +271,9 @@ BfMYroe26WYalil77FoDi9qh59eK5xNr
 &lt;p&gt;Como no nível anterior temos que conectar em localhost na porta 30001 porém usando
 encriptação SSL e fornecer a senha do nível atual. Pesquisando um pouco sobre ssl descobri que para conectar como cliente
 devemos usar o parametro s_client no comando openssl, ficando assim:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit15@melinda:~$ openssl s_client -connect 127.0.0.1:30001 -quiet
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit15@melinda:~$ openssl s_client -connect &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:30001 -quiet
 &lt;span class="nv"&gt;depth&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;CN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; li190-250.members.linode.com
-verify error:num&lt;span class="o"&gt;=&lt;/span&gt;18:self signed certificate
+verify error:num&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;18&lt;/span&gt;:self signed certificate
 verify &lt;span class="k"&gt;return&lt;/span&gt;:1
 &lt;span class="nv"&gt;depth&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;CN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; li190-250.members.linode.com
 verify &lt;span class="k"&gt;return&lt;/span&gt;:1
@@ -281,7 +281,7 @@ BfMYroe26WYalil77FoDi9qh59eK5xNr
 Correct!
 cluFn7wTiGryunymYOu4RcffSxQluehd
 
-read:errno&lt;span class="o"&gt;=&lt;/span&gt;0
+read:errno&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Está cada vez ficando mais complexo conseguir as senhas, apesar de ser apenas
 um jogo com ele conseguimos aprender algumas coisas legais.&lt;/p&gt;
@@ -390,7 +390,7 @@ strings is mainly useful for determining the contents of non-text files.
 que a senha se encontra após vários '=' vamos casar o comando com o &lt;strong&gt;grep =&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit9@melinda:~$ strings data.txt &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nv"&gt;grep&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
 epr~F&lt;span class="o"&gt;=&lt;/span&gt;K
-7?YD&lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="m"&gt;7&lt;/span&gt;?YD&lt;span class="o"&gt;=&lt;/span&gt;
 ?M&lt;span class="o"&gt;=&lt;/span&gt;HqAH
 /&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Ne&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
 &lt;span class="nv"&gt;C&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;_&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
@@ -501,13 +501,13 @@ CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 deve saber que para tratar os arquivos com espaços devemos usar o antes do espaço ou colocar o nome do
 arquivo entre &amp;quot;&amp;quot;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit2@melinda:~$ ll
-total 24
-drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ./
-drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; 06:46 ../
+total &lt;span class="m"&gt;24&lt;/span&gt;
+drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 ./
+drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:46 ../
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root    root     &lt;span class="m"&gt;220&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bash_logout
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root    root    &lt;span class="m"&gt;3637&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bashrc
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root    root     &lt;span class="m"&gt;675&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .profile
--rw-r-----   &lt;span class="m"&gt;1&lt;/span&gt; bandit3 bandit2   &lt;span class="m"&gt;33&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 spaces in this filename
+-rw-r-----   &lt;span class="m"&gt;1&lt;/span&gt; bandit3 bandit2   &lt;span class="m"&gt;33&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 spaces in this filename
 bandit2@melinda:~$ cat spaces&lt;span class="se"&gt;\ &lt;/span&gt;in&lt;span class="se"&gt;\ &lt;/span&gt;this&lt;span class="se"&gt;\ &lt;/span&gt;filename
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 bandit2@melinda:~$ cat &lt;span class="s2"&gt;&amp;quot;spaces in this filename&amp;quot;&lt;/span&gt;
@@ -523,18 +523,18 @@ todos os arquivos de um diretório podemos usar vários comandos, mas os mais co
 que é um atalho para o &lt;strong&gt;ls -lai&lt;/strong&gt;. Após conseguirmos encontrar o arquivo chamado &lt;strong&gt;.hidden&lt;/strong&gt; podemos
 listar o conteúdo dele com os comandos abaixo:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bandit3@melinda:~$ ll
-total 24
-drwxr-xr-x   &lt;span class="m"&gt;3&lt;/span&gt; root root &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ./
-drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root root &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; 06:46 ../
+total &lt;span class="m"&gt;24&lt;/span&gt;
+drwxr-xr-x   &lt;span class="m"&gt;3&lt;/span&gt; root root &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 ./
+drwxr-xr-x &lt;span class="m"&gt;167&lt;/span&gt; root root &lt;span class="m"&gt;4096&lt;/span&gt; Mar &lt;span class="m"&gt;21&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:46 ../
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root root  &lt;span class="m"&gt;220&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bash_logout
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root root &lt;span class="m"&gt;3637&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .bashrc
 -rw-r--r--   &lt;span class="m"&gt;1&lt;/span&gt; root root  &lt;span class="m"&gt;675&lt;/span&gt; Apr  &lt;span class="m"&gt;9&lt;/span&gt;  &lt;span class="m"&gt;2014&lt;/span&gt; .profile
-drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root root &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 inhere/
+drwxr-xr-x   &lt;span class="m"&gt;2&lt;/span&gt; root root &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 inhere/
 bandit3@melinda:~$ ll inhere/
-total 12
-drwxr-xr-x &lt;span class="m"&gt;2&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ./
-drwxr-xr-x &lt;span class="m"&gt;3&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 ../
--rw-r----- &lt;span class="m"&gt;1&lt;/span&gt; bandit4 bandit3   &lt;span class="m"&gt;33&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; 10:32 .hidden
+total &lt;span class="m"&gt;12&lt;/span&gt;
+drwxr-xr-x &lt;span class="m"&gt;2&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 ./
+drwxr-xr-x &lt;span class="m"&gt;3&lt;/span&gt; root    root    &lt;span class="m"&gt;4096&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 ../
+-rw-r----- &lt;span class="m"&gt;1&lt;/span&gt; bandit4 bandit3   &lt;span class="m"&gt;33&lt;/span&gt; Nov &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:32 .hidden
 bandit3@melinda:~$ cat inhere/.hidden
 pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 &lt;/pre&gt;&lt;/div&gt;

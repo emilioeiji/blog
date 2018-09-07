@@ -22,7 +22,6 @@
   <li><a href="./archives/">Arquivos</a></li>
   <li><a href="./focalinux/index.html">FocaLinux</a></li>
   <li><a href="./about/">Sobre</a></li>
-  <li><a href="./wiki/index.php">WiKi</a></li>
     </div>
     <div class="nav social">
 <ul>
@@ -35,7 +34,7 @@
 </ul>    </div>
 </div>    <div id="main">
 <h2><a href="./criptografando-hd-externo.html">Criptografando HD Externo</a></h2>
-<h5><i class="icon-feather"></i> Qua 19 agosto 2015
+<h5><i class="icon-feather"></i> qua 19 agosto 2015
 <i class="icon-bookmarks"></i>
 <span><a href="./tag/criptografia.html">criptografia</a> / </span>
 <span><a href="./tag/hd.html">hd</a> / </span>
@@ -50,7 +49,7 @@
 <div class="highlight"><pre><span></span>apt-get install cryptsetup
 </pre></div>
 <p>Após o pacote instalado, devemos garantir que o disco esteja todo zerado, podemos fazer isso executando o seguinte comando (supondo que o hd externo seja /dev/sdc1 :</p>
-<div class="highlight"><pre><span></span>dd <span class="nv">If</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/dev/sdc1 <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span>128
+<div class="highlight"><pre><span></span>dd <span class="nv">If</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/dev/sdc1 <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">128</span>
 </pre></div>
 <p>Agora ao inves de utilizarmos uma partição ext4 por exemplo, vamos criar uma partição LUKS com o seguinte comando:</p>
 <div class="highlight"><pre><span></span>cryptsetup luksFormat /dev/sdc1
@@ -73,28 +72,28 @@ Informe a frase secreta para /dev/sdc1:
 <p>Onde o hdexterno pode ser trocado por qualquer nome de sua preferencia.</p>
 <p>Após mapearmos o nosso hd externo o mesmo se encontrará em /dev/mapper/hdexterno, agora vamos efetuar a formatação da partição:</p>
 <div class="highlight"><pre><span></span>emilio ~ $ sudo mkfs.ext4 /dev/mapper/hdexterno
-mke2fs 1.42.9 <span class="o">(</span>4-Feb-2014<span class="o">)</span>
+mke2fs <span class="m">1</span>.42.9 <span class="o">(</span><span class="m">4</span>-Feb-2014<span class="o">)</span>
 Rótulo <span class="k">do</span> sistema de <span class="nv">arquivos</span><span class="o">=</span>
 OS type: Linux
-Tamanho <span class="k">do</span> <span class="nv">bloco</span><span class="o">=</span><span class="m">4096</span> <span class="o">(</span><span class="nv">log</span><span class="o">=</span>2<span class="o">)</span>
-Tamanho <span class="k">do</span> <span class="nv">fragmento</span><span class="o">=</span><span class="m">4096</span> <span class="o">(</span><span class="nv">log</span><span class="o">=</span>2<span class="o">)</span>
+Tamanho <span class="k">do</span> <span class="nv">bloco</span><span class="o">=</span><span class="m">4096</span> <span class="o">(</span><span class="nv">log</span><span class="o">=</span><span class="m">2</span><span class="o">)</span>
+Tamanho <span class="k">do</span> <span class="nv">fragmento</span><span class="o">=</span><span class="m">4096</span> <span class="o">(</span><span class="nv">log</span><span class="o">=</span><span class="m">2</span><span class="o">)</span>
 <span class="nv">Stride</span><span class="o">=</span><span class="m">0</span> blocks, Stripe <span class="nv">width</span><span class="o">=</span><span class="m">0</span> blocks
 <span class="m">30531584</span> inodes, <span class="m">122095488</span> blocks
-<span class="m">6104774</span> blocks <span class="o">(</span>5.00%<span class="o">)</span> reserved <span class="k">for</span> the super user
-Primeiro bloco de <span class="nv">dados</span><span class="o">=</span>0
-Máximo de blocos de sistema de <span class="nv">arquivos</span><span class="o">=</span>4294967296
+<span class="m">6104774</span> blocks <span class="o">(</span><span class="m">5</span>.00%<span class="o">)</span> reserved <span class="k">for</span> the super user
+Primeiro bloco de <span class="nv">dados</span><span class="o">=</span><span class="m">0</span>
+Máximo de blocos de sistema de <span class="nv">arquivos</span><span class="o">=</span><span class="m">4294967296</span>
 <span class="m">3727</span> grupos de blocos
 <span class="m">32768</span> blocos por grupo, <span class="m">32768</span> fragmentos por grupo
 <span class="m">8192</span> inodes por grupo
 Cópias de segurança de superblocos gravadas em blocos:
-        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
-        4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
-        102400000
+        <span class="m">32768</span>, <span class="m">98304</span>, <span class="m">163840</span>, <span class="m">229376</span>, <span class="m">294912</span>, <span class="m">819200</span>, <span class="m">884736</span>, <span class="m">1605632</span>, <span class="m">2654208</span>,
+        <span class="m">4096000</span>, <span class="m">7962624</span>, <span class="m">11239424</span>, <span class="m">20480000</span>, <span class="m">23887872</span>, <span class="m">71663616</span>, <span class="m">78675968</span>,
+        <span class="m">102400000</span>
 
 Allocating group tables: pronto
 Gravando tabelas inode: pronto
 Creating journal <span class="o">(</span><span class="m">32768</span> blocks<span class="o">)</span>: concluído
-Escrevendo superblocos e informações de contabilidade de sistema de arquivos:    0/concluído
+Escrevendo superblocos e informações de contabilidade de sistema de arquivos:    <span class="m">0</span>/concluído
 </pre></div>
 <p>Agora vamos montar o nosso dispositivo:</p>
 <div class="highlight"><pre><span></span>emilio ~ $ sudo mkdir /media/emilio/hdexterno

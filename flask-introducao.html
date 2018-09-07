@@ -22,7 +22,6 @@
   <li><a href="./archives/">Arquivos</a></li>
   <li><a href="./focalinux/index.html">FocaLinux</a></li>
   <li><a href="./about/">Sobre</a></li>
-  <li><a href="./wiki/index.php">WiKi</a></li>
     </div>
     <div class="nav social">
 <ul>
@@ -35,7 +34,7 @@
 </ul>    </div>
 </div>    <div id="main">
 <h2><a href="./flask-introducao.html">Flask - Introdução</a></h2>
-<h5><i class="icon-feather"></i> Dom 24 maio 2015
+<h5><i class="icon-feather"></i> dom 24 maio 2015
 <i class="icon-bookmarks"></i>
 <span><a href="./tag/flask.html">flask</a> / </span>
 <span><a href="./tag/python.html">python</a> / </span>
@@ -103,7 +102,7 @@ com o python que estará pronto nosso primeiro aplicativo, veja um exemplo abaix
 <span class="c1"># -*- encoding: utf-8 -*-</span>
 
 <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 <span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
@@ -113,7 +112,7 @@ com o python que estará pronto nosso primeiro aplicativo, veja um exemplo abaix
 <span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
         <span class="k">return</span> <span class="s1">&#39;Hello World!&#39;</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
 </pre></div>
 <p>Para executá-lo:</p>
 <div class="highlight"><pre><span></span>python3 hello.py
@@ -171,13 +170,13 @@ funções e mapeamentos para que a nossa aplicação funcione corretamente.</p>
 <p>Dentro do arquivo app/routes.py vamos codar as seguintes linhas:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span>
 
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 <span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;home.html&#39;</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
   <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 <ol class="arabic simple">
@@ -198,64 +197,64 @@ Vamos melhorar essa visualização utilizando o arquivo static/css que criaremos
 <p>Vamos criar um arquivo dentro de app/static/css com o nome de main.css e vamos colocar
 o seguinte conteúdo dentro dele.</p>
 <div class="highlight"><pre><span></span><span class="nt">body</span> <span class="p">{</span>
-  <span class="nb">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nb">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nb">font-family</span><span class="o">:</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="n">sans</span><span class="o">-</span>        <span class="nb">serif</span><span class="p">;</span>
-  <span class="nb">color</span><span class="o">:</span> <span class="m">#444</span><span class="p">;</span>
+  <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">font-family</span><span class="p">:</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="p">,</span> <span class="n">Helvetica</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="n">sans-</span>        <span class="kc">serif</span><span class="p">;</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#444</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nt">header</span> <span class="p">{</span>
-  <span class="nb">background-color</span><span class="o">:</span> <span class="m">#2B2B2B</span><span class="p">;</span>
-  <span class="nb">height</span><span class="o">:</span> <span class="m">35px</span><span class="p">;</span>
-  <span class="nb">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
-  <span class="nb">opacity</span><span class="o">:</span> <span class="o">.</span><span class="m">9</span><span class="p">;</span>
-  <span class="nb">margin-bottom</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#2B2B2B</span><span class="p">;</span>
+  <span class="k">height</span><span class="p">:</span> <span class="mi">35</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+  <span class="k">opacity</span><span class="p">:</span> <span class="mf">.9</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nt">header</span> <span class="nt">h1</span><span class="nc">.logo</span> <span class="p">{</span>
-  <span class="nb">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nb">font-size</span><span class="o">:</span> <span class="m">1.7em</span><span class="p">;</span>
-  <span class="nb">color</span><span class="o">:</span> <span class="m">#fff</span><span class="p">;</span>
-  <span class="nb">text-transform</span><span class="o">:</span> <span class="nb">uppercase</span><span class="p">;</span>
-  <span class="nb">float</span><span class="o">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="nt">header</span> <span class="nt">h1</span><span class="p">.</span><span class="nc">logo</span> <span class="p">{</span>
+  <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="p">:</span> <span class="mf">1.7</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+  <span class="k">text-transform</span><span class="p">:</span> <span class="kc">uppercase</span><span class="p">;</span>
+  <span class="k">float</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nt">header</span> <span class="nt">h1</span><span class="nc">.logo</span><span class="nd">:hover</span> <span class="p">{</span>
-  <span class="nb">color</span><span class="o">:</span> <span class="m">#fff</span><span class="p">;</span>
-  <span class="nb">text-decoration</span><span class="o">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="nt">header</span> <span class="nt">h1</span><span class="p">.</span><span class="nc">logo</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+  <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c">/*</span>
 <span class="c"> * Center the body content</span>
 <span class="c"> */</span>
 
-<span class="nc">.container</span> <span class="p">{</span>
-  <span class="nb">width</span><span class="o">:</span> <span class="m">940px</span><span class="p">;</span>
-  <span class="nb">margin</span><span class="o">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">940</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nt">div</span><span class="nc">.jumbo</span> <span class="p">{</span>
-  <span class="nb">padding</span><span class="o">:</span> <span class="m">10px</span> <span class="m">0</span> <span class="m">30px</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nb">background-color</span><span class="o">:</span> <span class="m">#eeeeee</span><span class="p">;</span>
-  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">6px</span><span class="p">;</span>
- <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">6px</span><span class="p">;</span>
-          <span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">6px</span><span class="p">;</span>
+<span class="nt">div</span><span class="p">.</span><span class="nc">jumbo</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span> <span class="mi">0</span> <span class="mi">30</span><span class="kt">px</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#eeeeee</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">6</span><span class="kt">px</span><span class="p">;</span>
+ <span class="kp">-moz-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">6</span><span class="kt">px</span><span class="p">;</span>
+          <span class="k">border-radius</span><span class="p">:</span> <span class="mi">6</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nt">h2</span> <span class="p">{</span>
-  <span class="nb">font-size</span><span class="o">:</span> <span class="m">3em</span><span class="p">;</span>
-  <span class="nb">margin-top</span><span class="o">:</span> <span class="m">40px</span><span class="p">;</span>
-  <span class="nb">text-align</span><span class="o">:</span> <span class="nb">center</span><span class="p">;</span>
-  <span class="nb">letter-spacing</span><span class="o">:</span> <span class="m">-2px</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="p">:</span> <span class="mi">3</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="p">:</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+  <span class="k">letter-spacing</span><span class="p">:</span> <span class="mi">-2</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nt">h3</span> <span class="p">{</span>
-  <span class="nb">font-size</span><span class="o">:</span> <span class="m">1.7em</span><span class="p">;</span>
-  <span class="nb">font-weight</span><span class="o">:</span> <span class="m">100</span><span class="p">;</span>
-  <span class="nb">margin-top</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
-  <span class="nb">text-align</span><span class="o">:</span> <span class="nb">center</span><span class="p">;</span>
-  <span class="nb">letter-spacing</span><span class="o">:</span> <span class="m">-1px</span><span class="p">;</span>
-  <span class="nb">color</span><span class="o">:</span> <span class="m">#999</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="p">:</span> <span class="mf">1.7</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="p">:</span> <span class="mi">100</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+  <span class="k">letter-spacing</span><span class="p">:</span> <span class="mi">-1</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#999</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 <p>Agora vamos alterar nosso arquivo layout.html para que busce nosso arquivo de
@@ -300,7 +299,7 @@ de about.html, iniciaremos criando um template para ela em app/templates</p>
 <p>Como feito anteriormente precisamos mapear essa página no arquivo routes.py criando uma rota e uma função.</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span>
 
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 <span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
@@ -310,7 +309,7 @@ de about.html, iniciaremos criando um template para ela em app/templates</p>
 <span class="k">def</span> <span class="nf">about</span><span class="p">():</span>
   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;about.html&#39;</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
   <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -351,22 +350,22 @@ o arquivo layout.html e fazer nossas alterações.</p>
 <p>Efetuando apenas o ajuste no layout.html notará que o menu ficou um pouco estranho,
 devemos editar também o nosso arquivo main.css para que seja ajustado o nosso
 menu, para tanto vamos adicionar as seguintes linhas:</p>
-<div class="highlight"><pre><span></span><span class="nc">.menu</span> <span class="p">{</span>
-  <span class="nb">float</span><span class="o">:</span> <span class="nb">right</span><span class="p">;</span>
-  <span class="nb">margin-top</span><span class="o">:</span> <span class="m">8px</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">menu</span> <span class="p">{</span>
+  <span class="k">float</span><span class="p">:</span> <span class="kc">right</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="p">:</span> <span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nc">.menu</span> <span class="nt">li</span> <span class="p">{</span>
-  <span class="nb">display</span><span class="o">:</span> <span class="nb">inline</span><span class="p">;</span>
+<span class="p">.</span><span class="nc">menu</span> <span class="nt">li</span> <span class="p">{</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nc">.menu</span> <span class="nt">li</span> <span class="o">+</span> <span class="nt">li</span> <span class="p">{</span>
-  <span class="nb">margin-left</span><span class="o">:</span> <span class="m">35px</span><span class="p">;</span>
+<span class="p">.</span><span class="nc">menu</span> <span class="nt">li</span> <span class="o">+</span> <span class="nt">li</span> <span class="p">{</span>
+  <span class="k">margin-left</span><span class="p">:</span> <span class="mi">35</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nc">.menu</span> <span class="nt">li</span> <span class="nt">a</span> <span class="p">{</span>
-  <span class="nb">color</span><span class="o">:</span> <span class="m">#999</span><span class="p">;</span>
-  <span class="nb">text-decoration</span><span class="o">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">.</span><span class="nc">menu</span> <span class="nt">li</span> <span class="nt">a</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#999</span><span class="p">;</span>
+  <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 <p>A pagina ficou bem simples, mas para exemplo conseguimos abordar alguns pontos

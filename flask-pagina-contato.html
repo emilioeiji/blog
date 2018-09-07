@@ -22,7 +22,6 @@
   <li><a href="./archives/">Arquivos</a></li>
   <li><a href="./focalinux/index.html">FocaLinux</a></li>
   <li><a href="./about/">Sobre</a></li>
-  <li><a href="./wiki/index.php">WiKi</a></li>
     </div>
     <div class="nav social">
 <ul>
@@ -35,7 +34,7 @@
 </ul>    </div>
 </div>    <div id="main">
 <h2><a href="./flask-pagina-contato.html">Flask - Página de Contato</a></h2>
-<h5><i class="icon-feather"></i> Seg 25 maio 2015
+<h5><i class="icon-feather"></i> seg 25 maio 2015
 <i class="icon-bookmarks"></i>
 <span><a href="./tag/flask.html">flask</a> / </span>
 <span><a href="./tag/python.html">python</a> / </span>
@@ -80,7 +79,7 @@ O primeiro passo é importar as funções que acabamos de criar no forms.py.</p>
 <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span><span class="p">,</span> <span class="n">request</span>
 <span class="kn">from</span> <span class="nn">forms</span> <span class="kn">import</span> <span class="n">ContactForm</span>
 
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 <span class="n">app</span><span class="o">.</span><span class="n">secret_key</span> <span class="o">=</span> <span class="s1">&#39;development key&#39;</span>
 
@@ -102,7 +101,7 @@ O primeiro passo é importar as funções que acabamos de criar no forms.py.</p>
         <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;contact.html&#39;</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="n">form</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
         <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 <p>Vamos criar também o template para o nosso formulário:</p>
@@ -143,67 +142,67 @@ configurados. Para que possamos fazer isso vamos editar nosso arquivo main.css
 acrescentando o seguinte conteúdo.</p>
 <div class="highlight"><pre><span></span><span class="c">/* Contact form */</span>
 <span class="nt">form</span> <span class="nt">label</span> <span class="p">{</span>
-  <span class="nb">font-size</span><span class="o">:</span> <span class="m">1.2em</span><span class="p">;</span>
-  <span class="nb">font-weight</span><span class="o">:</span> <span class="nb">bold</span><span class="p">;</span>
-  <span class="nb">display</span><span class="o">:</span> <span class="nb">block</span><span class="p">;</span>
-  <span class="nb">padding</span><span class="o">:</span> <span class="m">10px</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="p">:</span> <span class="mf">1.2</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nt">form</span> <span class="nt">input</span><span class="nn">#name</span><span class="o">,</span>
-<span class="nt">form</span> <span class="nt">input</span><span class="nn">#email</span><span class="o">,</span>
-<span class="nt">form</span> <span class="nt">input</span><span class="nn">#subject</span> <span class="p">{</span>
-  <span class="nb">width</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
-  <span class="nb">background-color</span><span class="o">:</span> <span class="m">#fafafa</span><span class="p">;</span>
-  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
-     <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
-          <span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
-  <span class="nb">border</span><span class="o">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#cccccc</span><span class="p">;</span>
-  <span class="nb">padding</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
-  <span class="nb">font-size</span><span class="o">:</span> <span class="m">1.1em</span><span class="p">;</span>
+<span class="nt">form</span> <span class="nt">input</span><span class="p">#</span><span class="nn">name</span><span class="o">,</span>
+<span class="nt">form</span> <span class="nt">input</span><span class="p">#</span><span class="nn">email</span><span class="o">,</span>
+<span class="nt">form</span> <span class="nt">input</span><span class="p">#</span><span class="nn">subject</span> <span class="p">{</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#fafafa</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+     <span class="kp">-moz-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+          <span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#cccccc</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="p">:</span> <span class="mf">1.1</span><span class="kt">em</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nt">form</span> <span class="nt">textarea</span><span class="nn">#message</span> <span class="p">{</span>
-  <span class="nb">width</span><span class="o">:</span> <span class="m">500px</span><span class="p">;</span>
-  <span class="nb">height</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
-  <span class="nb">background-color</span><span class="o">:</span> <span class="m">#fafafa</span><span class="p">;</span>
-  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
-     <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
-          <span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
-  <span class="nb">border</span><span class="o">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#cccccc</span><span class="p">;</span>
-  <span class="nb">margin-bottom</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
-  <span class="nb">padding</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
-  <span class="nb">font-size</span><span class="o">:</span> <span class="m">1.1em</span><span class="p">;</span>
+<span class="nt">form</span> <span class="nt">textarea</span><span class="p">#</span><span class="nn">message</span> <span class="p">{</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">500</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#fafafa</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+     <span class="kp">-moz-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+          <span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#cccccc</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="p">:</span> <span class="mf">1.1</span><span class="kt">em</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nt">form</span> <span class="nt">input</span><span class="nn">#submit</span> <span class="p">{</span>
-  <span class="nb">display</span><span class="o">:</span> <span class="nb">block</span><span class="p">;</span>
-  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
-     <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
-          <span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
-  <span class="nb">border</span><span class="o">:</span><span class="m">1px</span> <span class="nb">solid</span> <span class="m">#d8d8d8</span><span class="p">;</span>
-  <span class="nb">padding</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
-  <span class="nb">font-weight</span><span class="o">:</span><span class="nb">bold</span><span class="p">;</span>
-  <span class="nb">text-align</span><span class="o">:</span> <span class="nb">center</span><span class="p">;</span>
-  <span class="nb">color</span><span class="o">:</span> <span class="m">#000000</span><span class="p">;</span>
-  <span class="nb">background-color</span><span class="o">:</span> <span class="m">#f4f4f4</span><span class="p">;</span>
-  <span class="nb">background-image</span><span class="o">:</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="n">linear</span><span class="o">,</span> <span class="nb">left</span> <span class="nb">top</span><span class="o">,</span> <span class="nb">left</span> <span class="nb">bottom</span><span class="o">,</span> <span class="nb">color</span><span class="o">-</span><span class="n">stop</span><span class="p">(</span><span class="m">0%</span><span class="o">,</span> <span class="m">#f4f4f4</span><span class="p">)</span><span class="o">,</span> <span class="nb">color</span><span class="o">-</span><span class="n">stop</span><span class="p">(</span><span class="m">100%</span><span class="o">,</span> <span class="m">#e5e5e5</span><span class="p">));</span>
-  <span class="nb">background-image</span><span class="o">:</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="nb">top</span><span class="o">,</span> <span class="m">#f4f4f4</span><span class="o">,</span> <span class="m">#e5e5e5</span><span class="p">);</span>
-  <span class="nb">background-image</span><span class="o">:</span> <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="nb">top</span><span class="o">,</span> <span class="m">#f4f4f4</span><span class="o">,</span> <span class="m">#e5e5e5</span><span class="p">);</span>
-  <span class="nb">background-image</span><span class="o">:</span> <span class="o">-</span><span class="n">ms</span><span class="o">-</span><span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="nb">top</span><span class="o">,</span> <span class="m">#f4f4f4</span><span class="o">,</span> <span class="m">#e5e5e5</span><span class="p">);</span>
-  <span class="nb">background-image</span><span class="o">:</span> <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="nb">top</span><span class="o">,</span> <span class="m">#f4f4f4</span><span class="o">,</span> <span class="m">#e5e5e5</span><span class="p">);</span>
-  <span class="nb">background-image</span><span class="o">:</span> <span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="nb">top</span><span class="o">,</span> <span class="m">#f4f4f4</span><span class="o">,</span> <span class="m">#e5e5e5</span><span class="p">);</span><span class="n">filter</span><span class="o">:</span><span class="n">progid</span><span class="o">:</span><span class="n">DXImageTransform</span><span class="o">.</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">GradientType</span><span class="o">=</span><span class="m">0</span><span class="o">,</span><span class="n">startColorstr</span><span class="o">=</span><span class="m">#f4f4f4</span><span class="o">,</span> <span class="n">endColorstr</span><span class="o">=</span><span class="m">#e5e5e5</span><span class="p">);</span>
+<span class="nt">form</span> <span class="nt">input</span><span class="p">#</span><span class="nn">submit</span> <span class="p">{</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+     <span class="kp">-moz-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+          <span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">border</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#d8d8d8</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="p">:</span><span class="kc">bold</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#000000</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#f4f4f4</span><span class="p">;</span>
+  <span class="k">background-image</span><span class="p">:</span> <span class="bp">-webkit-</span><span class="nf">gradient</span><span class="p">(</span><span class="kc">linear</span><span class="p">,</span> <span class="kc">left</span> <span class="kc">top</span><span class="p">,</span> <span class="kc">left</span> <span class="kc">bottom</span><span class="p">,</span> <span class="kc">color</span><span class="o">-</span><span class="nf">stop</span><span class="p">(</span><span class="mi">0</span><span class="kt">%</span><span class="p">,</span> <span class="mh">#f4f4f4</span><span class="p">),</span> <span class="kc">color</span><span class="o">-</span><span class="nf">stop</span><span class="p">(</span><span class="mi">100</span><span class="kt">%</span><span class="p">,</span> <span class="mh">#e5e5e5</span><span class="p">));</span>
+  <span class="k">background-image</span><span class="p">:</span> <span class="bp">-webkit-</span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">top</span><span class="p">,</span> <span class="mh">#f4f4f4</span><span class="p">,</span> <span class="mh">#e5e5e5</span><span class="p">);</span>
+  <span class="k">background-image</span><span class="p">:</span> <span class="bp">-moz-</span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">top</span><span class="p">,</span> <span class="mh">#f4f4f4</span><span class="p">,</span> <span class="mh">#e5e5e5</span><span class="p">);</span>
+  <span class="k">background-image</span><span class="p">:</span> <span class="bp">-ms-</span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">top</span><span class="p">,</span> <span class="mh">#f4f4f4</span><span class="p">,</span> <span class="mh">#e5e5e5</span><span class="p">);</span>
+  <span class="k">background-image</span><span class="p">:</span> <span class="bp">-o-</span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">top</span><span class="p">,</span> <span class="mh">#f4f4f4</span><span class="p">,</span> <span class="mh">#e5e5e5</span><span class="p">);</span>
+  <span class="k">background-image</span><span class="p">:</span> <span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">top</span><span class="p">,</span> <span class="mh">#f4f4f4</span><span class="p">,</span> <span class="mh">#e5e5e5</span><span class="p">);</span><span class="k">filter</span><span class="p">:</span><span class="n">progid</span><span class="o">:</span><span class="n">DXImageTransform</span><span class="o">.</span><span class="n">Microsoft</span><span class="o">.</span><span class="nf">gradient</span><span class="p">(</span><span class="n">GradientType</span><span class="err">=</span><span class="mi">0</span><span class="p">,</span><span class="n">startColorstr</span><span class="err">=</span><span class="mh">#f4f4f4</span><span class="p">,</span> <span class="n">endColorstr</span><span class="err">=</span><span class="mh">#e5e5e5</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nt">form</span> <span class="nt">input</span><span class="nn">#submit</span><span class="nd">:hover</span><span class="p">{</span>
-  <span class="nb">cursor</span><span class="o">:</span> <span class="nb">pointer</span><span class="p">;</span>
-  <span class="nb">border</span><span class="o">:</span><span class="m">1px</span> <span class="nb">solid</span> <span class="m">#c1c1c1</span><span class="p">;</span>
-  <span class="nb">background-color</span><span class="o">:</span> <span class="m">#dbdbdb</span><span class="p">;</span>
-  <span class="nb">background-image</span><span class="o">:</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="n">linear</span><span class="o">,</span> <span class="nb">left</span> <span class="nb">top</span><span class="o">,</span> <span class="nb">left</span> <span class="nb">bottom</span><span class="o">,</span> <span class="nb">color</span><span class="o">-</span><span class="n">stop</span><span class="p">(</span><span class="m">0%</span><span class="o">,</span><span class="m">#dbdbdb</span><span class="p">)</span><span class="o">,</span> <span class="nb">color</span><span class="o">-</span><span class="n">stop</span><span class="p">(</span><span class="m">100%</span><span class="o">,</span> <span class="m">#cccccc</span><span class="p">));</span>
-  <span class="nb">background-image</span><span class="o">:</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="nb">top</span><span class="o">,</span> <span class="m">#dbdbdb</span><span class="o">,</span> <span class="m">#cccccc</span><span class="p">);</span>
-  <span class="nb">background-image</span><span class="o">:</span> <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="nb">top</span><span class="o">,</span> <span class="m">#dbdbdb</span><span class="o">,</span> <span class="m">#cccccc</span><span class="p">);</span>
-  <span class="nb">background-image</span><span class="o">:</span> <span class="o">-</span><span class="n">ms</span><span class="o">-</span><span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="nb">top</span><span class="o">,</span> <span class="m">#dbdbdb</span><span class="o">,</span> <span class="m">#cccccc</span><span class="p">);</span>
-  <span class="nb">background-image</span><span class="o">:</span> <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="nb">top</span><span class="o">,</span> <span class="m">#dbdbdb</span><span class="o">,</span> <span class="m">#cccccc</span><span class="p">);</span>
-  <span class="nb">background-image</span><span class="o">:</span> <span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="nb">top</span><span class="o">,</span> <span class="m">#dbdbdb</span><span class="o">,</span> <span class="m">#cccccc</span><span class="p">);</span><span class="n">filter</span><span class="o">:</span><span class="n">progid</span><span class="o">:</span><span class="n">DXImageTransform</span><span class="o">.</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">GradientType</span><span class="o">=</span><span class="m">0</span><span class="o">,</span><span class="n">startColorstr</span><span class="o">=</span><span class="m">#dbdbdb</span><span class="o">,</span> <span class="n">endColorstr</span><span class="o">=</span><span class="m">#cccccc</span><span class="p">);</span>
+<span class="nt">form</span> <span class="nt">input</span><span class="p">#</span><span class="nn">submit</span><span class="p">:</span><span class="nd">hover</span><span class="p">{</span>
+  <span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>
+  <span class="k">border</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#c1c1c1</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#dbdbdb</span><span class="p">;</span>
+  <span class="k">background-image</span><span class="p">:</span> <span class="bp">-webkit-</span><span class="nf">gradient</span><span class="p">(</span><span class="kc">linear</span><span class="p">,</span> <span class="kc">left</span> <span class="kc">top</span><span class="p">,</span> <span class="kc">left</span> <span class="kc">bottom</span><span class="p">,</span> <span class="kc">color</span><span class="o">-</span><span class="nf">stop</span><span class="p">(</span><span class="mi">0</span><span class="kt">%</span><span class="p">,</span><span class="mh">#dbdbdb</span><span class="p">),</span> <span class="kc">color</span><span class="o">-</span><span class="nf">stop</span><span class="p">(</span><span class="mi">100</span><span class="kt">%</span><span class="p">,</span> <span class="mh">#cccccc</span><span class="p">));</span>
+  <span class="k">background-image</span><span class="p">:</span> <span class="bp">-webkit-</span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">top</span><span class="p">,</span> <span class="mh">#dbdbdb</span><span class="p">,</span> <span class="mh">#cccccc</span><span class="p">);</span>
+  <span class="k">background-image</span><span class="p">:</span> <span class="bp">-moz-</span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">top</span><span class="p">,</span> <span class="mh">#dbdbdb</span><span class="p">,</span> <span class="mh">#cccccc</span><span class="p">);</span>
+  <span class="k">background-image</span><span class="p">:</span> <span class="bp">-ms-</span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">top</span><span class="p">,</span> <span class="mh">#dbdbdb</span><span class="p">,</span> <span class="mh">#cccccc</span><span class="p">);</span>
+  <span class="k">background-image</span><span class="p">:</span> <span class="bp">-o-</span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">top</span><span class="p">,</span> <span class="mh">#dbdbdb</span><span class="p">,</span> <span class="mh">#cccccc</span><span class="p">);</span>
+  <span class="k">background-image</span><span class="p">:</span> <span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">top</span><span class="p">,</span> <span class="mh">#dbdbdb</span><span class="p">,</span> <span class="mh">#cccccc</span><span class="p">);</span><span class="k">filter</span><span class="p">:</span><span class="n">progid</span><span class="o">:</span><span class="n">DXImageTransform</span><span class="o">.</span><span class="n">Microsoft</span><span class="o">.</span><span class="nf">gradient</span><span class="p">(</span><span class="n">GradientType</span><span class="err">=</span><span class="mi">0</span><span class="p">,</span><span class="n">startColorstr</span><span class="err">=</span><span class="mh">#dbdbdb</span><span class="p">,</span> <span class="n">endColorstr</span><span class="err">=</span><span class="mh">#cccccc</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -295,10 +294,10 @@ e acrescentar o código para apresentar a mensagem de erro.</p>
 </pre></div>
 <p>E finalmente editar nosso arquivo main.css</p>
 <div class="highlight"><pre><span></span><span class="c">/* Message flashing */</span>
-<span class="nc">.flash</span> <span class="p">{</span>
-  <span class="nb">background-color</span><span class="o">:</span> <span class="m">#FBB0B0</span><span class="p">;</span>
-  <span class="nb">padding</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
-  <span class="nb">width</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+<span class="p">.</span><span class="nc">flash</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#FBB0B0</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 <p>Ok, até agora estamos validando se todos os campos foram preenchidos e caso
@@ -354,7 +353,7 @@ que utilizamos até agora vamos instalá-lo</p>
 
 <span class="n">mail</span> <span class="o">=</span> <span class="n">Mail</span><span class="p">()</span>
 
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 <span class="n">app</span><span class="o">.</span><span class="n">secret_key</span> <span class="o">=</span> <span class="s1">&#39;development key&#39;</span>
 

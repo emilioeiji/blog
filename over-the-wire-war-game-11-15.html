@@ -22,7 +22,6 @@
   <li><a href="./archives/">Arquivos</a></li>
   <li><a href="./focalinux/index.html">FocaLinux</a></li>
   <li><a href="./about/">Sobre</a></li>
-  <li><a href="./wiki/index.php">WiKi</a></li>
     </div>
     <div class="nav social">
 <ul>
@@ -35,7 +34,7 @@
 </ul>    </div>
 </div>    <div id="main">
 <h2><a href="./over-the-wire-war-game-11-15.html">Over The Wire - War Games Level 11 - 15</a></h2>
-<h5><i class="icon-feather"></i> Sáb 18 abril 2015
+<h5><i class="icon-feather"></i> sáb 18 abril 2015
 <i class="icon-bookmarks"></i>
 <span><a href="./tag/wargame.html">wargame</a> / </span>
 <span><a href="./tag/linux.html">linux</a> / </span>
@@ -69,13 +68,13 @@ to standard output.
 decifrar a senha pulando os 13 caracteres 'N-ZA-Mn-za-m', o comando completo ficaria
 assim:</p>
 <div class="highlight"><pre><span></span>bandit11@melinda:~$ ll
-total 24
-drwxr-xr-x   <span class="m">2</span> root     root     <span class="m">4096</span> Nov <span class="m">14</span> 10:32 ./
-drwxr-xr-x <span class="m">167</span> root     root     <span class="m">4096</span> Mar <span class="m">21</span> 06:46 ../
+total <span class="m">24</span>
+drwxr-xr-x   <span class="m">2</span> root     root     <span class="m">4096</span> Nov <span class="m">14</span> <span class="m">10</span>:32 ./
+drwxr-xr-x <span class="m">167</span> root     root     <span class="m">4096</span> Mar <span class="m">21</span> <span class="m">06</span>:46 ../
 -rw-r--r--   <span class="m">1</span> root     root      <span class="m">220</span> Apr  <span class="m">9</span>  <span class="m">2014</span> .bash_logout
 -rw-r--r--   <span class="m">1</span> root     root     <span class="m">3637</span> Apr  <span class="m">9</span>  <span class="m">2014</span> .bashrc
 -rw-r--r--   <span class="m">1</span> root     root      <span class="m">675</span> Apr  <span class="m">9</span>  <span class="m">2014</span> .profile
--rw-r-----   <span class="m">1</span> bandit12 bandit11   <span class="m">49</span> Nov <span class="m">14</span> 10:32 data.txt
+-rw-r-----   <span class="m">1</span> bandit12 bandit11   <span class="m">49</span> Nov <span class="m">14</span> <span class="m">10</span>:32 data.txt
 bandit11@melinda:~$ cat data.txt
 Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
 bandit11@melinda:~$ cat data.txt <span class="p">|</span> tr <span class="s1">&#39;A-Za-z&#39;</span> <span class="s1">&#39;N-ZA-Mn-za-m&#39;</span>
@@ -140,7 +139,7 @@ SYNOPSIS
 </pre>
 <p>vamos rodar o comando então para descobri que tipo de arquivo é esse.</p>
 <div class="highlight"><pre><span></span>bandit12@melinda:/tmp/emilioeiji$ file arquivo2
-arquivo2: gzip compressed data, was <span class="s2">&quot;data2.bin&quot;</span>, from Unix, last modified: Fri Nov <span class="m">14</span> 10:32:20 2014, max compression
+arquivo2: gzip compressed data, was <span class="s2">&quot;data2.bin&quot;</span>, from Unix, last modified: Fri Nov <span class="m">14</span> <span class="m">10</span>:32:20 <span class="m">2014</span>, max compression
 </pre></div>
 <p>Descobrimos que se trata de um arquivo gzip, tentei descompactar o arquivo2 direto com o comando
 <strong>gzip -d arquivo2</strong> porem tive o retorno que o sulfixo do arquivo era desconhecido, mudei o nome do arquivo
@@ -163,7 +162,7 @@ bzip2: Can<span class="err">&#39;</span>t guess original name <span class="k">fo
 bandit12@melinda:/tmp/emilioeiji$ ls
 arquivo2.out  data.txt
 bandit12@melinda:/tmp/emilioeiji$ file arquivo2.out
-arquivo2.out: gzip compressed data, was <span class="s2">&quot;data4.bin&quot;</span>, from Unix, last modified: Fri Nov <span class="m">14</span> 10:32:20 2014, max compression
+arquivo2.out: gzip compressed data, was <span class="s2">&quot;data4.bin&quot;</span>, from Unix, last modified: Fri Nov <span class="m">14</span> <span class="m">10</span>:32:20 <span class="m">2014</span>, max compression
 </pre></div>
 <p>Com o comando de descompactaçao foi gerado o <strong>arquivo2.out</strong> e com o comando file obtive novamente que se
 tratava de outro arquivo compactado no formato gzip, vamos acrescentar a extensão .gz e descompactar
@@ -205,7 +204,7 @@ data8.bin
 bandit12@melinda:/tmp/emilioeiji$ ls
 arquivo2  data.txt  data5.bin  data6.bin.out  data8.bin
 bandit12@melinda:/tmp/emilioeiji$ file data8.bin
-data8.bin: gzip compressed data, was <span class="s2">&quot;data9.bin&quot;</span>, from Unix, last modified: Fri Nov <span class="m">14</span> 10:32:20 2014, max compression
+data8.bin: gzip compressed data, was <span class="s2">&quot;data9.bin&quot;</span>, from Unix, last modified: Fri Nov <span class="m">14</span> <span class="m">10</span>:32:20 <span class="m">2014</span>, max compression
 </pre></div>
 <p>Outro arquivo gzip.</p>
 <div class="highlight"><pre><span></span>bandit12@melinda:/tmp/emilioeiji$ mv data8.bin data8.gz
@@ -247,17 +246,17 @@ SYNOPSIS
 </pre>
 <p>Temos que usar o parametro -i e o nome do arquivo:</p>
 <div class="highlight"><pre><span></span>bandit13@melinda:~$ ll
-total 24
-drwxr-xr-x   <span class="m">2</span> root     root     <span class="m">4096</span> Nov <span class="m">14</span> 10:32 ./
-drwxr-xr-x <span class="m">167</span> root     root     <span class="m">4096</span> Mar <span class="m">21</span> 06:46 ../
+total <span class="m">24</span>
+drwxr-xr-x   <span class="m">2</span> root     root     <span class="m">4096</span> Nov <span class="m">14</span> <span class="m">10</span>:32 ./
+drwxr-xr-x <span class="m">167</span> root     root     <span class="m">4096</span> Mar <span class="m">21</span> <span class="m">06</span>:46 ../
 -rw-r--r--   <span class="m">1</span> root     root      <span class="m">220</span> Apr  <span class="m">9</span>  <span class="m">2014</span> .bash_logout
 -rw-r--r--   <span class="m">1</span> root     root     <span class="m">3637</span> Apr  <span class="m">9</span>  <span class="m">2014</span> .bashrc
 -rw-r--r--   <span class="m">1</span> root     root      <span class="m">675</span> Apr  <span class="m">9</span>  <span class="m">2014</span> .profile
--rw-r-----   <span class="m">1</span> bandit14 bandit13 <span class="m">1679</span> Nov <span class="m">14</span> 10:32 sshkey.private
+-rw-r-----   <span class="m">1</span> bandit14 bandit13 <span class="m">1679</span> Nov <span class="m">14</span> <span class="m">10</span>:32 sshkey.private
 bandit13@melinda:~$ ssh -i sshkey.private bandit14@localhost
 Could not create directory <span class="s1">&#39;/home/bandit13/.ssh&#39;</span>.
 The authenticity of host <span class="s1">&#39;localhost (127.0.0.1)&#39;</span> can<span class="err">&#39;</span>t be established.
-ECDSA key fingerprint is 05:3a:1c:25:35:0a:ed:2f:cd:87:1c:f6:fe:69:e4:f6.
+ECDSA key fingerprint is <span class="m">05</span>:3a:1c:25:35:0a:ed:2f:cd:87:1c:f6:fe:69:e4:f6.
 Are you sure you want to <span class="k">continue</span> connecting <span class="o">(</span>yes/no<span class="o">)</span>? yes
 bandit14@melinda:~$ cat /etc/bandit_pass/bandit
 bandit0   bandit10  bandit12  bandit14  bandit16  bandit18  bandit2   bandit21  bandit23  bandit25  bandit3   bandit5           bandit7   bandit9
@@ -290,7 +289,7 @@ DESCRIPTION
 </pre>
 <p>Basicamente o nc abre e escuta conexões tcp e udp então tentei no modo padrão para praticamente
 todo tipo de conexão, comando destino porta.</p>
-<div class="highlight"><pre><span></span>bandit14@melinda:~$ nc localhost 30000
+<div class="highlight"><pre><span></span>bandit14@melinda:~$ nc localhost <span class="m">30000</span>
 
 Wrong! Please enter the correct current password
 </pre></div>
@@ -298,7 +297,7 @@ Wrong! Please enter the correct current password
 e não aconteceu mais nada, esperei por alguns momentos e resolvi pressionar enter, retornou que a senha
 estava incorreta, resolvi então repetir o procedimento e colocar a senha desse level <strong>4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e</strong>
 e para minha surpresa funcionou.s</p>
-<div class="highlight"><pre><span></span>bandit14@melinda:~$ nc localhost 30000
+<div class="highlight"><pre><span></span>bandit14@melinda:~$ nc localhost <span class="m">30000</span>
 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
 Correct!
 BfMYroe26WYalil77FoDi9qh59eK5xNr
@@ -310,9 +309,9 @@ BfMYroe26WYalil77FoDi9qh59eK5xNr
 <p>Como no nível anterior temos que conectar em localhost na porta 30001 porém usando
 encriptação SSL e fornecer a senha do nível atual. Pesquisando um pouco sobre ssl descobri que para conectar como cliente
 devemos usar o parametro s_client no comando openssl, ficando assim:</p>
-<div class="highlight"><pre><span></span>bandit15@melinda:~$ openssl s_client -connect 127.0.0.1:30001 -quiet
+<div class="highlight"><pre><span></span>bandit15@melinda:~$ openssl s_client -connect <span class="m">127</span>.0.0.1:30001 -quiet
 <span class="nv">depth</span><span class="o">=</span><span class="m">0</span> <span class="nv">CN</span> <span class="o">=</span> li190-250.members.linode.com
-verify error:num<span class="o">=</span>18:self signed certificate
+verify error:num<span class="o">=</span><span class="m">18</span>:self signed certificate
 verify <span class="k">return</span>:1
 <span class="nv">depth</span><span class="o">=</span><span class="m">0</span> <span class="nv">CN</span> <span class="o">=</span> li190-250.members.linode.com
 verify <span class="k">return</span>:1
@@ -320,7 +319,7 @@ BfMYroe26WYalil77FoDi9qh59eK5xNr
 Correct!
 cluFn7wTiGryunymYOu4RcffSxQluehd
 
-read:errno<span class="o">=</span>0
+read:errno<span class="o">=</span><span class="m">0</span>
 </pre></div>
 <p>Está cada vez ficando mais complexo conseguir as senhas, apesar de ser apenas
 um jogo com ele conseguimos aprender algumas coisas legais.</p>

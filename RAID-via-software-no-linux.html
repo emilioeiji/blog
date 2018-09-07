@@ -22,7 +22,6 @@
   <li><a href="./archives/">Arquivos</a></li>
   <li><a href="./focalinux/index.html">FocaLinux</a></li>
   <li><a href="./about/">Sobre</a></li>
-  <li><a href="./wiki/index.php">WiKi</a></li>
     </div>
     <div class="nav social">
 <ul>
@@ -35,7 +34,7 @@
 </ul>    </div>
 </div>    <div id="main">
 <h2><a href="./RAID-via-software-no-linux.html">RAID via software no linux</a></h2>
-<h5><i class="icon-feather"></i> Qui 03 setembro 2015
+<h5><i class="icon-feather"></i> qui 03 setembro 2015
 <i class="icon-bookmarks"></i>
 <span><a href="./tag/hd.html">hd</a> / </span>
 <span><a href="./tag/raid.html">raid</a> / </span>
@@ -53,15 +52,15 @@ Os NOVOS pacotes a seguir serão instalados:
   mdadm
 <span class="m">0</span> pacotes atualizados, <span class="m">1</span> pacotes novos instalados, <span class="m">0</span> a serem removidos e <span class="m">9</span> não atualizados.
 É preciso baixar <span class="m">566</span> kB de arquivos.
-Depois desta operação, 1.098 kB adicionais de espaço em disco serão usados.
-Obter:1 http://ftp.br.debian.org/debian/ wheezy/main mdadm i386 3.2.5-5 <span class="o">[</span><span class="m">566</span> kB<span class="o">]</span>
+Depois desta operação, <span class="m">1</span>.098 kB adicionais de espaço em disco serão usados.
+Obter:1 http://ftp.br.debian.org/debian/ wheezy/main mdadm i386 <span class="m">3</span>.2.5-5 <span class="o">[</span><span class="m">566</span> kB<span class="o">]</span>
 Baixados <span class="m">566</span> kB em 1s <span class="o">(</span><span class="m">353</span> kB/s<span class="o">)</span>
 Pré-configurando pacotes ...
 A seleccionar pacote anteriormente não seleccionado mdadm.
 <span class="o">(</span>Lendo banco de dados ... <span class="m">70717</span> ficheiros e directórios actualmente instalados.<span class="o">)</span>
 Desempacotando mdadm <span class="o">(</span>de .../mdadm_3.2.5-5_i386.deb<span class="o">)</span> ...
 Processando gatilhos para man-db ...
-Configurando mdadm <span class="o">(</span>3.2.5-5<span class="o">)</span> ...
+Configurando mdadm <span class="o">(</span><span class="m">3</span>.2.5-5<span class="o">)</span> ...
 Generating array device nodes... <span class="k">done</span>.
 Generating mdadm.conf... <span class="k">done</span>.
 update-initramfs: deferring update <span class="o">(</span>trigger activated<span class="o">)</span>
@@ -79,7 +78,7 @@ W: mdadm: no arrays defined in configuration file.
 <p>Agora vamos identificar os discos com o comando fdis -l, geralmente os discos são /dev/sd*.</p>
 <div class="highlight"><pre><span></span>root@srv-bacula:~# fdisk -l
 
-Disk /dev/sda: 250.1 GB, <span class="m">250059350016</span> bytes
+Disk /dev/sda: <span class="m">250</span>.1 GB, <span class="m">250059350016</span> bytes
 <span class="m">255</span> heads, <span class="m">63</span> sectors/track, <span class="m">30401</span> cylinders, total <span class="m">488397168</span> sectors
 <span class="nv">Units</span> <span class="o">=</span> setores of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
 Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
@@ -91,7 +90,7 @@ Dispositivo Boot      Start         End      Blocks   Id  System
 /dev/sda2       <span class="m">484249598</span>   <span class="m">488396799</span>     <span class="m">2073601</span>    <span class="m">5</span>  Estendida
 /dev/sda5       <span class="m">484249600</span>   <span class="m">488396799</span>     <span class="m">2073600</span>   <span class="m">82</span>  Linux swap / Solaris
 
-Disk /dev/sdb: 250.1 GB, <span class="m">250059350016</span> bytes
+Disk /dev/sdb: <span class="m">250</span>.1 GB, <span class="m">250059350016</span> bytes
 <span class="m">255</span> heads, <span class="m">63</span> sectors/track, <span class="m">30401</span> cylinders, total <span class="m">488397168</span> sectors
 <span class="nv">Units</span> <span class="o">=</span> setores of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
 Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
@@ -100,7 +99,7 @@ Disk identifier: 0x00000000
 
 Dispositivo Boot      Start         End      Blocks   Id  System
 
-Disk /dev/sdd: 1000.2 GB, <span class="m">1000204886016</span> bytes
+Disk /dev/sdd: <span class="m">1000</span>.2 GB, <span class="m">1000204886016</span> bytes
 <span class="m">255</span> heads, <span class="m">63</span> sectors/track, <span class="m">121601</span> cylinders, total <span class="m">1953525168</span> sectors
 <span class="nv">Units</span> <span class="o">=</span> setores of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
 Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
@@ -109,7 +108,7 @@ Disk identifier: 0x00000000
 
 Dispositivo Boot      Start         End      Blocks   Id  System
 
-Disk /dev/sdc: 250.1 GB, <span class="m">250059350016</span> bytes
+Disk /dev/sdc: <span class="m">250</span>.1 GB, <span class="m">250059350016</span> bytes
 <span class="m">255</span> heads, <span class="m">63</span> sectors/track, <span class="m">30401</span> cylinders, total <span class="m">488397168</span> sectors
 <span class="nv">Units</span> <span class="o">=</span> setores of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
 Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
@@ -118,7 +117,7 @@ Disk identifier: 0x00000000
 
 Dispositivo Boot      Start         End      Blocks   Id  System
 
-Disk /dev/sde: 1000.2 GB, <span class="m">1000204886016</span> bytes
+Disk /dev/sde: <span class="m">1000</span>.2 GB, <span class="m">1000204886016</span> bytes
 <span class="m">255</span> heads, <span class="m">63</span> sectors/track, <span class="m">121601</span> cylinders, total <span class="m">1953525168</span> sectors
 <span class="nv">Units</span> <span class="o">=</span> setores of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
 Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">4096</span> bytes
@@ -138,27 +137,27 @@ Dispositivo Boot      Start         End      Blocks   Id  System
 <p>Onde criarei abaixo um grupo com 2 HD's de 250GB (MD0) e outro grupo com mais 2 HD's de 1TB (MD1).</p>
 <div class="highlight"><pre><span></span>root@srv-bacula:~# mdadm --create /dev/md0 --level<span class="o">=</span><span class="m">0</span> --raid-devices<span class="o">=</span><span class="m">2</span> /dev/sdb /dev/sdc
 mdadm: /dev/sdb appears to be part of a raid array:
-    <span class="nv">level</span><span class="o">=</span>raid0 <span class="nv">devices</span><span class="o">=</span><span class="m">0</span> <span class="nv">ctime</span><span class="o">=</span>Wed Dec <span class="m">31</span> 21:00:00 1969
+    <span class="nv">level</span><span class="o">=</span>raid0 <span class="nv">devices</span><span class="o">=</span><span class="m">0</span> <span class="nv">ctime</span><span class="o">=</span>Wed Dec <span class="m">31</span> <span class="m">21</span>:00:00 <span class="m">1969</span>
 mdadm: partition table exists on /dev/sdb but will be lost or
        meaningless after creating array
 mdadm: /dev/sdc appears to be part of a raid array:
-    <span class="nv">level</span><span class="o">=</span>raid0 <span class="nv">devices</span><span class="o">=</span><span class="m">0</span> <span class="nv">ctime</span><span class="o">=</span>Wed Dec <span class="m">31</span> 21:00:00 1969
+    <span class="nv">level</span><span class="o">=</span>raid0 <span class="nv">devices</span><span class="o">=</span><span class="m">0</span> <span class="nv">ctime</span><span class="o">=</span>Wed Dec <span class="m">31</span> <span class="m">21</span>:00:00 <span class="m">1969</span>
 mdadm: partition table exists on /dev/sdc but will be lost or
        meaningless after creating array
 Continue creating array? y
-mdadm: Defaulting to version 1.2 metadata
+mdadm: Defaulting to version <span class="m">1</span>.2 metadata
 mdadm: array /dev/md0 started.
 root@srv-bacula:~# mdadm --create /dev/md1 --level<span class="o">=</span><span class="m">0</span> --raid-devices<span class="o">=</span><span class="m">2</span> /dev/sdd /dev/sde
 mdadm: /dev/sdd appears to be part of a raid array:
-    <span class="nv">level</span><span class="o">=</span>raid0 <span class="nv">devices</span><span class="o">=</span><span class="m">0</span> <span class="nv">ctime</span><span class="o">=</span>Wed Dec <span class="m">31</span> 21:00:00 1969
+    <span class="nv">level</span><span class="o">=</span>raid0 <span class="nv">devices</span><span class="o">=</span><span class="m">0</span> <span class="nv">ctime</span><span class="o">=</span>Wed Dec <span class="m">31</span> <span class="m">21</span>:00:00 <span class="m">1969</span>
 mdadm: partition table exists on /dev/sdd but will be lost or
        meaningless after creating array
 mdadm: /dev/sde appears to be part of a raid array:
-    <span class="nv">level</span><span class="o">=</span>raid0 <span class="nv">devices</span><span class="o">=</span><span class="m">0</span> <span class="nv">ctime</span><span class="o">=</span>Wed Dec <span class="m">31</span> 21:00:00 1969
+    <span class="nv">level</span><span class="o">=</span>raid0 <span class="nv">devices</span><span class="o">=</span><span class="m">0</span> <span class="nv">ctime</span><span class="o">=</span>Wed Dec <span class="m">31</span> <span class="m">21</span>:00:00 <span class="m">1969</span>
 mdadm: partition table exists on /dev/sde but will be lost or
        meaningless after creating array
 Continue creating array? y
-mdadm: Defaulting to version 1.2 metadata
+mdadm: Defaulting to version <span class="m">1</span>.2 metadata
 mdadm: array /dev/md1 started.
 </pre></div>
 <p>Vamos entender o comando:</p>
@@ -166,10 +165,10 @@ mdadm: array /dev/md1 started.
 <div class="highlight"><pre><span></span>mdadm --create /dev/md0
 </pre></div>
 <p>O --level= define qual o nível de RAID será criado</p>
-<div class="highlight"><pre><span></span>--level<span class="o">=</span>0
+<div class="highlight"><pre><span></span>--level<span class="o">=</span><span class="m">0</span>
 </pre></div>
 <p>Com o parametro --raid-devices=2 estamos definindo que vamos utilizar 2 dispositivos.</p>
-<div class="highlight"><pre><span></span>--raid-devices<span class="o">=</span>2
+<div class="highlight"><pre><span></span>--raid-devices<span class="o">=</span><span class="m">2</span>
 </pre></div>
 <p>E no final passamos quais dispositivos vamos utilizar</p>
 <div class="highlight"><pre><span></span>/dev/sdb /dev/sdc
@@ -177,11 +176,11 @@ mdadm: array /dev/md1 started.
 <p>Após criados os grupos, vamos validar se está tudo certo com o RAID:</p>
 <div class="highlight"><pre><span></span>root@srv-bacula:~# cat /proc/mdstat
 Personalities : <span class="o">[</span>raid0<span class="o">]</span>
-md1 : active raid0 sde<span class="o">[</span>1<span class="o">]</span> sdd<span class="o">[</span>0<span class="o">]</span>
-      <span class="m">1953524736</span> blocks super 1.2 512k chunks
+md1 : active raid0 sde<span class="o">[</span><span class="m">1</span><span class="o">]</span> sdd<span class="o">[</span><span class="m">0</span><span class="o">]</span>
+      <span class="m">1953524736</span> blocks super <span class="m">1</span>.2 512k chunks
 
-md0 : active raid0 sdc<span class="o">[</span>1<span class="o">]</span> sdb<span class="o">[</span>0<span class="o">]</span>
-      <span class="m">488396800</span> blocks super 1.2 512k chunks
+md0 : active raid0 sdc<span class="o">[</span><span class="m">1</span><span class="o">]</span> sdb<span class="o">[</span><span class="m">0</span><span class="o">]</span>
+      <span class="m">488396800</span> blocks super <span class="m">1</span>.2 512k chunks
 
 unused devices: &lt;none&gt;
 </pre></div>
@@ -201,16 +200,16 @@ Partition type:
    p   primary <span class="o">(</span><span class="m">0</span> primary, <span class="m">0</span> extended, <span class="m">4</span> free<span class="o">)</span>
    e   extended
 Select <span class="o">(</span>default p<span class="o">)</span>: p
-Número da partição <span class="o">(</span>1-4, default 1<span class="o">)</span>:
-Using default value 1
-Primeiro setor <span class="o">(</span>2048-976793599, default 2048<span class="o">)</span>:
-Using default value 2048
-Last setor, +setores or +size<span class="o">{</span>K,M,G<span class="o">}</span> <span class="o">(</span>2048-976793599, default 976793599<span class="o">)</span>:
-Using default value 976793599
+Número da partição <span class="o">(</span><span class="m">1</span>-4, default <span class="m">1</span><span class="o">)</span>:
+Using default value <span class="m">1</span>
+Primeiro setor <span class="o">(</span><span class="m">2048</span>-976793599, default <span class="m">2048</span><span class="o">)</span>:
+Using default value <span class="m">2048</span>
+Last setor, +setores or +size<span class="o">{</span>K,M,G<span class="o">}</span> <span class="o">(</span><span class="m">2048</span>-976793599, default <span class="m">976793599</span><span class="o">)</span>:
+Using default value <span class="m">976793599</span>
 
 Comando <span class="o">(</span>m para ajuda<span class="o">)</span>: p
 
-Disk /dev/md0: 500.1 GB, <span class="m">500118323200</span> bytes
+Disk /dev/md0: <span class="m">500</span>.1 GB, <span class="m">500118323200</span> bytes
 <span class="m">2</span> heads, <span class="m">4</span> sectors/track, <span class="m">122099200</span> cylinders, total <span class="m">976793600</span> sectors
 <span class="nv">Units</span> <span class="o">=</span> setores of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
 Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
@@ -232,23 +231,23 @@ mkfs.ext4 /dev/md1p1
 </pre></div>
 <p>Teremos a seguinte saída para o comando acima:</p>
 <div class="highlight"><pre><span></span>root@srv-bacula:~# mkfs.ext4 /dev/md0p1
-mke2fs 1.42.5 <span class="o">(</span>29-Jul-2012<span class="o">)</span>
+mke2fs <span class="m">1</span>.42.5 <span class="o">(</span><span class="m">29</span>-Jul-2012<span class="o">)</span>
 Filesystem <span class="nv">label</span><span class="o">=</span>
 OS type: Linux
-Block <span class="nv">size</span><span class="o">=</span><span class="m">4096</span> <span class="o">(</span><span class="nv">log</span><span class="o">=</span>2<span class="o">)</span>
-Fragment <span class="nv">size</span><span class="o">=</span><span class="m">4096</span> <span class="o">(</span><span class="nv">log</span><span class="o">=</span>2<span class="o">)</span>
+Block <span class="nv">size</span><span class="o">=</span><span class="m">4096</span> <span class="o">(</span><span class="nv">log</span><span class="o">=</span><span class="m">2</span><span class="o">)</span>
+Fragment <span class="nv">size</span><span class="o">=</span><span class="m">4096</span> <span class="o">(</span><span class="nv">log</span><span class="o">=</span><span class="m">2</span><span class="o">)</span>
 <span class="nv">Stride</span><span class="o">=</span><span class="m">128</span> blocks, Stripe <span class="nv">width</span><span class="o">=</span><span class="m">256</span> blocks
 <span class="m">30531584</span> inodes, <span class="m">122098944</span> blocks
-<span class="m">6104947</span> blocks <span class="o">(</span>5.00%<span class="o">)</span> reserved <span class="k">for</span> the super user
-First data <span class="nv">block</span><span class="o">=</span>0
-Maximum filesystem <span class="nv">blocks</span><span class="o">=</span>0
+<span class="m">6104947</span> blocks <span class="o">(</span><span class="m">5</span>.00%<span class="o">)</span> reserved <span class="k">for</span> the super user
+First data <span class="nv">block</span><span class="o">=</span><span class="m">0</span>
+Maximum filesystem <span class="nv">blocks</span><span class="o">=</span><span class="m">0</span>
 <span class="m">3727</span> block groups
 <span class="m">32768</span> blocks per group, <span class="m">32768</span> fragments per group
 <span class="m">8192</span> inodes per group
 Superblock backups stored on blocks:
-        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
-        4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
-        102400000
+        <span class="m">32768</span>, <span class="m">98304</span>, <span class="m">163840</span>, <span class="m">229376</span>, <span class="m">294912</span>, <span class="m">819200</span>, <span class="m">884736</span>, <span class="m">1605632</span>, <span class="m">2654208</span>,
+        <span class="m">4096000</span>, <span class="m">7962624</span>, <span class="m">11239424</span>, <span class="m">20480000</span>, <span class="m">23887872</span>, <span class="m">71663616</span>, <span class="m">78675968</span>,
+        <span class="m">102400000</span>
 
 Allocating group tables: <span class="k">done</span>
 Writing inode tables: <span class="k">done</span>
@@ -259,22 +258,22 @@ Writing superblocks and filesystem accounting information: <span class="k">done<
 <div class="highlight"><pre><span></span>      vim /etc/fstab
 
 
-/dev/md0p1          /mnt/md0  ext4    defaults,noatime      <span class="m">0</span>      2
-/dev/md1p1          /mnt/md1  ext4    defaults,noatime      <span class="m">0</span>      2
+/dev/md0p1          /mnt/md0  ext4    defaults,noatime      <span class="m">0</span>      <span class="m">2</span>
+/dev/md1p1          /mnt/md1  ext4    defaults,noatime      <span class="m">0</span>      <span class="m">2</span>
 </pre></div>
 <p>Para montar as partições vamos rodar o comando abaixo:</p>
 <div class="highlight"><pre><span></span>mount -a
 
 root@srv-bacula:/mnt# df -mh
 Sist. Arq.                                               Tam  Usad Dispon. Uso% Montado em
-rootfs                                                  228G   17G    200G   8% /
-udev                                                     10M     <span class="m">0</span>     10M   0% /dev
-tmpfs                                                   405M  288K    404M   1% /run
-/dev/disk/by-uuid/5d3c3f4c-988e-477d-b4fd-c614cb9ec9d2  228G   17G    200G   8% /
-tmpfs                                                   5,0M     <span class="m">0</span>    5,0M   0% /run/lock
-tmpfs                                                   1,2G     <span class="m">0</span>    1,2G   0% /run/shm
-/dev/md0p1                                              459G  198M    435G   1% /mnt/md0
-/dev/md1p1                                              1,8T  196M    1,7T   1% /mnt/md1
+rootfs                                                  228G   17G    200G   <span class="m">8</span>% /
+udev                                                     10M     <span class="m">0</span>     10M   <span class="m">0</span>% /dev
+tmpfs                                                   405M  288K    404M   <span class="m">1</span>% /run
+/dev/disk/by-uuid/5d3c3f4c-988e-477d-b4fd-c614cb9ec9d2  228G   17G    200G   <span class="m">8</span>% /
+tmpfs                                                   <span class="m">5</span>,0M     <span class="m">0</span>    <span class="m">5</span>,0M   <span class="m">0</span>% /run/lock
+tmpfs                                                   <span class="m">1</span>,2G     <span class="m">0</span>    <span class="m">1</span>,2G   <span class="m">0</span>% /run/shm
+/dev/md0p1                                              459G  198M    435G   <span class="m">1</span>% /mnt/md0
+/dev/md1p1                                              <span class="m">1</span>,8T  196M    <span class="m">1</span>,7T   <span class="m">1</span>% /mnt/md1
 </pre></div>
 <p>Pronto, agora temos nosso RAID via software funcionando em nosso linux.</p>
 <p>Até a próxima.</p>
