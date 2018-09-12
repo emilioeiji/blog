@@ -3,7 +3,7 @@
 <head>
   <title>Atualizando fontes no linux mint. | Emilio Eiji</title>
   <meta charset="utf-8">
-<meta name="description" content="Comandinho básico. Segue um comandinho básico para incluir novas fonts, mas que eu não tinha conhecimento por nunca ter precisado executar. No linux mint crie um diretório .fonts dentro do diretório home do usuário, no meu casso: mkdir /home/emilio/.fonts fc-cache -fv Diretórios com o . na frente serve para …"><meta name="author" content="Emilio">  <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+<meta name="description" content="Comandinho básico. Segue um comandinho básico para incluir novas fonts, mas que eu não tinha conhecimento por nunca ter precisado executar. No linux mint crie um diretório .fonts dentro do diretório home do usuário, no meu casso: mkdir /home/emilio/.fonts Em seguida coloque os novos arquivos de fontes dentre …"><meta name="author" content="Emilio">  <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
   <meta http-equiv="Cache-Control" content="max-age=604800, must-revalidate" />
   <link href="./theme/css/screen.css" rel="stylesheet" type="text/css" />
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
@@ -47,8 +47,10 @@
 <p>No linux mint crie um diretório .fonts dentro do diretório home do usuário, no meu casso:</p>
 <div class="highlight"><pre><span></span>mkdir /home/emilio/.fonts
 </pre></div>
+<p>Em seguida coloque os novos arquivos de fontes dentre do diretório e execute o comando fc-cache para atualizar os mesmo.</p>
 <div class="highlight"><pre><span></span>fc-cache -fv
 </pre></div>
+<p>No meu caso onde estava utilizando o GIMP, para aparecer as novas fontes tive que fechar o aplicativo e abrir novamente.</p>
 <hr class="docutils" />
 <ul class="simple">
 <li>Diretórios com o . na frente serve para deixá-lo oculto, no gerenciado de arquivos nemo podemos exebí-los e ocultá-los com o comando CTRL + h.</li>
