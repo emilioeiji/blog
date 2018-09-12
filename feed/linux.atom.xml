@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - Linux</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/linux.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2018-05-30T17:33:00-03:00</updated><entry><title>Gravar DVD do xbox 360 no linux.</title><link href="http://emilioeiji.com.br/gravando-dvd-xbox360.html" rel="alternate"></link><published>2018-05-30T17:33:00-03:00</published><updated>2018-05-30T17:33:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2018-05-30:/gravando-dvd-xbox360.html</id><summary type="html">&lt;div class="section" id="gravando-dvd-do-xbox360-via-linha-de-comando-no-linux"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - Linux</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/linux.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2018-09-12T12:30:00-03:00</updated><entry><title>Atualizando fontes no linux mint.</title><link href="http://emilioeiji.com.br/atualizando-fontes-no-linux-mint.html" rel="alternate"></link><published>2018-09-12T12:30:00-03:00</published><updated>2018-09-12T12:30:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2018-09-12:/atualizando-fontes-no-linux-mint.html</id><summary type="html">&lt;div class="section" id="comandinho-basico"&gt;
+&lt;h2&gt;Comandinho básico.&lt;/h2&gt;
+&lt;p&gt;Segue um comandinho básico para incluir novas fonts, mas que eu não tinha conhecimento por nunca ter precisado executar.&lt;/p&gt;
+&lt;p&gt;No linux mint crie um diretório .fonts dentro do diretório home do usuário, no meu casso:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir /home/emilio/.fonts
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fc-cache -fv
+&lt;/pre&gt;&lt;/div&gt;
+&lt;hr class="docutils" /&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Diretórios com o . na frente serve para …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="comandinho-basico"&gt;
+&lt;h2&gt;Comandinho básico.&lt;/h2&gt;
+&lt;p&gt;Segue um comandinho básico para incluir novas fonts, mas que eu não tinha conhecimento por nunca ter precisado executar.&lt;/p&gt;
+&lt;p&gt;No linux mint crie um diretório .fonts dentro do diretório home do usuário, no meu casso:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir /home/emilio/.fonts
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fc-cache -fv
+&lt;/pre&gt;&lt;/div&gt;
+&lt;hr class="docutils" /&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Diretórios com o . na frente serve para deixá-lo oculto, no gerenciado de arquivos nemo podemos exebí-los e ocultá-los com o comando CTRL + h.&lt;/li&gt;
+&lt;li&gt;Os parametros -fv do comando fc-cache:&lt;ul&gt;
+&lt;li&gt;f - Força a geração do arquivo de cache.&lt;/li&gt;
+&lt;li&gt;v - Exibe um resumo ao finalizar, podendo chegar se o diretório com as fontes dentro foram atualizados.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="linux"></category><category term="fonts"></category><category term="fc-cache"></category></entry><entry><title>Gravar DVD do xbox 360 no linux.</title><link href="http://emilioeiji.com.br/gravando-dvd-xbox360.html" rel="alternate"></link><published>2018-05-30T17:33:00-03:00</published><updated>2018-05-30T17:33:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2018-05-30:/gravando-dvd-xbox360.html</id><summary type="html">&lt;div class="section" id="gravando-dvd-do-xbox360-via-linha-de-comando-no-linux"&gt;
 &lt;h2&gt;Gravando DVD do XBOX360 via linha de comando no linux.&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Atenção&lt;/em&gt; Não testei esse procedimento ainda, mas estou plublicando para efetuar os testes posteriormente.&lt;/p&gt;
 &lt;p&gt;Corrigindo o patch:&lt;/p&gt;

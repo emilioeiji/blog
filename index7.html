@@ -33,6 +33,9 @@
     <li><a href="https://youtube.com/c/emilioeiji">Youtube</a></li>
 </ul>    </div>
 </div>    <div id="main">
+<h2><a href="./alterar-senha-do-cacti.html">Alterar senha do Cacti</a></h2>
+<h5><i class="icon-feather"></i> qui 12 maio 2011 </h5>
+Retirado do Viva o Linux por Walber Santos $ mysql -p cacti mysql> update user_auth set password = MD5('novasenha') where username = 'admin'; De brinde: caso deseje forçar um usuário a trocar a senha no próximo login : mysql> update user_auth set must_change_password = 'on' where username = "admin"; Abraços
 <h2><a href="./pendrive-bootavel-com-windows-7.html">PenDrive Bootável com Windows 7</a></h2>
 <h5><i class="icon-feather"></i> qui 21 abril 2011 </h5>
 Procedimentos para preparar o pendriveAntes de começar, espete seu pendrive na porta USB Abra o prompt de comando (Iniciar >> All Programs >> Acessories >> Command Prompt). Digite os comandos abaixo, sempre pressionando Enter após cada um: Diskpart (Uma nova janela será aberta, espere até o cursor aparecer) List Disk Select Disk 1 …
@@ -60,9 +63,6 @@ Do ponto de vista feminino: A primeira vez que você usa, não obtém quase nenh
 <h2><a href="./o-computador-e-do-sexo-feminino.html">O computador é do sexo feminino???</a></h2>
 <h5><i class="icon-feather"></i> qua 06 janeiro 2010 </h5>
 1) Assim que se arranja um, aparece outro melhor na esquina mais próxima. 2) Ninguém, além do Criador, é capaz de entender a sua lógica interna. (Muito boa!) 3) Mesmo os erros mais pequeninos que você cometa são guardados na memória para futura referência. (Esta é fatal!) 4) A linguagem …
-<h2><a href="./lamp-com-debian-lenny-ambiente-simples-para-testes.html">LAMP com Debian Lenny (Ambiente Simples para Testes)</a></h2>
-<h5><i class="icon-feather"></i> qui 17 setembro 2009 </h5>
-Instalando o apache2: apt-get install apache2 apache2-doc apache2-mpm-prefork apache2-utils libexpat1 ssl-cert Instalando Suporte ao PHP5 no apache: apt-get install libapache2-mod-php5 php5 php5-common php5-curl php5-dev php5-gd php5-idn php-pear php5-imagick php5-imap php5-json php5-mcrypt php5-memcache php5-mhash php5-ming php5-mysql php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl Edite o arquivo *dir.conf* vim /etc …
 <div class="pagination">
         <a href="./index6.html">&larr;Prev</a>
     page 7 of 8.
@@ -110,10 +110,12 @@ Instalando o apache2: apt-get install apache2 apache2-doc apache2-mpm-prefork ap
      <li class="footer"><a href="./tag/excluir.html">excluir&nbsp;&bull;&nbsp;</a></li>
      <li class="footer"><a href="./tag/externo.html">externo&nbsp;&bull;&nbsp;</a></li>
      <li class="footer"><a href="./tag/facebook.html">facebook&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/fc-cache.html">fc-cache&nbsp;&bull;&nbsp;</a></li>
      <li class="footer"><a href="./tag/filezilla.html">filezilla&nbsp;&bull;&nbsp;</a></li>
      <li class="footer"><a href="./tag/firefox.html">firefox&nbsp;&bull;&nbsp;</a></li>
      <li class="footer"><a href="./tag/flask.html">flask&nbsp;&bull;&nbsp;</a></li>
      <li class="footer"><a href="./tag/fluxbox.html">fluxbox&nbsp;&bull;&nbsp;</a></li>
+     <li class="footer"><a href="./tag/fonts.html">fonts&nbsp;&bull;&nbsp;</a></li>
      <li class="footer"><a href="./tag/freenas.html">freenas&nbsp;&bull;&nbsp;</a></li>
      <li class="footer"><a href="./tag/geany.html">geany&nbsp;&bull;&nbsp;</a></li>
      <li class="footer"><a href="./tag/git.html">git&nbsp;&bull;&nbsp;</a></li>

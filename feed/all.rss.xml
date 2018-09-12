@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Emilio Eiji</title><link>http://emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Wed, 30 May 2018 17:33:00 -0300</lastBuildDate><item><title>Gravar DVD do xbox 360 no linux.</title><link>http://emilioeiji.com.br/gravando-dvd-xbox360.html</link><description>&lt;div class="section" id="gravando-dvd-do-xbox360-via-linha-de-comando-no-linux"&gt;
+<rss version="2.0"><channel><title>Emilio Eiji</title><link>http://emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Wed, 12 Sep 2018 12:30:00 -0300</lastBuildDate><item><title>Atualizando fontes no linux mint.</title><link>http://emilioeiji.com.br/atualizando-fontes-no-linux-mint.html</link><description>&lt;div class="section" id="comandinho-basico"&gt;
+&lt;h2&gt;Comandinho básico.&lt;/h2&gt;
+&lt;p&gt;Segue um comandinho básico para incluir novas fonts, mas que eu não tinha conhecimento por nunca ter precisado executar.&lt;/p&gt;
+&lt;p&gt;No linux mint crie um diretório .fonts dentro do diretório home do usuário, no meu casso:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir /home/emilio/.fonts
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fc-cache -fv
+&lt;/pre&gt;&lt;/div&gt;
+&lt;hr class="docutils" /&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Diretórios com o . na frente serve para …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Wed, 12 Sep 2018 12:30:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2018-09-12:/atualizando-fontes-no-linux-mint.html</guid><category>linux</category><category>fonts</category><category>fc-cache</category></item><item><title>Gravar DVD do xbox 360 no linux.</title><link>http://emilioeiji.com.br/gravando-dvd-xbox360.html</link><description>&lt;div class="section" id="gravando-dvd-do-xbox360-via-linha-de-comando-no-linux"&gt;
 &lt;h2&gt;Gravando DVD do XBOX360 via linha de comando no linux.&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Atenção&lt;/em&gt; Não testei esse procedimento ainda, mas estou plublicando para efetuar os testes posteriormente.&lt;/p&gt;
 &lt;p&gt;Corrigindo o patch:&lt;/p&gt;
