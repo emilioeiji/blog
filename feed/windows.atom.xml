@@ -157,7 +157,7 @@ available to provide a license. Please contact the server
 administrator.&amp;quot;, segue a correção.&lt;/p&gt;
 &lt;p&gt;Efetuar um backup do registro e em seguinda apagar a seguinte chave:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-[HKEY\_LOCAL\_MACHINESOFTWAREMicrosoftMSLicensingStore]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSLicensing\Store]
 &lt;/pre&gt;
 &lt;p&gt;Basta reiniciar a maquina e está conectando normalmente.&lt;/p&gt;
 &lt;p&gt;Abraços&lt;/p&gt;
