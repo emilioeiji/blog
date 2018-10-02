@@ -5,8 +5,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://emilioeiji.com.br/</loc>
-<lastmod>2018-09-28T10:15:32-00:00</lastmod>
+<lastmod>2018-10-02T10:21:49-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://emilioeiji.com.br/rdesktop-failed-to-negotiate-protocol.html</loc>
+<lastmod>2018-10-02T07:00:00-03:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -55,13 +62,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://emilioeiji.com.br/criptografando-hd-externo.html</loc>
 <lastmod>2015-08-19T22:30:00-03:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://emilioeiji.com.br/7gerenciamento-integrado-de-servidores.html</loc>
-<lastmod>2015-08-10T22:30:00-03:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -557,15 +557,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://emilioeiji.com.br/category/infra.html</loc>
-<lastmod>2015-08-10T22:30:00-03:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>http://emilioeiji.com.br/category/linux.html</loc>
-<lastmod>2018-09-12T12:30:00-03:06</lastmod>
+<lastmod>2018-10-02T07:00:00-03:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -655,8 +648,22 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://emilioeiji.com.br/tag/rdesktop.html</loc>
+<lastmod>2018-10-02T07:00:00-03:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://emilioeiji.com.br/tag/linux.html</loc>
-<lastmod>2018-09-12T12:30:00-03:06</lastmod>
+<lastmod>2018-10-02T07:00:00-03:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://emilioeiji.com.br/tag/rdp.html</loc>
+<lastmod>2018-10-02T07:00:00-03:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -790,27 +797,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://emilioeiji.com.br/tag/externo.html</loc>
 <lastmod>2015-08-19T22:30:00-03:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://emilioeiji.com.br/tag/idrac.html</loc>
-<lastmod>2015-08-10T22:30:00-03:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://emilioeiji.com.br/tag/imm.html</loc>
-<lastmod>2015-08-10T22:30:00-03:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://emilioeiji.com.br/tag/ilo.html</loc>
-<lastmod>2015-08-10T22:30:00-03:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1720,7 +1706,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://emilioeiji.com.br/author/emilio.html</loc>
-<lastmod>2018-09-12T12:30:00-03:06</lastmod>
+<lastmod>2018-10-02T07:00:00-03:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

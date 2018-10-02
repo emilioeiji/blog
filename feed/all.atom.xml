@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/all.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2018-09-12T12:30:00-03:00</updated><entry><title>Atualizando fontes no linux mint.</title><link href="http://emilioeiji.com.br/atualizando-fontes-no-linux-mint.html" rel="alternate"></link><published>2018-09-12T12:30:00-03:00</published><updated>2018-09-12T12:30:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2018-09-12:/atualizando-fontes-no-linux-mint.html</id><summary type="html">&lt;div class="section" id="comandinho-basico"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/all.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2018-10-02T07:00:00-03:00</updated><entry><title>rdesktop falied to negotiate protocol.</title><link href="http://emilioeiji.com.br/rdesktop-failed-to-negotiate-protocol.html" rel="alternate"></link><published>2018-10-02T07:00:00-03:00</published><updated>2018-10-02T07:00:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2018-10-02:/rdesktop-failed-to-negotiate-protocol.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;rdesktop falied to negotiate protocol.&lt;/h2&gt;
+&lt;p&gt;Após atualizar o linux mint para a versão 19.1, ao tentar rodar algumas conexões remotas via RDP me deparei com o seguinte erro.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lnx ~ $ rdesktop &lt;span class="m"&gt;10&lt;/span&gt;.0.0.1 -f &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="m"&gt;6076&lt;/span&gt;
+lnx ~ $ Autoselected keyboard map pt-br
+Failed to negotiate protocol, retrying with plain …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;rdesktop falied to negotiate protocol.&lt;/h2&gt;
+&lt;p&gt;Após atualizar o linux mint para a versão 19.1, ao tentar rodar algumas conexões remotas via RDP me deparei com o seguinte erro.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lnx ~ $ rdesktop &lt;span class="m"&gt;10&lt;/span&gt;.0.0.1 -f &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="m"&gt;6076&lt;/span&gt;
+lnx ~ $ Autoselected keyboard map pt-br
+Failed to negotiate protocol, retrying with plain RDP.
+
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;+  Falha de segmentação  rdesktop &lt;span class="m"&gt;10&lt;/span&gt;.0.0.1 -f
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Efetuando uma breve pesquisa notei que se trata de um bug na ultima versão do rdesktop e que para solucioná-la deveria efetuar o downgrade do mesmo. Ao invés de efetuar esse procedimento resolvi procurar uma alternativa para o rdesktop e resolvi instalar o remmina.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lnx ~ $ sudo apt-get install remmina remmina-plugin-rdp libxfreerdp-client1.1
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;O software é bem completo porém, eu gosto de utilizar a maioria das coias via linha de comando &amp;quot;um vício antigo :p&amp;quot; e com o remmina é bem complicado pois, após adicionar os servidores pelo gerenciador ele cria um arquivo de configuração .remmina e para conectar via linha de comando ficaria assim:&lt;/p&gt;
+&lt;p&gt;..code-block:: bash&lt;/p&gt;
+&lt;blockquote&gt;
+lnx ~ $ remmina ~/.remmina/1473340115306.remmina&lt;/blockquote&gt;
+&lt;p&gt;Podemos efetuar uma cópia do arquivo e renomeá-lo para efetuar as conexões porém, todo novo host que eu for conectar primeiramente devo adicioná-lo no gerenciador e muitas vezes no meu caso eu faço diversas conexões com usuários diferentes, resoluções diferentes e com o rdesktop via linha de comando facilitava bastante.&lt;/p&gt;
+&lt;p&gt;Esse foi um ponto negativo que encontrei com o remmina e resolvi continuar buscando alguma alternativa.&lt;/p&gt;
+&lt;p&gt;Junto com o remmina foi instalado o xfreerdp e por sorte ele é bem parecido com o rdesktop inclusive sua sintax:&lt;/p&gt;
+&lt;p&gt;..code-block:: bash&lt;/p&gt;
+&lt;blockquote&gt;
+lnx ~ $ xfreerdp /f /d:local /u:emilio /p:123 /v:10.0.0.1&lt;/blockquote&gt;
+&lt;p&gt;Abaixo alguns parametros que podem ser utilizados:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;/f Full screen&lt;/li&gt;
+&lt;li&gt;/d: domínio&lt;/li&gt;
+&lt;li&gt;/u: usuário, no mesmo arguimento pode ser passado o domínio junto ficando dominiousuario&lt;/li&gt;
+&lt;li&gt;/p: senha&lt;/li&gt;
+&lt;li&gt;/v: o endereço do host caso a porta de conexão não for a padrão pode estar especificando com um :numero da porta&lt;/li&gt;
+&lt;li&gt;Podemos usar os parametros /w: e /h: para especificar a resolução /w:1024 /h:768&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Espero que corrijam os bugs do rdesktop e que o xfreerdp continue funcionando corretamente :)&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="rdesktop"></category><category term="linux"></category><category term="rdp"></category></entry><entry><title>Atualizando fontes no linux mint.</title><link href="http://emilioeiji.com.br/atualizando-fontes-no-linux-mint.html" rel="alternate"></link><published>2018-09-12T12:30:00-03:00</published><updated>2018-09-12T12:30:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2018-09-12:/atualizando-fontes-no-linux-mint.html</id><summary type="html">&lt;div class="section" id="comandinho-basico"&gt;
 &lt;h2&gt;Comandinho básico.&lt;/h2&gt;
 &lt;p&gt;Segue um comandinho básico para incluir novas fonts, mas que eu não tinha conhecimento por nunca ter precisado executar.&lt;/p&gt;
 &lt;p&gt;No linux mint crie um diretório .fonts dentro do diretório home do usuário, no meu casso:&lt;/p&gt;
@@ -421,7 +463,7 @@ emilio ~ $ sudo cryptsetup luksClose hdexterno
 &lt;p&gt;Agora só copiar os arquivos para o seu hd externo&lt;/p&gt;
 &lt;p&gt;Uma dica muito importante é não salvar a senha para garantir mais segurança aos seus dados.&lt;/p&gt;
 &lt;p&gt;Abraços pessoal, atéa  próxima.&lt;/p&gt;
-</content><category term="criptografia"></category><category term="hd"></category><category term="externo"></category></entry><entry><title>Gerenciamento Integrado de Servidores</title><link href="http://emilioeiji.com.br/7gerenciamento-integrado-de-servidores.html" rel="alternate"></link><published>2015-08-10T22:30:00-03:00</published><updated>2015-08-10T22:30:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2015-08-10:/7gerenciamento-integrado-de-servidores.html</id><summary type="html"></summary><content type="html"></content><category term="idrac"></category><category term="imm"></category><category term="ilo"></category></entry><entry><title>70-410 - Introdução</title><link href="http://emilioeiji.com.br/70-410-introducao.html" rel="alternate"></link><published>2015-06-28T18:50:00-03:00</published><updated>2015-06-28T18:50:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2015-06-28:/70-410-introducao.html</id><summary type="html">&lt;p&gt;Fala galera!!!&lt;/p&gt;
+</content><category term="criptografia"></category><category term="hd"></category><category term="externo"></category></entry><entry><title>70-410 - Introdução</title><link href="http://emilioeiji.com.br/70-410-introducao.html" rel="alternate"></link><published>2015-06-28T18:50:00-03:00</published><updated>2015-06-28T18:50:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2015-06-28:/70-410-introducao.html</id><summary type="html">&lt;p&gt;Fala galera!!!&lt;/p&gt;
 &lt;p&gt;Como já está marcado a prova para o exame 70-410 da Microsoft e não tem mais volta
 já que foi debitado do meu cartão :p vou começar a postar a minha saga até o momento
 da prova, pretendo postar dicas, como estou estudando e os conteúdos que estudei …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Fala galera!!!&lt;/p&gt;

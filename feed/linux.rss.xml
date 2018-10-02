@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Emilio Eiji - Linux</title><link>http://emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Wed, 12 Sep 2018 12:30:00 -0300</lastBuildDate><item><title>Atualizando fontes no linux mint.</title><link>http://emilioeiji.com.br/atualizando-fontes-no-linux-mint.html</link><description>&lt;div class="section" id="comandinho-basico"&gt;
+<rss version="2.0"><channel><title>Emilio Eiji - Linux</title><link>http://emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Tue, 02 Oct 2018 07:00:00 -0300</lastBuildDate><item><title>rdesktop falied to negotiate protocol.</title><link>http://emilioeiji.com.br/rdesktop-failed-to-negotiate-protocol.html</link><description>&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;rdesktop falied to negotiate protocol.&lt;/h2&gt;
+&lt;p&gt;Após atualizar o linux mint para a versão 19.1, ao tentar rodar algumas conexões remotas via RDP me deparei com o seguinte erro.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lnx ~ $ rdesktop &lt;span class="m"&gt;10&lt;/span&gt;.0.0.1 -f &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="m"&gt;6076&lt;/span&gt;
+lnx ~ $ Autoselected keyboard map pt-br
+Failed to negotiate protocol, retrying with plain …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Tue, 02 Oct 2018 07:00:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2018-10-02:/rdesktop-failed-to-negotiate-protocol.html</guid><category>rdesktop</category><category>linux</category><category>rdp</category></item><item><title>Atualizando fontes no linux mint.</title><link>http://emilioeiji.com.br/atualizando-fontes-no-linux-mint.html</link><description>&lt;div class="section" id="comandinho-basico"&gt;
 &lt;h2&gt;Comandinho básico.&lt;/h2&gt;
 &lt;p&gt;Segue um comandinho básico para incluir novas fonts, mas que eu não tinha conhecimento por nunca ter precisado executar.&lt;/p&gt;
 &lt;p&gt;No linux mint crie um diretório .fonts dentro do diretório home do usuário, no meu casso:&lt;/p&gt;

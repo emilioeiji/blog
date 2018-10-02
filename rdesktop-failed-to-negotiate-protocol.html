@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>LibreOffice Brasil | Emilio Eiji</title>
+  <title>rdesktop falied to negotiate protocol. | Emilio Eiji</title>
   <meta charset="utf-8">
-<meta name="description" content="Animação bacana apresentando o LibreOffice feito por brasileiros e produzida 100% com softwares opensource."><meta name="author" content="Emilio">  <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+<meta name="description" content="rdesktop falied to negotiate protocol. Após atualizar o linux mint para a versão 19.1, ao tentar rodar algumas conexões remotas via RDP me deparei com o seguinte erro. lnx ~ $ rdesktop 10.0.0.1 -f & [1] 6076 lnx ~ $ Autoselected keyboard map pt-br Failed to negotiate protocol, retrying with plain …"><meta name="author" content="Emilio">  <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
   <meta http-equiv="Cache-Control" content="max-age=604800, must-revalidate" />
   <link href="./theme/css/screen.css" rel="stylesheet" type="text/css" />
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
@@ -33,22 +33,57 @@
     <li><a href="https://youtube.com/c/emilioeiji">Youtube</a></li>
 </ul>    </div>
 </div>    <div id="main">
-<h2><a href="./libreoffice-brasil.html">LibreOffice Brasil</a></h2>
-<h5><i class="icon-feather"></i> qua 30 julho 2014
+<h2><a href="./rdesktop-failed-to-negotiate-protocol.html">rdesktop falied to negotiate protocol.</a></h2>
+<h5><i class="icon-feather"></i> ter 02 outubro 2018
 <i class="icon-bookmarks"></i>
+<span><a href="./tag/rdesktop.html">rdesktop</a> / </span>
 <span><a href="./tag/linux.html">linux</a> / </span>
-<span><a href="./tag/libreoffice.html">libreoffice</a> / </span>
+<span><a href="./tag/rdp.html">rdp</a> / </span>
 </h5>
 
-<p>Animação bacana apresentando o LibreOffice feito por brasileiros e
-produzida 100% com softwares opensource.</p>
-<div class="youtube youtube-16x9"><iframe src="https://www.youtube.com/embed/rYoLBPAGLbo" allowfullscreen seamless frameBorder="0"></iframe></div>
+<div class="section" id="id1">
+<h2>rdesktop falied to negotiate protocol.</h2>
+<p>Após atualizar o linux mint para a versão 19.1, ao tentar rodar algumas conexões remotas via RDP me deparei com o seguinte erro.</p>
+<div class="highlight"><pre><span></span>lnx ~ $ rdesktop <span class="m">10</span>.0.0.1 -f <span class="p">&amp;</span>
+<span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="m">6076</span>
+lnx ~ $ Autoselected keyboard map pt-br
+Failed to negotiate protocol, retrying with plain RDP.
+
+<span class="o">[</span><span class="m">1</span><span class="o">]</span>+  Falha de segmentação  rdesktop <span class="m">10</span>.0.0.1 -f
+</pre></div>
+<p>Efetuando uma breve pesquisa notei que se trata de um bug na ultima versão do rdesktop e que para solucioná-la deveria efetuar o downgrade do mesmo. Ao invés de efetuar esse procedimento resolvi procurar uma alternativa para o rdesktop e resolvi instalar o remmina.</p>
+<div class="highlight"><pre><span></span>lnx ~ $ sudo apt-get install remmina remmina-plugin-rdp libxfreerdp-client1.1
+</pre></div>
+<p>O software é bem completo porém, eu gosto de utilizar a maioria das coias via linha de comando &quot;um vício antigo :p&quot; e com o remmina é bem complicado pois, após adicionar os servidores pelo gerenciador ele cria um arquivo de configuração .remmina e para conectar via linha de comando ficaria assim:</p>
+<p>..code-block:: bash</p>
+<blockquote>
+lnx ~ $ remmina ~/.remmina/1473340115306.remmina</blockquote>
+<p>Podemos efetuar uma cópia do arquivo e renomeá-lo para efetuar as conexões porém, todo novo host que eu for conectar primeiramente devo adicioná-lo no gerenciador e muitas vezes no meu caso eu faço diversas conexões com usuários diferentes, resoluções diferentes e com o rdesktop via linha de comando facilitava bastante.</p>
+<p>Esse foi um ponto negativo que encontrei com o remmina e resolvi continuar buscando alguma alternativa.</p>
+<p>Junto com o remmina foi instalado o xfreerdp e por sorte ele é bem parecido com o rdesktop inclusive sua sintax:</p>
+<p>..code-block:: bash</p>
+<blockquote>
+lnx ~ $ xfreerdp /f /d:local /u:emilio /p:123 /v:10.0.0.1</blockquote>
+<p>Abaixo alguns parametros que podem ser utilizados:</p>
+<blockquote>
+<ul class="simple">
+<li>/f Full screen</li>
+<li>/d: domínio</li>
+<li>/u: usuário, no mesmo arguimento pode ser passado o domínio junto ficando dominiousuario</li>
+<li>/p: senha</li>
+<li>/v: o endereço do host caso a porta de conexão não for a padrão pode estar especificando com um :numero da porta</li>
+<li>Podemos usar os parametros /w: e /h: para especificar a resolução /w:1024 /h:768</li>
+</ul>
+</blockquote>
+<p>Espero que corrijam os bugs do rdesktop e que o xfreerdp continue funcionando corretamente :)</p>
+</div>
+
 
 <p align="center"><a href="#">on the top</a></p>
 <h3>Comments</h3>
 <div id="disqus_thread">
     <script type="text/javascript">
-       var disqus_identifier = "libreoffice-brasil.html";
+       var disqus_identifier = "rdesktop-failed-to-negotiate-protocol.html";
        (function() {
        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
        dsq.src = 'http://emilioeiji.disqus.com/embed.js';
