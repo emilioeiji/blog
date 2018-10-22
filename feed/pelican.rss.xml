@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Emilio Eiji - Pelican</title><link>http://emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Sat, 07 Mar 2015 18:27:00 -0300</lastBuildDate><item><title>Primeiro post no pelican</title><link>http://emilioeiji.com.br/primeiro-post-no-pelican.html</link><description>&lt;p&gt;Bom galera, estou tentando deixar o blog mais hardcore e
+<rss version="2.0"><channel><title>Emilio Eiji - Pelican</title><link>http://blog.emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Sat, 07 Mar 2015 18:27:00 -0300</lastBuildDate><item><title>Primeiro post no pelican</title><link>http://blog.emilioeiji.com.br/primeiro-post-no-pelican.html</link><description>&lt;p&gt;Bom galera, estou tentando deixar o blog mais hardcore e
 estou migrando do wordpress para pelican. Não que o WP seja ruim
 ou não estivesse atendendo as minhas necessidades, mas como estou
 engajado em aprender python nada melhor doque fazer tudo em python.&lt;/p&gt;
-&lt;p&gt;Como base nessa empreitada me inspirei no …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Sat, 07 Mar 2015 18:27:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2015-03-07:/primeiro-post-no-pelican.html</guid><category>pelican</category></item></channel></rss>
+&lt;p&gt;Como base nessa empreitada me inspirei no …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Sat, 07 Mar 2015 18:27:00 -0300</pubDate><guid isPermaLink="false">tag:blog.emilioeiji.com.br,2015-03-07:/primeiro-post-no-pelican.html</guid><category>pelican</category></item></channel></rss>

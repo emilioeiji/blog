@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - vim</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/vim.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2013-06-02T20:49:00-03:00</updated><entry><title>100 comandos para turbinar a utilização do vim.</title><link href="http://emilioeiji.com.br/100-comandos-para-vim.html" rel="alternate"></link><published>2013-06-02T20:49:00-03:00</published><updated>2013-06-02T20:49:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2013-06-02:/100-comandos-para-vim.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;100 comandos para turbinar a utilização do vim.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/vim.jpg"&gt;&lt;img alt="vim" src="http://emilioeiji.com.br/images/vim-300x167.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - vim</title><link href="http://blog.emilioeiji.com.br/" rel="alternate"></link><link href="http://blog.emilioeiji.com.br/feed/vim.atom.xml" rel="self"></link><id>http://blog.emilioeiji.com.br/</id><updated>2013-06-02T20:49:00-03:00</updated><entry><title>100 comandos para turbinar a utilização do vim.</title><link href="http://blog.emilioeiji.com.br/100-comandos-para-vim.html" rel="alternate"></link><published>2013-06-02T20:49:00-03:00</published><updated>2013-06-02T20:49:00-03:00</updated><author><name>Emilio</name></author><id>tag:blog.emilioeiji.com.br,2013-06-02:/100-comandos-para-vim.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;100 comandos para turbinar a utilização do vim.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/vim.jpg"&gt;&lt;img alt="vim" src="http://blog.emilioeiji.com.br/images/vim-300x167.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Busca&lt;/strong&gt;&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 /palavra: Procura por “palavra” do início para o fim
@@ -8,7 +8,7 @@
 /Mari[oa]: Procura por “Mario” ou “Maria”
 /&amp;lt;pal: Procura por expressões que começem com “pala” como, “palavra” ou “palíndromo”
 /ismo&amp;gt;: Procura por expressões …&lt;/pre&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;100 comandos para turbinar a utilização do vim.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/vim.jpg"&gt;&lt;img alt="vim" src="http://emilioeiji.com.br/images/vim-300x167.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/vim.jpg"&gt;&lt;img alt="vim" src="http://blog.emilioeiji.com.br/images/vim-300x167.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Busca&lt;/strong&gt;&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 /palavra: Procura por “palavra” do início para o fim
@@ -150,7 +150,7 @@ ctrl-t, ctrl-d: Identa/Deidenta no modo de inserção
 :syntax off: Desliga a marcação de sintaxe
 :set syntax=perl: Força a usar a marcação de sintaxe do perl
 &lt;/pre&gt;
-</content><category term="comandos vim"></category><category term="dicas"></category><category term="dicas vim"></category><category term="vim"></category></entry><entry><title>Vim abrir direto em uma determinada linha</title><link href="http://emilioeiji.com.br/vim-abrir-direto-em-uma-determinada-linha.html" rel="alternate"></link><published>2013-05-22T16:49:00-03:00</published><updated>2013-05-22T16:49:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2013-05-22:/vim-abrir-direto-em-uma-determinada-linha.html</id><summary type="html">&lt;p&gt;Daew galera blz?&lt;/p&gt;
+</content><category term="comandos vim"></category><category term="dicas"></category><category term="dicas vim"></category><category term="vim"></category></entry><entry><title>Vim abrir direto em uma determinada linha</title><link href="http://blog.emilioeiji.com.br/vim-abrir-direto-em-uma-determinada-linha.html" rel="alternate"></link><published>2013-05-22T16:49:00-03:00</published><updated>2013-05-22T16:49:00-03:00</updated><author><name>Emilio</name></author><id>tag:blog.emilioeiji.com.br,2013-05-22:/vim-abrir-direto-em-uma-determinada-linha.html</id><summary type="html">&lt;p&gt;Daew galera blz?&lt;/p&gt;
 &lt;p&gt;Hoje estava tentando lembrar como fazia para abrir algum arquivo no vim
 direto em um alinha, para tanto basta adicionar + e o numero da linha
 desejada;&lt;/p&gt;

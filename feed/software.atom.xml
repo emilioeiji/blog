@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - Software</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/software.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2013-05-23T09:12:00-03:00</updated><entry><title>Atualizar DokuWiki</title><link href="http://emilioeiji.com.br/atualizar-dokuwiki.html" rel="alternate"></link><published>2013-05-23T09:12:00-03:00</published><updated>2013-05-23T09:12:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2013-05-23:/atualizar-dokuwiki.html</id><summary type="html">&lt;p&gt;Daew galera...&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - Software</title><link href="http://blog.emilioeiji.com.br/" rel="alternate"></link><link href="http://blog.emilioeiji.com.br/feed/software.atom.xml" rel="self"></link><id>http://blog.emilioeiji.com.br/</id><updated>2013-05-23T09:12:00-03:00</updated><entry><title>Atualizar DokuWiki</title><link href="http://blog.emilioeiji.com.br/atualizar-dokuwiki.html" rel="alternate"></link><published>2013-05-23T09:12:00-03:00</published><updated>2013-05-23T09:12:00-03:00</updated><author><name>Emilio</name></author><id>tag:blog.emilioeiji.com.br,2013-05-23:/atualizar-dokuwiki.html</id><summary type="html">&lt;p&gt;Daew galera...&lt;/p&gt;
 &lt;p&gt;Hoje tive a necessidade de efetuar uma atualização do DokuWiki e
 vasculhando na net achei uma dica muito rápida e prática do Guto
 Carvalho&lt;/p&gt;
@@ -11,7 +11,7 @@ vasculhando na net achei uma dica muito rápida e prática do Guto
 Carvalho&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://gutocarvalho.net/octopress/2013/05/20/dokuwiki-atualizando-versao/"&gt;Link&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Então é isso pessoal.&lt;/p&gt;
-</content><category term="atualizar"></category><category term="atualizar dokuwiki"></category><category term="dokuwiki"></category></entry><entry><title>OpenFire - Excluir mensagens arquivadas no banco de dados (MySQL)</title><link href="http://emilioeiji.com.br/openfire-excluir-mensagens-arquivadas-no-banco-de-dados-mysql.html" rel="alternate"></link><published>2013-05-06T16:33:00-03:00</published><updated>2013-05-06T16:33:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2013-05-06:/openfire-excluir-mensagens-arquivadas-no-banco-de-dados-mysql.html</id><summary type="html">&lt;p&gt;Daew galera!!!&lt;/p&gt;
+</content><category term="atualizar"></category><category term="atualizar dokuwiki"></category><category term="dokuwiki"></category></entry><entry><title>OpenFire - Excluir mensagens arquivadas no banco de dados (MySQL)</title><link href="http://blog.emilioeiji.com.br/openfire-excluir-mensagens-arquivadas-no-banco-de-dados-mysql.html" rel="alternate"></link><published>2013-05-06T16:33:00-03:00</published><updated>2013-05-06T16:33:00-03:00</updated><author><name>Emilio</name></author><id>tag:blog.emilioeiji.com.br,2013-05-06:/openfire-excluir-mensagens-arquivadas-no-banco-de-dados-mysql.html</id><summary type="html">&lt;p&gt;Daew galera!!!&lt;/p&gt;
 &lt;p&gt;Hoje tive problemas com o arquivamento de mensagens no openfire 3.8.1,
 não sei oque aconteceu mas parou de arquivar as mensagens, tentei
 reinstalar o plugin de monitoramento e nada então resolvi limpar as
@@ -50,7 +50,7 @@ start**
 os arquivamentos como para tentar resolver algum problema como foi o meu
 caso.&lt;/p&gt;
 &lt;p&gt;Abraços&lt;/p&gt;
-</content><category term="openfire"></category><category term="mysql"></category><category term="excluir"></category><category term="mensagens"></category></entry><entry><title>Alterar senha do Cacti</title><link href="http://emilioeiji.com.br/alterar-senha-do-cacti.html" rel="alternate"></link><published>2011-05-12T14:06:00-03:00</published><updated>2011-05-12T14:06:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2011-05-12:/alterar-senha-do-cacti.html</id><summary type="html">&lt;p&gt;Retirado do &lt;a class="reference external" href="http://www.vivaolinux.com.br/dica/Alterar-a-senha-do-Cacti-via-console"&gt;Viva o
+</content><category term="openfire"></category><category term="mysql"></category><category term="excluir"></category><category term="mensagens"></category></entry><entry><title>Alterar senha do Cacti</title><link href="http://blog.emilioeiji.com.br/alterar-senha-do-cacti.html" rel="alternate"></link><published>2011-05-12T14:06:00-03:00</published><updated>2011-05-12T14:06:00-03:00</updated><author><name>Emilio</name></author><id>tag:blog.emilioeiji.com.br,2011-05-12:/alterar-senha-do-cacti.html</id><summary type="html">&lt;p&gt;Retirado do &lt;a class="reference external" href="http://www.vivaolinux.com.br/dica/Alterar-a-senha-do-Cacti-via-console"&gt;Viva o
 Linux&lt;/a&gt;
 por Walber Santos&lt;/p&gt;
 &lt;pre class="literal-block"&gt;

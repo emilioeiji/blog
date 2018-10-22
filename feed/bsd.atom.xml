@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - BSD</title><link href="http://emilioeiji.com.br/" rel="alternate"></link><link href="http://emilioeiji.com.br/feed/bsd.atom.xml" rel="self"></link><id>http://emilioeiji.com.br/</id><updated>2013-05-03T13:25:00-03:00</updated><entry><title>Freenas (8.3.1) Rsync + Windows 2003</title><link href="http://emilioeiji.com.br/freenas-8-3-1-rsync-windows-2003.html" rel="alternate"></link><published>2013-05-03T13:25:00-03:00</published><updated>2013-05-03T13:25:00-03:00</updated><author><name>Emilio</name></author><id>tag:emilioeiji.com.br,2013-05-03:/freenas-8-3-1-rsync-windows-2003.html</id><summary type="html">&lt;div class="section" id="daew-galera"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - BSD</title><link href="http://blog.emilioeiji.com.br/" rel="alternate"></link><link href="http://blog.emilioeiji.com.br/feed/bsd.atom.xml" rel="self"></link><id>http://blog.emilioeiji.com.br/</id><updated>2013-05-03T13:25:00-03:00</updated><entry><title>Freenas (8.3.1) Rsync + Windows 2003</title><link href="http://blog.emilioeiji.com.br/freenas-8-3-1-rsync-windows-2003.html" rel="alternate"></link><published>2013-05-03T13:25:00-03:00</published><updated>2013-05-03T13:25:00-03:00</updated><author><name>Emilio</name></author><id>tag:blog.emilioeiji.com.br,2013-05-03:/freenas-8-3-1-rsync-windows-2003.html</id><summary type="html">&lt;div class="section" id="daew-galera"&gt;
 &lt;h2&gt;Daew galera!!!&lt;/h2&gt;
 &lt;p&gt;Recentemente comecei a testar o pfsense e como gostei muito do BDS estou
 testando também o FreeNAS, a baixo vou descrever como testei o rsync com
@@ -10,10 +10,10 @@ windows 2003.&lt;/p&gt;
 &lt;div&gt;&lt;p&gt;Primeiramente efetue o download do
 DeltaCopy&amp;nbsp;&lt;a class="reference external" href="http://www.aboutmyip.com/AboutMyXApp/DeltaCopyDownloadInstaller.jsp"&gt;aqui!&lt;/a&gt;&amp;nbsp;e
 efetue a instalação no modelo NNF.&lt;/p&gt;
-&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Print1.png"&gt;&lt;img alt="image0" src="http://emilioeiji.com.br/images/Print1.png" /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Print2.png"&gt;&lt;img alt="image1" src="http://emilioeiji.com.br/images/Print2.png" /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Print3.png"&gt;&lt;img alt="image2" src="http://emilioeiji.com.br/images/Print3.png" /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Print4.png"&gt;&lt;img alt="image3" src="http://emilioeiji.com.br/images/Print4.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/Print1.png"&gt;&lt;img alt="image0" src="http://blog.emilioeiji.com.br/images/Print1.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/Print2.png"&gt;&lt;img alt="image1" src="http://blog.emilioeiji.com.br/images/Print2.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/Print3.png"&gt;&lt;img alt="image2" src="http://blog.emilioeiji.com.br/images/Print3.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/Print4.png"&gt;&lt;img alt="image3" src="http://blog.emilioeiji.com.br/images/Print4.png" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;Após a …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="daew-galera"&gt;
 &lt;h2&gt;Daew galera!!!&lt;/h2&gt;
 &lt;p&gt;Recentemente comecei a testar o pfsense e como gostei muito do BDS estou
@@ -25,20 +25,20 @@ windows 2003.&lt;/p&gt;
 &lt;div&gt;&lt;p&gt;Primeiramente efetue o download do
 DeltaCopy&amp;nbsp;&lt;a class="reference external" href="http://www.aboutmyip.com/AboutMyXApp/DeltaCopyDownloadInstaller.jsp"&gt;aqui!&lt;/a&gt;&amp;nbsp;e
 efetue a instalação no modelo NNF.&lt;/p&gt;
-&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Print1.png"&gt;&lt;img alt="image0" src="http://emilioeiji.com.br/images/Print1.png" /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Print2.png"&gt;&lt;img alt="image1" src="http://emilioeiji.com.br/images/Print2.png" /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Print3.png"&gt;&lt;img alt="image2" src="http://emilioeiji.com.br/images/Print3.png" /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Print4.png"&gt;&lt;img alt="image3" src="http://emilioeiji.com.br/images/Print4.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/Print1.png"&gt;&lt;img alt="image0" src="http://blog.emilioeiji.com.br/images/Print1.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/Print2.png"&gt;&lt;img alt="image1" src="http://blog.emilioeiji.com.br/images/Print2.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/Print3.png"&gt;&lt;img alt="image2" src="http://blog.emilioeiji.com.br/images/Print3.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/Print4.png"&gt;&lt;img alt="image3" src="http://blog.emilioeiji.com.br/images/Print4.png" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;Após a conclusão da instalação vamos registrar o serviço e iniciá-lo.&lt;/p&gt;
-&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Print5.png"&gt;&lt;img alt="image4" src="http://emilioeiji.com.br/images/Print5.png" /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Print6.png"&gt;&lt;img alt="image5" src="http://emilioeiji.com.br/images/Print6.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/Print5.png"&gt;&lt;img alt="image4" src="http://blog.emilioeiji.com.br/images/Print5.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/Print6.png"&gt;&lt;img alt="image5" src="http://blog.emilioeiji.com.br/images/Print6.png" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;Pode ser conferido o registro e a inicialização do serviço no
 gerenciador de serviços do windows &lt;em&gt;(Iniciar / Executar / services.msn)&lt;/em&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Print8.png"&gt;&lt;img alt="image6" src="http://emilioeiji.com.br/images/Print8.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/Print8.png"&gt;&lt;img alt="image6" src="http://blog.emilioeiji.com.br/images/Print8.png" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;Após o serviço ser registrado e estar inicializado vamos criar um
 diretório virtual onde o servidor FreeNAS conectará para sincronizar os
 arquivos.&lt;/p&gt;
-&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Print7.png"&gt;&lt;img alt="image7" src="http://emilioeiji.com.br/images/Print7.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/Print7.png"&gt;&lt;img alt="image7" src="http://blog.emilioeiji.com.br/images/Print7.png" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;Na imagem acima eu deixei o diretório virtual padrão que já é criado na
 instalação e direcionei para o díretório local do
 servidor&amp;nbsp;D:BackupDesktopReconsolidacaoVisitas para testes.&lt;/p&gt;
@@ -47,9 +47,9 @@ servidor&amp;nbsp;D:BackupDesktopReconsolidacaoVisitas para testes.&lt;/p&gt;
 &lt;div&gt;&lt;p&gt;A configuração do FreeNAS para pegar os arquivos com o rSync é bem
 simples.&lt;/p&gt;
 &lt;/div&gt;&lt;div&gt;&lt;p&gt;Clique em Sistema / Rsync Task / Adicionar Rsynk Task&lt;/p&gt;
-&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Print10.png"&gt;&lt;img alt="image8" src="http://emilioeiji.com.br/images/Print10.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/Print10.png"&gt;&lt;img alt="image8" src="http://blog.emilioeiji.com.br/images/Print10.png" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;Irá carregar a seguinte tela.&lt;/p&gt;
-&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Print9.png"&gt;&lt;img alt="image9" src="http://emilioeiji.com.br/images/Print9.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/Print9.png"&gt;&lt;img alt="image9" src="http://blog.emilioeiji.com.br/images/Print9.png" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;div style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;Caminho: Selecione o local onde será salvo os arquivos.&lt;/li&gt;
 &lt;li&gt;Host Remoto: Ip do servidor onde instalamos o DeltaCopy&lt;/li&gt;
@@ -61,13 +61,13 @@ deixe como Empurrar)&lt;/li&gt;
 &lt;li&gt;Minuto / Hora / Dia do Mês / Mês / Dia da Semana: deve ser
 configurado de a cordo com a sua necessidade.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Print11.png"&gt;&lt;img alt="image10" src="http://emilioeiji.com.br/images/Print11.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/Print11.png"&gt;&lt;img alt="image10" src="http://blog.emilioeiji.com.br/images/Print11.png" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;No meu teste sincronizei o diretório
 D:BackupDesktopReconsolidacaoVisitas onde tinha apenas 2 arquivos, o
 mesmo foi sincronizado no horário determinado copiando os 2 arquivos
 para o servidor FreeNAS&lt;/p&gt;
-&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Print12.png"&gt;&lt;img alt="image11" src="http://emilioeiji.com.br/images/Print12.png" /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/Print13.png"&gt;&lt;img alt="image12" src="http://emilioeiji.com.br/images/Print13.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/Print12.png"&gt;&lt;img alt="image11" src="http://blog.emilioeiji.com.br/images/Print12.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/Print13.png"&gt;&lt;img alt="image12" src="http://blog.emilioeiji.com.br/images/Print13.png" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div style="clear: both; text-align: left;"&gt;&lt;p&gt;Por enquanto é isso pessoal.&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;

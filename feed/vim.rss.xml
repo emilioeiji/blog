@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Emilio Eiji - vim</title><link>http://emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Sun, 02 Jun 2013 20:49:00 -0300</lastBuildDate><item><title>100 comandos para turbinar a utilização do vim.</title><link>http://emilioeiji.com.br/100-comandos-para-vim.html</link><description>&lt;p&gt;&lt;strong&gt;100 comandos para turbinar a utilização do vim.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://emilioeiji.com.br/images/vim.jpg"&gt;&lt;img alt="vim" src="http://emilioeiji.com.br/images/vim-300x167.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Emilio Eiji - vim</title><link>http://blog.emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Sun, 02 Jun 2013 20:49:00 -0300</lastBuildDate><item><title>100 comandos para turbinar a utilização do vim.</title><link>http://blog.emilioeiji.com.br/100-comandos-para-vim.html</link><description>&lt;p&gt;&lt;strong&gt;100 comandos para turbinar a utilização do vim.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://blog.emilioeiji.com.br/images/vim.jpg"&gt;&lt;img alt="vim" src="http://blog.emilioeiji.com.br/images/vim-300x167.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Busca&lt;/strong&gt;&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 /palavra: Procura por “palavra” do início para o fim
 ?palavra: Procura por “palavra” do fim para o início
 /Mari[oa]: Procura por “Mario” ou “Maria”
 /&amp;lt;pal: Procura por expressões que começem com “pala” como, “palavra” ou “palíndromo”
-/ismo&amp;gt;: Procura por expressões …&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Sun, 02 Jun 2013 20:49:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2013-06-02:/100-comandos-para-vim.html</guid><category>comandos vim</category><category>dicas</category><category>dicas vim</category><category>vim</category></item><item><title>Vim abrir direto em uma determinada linha</title><link>http://emilioeiji.com.br/vim-abrir-direto-em-uma-determinada-linha.html</link><description>&lt;p&gt;Daew galera blz?&lt;/p&gt;
+/ismo&amp;gt;: Procura por expressões …&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Sun, 02 Jun 2013 20:49:00 -0300</pubDate><guid isPermaLink="false">tag:blog.emilioeiji.com.br,2013-06-02:/100-comandos-para-vim.html</guid><category>comandos vim</category><category>dicas</category><category>dicas vim</category><category>vim</category></item><item><title>Vim abrir direto em uma determinada linha</title><link>http://blog.emilioeiji.com.br/vim-abrir-direto-em-uma-determinada-linha.html</link><description>&lt;p&gt;Daew galera blz?&lt;/p&gt;
 &lt;p&gt;Hoje estava tentando lembrar como fazia para abrir algum arquivo no vim
 direto em um alinha, para tanto basta adicionar + e o numero da linha
 desejada;&lt;/p&gt;
@@ -15,4 +15,4 @@ desejada;&lt;/p&gt;
 $ vim arquivo +123
 &lt;/pre&gt;
 &lt;p&gt;Pronto, conforme o exemplo acima o vim vai abrir o arquivo na linha 123, muito útil
-para debugar …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Wed, 22 May 2013 16:49:00 -0300</pubDate><guid isPermaLink="false">tag:emilioeiji.com.br,2013-05-22:/vim-abrir-direto-em-uma-determinada-linha.html</guid><category>abrir linha</category><category>linha</category><category>linux</category><category>vim</category><category>vim abrir linha</category></item></channel></rss>
+para debugar …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Wed, 22 May 2013 16:49:00 -0300</pubDate><guid isPermaLink="false">tag:blog.emilioeiji.com.br,2013-05-22:/vim-abrir-direto-em-uma-determinada-linha.html</guid><category>abrir linha</category><category>linha</category><category>linux</category><category>vim</category><category>vim abrir linha</category></item></channel></rss>
