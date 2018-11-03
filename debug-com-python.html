@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Instalando Debian Netinst | Emilio Eiji</title>
+  <title>Debug com python. | Emilio Eiji</title>
   <meta charset="utf-8">
-<meta name="description" content="Boas galera, como estou precisando instalar o Debian para estudos, abaixo vou mostrar como fazer a instalação do netinst do zero. Para efetuar o download da iso clique aqui e após o término do download podemos gravar a iso em um cd ou criaros um pendrive de boot . Em seguida …"><meta name="author" content="Emilio">  <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+<meta name="description" content="Debug com python. Olá pessoal. Postando uma dica rápida como fazer debug com o python. Acima do código onde queremos iniciar o debug vamos importar o pdb e setar o trace. import pdb pdb.set_trace() Quando executar o código no vamente no console irá mostrar os resultados linha por linha …"><meta name="author" content="Emilio">  <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
   <meta http-equiv="Cache-Control" content="max-age=604800, must-revalidate" />
   <link href="./theme/css/screen.css" rel="stylesheet" type="text/css" />
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
@@ -33,124 +33,72 @@
     <li><a href="https://youtube.com/c/emilioeiji">Youtube</a></li>
 </ul>    </div>
 </div>    <div id="main">
-<h2><a href="./instalando-debian-netinst.html">Instalando Debian Netinst</a></h2>
-<h5><i class="icon-feather"></i> dom 29 março 2015
+<h2><a href="./debug-com-python.html">Debug com python.</a></h2>
+<h5><i class="icon-feather"></i> sáb 03 novembro 2018
 <i class="icon-bookmarks"></i>
-<span><a href="./tag/linux.html">linux</a> / </span>
-<span><a href="./tag/debian.html">debian</a> / </span>
-<span><a href="./tag/100-linux.html">100-linux</a> / </span>
-<span><a href="./tag/netinst.html">netinst</a> / </span>
-<span><a href="./tag/instalacao.html">instalação</a> / </span>
-<span><a href="./tag/instalando.html">instalando</a> / </span>
+<span><a href="./tag/python.html">python</a> / </span>
+<span><a href="./tag/debug.html">debug</a> / </span>
 </h5>
 
-<p>Boas galera, como estou precisando instalar o Debian para estudos, abaixo vou mostrar
-como fazer a instalação do <a class="reference external" href="https://www.debian.org/CD/netinst/">netinst</a> do zero.</p>
-<p>Para efetuar o download da iso clique <a class="reference external" href="https://www.debian.org/distrib/netinst">aqui</a>
-e após o término do download podemos gravar a iso em um cd ou criaros um <a class="reference external" href="http://emilioeiji.com.br/imagens-iso-no-pendrive.html">pendrive de boot</a> .</p>
-<p>Em seguida vamos dar boot na maquina e teremos a tela abaixo:</p>
-<p><a class="reference external" href="./images/netinst-01.png"><img alt="netinst-01" src="./images/netinst-01.png" /></a></p>
-<p>Temos as seguintes opções de instalação:</p>
-<ol class="arabic simple">
-<li><strong>Install</strong> - Iniciará o mode de instalação padrão em modo texto.</li>
-<li><strong>Graphical install</strong> - Iniciará a instalação em modo gráfico, um pouco mais amigável mas
-nada de diferente do modo padrão.</li>
-<li><dl class="first docutils">
-<dt>Advanced options</dt>
-<dd><ol class="first last arabic">
-<li><strong>Modo Expert</strong> - Iniciará a instalaçao no modo very hard, onde se tem controle de todos os
-os processos que serão executados durante a instalação, indicado para usuários avançados.</li>
-<li><strong>Graphical Expert</strong> - Iniciára a instalação no modo hard com uma interface gráfica.</li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><strong>Help</strong> - Obtem ajuda do sistema na instalação.</li>
-<li><strong>Install with speech synthesis</strong> - Inicia no modo de acessibilidade, onde um assistente &quot;lê&quot;
-oque está aparecendo na tela.</li>
-</ol>
-<p>Vou efetuar a instalação pelo modo padrão, selecionando <strong>Install</strong>, após isso ira carregar as telas
-onde selecionaremos a opção de linguagem do sistema, localidade e teclado.</p>
-<p><a class="reference external" href="./images/netinst-02.png"><img alt="netinst-02" src="./images/netinst-02.png" /></a></p>
-<p><a class="reference external" href="./images/netinst-03.png"><img alt="netinst-03" src="./images/netinst-03.png" /></a></p>
-<p>Irá carregar alguns módulos do sistema, configurar o ip e em seguita irá para a tela onde definiremos
-o nome do computador e o domínio.</p>
-<p><a class="reference external" href="./images/netinst-05.png"><img alt="netinst-05" src="./images/netinst-05.png" /></a></p>
-<p>Após definirmos o nome vamos para a senha do root, cadatro do nome de um usuário e senha para o mesmo.</p>
-<p><a class="reference external" href="./images/netinst-06.png"><img alt="netinst-06" src="./images/netinst-06.png" /></a></p>
-<p><a class="reference external" href="./images/netinst-07.png"><img alt="netinst-07" src="./images/netinst-07.png" /></a></p>
-<p><a class="reference external" href="./images/netinst-08.png"><img alt="netinst-08" src="./images/netinst-08.png" /></a></p>
-<p>Agora vamos definir o fuso horário.</p>
-<p><a class="reference external" href="./images/netinst-09.png"><img alt="netinst-09" src="./images/netinst-09.png" /></a></p>
-<p>Na criação das partições devemos ter uma certa atenção caso tenhamos outros SO's instalados, visto
-que se selecionarmos a opção <strong>Assistido - usar disco inteiro</strong> todos os dados do disco serão apagados
-e dá o maior trabalho recuperar os arquivos :p</p>
-<p>Nesta etapa temos as seguintes opções:</p>
-<ol class="arabic simple">
-<li><strong>Assistido - usar o disco inteiro</strong> - Essa opção serve para usuários iniciantes que não tem experiencia
-com particionamento de discos ou igual estou fazendo agora apenas para testes. :)</li>
-<li><strong>Assistido - usar o disco inteiro e configurar LVM</strong> - Essa opção serve para configurarmos o <a class="reference external" href="http://www.vivaolinux.com.br/dica/LVM-Logical-Volume-Manager">LVM</a>
-(Gerenciamento de Volume Lógico) que facilida em situações que após instalar o sistemas precise alterar
-o tamanho do volume.</li>
-<li><strong>Assistido - usar disco todo e LVM criptografado</strong> - Faz a junção das duas primeiras opções e faz
-a criptografia dos volumes.</li>
-<li><strong>Manual</strong> - Aqui efetuamos as configurações manualmente das partições e volumes, quando instalamos em
-servidores ou desktops e precisamos definir os tamanhos das partições e o ponto de montagem para cada
-partição.</li>
-</ol>
-<p><a class="reference external" href="./images/netinst-10.png"><img alt="netinst-10" src="./images/netinst-10.png" /></a></p>
-<p><a class="reference external" href="./images/netinst-11.png"><img alt="netinst-11" src="./images/netinst-11.png" /></a></p>
-<p><a class="reference external" href="./images/netinst-12.png"><img alt="netinst-12" src="./images/netinst-12.png" /></a></p>
-<p><a class="reference external" href="./images/netinst-13.png"><img alt="netinst-13" src="./images/netinst-13.png" /></a></p>
-<p><a class="reference external" href="./images/netinst-14.png"><img alt="netinst-14" src="./images/netinst-14.png" /></a></p>
-<p>Após o procedimento das partições é efetuado a instalação do sistema básico e em seguida selecionamos em qual
-repositório queremos buscar os nossos pacotes para que seja configurado o apt.</p>
-<p><a class="reference external" href="./images/netinst-15.png"><img alt="netinst-15" src="./images/netinst-15.png" /></a></p>
-<p><a class="reference external" href="./images/netinst-16.png"><img alt="netinst-16" src="./images/netinst-16.png" /></a></p>
-<p><a class="reference external" href="./images/netinst-17.png"><img alt="netinst-17" src="./images/netinst-17.png" /></a></p>
-<p>Em seguida é solicitado se quer participar do consurso de utilização de pacote, que ajuda no desenvolvimento
-do sistema oferecendo informações anonimas.</p>
-<p><a class="reference external" href="./images/netinst-18.png"><img alt="netinst-18" src="./images/netinst-18.png" /></a></p>
-<p>Após isso vamos para a tela de seleção de software, onde vamos selecionar oque queremos instalar, no meu caso
-como é uma maquina para teste não quero instalar nada além do sistema básico, portanto vou deixar marcado apenas
-a opção de Utilitários standard de sistema.</p>
-<p>Caso queria instalar um desktop completo deve marcar a opção <strong>Debian desktop environment</strong> e caso a instalação
-esteja ocorrendo de um laptop marcar a opção <strong>Laptop</strong></p>
-<p>Temos outras opções para instalarmos como web server, servidor de impressão, sql db, file server, mail server, ssh server.
-Eu particularmente gosto de instalar tudo depois que finalizar a instalação do sistema.</p>
-<p><a class="reference external" href="./images/netinst-19.png"><img alt="netinst-19" src="./images/netinst-19.png" /></a></p>
-<p>Agora vamos somos questionados se queremos instalar o gerenciador de boot GRUB.</p>
-<p><a class="reference external" href="./images/netinst-20.png"><img alt="netinst-20" src="./images/netinst-20.png" /></a></p>
-<p>E pronto, acabamos de finalizar a instalação do Debian Netinst, muito fácil não?</p>
-<p><a class="reference external" href="./images/netinst-21.png"><img alt="netinst-21" src="./images/netinst-21.png" /></a></p>
-<p>Agora já temos a nossa tão querida telinha preta.</p>
-<p><a class="reference external" href="./images/netinst-22.png"><img alt="netinst-22" src="./images/netinst-22.png" /></a></p>
-<p>Após a instalação a primeira coisa que faço é deixar o bash coloridinho :p editando o bash /root/.bashrc
-descomentando as linhas:</p>
-<div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">LS_OPTIONS</span><span class="o">=</span><span class="s1">&#39;--color=auto&#39;</span>
-<span class="nb">eval</span> <span class="s2">&quot;`dircolors`&quot;</span>
-<span class="nb">alias</span> <span class="nv">ls</span><span class="o">=</span><span class="s1">&#39;ls $LS_OPTIONS&#39;</span>
-<span class="nb">alias</span> <span class="nv">ll</span><span class="o">=</span><span class="s1">&#39;ls $LS_OPTIONS -l&#39;</span>
-<span class="nb">alias</span> <span class="nv">l</span><span class="o">=</span><span class="s1">&#39;ls $LS_OPTIONS -lA&#39;</span>
+<div class="section" id="id1">
+<h2>Debug com python.</h2>
+<p>Olá pessoal.</p>
+<p>Postando uma dica rápida como fazer debug com o python.</p>
+<p>Acima do código onde queremos iniciar o debug vamos importar o pdb e setar o trace.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pdb</span>
+<span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
+</pre></div>
+<p>Quando executar o código no vamente no console irá mostrar os resultados linha por linha e podemos usar os seguintes comandos:</p>
+<blockquote>
+l = Lista em qual linha a execução está parada.
+n = Pula para a linha seguinte ou execução seguinte.
+c = continua a execução sem interrupções.</blockquote>
+<div class="highlight"><pre><span></span>Python $ cat debug.py
+import pdb
+pdb.set_trace<span class="o">()</span>
 
-<span class="nb">alias</span> <span class="nv">rm</span><span class="o">=</span><span class="s1">&#39;rm -i&#39;</span>
-<span class="nb">alias</span> <span class="nv">cp</span><span class="o">=</span><span class="s1">&#39;cp -i&#39;</span>
-<span class="nb">alias</span> <span class="nv">mv</span><span class="o">=</span><span class="s1">&#39;mv -i&#39;</span>
+<span class="nv">valor1</span> <span class="o">=</span> <span class="m">10</span>
+<span class="nv">valor2</span> <span class="o">=</span> <span class="m">20</span>
+<span class="nv">calculo</span> <span class="o">=</span> valor1 * valor2
+
+print<span class="o">(</span>calculo<span class="o">)</span>
+ Python $ python debug.py
+&gt; /home/emilio/Documentos/Programação/Python/debug.py<span class="o">(</span><span class="m">4</span><span class="o">)</span>&lt;module&gt;<span class="o">()</span>
+-&gt; <span class="nv">valor1</span> <span class="o">=</span> <span class="m">10</span>
+<span class="o">(</span>Pdb<span class="o">)</span> l
+  <span class="m">1</span>         import pdb
+  <span class="m">2</span>         pdb.set_trace<span class="o">()</span>
+  <span class="m">3</span>
+  <span class="m">4</span>  -&gt;     <span class="nv">valor1</span> <span class="o">=</span> <span class="m">10</span>
+  <span class="m">5</span>         <span class="nv">valor2</span> <span class="o">=</span> <span class="m">20</span>
+  <span class="m">6</span>         <span class="nv">calculo</span> <span class="o">=</span> valor1 * valor2
+  <span class="m">7</span>
+  <span class="m">8</span>         print<span class="o">(</span>calculo<span class="o">)</span>
+<span class="o">[</span>EOF<span class="o">]</span>
+<span class="o">(</span>Pdb<span class="o">)</span> n
+&gt; /home/emilio/Documentos/Programação/Python/debug.py<span class="o">(</span><span class="m">5</span><span class="o">)</span>&lt;module&gt;<span class="o">()</span>
+-&gt; <span class="nv">valor2</span> <span class="o">=</span> <span class="m">20</span>
+<span class="o">(</span>Pdb<span class="o">)</span> l
+  <span class="m">1</span>         import pdb
+  <span class="m">2</span>         pdb.set_trace<span class="o">()</span>
+  <span class="m">3</span>
+  <span class="m">4</span>         <span class="nv">valor1</span> <span class="o">=</span> <span class="m">10</span>
+  <span class="m">5</span>  -&gt;     <span class="nv">valor2</span> <span class="o">=</span> <span class="m">20</span>
+  <span class="m">6</span>         <span class="nv">calculo</span> <span class="o">=</span> valor1 * valor2
+  <span class="m">7</span>
+  <span class="m">8</span>         print<span class="o">(</span>calculo<span class="o">)</span>
+<span class="o">[</span>EOF<span class="o">]</span>
+<span class="o">(</span>Pdb<span class="o">)</span> c
+<span class="m">200</span>
 </pre></div>
-<p>O segundo passo é instalar o <strong>vim</strong> para facilitar e edição dos arquivos.</p>
-<div class="highlight"><pre><span></span>apt-get install vim
-</pre></div>
-<p>e após a instalação descomento a linha <em>syntax on</em> no arquivo <em>/etc/vim/vimrc</em> para destacar a sintax nos
-arquivos de configurações.</p>
-<p>Agora vou procurar um ambiente gráfico para brincar e provavelmente irá tornar outro post do blog.</p>
-<p>Abraços</p>
+</div>
 
 
 <p align="center"><a href="#">on the top</a></p>
 <h3>Comments</h3>
 <div id="disqus_thread">
     <script type="text/javascript">
-       var disqus_identifier = "instalando-debian-netinst.html";
+       var disqus_identifier = "debug-com-python.html";
        (function() {
        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
        dsq.src = 'http://emilioeiji.disqus.com/embed.js';

@@ -1,5 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - Python</title><link href="http://blog.emilioeiji.com.br/" rel="alternate"></link><link href="http://blog.emilioeiji.com.br/feed/python.atom.xml" rel="self"></link><id>http://blog.emilioeiji.com.br/</id><updated>2015-03-17T20:30:00-03:00</updated><entry><title>Hello World em Python vs Java vs C</title><link href="http://blog.emilioeiji.com.br/hello-world-em-python-vs-java-vs-c.html" rel="alternate"></link><published>2015-03-17T20:30:00-03:00</published><updated>2015-03-17T20:30:00-03:00</updated><author><name>Emilio</name></author><id>tag:blog.emilioeiji.com.br,2015-03-17:/hello-world-em-python-vs-java-vs-c.html</id><summary type="html">&lt;p&gt;Olá Galera.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Emilio Eiji - Python</title><link href="http://blog.emilioeiji.com.br/" rel="alternate"></link><link href="http://blog.emilioeiji.com.br/feed/python.atom.xml" rel="self"></link><id>http://blog.emilioeiji.com.br/</id><updated>2018-11-03T11:10:00-03:00</updated><entry><title>Debug com python.</title><link href="http://blog.emilioeiji.com.br/debug-com-python.html" rel="alternate"></link><published>2018-11-03T11:10:00-03:00</published><updated>2018-11-03T11:10:00-03:00</updated><author><name>Emilio</name></author><id>tag:blog.emilioeiji.com.br,2018-11-03:/debug-com-python.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;Debug com python.&lt;/h2&gt;
+&lt;p&gt;Olá pessoal.&lt;/p&gt;
+&lt;p&gt;Postando uma dica rápida como fazer debug com o python.&lt;/p&gt;
+&lt;p&gt;Acima do código onde queremos iniciar o debug vamos importar o pdb e setar o trace.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pdb&lt;/span&gt;
+&lt;span class="n"&gt;pdb&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_trace&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Quando executar o código no vamente no console irá mostrar os resultados linha por linha …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;Debug com python.&lt;/h2&gt;
+&lt;p&gt;Olá pessoal.&lt;/p&gt;
+&lt;p&gt;Postando uma dica rápida como fazer debug com o python.&lt;/p&gt;
+&lt;p&gt;Acima do código onde queremos iniciar o debug vamos importar o pdb e setar o trace.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pdb&lt;/span&gt;
+&lt;span class="n"&gt;pdb&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_trace&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Quando executar o código no vamente no console irá mostrar os resultados linha por linha e podemos usar os seguintes comandos:&lt;/p&gt;
+&lt;blockquote&gt;
+l = Lista em qual linha a execução está parada.
+n = Pula para a linha seguinte ou execução seguinte.
+c = continua a execução sem interrupções.&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Python $ cat debug.py
+import pdb
+pdb.set_trace&lt;span class="o"&gt;()&lt;/span&gt;
+
+&lt;span class="nv"&gt;valor1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;
+&lt;span class="nv"&gt;valor2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;
+&lt;span class="nv"&gt;calculo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; valor1 * valor2
+
+print&lt;span class="o"&gt;(&lt;/span&gt;calculo&lt;span class="o"&gt;)&lt;/span&gt;
+ Python $ python debug.py
+&amp;gt; /home/emilio/Documentos/Programação/Python/debug.py&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&amp;lt;module&amp;gt;&lt;span class="o"&gt;()&lt;/span&gt;
+-&amp;gt; &lt;span class="nv"&gt;valor1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;Pdb&lt;span class="o"&gt;)&lt;/span&gt; l
+  &lt;span class="m"&gt;1&lt;/span&gt;         import pdb
+  &lt;span class="m"&gt;2&lt;/span&gt;         pdb.set_trace&lt;span class="o"&gt;()&lt;/span&gt;
+  &lt;span class="m"&gt;3&lt;/span&gt;
+  &lt;span class="m"&gt;4&lt;/span&gt;  -&amp;gt;     &lt;span class="nv"&gt;valor1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;
+  &lt;span class="m"&gt;5&lt;/span&gt;         &lt;span class="nv"&gt;valor2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;
+  &lt;span class="m"&gt;6&lt;/span&gt;         &lt;span class="nv"&gt;calculo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; valor1 * valor2
+  &lt;span class="m"&gt;7&lt;/span&gt;
+  &lt;span class="m"&gt;8&lt;/span&gt;         print&lt;span class="o"&gt;(&lt;/span&gt;calculo&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;EOF&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;Pdb&lt;span class="o"&gt;)&lt;/span&gt; n
+&amp;gt; /home/emilio/Documentos/Programação/Python/debug.py&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&amp;lt;module&amp;gt;&lt;span class="o"&gt;()&lt;/span&gt;
+-&amp;gt; &lt;span class="nv"&gt;valor2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;Pdb&lt;span class="o"&gt;)&lt;/span&gt; l
+  &lt;span class="m"&gt;1&lt;/span&gt;         import pdb
+  &lt;span class="m"&gt;2&lt;/span&gt;         pdb.set_trace&lt;span class="o"&gt;()&lt;/span&gt;
+  &lt;span class="m"&gt;3&lt;/span&gt;
+  &lt;span class="m"&gt;4&lt;/span&gt;         &lt;span class="nv"&gt;valor1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;
+  &lt;span class="m"&gt;5&lt;/span&gt;  -&amp;gt;     &lt;span class="nv"&gt;valor2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;
+  &lt;span class="m"&gt;6&lt;/span&gt;         &lt;span class="nv"&gt;calculo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; valor1 * valor2
+  &lt;span class="m"&gt;7&lt;/span&gt;
+  &lt;span class="m"&gt;8&lt;/span&gt;         print&lt;span class="o"&gt;(&lt;/span&gt;calculo&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;EOF&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;Pdb&lt;span class="o"&gt;)&lt;/span&gt; c
+&lt;span class="m"&gt;200&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content><category term="python"></category><category term="debug"></category></entry><entry><title>Hello World em Python vs Java vs C</title><link href="http://blog.emilioeiji.com.br/hello-world-em-python-vs-java-vs-c.html" rel="alternate"></link><published>2015-03-17T20:30:00-03:00</published><updated>2015-03-17T20:30:00-03:00</updated><author><name>Emilio</name></author><id>tag:blog.emilioeiji.com.br,2015-03-17:/hello-world-em-python-vs-java-vs-c.html</id><summary type="html">&lt;p&gt;Olá Galera.&lt;/p&gt;
 &lt;p&gt;Recentemente fui questionado porque eu estava estudando
 Python e não Java, que seria a &amp;quot;linguagem mais utilizada, eficaz, etc. etc.&amp;quot;
 Acredito que não exista linguagem de programação melhor que a outra

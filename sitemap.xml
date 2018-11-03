@@ -5,8 +5,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://blog.emilioeiji.com.br/</loc>
-<lastmod>2018-10-31T11:50:14-00:00</lastmod>
+<lastmod>2018-11-03T11:22:50-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://blog.emilioeiji.com.br/debug-com-python.html</loc>
+<lastmod>2018-11-03T11:10:00-03:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -600,7 +607,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://blog.emilioeiji.com.br/category/python.html</loc>
-<lastmod>2015-03-17T20:30:00-03:06</lastmod>
+<lastmod>2018-11-03T11:10:00-03:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -650,6 +657,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://blog.emilioeiji.com.br/category/windows.html</loc>
 <lastmod>2015-03-11T21:29:00-03:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://blog.emilioeiji.com.br/tag/python.html</loc>
+<lastmod>2018-11-03T11:10:00-03:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://blog.emilioeiji.com.br/tag/debug.html</loc>
+<lastmod>2018-11-03T11:10:00-03:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -859,13 +880,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://blog.emilioeiji.com.br/tag/flask.html</loc>
-<lastmod>2015-05-25T19:32:00-03:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://blog.emilioeiji.com.br/tag/python.html</loc>
 <lastmod>2015-05-25T19:32:00-03:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -1727,7 +1741,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://blog.emilioeiji.com.br/author/emilio.html</loc>
-<lastmod>2018-10-31T12:00:00-03:06</lastmod>
+<lastmod>2018-11-03T11:10:00-03:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

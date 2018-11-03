@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Emilio Eiji</title><link>http://blog.emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Wed, 31 Oct 2018 12:00:00 -0300</lastBuildDate><item><title>Abrindo uma urna eletronica.</title><link>http://blog.emilioeiji.com.br/abrindo-uma-urna-eletronica.html</link><description>&lt;div class="section" id="id1"&gt;
+<rss version="2.0"><channel><title>Emilio Eiji</title><link>http://blog.emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Sat, 03 Nov 2018 11:10:00 -0300</lastBuildDate><item><title>Debug com python.</title><link>http://blog.emilioeiji.com.br/debug-com-python.html</link><description>&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;Debug com python.&lt;/h2&gt;
+&lt;p&gt;Olá pessoal.&lt;/p&gt;
+&lt;p&gt;Postando uma dica rápida como fazer debug com o python.&lt;/p&gt;
+&lt;p&gt;Acima do código onde queremos iniciar o debug vamos importar o pdb e setar o trace.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pdb&lt;/span&gt;
+&lt;span class="n"&gt;pdb&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_trace&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Quando executar o código no vamente no console irá mostrar os resultados linha por linha …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Sat, 03 Nov 2018 11:10:00 -0300</pubDate><guid isPermaLink="false">tag:blog.emilioeiji.com.br,2018-11-03:/debug-com-python.html</guid><category>python</category><category>debug</category></item><item><title>Abrindo uma urna eletronica.</title><link>http://blog.emilioeiji.com.br/abrindo-uma-urna-eletronica.html</link><description>&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;Abrindo uma urna eletrônica.&lt;/h2&gt;
 &lt;p&gt;Ví um vídeo que achei bem interessante, encontrei no manual do mundo onde demonstra como a urna chega até a sessão eleitoral, como é ligada (com seu boot rodando uma versão do linux), como ocorre a votação e a impressão final.&lt;/p&gt;
 &lt;div class="youtube youtube-16x9"&gt;&lt;iframe src="https://www.youtube.com/embed/4wrMLzqgKEI" allowfullscreen seamless frameBorder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;
