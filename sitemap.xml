@@ -5,8 +5,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://blog.emilioeiji.com.br/</loc>
-<lastmod>2018-11-13T18:20:04-00:00</lastmod>
+<lastmod>2018-12-07T15:36:17-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://blog.emilioeiji.com.br/e-mail-de-sextortion.html</loc>
+<lastmod>2018-12-07T12:00:00-02:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -571,6 +578,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://blog.emilioeiji.com.br/category/hacking.html</loc>
+<lastmod>2018-12-07T12:00:00-03:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://blog.emilioeiji.com.br/category/linux.html</loc>
 <lastmod>2018-10-02T07:00:00-03:06</lastmod>
 <changefreq>daily</changefreq>
@@ -657,6 +671,34 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://blog.emilioeiji.com.br/category/windows.html</loc>
 <lastmod>2015-03-11T21:29:00-03:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://blog.emilioeiji.com.br/tag/sextortion.html</loc>
+<lastmod>2018-12-07T12:00:00-03:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://blog.emilioeiji.com.br/tag/email.html</loc>
+<lastmod>2018-12-07T12:00:00-03:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://blog.emilioeiji.com.br/tag/spam.html</loc>
+<lastmod>2018-12-07T12:00:00-03:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://blog.emilioeiji.com.br/tag/spyware.html</loc>
+<lastmod>2018-12-07T12:00:00-03:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1741,7 +1783,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://blog.emilioeiji.com.br/author/emilio.html</loc>
-<lastmod>2018-11-03T11:10:00-03:06</lastmod>
+<lastmod>2018-12-07T12:00:00-03:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

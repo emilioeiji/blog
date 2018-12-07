@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Emilio Eiji - Emilio</title><link>http://blog.emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Sat, 03 Nov 2018 11:10:00 -0300</lastBuildDate><item><title>Debug com python.</title><link>http://blog.emilioeiji.com.br/debug-com-python.html</link><description>&lt;div class="section" id="id1"&gt;
+<rss version="2.0"><channel><title>Emilio Eiji - Emilio</title><link>http://blog.emilioeiji.com.br/</link><description>The power of root</description><lastBuildDate>Fri, 07 Dec 2018 12:00:00 -0200</lastBuildDate><item><title>E-mail de sextortion</title><link>http://blog.emilioeiji.com.br/e-mail-de-sextortion.html</link><description>&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;E-mail de sextortion&lt;/h2&gt;
+&lt;p&gt;Hoje recebi o seguinte e-mail:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hello,&lt;/p&gt;
+&lt;p&gt;I am a spyware software developer. Your account has been hacked by me in the summer of 2018.&lt;/p&gt;
+&lt;p&gt;I understand that it is hard to believe, but here is my evidence (I sent you this email from your account).&lt;/p&gt;
+&lt;p&gt;The hacking …&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Emilio</dc:creator><pubDate>Fri, 07 Dec 2018 12:00:00 -0200</pubDate><guid isPermaLink="false">tag:blog.emilioeiji.com.br,2018-12-07:/e-mail-de-sextortion.html</guid><category>sextortion</category><category>email</category><category>spam</category><category>spyware</category></item><item><title>Debug com python.</title><link>http://blog.emilioeiji.com.br/debug-com-python.html</link><description>&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;Debug com python.&lt;/h2&gt;
 &lt;p&gt;Olá pessoal.&lt;/p&gt;
 &lt;p&gt;Postando uma dica rápida como fazer debug com o python.&lt;/p&gt;
