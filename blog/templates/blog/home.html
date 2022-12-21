@@ -5,6 +5,15 @@
     <title>Primeiro Template</title>
 </head>
 <body>
-    <h1>Hellow World!!! Template!!!</h1>
+    <h2>Lista de posts cadastrados</h2>
+
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{% url 'post_detail' post.id %}"> {{ post.titulo }} - {{ post.autor }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
 </body>
 </html>
