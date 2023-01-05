@@ -18,112 +18,9 @@
             <div class="col-xl-8">
                 <header class="bg-dark my-2">
 
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                        <div class="container-fluid px-0">
-                            <a class="navbar-brand" href="#">Django</a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                    aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li class="nav-item">
-                                        <a class="nav-link" aria-current="page" href="#">Blog</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Cursos</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link">Contato</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link">Login</a>
-                                    </li>
-                                </ul>
-                                <form class="d-flex" role="search">
-                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                    <button class="btn btn-outline-success" type="submit">Search</button>
-                                </form>
-                            </div>
-                        </div>
-                    </nav>
+                    {% include 'fragments/navbar.html' %}
 
-                    <div class="container-fluid d-none d-lg-block px-0">
-                        <div id="carouselExampleIndicators" class="carousel slide">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                        aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                        aria-label="Slide 3"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <svg class="bd-placeholder-img"
-                                         width="100%"
-                                         height="100%"
-                                         xmlns="http://www.w3.org/2000/svg"
-                                         aria-hidden="true"
-                                         preserveAspectRatio="xMidYMid slice"
-                                         focusable="false">
-                                        <rect height="100%" width="100%" fill="#3A3276"/>
-                                    </svg>
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>Conheça os meus serviços.</h5>
-                                        <p>Saiba de quais maneiras posso melhor atender o seu negócio, com atendimentos
-                                            personalizados.</p>
-                                    </div>
-
-                                </div>
-                                <div class="carousel-item">
-                                    <svg class="bd-placeholder-img"
-                                         width="100%"
-                                         height="100%"
-                                         xmlns="http://www.w3.org/2000/svg"
-                                         aria-hidden="true"
-                                         preserveAspectRatio="xMidYMid slice"
-                                         focusable="false">
-                                        <rect height="100%" width="100%" fill="#ffc107"/>
-                                    </svg>
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>Me siga nas redes sociais.</h5>
-                                        <p>Conheça o meu canal do YouTube e receba dicas, tutoriais gratuitos e fique por
-                                            dentro das novidade do mundo Geek</p>
-                                    </div>
-
-                                </div>
-                                <div class="carousel-item">
-                                    <svg class="bd-placeholder-img"
-                                         width="100%"
-                                         height="100%"
-                                         xmlns="http://www.w3.org/2000/svg"
-                                         aria-hidden="true"
-                                         preserveAspectRatio="xMidYMid slice"
-                                         focusable="false">
-                                        <rect height="100%" width="100%" fill="#3A3276"/>
-                                    </svg>
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>Entre em contato.</h5>
-                                        <p>Entre em contato para tirar dúvidas referentes ao serviços oferecidos por
-                                            mim.</p>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                                    data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                                    data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
+                    {% include 'fragments/carrousel.html' %}
 
                 </header>
             </div>
@@ -138,13 +35,13 @@
                         <div class="col-lg-8 d-flex">
 
                             <div class="card vh-75 vw-100">
-                                <a href="#">
+                                <a href="{% url 'post_detail' posts.0.id %}">
                                     <img src="{{ posts.0.image_capa.url }}"
                                          class="card-img-top"
                                          alt="Django Logo">
                                 </a>
                                 <div class="card-body pb-4">
-                                    <a href="#" style="text-decoration:none;">
+                                    <a href="{% url 'post_detail' posts.0.id %}" style="text-decoration:none;">
                                         <h4 class="card-title text-dark">
                                             {{ posts.0.titulo }}
                                         </h4>
@@ -225,14 +122,14 @@
                         {% for post in posts|slice:"1:5" %}
                             <div class="col d-flex">
                             <div class="card vh-75 vw-100">
-                                <a href="#">
+                                <a href="{% url 'post_detail' post.id %}">
                                     <img src="{{ post.image_capa.url }}"
                                          class="card-img-top img-capa"
                                          alt="Imagem Capa">
                                 </a>
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        <a href="#" style="text-decoration:none;" class="text-dark">
+                                        <a href="{% url 'post_detail' post.id %}" style="text-decoration:none;" class="text-dark">
                                             {{ post.titulo }}
                                         </a>
                                     </h5>
@@ -271,36 +168,7 @@
         </div>
     </main>
 
-    <footer class="bg-dark py-4 my-2">
-        <div class="container-fluid text-white">
-            <div class="row justify-content-center">
-                <div class="col-lg-2 text-left">
-                    <h5 class="text-uppercase fw-bold text-info">Quem somos?</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua.</p>
-                </div>
-                <div class="col-lg-4 text-left">
-                    <h5 class="text-uppercase fw-bold text-info">Onde queremos chegar?</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-                <div class="col-lg-2">
-                    <h5 class="text-uppercase fw-bold text-info">Siga-nos nas redes</h5>
-                    <p>
-                        <i class="fa-brands fa-youtube"></i>
-                        <a href="#" class="text-white" style="text-decoration:none;">YouTube</a>
-                    </p>
-                    <p>
-                        <i class="fa-brands fa-github"></i>
-                        <a href="#" class="text-white" style="text-decoration:none;">GitHub</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    {% include 'fragments/footer.html' %}
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
