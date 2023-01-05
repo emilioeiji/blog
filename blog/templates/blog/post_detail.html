@@ -27,11 +27,11 @@
     <main class="bg-light">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-xl-8">
+                <div class="col-xl-8 border-start border-end">
 
                     <hr class="my-5">
-                        <div class="container-fluid my-4">
-                            <div class="flex-row d-flex my-3">
+                        <div class="container-fluid">
+                            <div class="flex-row d-flex my-2">
                                 <h1>{{ post.titulo }}</h1>
 
                                 <span class="d-flex justify-content-center align-items-center ms-5">
@@ -66,11 +66,52 @@
 
                             </div>
                         </div>
-                    <hr class="my-5">
 
-                    <h3 class="mb-5">
-                        {{ post.subtitulo }}
-                    </h3>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="d-flex flex-row align-items-center">
+                                <div class="rounded-circle border d-flex
+                                justify-content-center align-items-center bg-info avatar">
+                                    <!-- Inserir imagem aqui -->
+                                </div>
+                                <p class="mb-0">
+                                    <span class="text-muted justify-content-center">
+                                        <span class="mx-2 h5">
+                                                {{ post.autor }}
+                                        </span>
+
+                                        <span>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <span>
+                                                30Min
+                                            </span>
+                                        </span>
+
+                                        <br>
+
+                                        <span class="mx-2">
+                                            <i class="fa-solid fa-tags"></i>
+                                            <span>
+                                                <a href="#" class="text-decoration-none text-muted">#Básico</a>
+                                            </span>
+                                            <span>
+                                                <a href="#" class="text-decoration-none text-muted">#Python</a>
+                                            </span>
+
+                                            <br>
+
+                                            <span class="mx-2">
+                                                {{ post.subtitulo }}
+                                            </span>
+                                        </span>
+
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-5">
 
                     <article class="fs-6 px-5 mx-2">
                         {{ post.conteudo|safe }}
