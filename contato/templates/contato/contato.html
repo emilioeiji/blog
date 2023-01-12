@@ -24,14 +24,17 @@
     <main class="bg-light">
       <div class="container-fluid">
         <div class="row justify-content-center">
-          <div class="col-xl-6">
+          <div class="col-xl-5 col-md-6">
 
               <form method="post" action="processa_contato">
                   {% csrf_token %}
-                  <div class="card p-5 mt-5">
+                  <div class="card border-0 ps-sm-0 p-md-5 mt-3 mb-3">
+                      <div class="card-head bg-white border-0">
+                          <h1 class="text-success text-center">Contato</h1>
+                      </div>
                       {{ form }}
-                      <div class="card-footer ps-0 pt-3">
-                          <button type="submit" class="btn btn-primary">Enviar</button>
+                      <div class="card-footer border-0 p-0 pt-3 bg-white">
+                          <button type="submit" class="btn btn-success col-12">Enviar</button>
                       </div>
                   </div>
               </form>
