@@ -26,9 +26,20 @@
         <div class="row justify-content-center">
           <div class="col-xl-5 col-md-6">
 
-              <form method="post" action="processa_contato">
+              <form method="post" action="{% url 'mensagem' %}">
                   {% csrf_token %}
                   <div class="card border-0 ps-sm-0 p-md-5 mt-3 mb-3">
+
+                      {% if messages %}
+                          {% for message in messages %}
+                              {% if message.tags %}
+                                  <div class="alert alert-success text-center" role="alert">
+                                      {{ message }}
+                                  </div>
+                              {% endif %}
+                          {% endfor %}
+                      {% endif %}
+
                       <div class="card-head bg-white border-0">
                           <h1 class="text-success text-center">Contato</h1>
                       </div>
