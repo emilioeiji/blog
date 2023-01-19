@@ -8,7 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
     path('login/', include('autenticacao.urls')),
-    path('contas', include('contas.urls')),
+    path('contas/', include('contas.urls')),
     path('contato/', include('contato.urls')),
     path('cursos/', include('cursos.urls')),
     path('bootstrap/', include('exemplos.urls')),
