@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'ckeditor_uploader',
+    'widget_tweaks',
     'blog.apps.BlogConfig',
     'contas.apps.ContasConfig',
     'contato.apps.ContatoConfig',
