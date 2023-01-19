@@ -1,15 +1,23 @@
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . usuario_form import PerfilForm
 
 def criar_conta(request):
     if request.method == 'POST':
         profile = PerfilForm(request.POST)
         if profile.is_valid():
-            print("Formulário válido")
+            usr = User.objects.create_user(
+                first_name=profile.cleaned_data['first_name'],
+                last_name=profile.cleaned_data['last_name'],
+                username=profile.cleaned_data['username'],
+                email=profile.cleaned_data['email'],
+                password=profile.cleaned_data['password']
+            )
+            usr.save()
+            return redirect('login')
         else:
-            print("Formulário inválido")
+            return render(request, 'contas/criar_conta.html', {'form': profile})
     else:
         return render(request, 'contas/criar_conta.html', {'form': PerfilForm})
 
