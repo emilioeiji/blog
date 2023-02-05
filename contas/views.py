@@ -42,3 +42,11 @@ def htmx_valida_senha(request):
         return HttpResponse('<label style="color:red;">Senhas não são iguais.</label>')
     else:
         return HttpResponse('')
+
+
+def htmx_valida_email(request):
+    emailParam = request.POST.get('email')
+    if User.objects.filter(email=emailParam):
+        return HttpResponse('<label style="color:red;">Email já cadastrado</label>')
+    else:
+        return HttpResponse('')
