@@ -1,3 +1,5 @@
+import re
+
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -22,6 +24,15 @@ def criar_conta(request):
         return render(request, 'contas/criar_conta.html', {'form': PerfilForm})
 
     return render(request, 'contas/criar_conta.html')
+
+
+def validou_email(email):
+    regex = '^(\w+)@[a-z]+(\.[a_z]+){1,2}$'
+
+    if (re.search(regex, email)):
+        return True
+    else:
+        return False
 
 
 def htmx_valida_username(request):
