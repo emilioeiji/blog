@@ -27,7 +27,9 @@ def criar_conta(request):
 
 
 def validou_email(email):
-    regex = '^(\w+)@[a-z]+(\.[a_z]+){1,2}$'
+
+    #regex = '^(\w+)@[a-z]+(\.[a_z]+){1,2}$'
+    regex = "^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$"
 
     if (re.search(regex, email)):
         return True
@@ -56,7 +58,11 @@ def htmx_valida_senha(request):
 
 
 def htmx_valida_email(request):
+
     emailParam = request.POST.get('email')
+
+    if not validou_email(emailParam):
+        return HttpResponse('<label style="color:red;">Email inválido.</label>')
 
     if User.objects.filter(email=emailParam):
         return HttpResponse('<label style="color:red;">Email já cadastrado</label>')
