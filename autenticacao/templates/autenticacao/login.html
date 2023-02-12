@@ -1,5 +1,6 @@
 <!doctype html>
 {% load static %}
+{% load socialaccount %}
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
@@ -92,9 +93,9 @@
                     </div>
 
                     <div class="d-grid mt-2">
-                      <button class="btn btn-danger" type="button">
+                      <a href="{% provider_login_url 'google' %}" class="btn btn-danger" type="button">
                         <i class="fa-brands fa-google"></i>
-                      </button>
+                      </a>
                     </div>
 
                     <div class="d-grid mt-2">
