@@ -2,6 +2,8 @@ import re
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+
+from .models import Perfil
 from . usuario_form import PerfilForm, UserForm
 from django.db import transaction
 from django.template.loader import render_to_string
@@ -9,19 +11,29 @@ from django.template.loader import render_to_string
 @transaction.atomic
 def criar_conta(request):
     if request.method == 'POST':
-        user = UserForm(request.POST, instance=request.user)
-        perfil = PerfilForm(equest.POST, instance=request.perfil)
+
+        user = UserForm(request.POST)
+        perfil = PerfilForm(request.POST, request.FILES)
+
+        usr = User.objects.create_user(
+            first_name=user.cleaned_data['first_name'],
+            last_name=user.cleaned_data['last_name'],
+            username=user.cleaned_data['username'],
+            email=user.cleaned_data['email'],
+            password=user.cleaned_data['password'],
+        )
+
+        perl = Perfil(bio=perfil.cleaned_data['bio'],
+                      foto=perfil.cleaned_data['foto'],
+                      user=usr)
 
         if perfil.is_valid() and user.is_valid():
-            user.save()
-            perfil.save()
+            perl.save()
             return redirect('login')
         else:
             return render(request, 'contas/criar_conta.html', {'form': user, 'form_perfil': perfil})
     else:
         return render(request, 'contas/criar_conta.html', {'form': UserForm(), 'form_perfil': PerfilForm()})
-
-    return render(request, 'contas/criar_conta.html')
 
 
 def validou_email(email):
