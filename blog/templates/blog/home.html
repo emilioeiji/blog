@@ -1,62 +1,14 @@
-{% extends 'base.html' %}
+{% extends 'blog_base.html' %}
 {% load static %}
 {% block title %} Blog Emilio Eiji {% endblock %}
-
-{% block navbar %}
-    {% include 'fragments/navbar.html' %}
-{% endblock %}
-
-{% block carrousel %}
-    {% include 'fragments/carrousel.html' %}
-{% endblock %}
 
 {% block content %}
     <div class="row">
         <div class="col-lg-8 d-flex">
-
-            <div class="card vh-75 vw-100">
-                <a href="{% url 'post_detail' posts.0.id %}">
-                    <img src="{{ posts.0.image_capa.url }}"
-                         class="card-img-top"
-                         alt="Django Logo">
-                </a>
-                <div class="card-body pb-4">
-                    <a href="{% url 'post_detail' posts.0.id %}" class="text-decoration-none text-dark">
-                        <h4 class="card-title">
-                            {{ posts.0.titulo }}
-                        </h4>
-                    </a>
-                    <p class="card-text">
-                        {{ posts.0.resumo|safe }}
-                    </p>
-                    <p class="card-text">
-                        <small class="text-muted d-flex justify-content-end">
-                            {{ posts.0.data_publicacao }}
-                        </small>
-                    </p>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="d-flex justify-content-center">
-                                <div class="span me-3 btn">
-                                    <i class="fa-solid fa-heart"></i>
-                                    Curtir
-                                </div>
-                                <div class="span me-3 btn">
-                                    <i class="fa-solid fa-comment"></i>
-                                    Comentar
-                                </div>
-                                <div class="span me-3 btn">
-                                    <i class="fa-solid fa-share"></i>
-                                    Compartilhar
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            {% include 'fragments/card_base.html' with post=posts.0 %}
         </div>
 
+        <!-- Ajustar após criação de app de Quizz -->
         <div class="col-lg-4 d-none d-sm-flex">
             <div class="card vh-75 vw-100">
                 <img src="{% static 'blog/img/snipet-01.png' %}" class="card-img-top" alt="texto-questao">
@@ -102,43 +54,7 @@
 
         {% for post in posts|slice:"1:5" %}
         <div class="col d-flex">
-            <div class="card vh-75 vw-100">
-                <a href="{% url 'post_detail' post.id %}">
-                    <img src="{{ post.image_capa.url }}"
-                         class="card-img-top img-capa"
-                         alt="Imagem Capa">
-                </a>
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="{% url 'post_detail' post.id %}" class="text-decoration-none text-dark">
-                            {{ post.titulo }}
-                        </a>
-                    </h5>
-                    <p class="card-text">
-                        {{ post.resumo|slice:":250"|safe }} ...
-                    </p>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="d-flex justify-content-center">
-                                <div class="span me-3 btn">
-                                    <i class="fa-solid fa-heart"></i>
-                                    Curtir
-                                </div>
-                                <div class="span me-3 btn">
-                                    <i class="fa-solid fa-comment"></i>
-                                    Comentar
-                                </div>
-                                <div class="span me-3 btn">
-                                    <i class="fa-solid fa-share"></i>
-                                    Compartilhar
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            {% include 'fragments/card_base.html' with post=post %}
         </div>
         {% endfor %}
 
