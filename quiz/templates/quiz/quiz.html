@@ -3,13 +3,18 @@
 <div class="card vh-75 vw-100">
 
     {% if questao.imagem %}
-        <img src="{{ questao.imagem.url }}" class="card-img-top" alt="texto-questao">
+        <img src="{{ questao.imagem.url }}"
+             class="card-img-top"
+             alt="texto-questao">
+    {% else %}
+        <img src="{% static 'blog/img/snipet-01.png' %}"
+             class="card-img-top">
     {% endif %}
-    <p>
+    <p class="mt-3 p-2">
         {{ questao.enunciado }}
     </p>
 
-    <div class="card-body">
+    <div class="card-body p-2">
 
         <div class="form-check">
 
@@ -30,6 +35,6 @@
 
         </div>
 
-        <a href="#" class="btn btn-success mt-2 d-grid">Responder</a>
+        <a href="#" class="btn btn-success mt-2 d-grid mt-3">Responder</a>
     </div>
 </div>

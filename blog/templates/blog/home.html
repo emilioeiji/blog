@@ -1,5 +1,6 @@
 {% extends 'blog_base.html' %}
 {% load static %}
+{% load widget_tweaks %}
 {% block title %} Blog Emilio Eiji {% endblock %}
 
 {% block content %}
@@ -10,7 +11,7 @@
             </div>
 
             <!-- Ajustar após criação de app de Quizz -->
-            <div class="col-lg-4 d-none d-sm-flex">
+            <div class="col-lg-4 d-none d-sm-flex" hx-get="quiz/" hx-trigger="load">
                 {% include 'quiz/quiz.html' %}
             </div>
 
