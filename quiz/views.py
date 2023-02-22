@@ -6,7 +6,9 @@ from quiz.models import Questao
 
 # Create your views here.
 def get_quiz(request):
-    questao = Questao.objects.get(pk=1)
+    #questao = Questao.objects.raw('SELECT * FROM quiz_questao order by random() LIMIT 1')[0]
+    #questao = Questao.objects.get(pk=1)
+    questao = Questao.objects.order_by('?').first()
     context = {
         'questao': questao
     }
@@ -20,4 +22,4 @@ def get_resposta(request):
     elif resposta == 'False':
         return HttpResponse('<p style="color:red"> Resposta Incorreta! </p>')
     else:
-        return HttpResponse('<p style="color:yellow"> Selecione uma alternativa! </p>')
+        return HttpResponse('<p style="color:red"> Selecione uma alternativa! </p>')
