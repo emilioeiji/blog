@@ -48,9 +48,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="d-flex flex-row align-items-center">
-                        <div class="rounded-circle border d-flex
-                                        justify-content-center align-items-center bg-info avatar">
-                            <!-- Inserir imagem aqui -->
+                        <div class="rounded-circle d-flex
+                                        justify-content-center align-items-center avatar">
+                            <img src="{{ post.autor.foto.url }}" alt="{{ post.autor }}"
+                                 style="heigt:85px; width:85px;"
+                                 class="rounded-circle">
+                            
                         </div>
                         <p class="mb-0">
                             <span class="text-muted justify-content-center">
@@ -92,7 +95,10 @@
             <hr class="my-5">
 
             <article class="fs-6 px-lg-5 mx-lg-2">
-                {{ post.conteudo|safe }}
+                {% for topico in post.topico_set.all %}
+                    {{ topico.conteudo|safe }}
+                    <br>
+                {% endfor %}
             </article>
 
             <hr class="my-5">

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Topico
+from .models import Post, Topico, Tag, Comentario, Situacao, PostSituacao
 
 
 class TopicoInline(admin.TabularInline):
@@ -16,3 +16,7 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Topico)
+admin.site.register(Tag)
+admin.site.register(Comentario)
+admin.site.register(Situacao)
+admin.site.register(PostSituacao)
