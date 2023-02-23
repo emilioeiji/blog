@@ -15,3 +15,7 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titulo
+
+class Topico(models.Model):
+    conteudo = RichTextUploadingField(null=True, blank=True)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
