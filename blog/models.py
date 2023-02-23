@@ -8,8 +8,6 @@ class Post(models.Model):
     autor = models.CharField(max_length=255)
     titulo = models.CharField(max_length=255)
     subtitulo = models.CharField(max_length=255)
-    resumo = RichTextField(null=True, blank=True)
-    conteudo = RichTextUploadingField()
     image_capa = models.ImageField(null=True, blank=True, upload_to="static/blog/img/")
     data_publicacao = models.DateTimeField(default=timezone.now)
 
@@ -17,5 +15,5 @@ class Post(models.Model):
         return self.titulo
 
 class Topico(models.Model):
-    conteudo = RichTextUploadingField(null=True, blank=True)
+    conteudo = RichTextUploadingField(blank=True, null=True)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
