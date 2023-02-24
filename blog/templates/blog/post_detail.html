@@ -64,7 +64,7 @@
                                 <span>
                                     <i class="fa-solid fa-clock"></i>
                                     <span>
-                                        30Min
+                                        {{ post.tempo_leitura }} min
                                     </span>
                                 </span>
 
@@ -72,12 +72,12 @@
 
                                 <span class="mx-2">
                                     <i class="fa-solid fa-tags"></i>
-                                    <span>
-                                        <a href="#" class="text-decoration-none text-muted">#Básico</a>
-                                    </span>
-                                    <span>
-                                        <a href="#" class="text-decoration-none text-muted">#Python</a>
-                                    </span>
+
+                                    {% for tag in post.tag_set.all %}
+                                        <span>
+                                            <a href="#" class="text-decoration-none text-muted">{{ tag.nome }}</a>
+                                        </span>
+                                    {% endfor %}
 
                                     <br>
 
